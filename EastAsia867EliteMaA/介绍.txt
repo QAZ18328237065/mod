@@ -1,0 +1,79 @@
+《东亚867精锐兵种》mod 介绍
+========================================
+【作用】
+为 867 年开局的中华、日本、韩国、西藏、南诏、东北、中国北方、
+中国南方共 27 个文化补充 53 个文化专属特殊兵种，填补原版缺失的
+兵种类型（散兵/枪兵/轻骑/弓骑/重步等），并统一按性价比模型校准强度。
+
+兵种一览（强度刻度：原版基准=50，骑侍≈101，本 mod=60~95）：
+  中国线（han 汉）：    跳荡兵、长枪都、神策游骑、射生军
+  日本线（japanese）：  防人弓队、马寮轻骑、健児队、追捕使団、六卫府兵
+  韩国线（silla/goryeo/baekje）：花郎、骨品马军、誓幢军、弩幢、光军、
+                        神骑军、鹰扬军、五方军、百济弩手、百济甲骑
+  西藏线（bodpa/象雄/苏毗/藏巴/基拉蒂/罗门）：雪域弓手、深山伏戎、
+                        高原马军、象雄穹骑、苏毗女军、后藏枪军、
+                        基拉蒂猎手、珞门弓手
+  东北线（balhae/mohe/goguryeo/jurchen）：楛矢弓手、渤海铁骑、五京军、
+                        靺鞨猎人、靺鞨劲卒、高句丽弓骑、高句丽甲士、女真精甲
+  南诏线（yi 彝 / bai 白）：罗苴子、蒙舍弩手、白蛮枪军、苍山伏兵
+  北方线（tangut/shatuo/qiang/viet）：定难枪军、蕃落骑、鸦儿军、
+                        羌弩、山道伏兵、交趾弩手、步阵枪军
+  南方线（tai/bouxcuengh/hmong/yao/hlai）：藤甲兵、僚人弩手、毒弩手、
+                        山猎手、黎峒弓手
+  日本诸岛（ainu/ryukyuan）：阿伊努猎手队、琉球弓手
+
+强度位阶（v5.2 降档压缩，区间无交叉，上限 95）：
+  中国 90.2~95.0 > 日本 85.5~88.1 > 韩国 80.5~83.5
+  > 东北 76.3~78.7 > 南诏 74.4~75.4 > 藏 bodpa 71.7~72.2
+  > 北方 69.1~71.1 > 西藏其他 60.4~66.0 > 南方 60.2~62.3
+  > 日本诸岛 60.1~60.3
+
+【使用方式】
+游戏内无需任何操作：所属文化满足绑定的统治者，在常备军界面
+即可直接招募对应兵种（与原版文化兵种相同的方式）。
+
+【实现原理】
+- 新增 9 个 men_at_arms_types 文件（零覆盖原版）：
+    zz_china_867_maa_types.txt / zz_korea_maa_types.txt
+    zz_japan_islands_maa_types.txt / zz_nanzhao_maa_types.txt
+    zz_northeast_maa_types.txt / zz_north_maa_types.txt
+    zz_south_maa_types.txt / zz_tibet_maa_types.txt
+    99_japan_special_maa.txt
+- 文化绑定（can_recruit）：逐文化绑定（culture:han / culture:japanese /
+  culture:silla / culture:bodpa ...），不依赖支柱，精确到单个文化
+- 成本：中国/韩国/南诏/东北/北方/南方线走自定义 script_values（6 个文件）；
+  日本/西藏/诸岛线数字字面量
+- 图标：复用原版 gfx/interface/icons/regimenttypes/ 已有 dds，
+  部分复制原版图标改名为 mod 自带文件
+- 强度：全部数值由平衡模型校准（见 project_plan/00_balance_model.md，
+  含地形/克制/追击掩护/horde 机制与区域权重），每次改动须过模型，
+  且文档表与脚本必须同步一致
+
+【依赖】
+- All Under Heaven (TGP) DLC：文化支柱 heritage_chinese/korean/buyeo/
+  japonic/tibetan 等出自该 DLC
+- 缺少该 DLC 时对应文化不存在，兵种自然不可见，无副作用
+
+【兼容性与扩展】
+- 全部为新增文件，不修改/覆盖任何原版文件，卸载即完全移除
+- 与其他 mod 的冲突面仅限同名文化支柱（TGP 固有），其余零冲突
+- 想调整某个兵种：直接改对应 txt 的数值，再用平衡模型重算
+- 想给其他文化加兵种：复制任一行改 id/数值/绑定即可
+- 已通过 ck3-tiger 完整校验（error 0）
+
+【文件清单】
+  EastAsia867EliteMaA.mod                              启动器注册文件
+  common/men_at_arms_types/zz_china_867_maa_types.txt  中国线兵种（4）
+  common/men_at_arms_types/zz_korea_maa_types.txt      韩国线兵种（10）
+  common/men_at_arms_types/zz_northeast_maa_types.txt  东北线兵种（8）
+  common/men_at_arms_types/zz_nanzhao_maa_types.txt    南诏线兵种（4）
+  common/men_at_arms_types/zz_north_maa_types.txt      北方线兵种（5）
+  common/men_at_arms_types/zz_south_maa_types.txt      南方线兵种（7）
+  common/men_at_arms_types/zz_tibet_maa_types.txt      西藏线兵种（8）
+  common/men_at_arms_types/99_japan_special_maa.txt    日本线兵种（5）
+  common/men_at_arms_types/zz_japan_islands_maa_types.txt  诸岛线兵种（2）
+  common/script_values/zz_*_maa_values.txt             各线成本（6 个文件）
+  localization/english/zz_*_867_regiments_l_english.yml       英文本地化
+  localization/simp_chinese/zz_*_867_regiments_l_simp_chinese.yml  简中本地化
+  gfx/interface/icons/regimenttypes/*.dds              兵种图标
+  project_plan/00_balance_model.md                     平衡模型文档

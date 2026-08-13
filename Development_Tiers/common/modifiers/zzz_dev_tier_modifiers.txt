@@ -1,0 +1,79 @@
+﻿# [DEV TIER] 发展度梯度档位 buff（互斥，由 dev_tier_check_pulse 每年自动切换）
+# 越高档增益种类越多，同时引入治理压力负面：
+#   T5+ 大城难治（控制度月降）、T6+ 地价昂贵（建造费）、T7 成熟饱和（成长放缓）
+
+dev_tier_1_modifier = {
+	icon = county_modifier_development_negative
+	# 荒野：无加成
+}
+
+dev_tier_2_modifier = {
+	icon = economy_positive
+	tax_mult = 0.02
+}
+
+dev_tier_3_modifier = {
+	icon = economy_positive
+	tax_mult = 0.04
+	levy_size = 0.03
+}
+
+dev_tier_4_modifier = {
+	icon = county_modifier_development_positive
+	tax_mult = 0.06
+	levy_size = 0.06
+	supply_limit_mult = 0.05
+	travel_danger = -10
+}
+
+dev_tier_5_modifier = {
+	icon = county_modifier_development_mixed
+	tax_mult = 0.09
+	levy_size = 0.09
+	supply_limit_mult = 0.1
+	development_growth = 0.1
+	county_opinion_add = 10
+	monthly_county_control_decline_add = -0.2
+	fort_level = 1
+}
+
+dev_tier_6_modifier = {
+	icon = county_modifier_development_mixed
+	tax_mult = 0.13
+	levy_size = 0.13
+	supply_limit_mult = 0.15
+	development_growth = 0.2
+	county_opinion_add = 15
+	monthly_county_control_decline_add = -0.3
+	build_gold_cost = 0.25
+	fort_level = 2
+	garrison_size = 0.1
+	levy_reinforcement_rate = 0.1
+	building_slot_add = 1
+	county_fertility_decline_mult = 0.1
+}
+
+dev_tier_7_modifier = {
+	icon = county_modifier_development_mixed
+	tax_mult = 0.18
+	levy_size = 0.18
+	supply_limit_mult = 0.25
+	development_growth = 0.35
+	county_opinion_add = 30
+	monthly_county_control_decline_add = -0.4
+	build_gold_cost = 0.4
+	development_growth_factor = -0.15
+	fort_level = 3
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.2
+	defender_holding_advantage = 3
+	building_slot_add = 1
+	county_fertility_decline_mult = 0.2
+}
+
+# 破城废墟：伯爵领被完全攻占后的 10 年冷却与负面演出（期间不再受破城重创）
+dev_siege_razed_modifier = {
+	icon = county_modifier_development_negative
+	development_growth_factor = large_development_growth_loss
+	county_opinion_add = -10
+}

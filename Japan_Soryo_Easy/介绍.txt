@@ -1,0 +1,54 @@
+﻿《总领体制与总领庄园·简化》mod 介绍
+========================================
+
+【作用】
+简化《Crusader Kings III: All Under Heaven》DLC 中日本律令制政体的
+两个"总领"相关决议的解锁条件,使其更早、更容易达成。
+
+涉及的两个决议:
+  - 建立总领庄园(tgp_japan_establish_soryo_manor_decision)
+  - 建立总领体制(tgp_japan_establish_soryo_administration_decision)
+
+【条件调整】
+两个决议均按原版条件为基础,仅移除以下前置:
+  - 科技前置:官僚制 3 级(has_realm_law = japanese_bureaucracy_3)
+  - 科技前置:宅邸主建筑等级(unlocks_establish_fief_decision)
+  - 法律条件:摄关继承法(japanese_regency_succession_law)
+  - 联盟凝聚力要求(house_confederation 凝聚力等级)
+
+其余条件均恢复为原版要求,例如:
+  - 建立总领庄园:律令制政体、贵族家族家主并持有贵族家族头衔、
+    宅邸不在顶级领主首都伯爵领、无直系后代担任总督/摄政、
+    无直系后代是领主或以上、500 威望
+  - 建立总领体制:独立律令制统治者、不处于战争中、
+    消耗巨额威望与影响力,随后进入原版战争流程
+
+【使用方式】
+游戏内打开决议面板,满足上述条件后即可执行对应决议。
+决议的后续事件链、奖励与原版完全一致。
+
+【实现原理】
+- 以同名覆盖原版决议(定义同键名决议即整体替换)
+- 重要:文件必须放在与源文件相同的子目录
+  common/decisions/dlc_decisions/tgp/ 下,并以 zzz_ 开头。
+  游戏先加载目录下的直接文件、后加载子目录(dlc_decisions),
+  若放在 common/decisions/ 根目录,会被子目录中的原版文件覆盖
+  (database_conflicts.log 会记录 "Overriding entry ... in
+  'file: common/decisions/dlc_decisions/tgp/tgp_japan_decisions.txt'")。
+- 两个决议均完整保留原版的 cost、effect、AI 逻辑,仅修改条件块
+- 未新增任何事件或本地化文件,全部沿用原版内容
+
+【依赖】
+- Crusader Kings III 1.19.*
+- All Under Heaven (TGP) DLC:两个决议均为该 DLC 内容
+缺少对应 DLC 时决议不存在,无副作用。
+
+【兼容性】
+- 卸载即完全移除,不残留任何文件
+- 若同时启用其他修改同名决议的 mod,加载顺序靠后的定义生效
+
+【文件清单】
+  Japan_Soryo_Easy.mod                              启动器注册文件
+  descriptor.mod                                    mod 定义
+  common/decisions/dlc_decisions/tgp/zzz_japan_soryo_easy.txt   决议本体(两个决议)
+  介绍.txt                                          本文件

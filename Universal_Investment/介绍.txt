@@ -1,0 +1,99 @@
+《天下置业》mod 介绍
+========================================
+
+【作用】
+给有地领主一个"无门槛投资建城"玩法：举办「投资考察」活动，在地图上
+直接点选任何符合条件的空男爵领（自己领地/封臣领地/领主领地/外国领地），
+旅行过去实地开工。无创新/好感/属性门槛，花钱就能投。
+建成后城堡归当地伯爵领持有者，玩家成为"股东"，每年收取年金
+（建造成本×10%，保底 10 金）。核心张力：无法律保护，年金随时可能
+被拒付/没收——高风险、高回报的"置业"体验。
+
+【使用方式】
+纯活动驱动 + 自动结算，玩法流程：
+  1. 活动面板 → 「投资考察」（需有地领主 + EP3 DLC，16 岁以上）
+  2. 地图选点：全图任何无建筑、无在建工程、所属伯爵领有领主的男爵领
+     （地图悬浮提示会标注"持有者对你好感为负"的风险地点）
+  3. 付差旅费 50 金 → 自动旅行 → 到达后弹开工确认（1 个月内选择）
+       A 开工：扣阶梯建造成本 → 动工 → 记录 → 开建造监控链
+               （在他人领地建城：该伯爵领持有者好感 -10）
+       B 反悔：只亏 50 金差旅费
+  4. 开工后角色即可回家，建造与事件链全程不依赖人在场
+     （完工/风险/年金全部由隐藏事件自动处理）
+  5. 建成后每年自动收年金；被赖账时弹交涉事件；累计建成 3/5/10 座
+     触发里程碑
+
+【核心数值】
+- 建造成本阶梯：400 × 2^(已开工次数-1)，封顶 12800 金（第 1 次 400、
+  第 2 次 800、第 3 次 1600……第 6 次起 12800）
+- 年金：每笔 = 该笔建造成本 × 10% / 年，保底 10 金（回收期约 10 年）
+- 建造期风险（在建满 3 个月起掷骰，每笔仅一次）：
+    领主敲诈：基础 35%；持有者好感 <0 翻倍；已结怨 ×1.5；
+              建筑师特质/管理 18 减半
+      → 付补偿金（成本×50%）/ 强硬拒绝（好感 -30，此后易被赖账）/
+        接受没收（投资作废，城堡仍建完归当地）
+    工地事故：基础 15%；建筑师/管理 18 减半
+      → 修复（成本×25%）/ 放弃
+  （玩家弹窗选择，AI 投资自动付账不弹窗）
+- 易主认账判定：基础 50%；持有者好感 ≥50 +15、≥20 +10、<20 -10；
+  已结怨 -30。认账→续约付款；不认账→弹赖账交涉：
+    谈判（好感 +15，当年租金减半）/ 贿赂 100 金（全收，好感 +10）/
+    威胁（基础 40%，恐惧 ≥50 +20、≥90 +20；失败则投资作废、好感 -30）/
+    放弃（投资作废，玩家对持有者好感 -20）
+- 付款机制：pay_short_term_gold 从持有者金库直接扣，不足自动分月补扣
+- 里程碑：累计建成 3 座 +500 威望 / 5 座 +1500 威望 +「城建者」绰号 /
+  10 座 +3000 威望
+
+【设计规则】
+- 自己领地建成也入年金名单，但持有者=自己时免税（封出后自动转年金）
+- 投资地并入自己领地 / 城堡被毁（投资作废）/ 失地（停发年金）均自动处理
+- 死亡自动清盘：所有投资记录挂在角色身上，角色死亡即消失，无泄漏
+- 每个玩家同一时间只有一个待处理弹窗（风险/纠纷/通知），互不抢占
+
+【实现原理】
+- 活动：monument_expedition（province_filter=all 全图选点）+
+  activity_survey（is_location_valid 地图筛选）模板，单阶段、
+  到达即弹开工事件，1 个月后自动结束回家
+- 建造监控：事件 0011 月度自循环（root 存活即有），列表驱动逐笔检查：
+  完工→结算（送 5 组 02 级建筑：水磨坊/城堡/农庄/工坊/修道院）→ 入年金名单；
+  取消→停跟；在建→月数+1 → 满 3 月掷风险
+- 年金：yearly_playable_pulse 追加隐藏事件 0005，每年遍历年金名单
+  判定（被毁作废/免税/易主认账/付款）→ 年度报告 0007（仅玩家）
+- 事件：0001 开工 / 0002 敲诈 / 0003 事故 / 0004 完工通知 / 0005 年金
+  （隐藏）/ 0006 赖账交涉 / 0007 年度报告 / 0008~0010 里程碑 /
+  0011 建造监控（隐藏）
+- 存储：全部 character 级 + barony 级变量/列表，无全局遍历
+
+【兼容性与扩展】
+- 不覆盖任何原版文件：on_action 为同键名追加（yearly_playable_pulse
+  原版本就多次定义，引擎自动合并 events 列表），其余全部是新文件
+- 依赖 EP3（Routes to Power）DLC：is_shown 有 has_ep3_dlc_trigger 守卫，
+  无 DLC 时活动不显示、其余脚本无副作用
+- 调成本/概率/费用：编辑
+  common/script_values/zzz_universal_investment_values.txt
+- 调好感/建筑组/事件奖励：编辑
+  common/scripted_effects/zzz_universal_investment_effects.txt
+- 已通过 ck3-tiger 完整校验（fatal 0 / error 0 / warning 0）
+
+【更新记录】
+- 2026-08-13 修复两项功能 bug：
+  1. 完工附加建筑失效：原调用 laamp_city_builder_construction_effect（依赖角色
+     作用域 + laamp_city_builder_* flag + scope:city_location，本 mod 均不具备），
+     改为男爵领直接 add_building（水磨坊/城堡/农庄/工坊/修道院 02 级）
+  2. AI 自动付账金额恒为 0：敲诈补偿金/事故修复费原引用 root 变量
+     （AI 无该变量 → 链断得 0），改为按当前男爵领年金直接计算
+     （补偿金=年金×50%，修复费=年金×25%）
+  并移除 ck3-tiger.conf 中掩盖上述问题的 scope_override，修复后重新校验 0 错 0 警
+
+【文件清单】
+  descriptor.mod                                    mod 定义
+  plan.md                                           设计文档
+  ck3-tiger.conf                                    Tiger 误报过滤配置
+  common/activities/activity_types/zzz_universal_investment_survey_activity.txt  活动定义
+  common/on_action/zzz_universal_investment_on_actions.txt  年金年度脉冲（追加）
+  common/scripted_effects/zzz_universal_investment_effects.txt  开工/监控/结算/年金/交涉
+  common/script_values/zzz_universal_investment_values.txt  成本阶梯/概率/费用
+  common/opinion_modifiers/zzz_universal_investment_opinion_modifiers.txt  6 个好感修正
+  events/universal_investment/zzz_universal_investment_events.txt  11 个事件（0001~0011）
+  localization/english/universal_investment_l_english.yml  英文本地化
+  localization/simp_chinese/universal_investment_l_simp_chinese.yml  简体中文本地化

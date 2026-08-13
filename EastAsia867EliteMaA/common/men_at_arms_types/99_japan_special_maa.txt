@@ -1,0 +1,191 @@
+﻿# 日本867精锐兵种 - japanese 大和 专属 (92-97档, 日韩权重)
+# 特化体系 v5.0: 防人=海防箭雨 / 健児=山地游击 / 马寮=平野追猎 / 追捕使=山林枪网 / 六卫府=王城铁壁
+# 原版避让: samurai/mounted_samurai/japanese_horse_archers 已有
+# 数值按 project_plan/00_balance_model.md v5.0 验证通过
+
+# 防人弓队 - 西海道边防戍卒, 海防箭雨, 类型: 弓兵
+japan_sakimori_archers = {
+	type = archers
+
+	damage = 36
+	toughness = 17
+	pursuit = 0
+	screen = 10
+
+	terrain_bonus = {
+		mountains = { damage = 14 toughness = 6 }
+		hills = { damage = 10 toughness = 6 }
+		forest = { toughness = 6 }
+		plains = { damage = -30 }
+	}
+
+	counters = {
+		skirmishers = 2
+		heavy_infantry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:japanese }
+	}
+
+	buy_cost = { gold = 60 }
+	low_maintenance_cost = { gold = 0.22 }
+	high_maintenance_cost = { gold = 0.66 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = { value = 100 }
+	icon = shenbigong
+}
+
+# 马寮轻骑 - 朝廷马政骑队, 平野追猎, 类型: 轻骑
+japan_umaya_light_cavalry = {
+	type = light_cavalry
+
+	damage = 49
+	toughness = 25
+	pursuit = 55
+	screen = 28
+
+	terrain_bonus = {
+		plains = { damage = 18 }
+		drylands = { damage = 18 }
+		hills = { damage = -20 }
+		mountains = { damage = -30 }
+		wetlands = { damage = -30 }
+	}
+
+	counters = {
+		archers = 2
+		light_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:japanese }
+	}
+
+	buy_cost = { gold = 93 }
+	low_maintenance_cost = { gold = 0.38 }
+	high_maintenance_cost = { gold = 1.14 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = steppe_raiders
+}
+
+# 健児队 - 律令地方健儿, 山地游击, 类型: 散兵
+kondei = {
+	type = skirmishers
+
+	damage = 41
+	toughness = 21
+	pursuit = 25
+	screen = 20
+
+	terrain_bonus = {
+		mountains = { damage = 30 toughness = 15 }
+		hills = { damage = 20 toughness = 10 }
+		forest = { damage = 10 toughness = 4 }
+		plains = { damage = -30 }
+	}
+
+	counters = {
+		light_cavalry = 2
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:japanese }
+	}
+
+	buy_cost = { gold = 65 }
+	low_maintenance_cost = { gold = 0.22 }
+	high_maintenance_cost = { gold = 0.66 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = {
+		value = 100
+	}
+	icon = mountaineer
+}
+
+# 追捕使団 - 国衙追捕使所辖, 山林枪网, 类型: 枪兵
+tsuibushi_spearmen = {
+	type = pikemen
+
+	damage = 41
+	toughness = 30
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		forest = { damage = 30 toughness = 20 }
+		hills = { damage = 10 toughness = 4 }
+		farmlands = { damage = 8 toughness = 4 }
+		mountains = { damage = 4 toughness = 6 }
+		plains = { damage = -20 }
+	}
+
+	counters = {
+		archer_cavalry = 2
+		light_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:japanese }
+	}
+
+	buy_cost = { gold = 87 }
+	low_maintenance_cost = { gold = 0.35 }
+	high_maintenance_cost = { gold = 1.05 }
+	provision_cost = 12
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 六卫府兵 - 平安京六卫府禁军, 王城铁壁, 类型: 重步
+rokuefu_guards = {
+	type = heavy_infantry
+
+	damage = 52
+	toughness = 30
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		farmlands = { damage = 10 toughness = 6 }
+		plains = { damage = 6 toughness = 4 }
+		hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		pikemen = 2
+		heavy_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:japanese }
+	}
+
+	buy_cost = { gold = 103 }
+	low_maintenance_cost = { gold = 0.42 }
+	high_maintenance_cost = { gold = 1.26 }
+	provision_cost = 12
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = palace_guards
+}

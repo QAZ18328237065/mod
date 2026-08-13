@@ -1,0 +1,4016 @@
+﻿@always_primary_score = 1000
+@better_than_the_alternatives_score = 50
+@correct_culture_primary_score = 100
+@never_primary_score = -1000
+
+# 区域外头衔框架(帝国纯空壳, 无王国/公国/伯爵领) — 供原版脚本引用解析
+
+h_roman_empire = {
+
+	color = { 167 10 0 }
+	definite_form = yes
+	can_be_named_after_dynasty = no
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+h_eastern_roman_empire = {
+
+	color = { 150 35 165 }
+	definite_form = yes
+	can_be_named_after_dynasty = no
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+h_dar_al_islam = {
+
+	color = { 20 160 30 }
+	definite_form = yes
+	#ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+can_create = {
+
+		has_global_variable = created_dar_al_islam
+}
+
+can_destroy = {
+
+}
+}
+
+h_india = {
+		# Titular, created by special decision only if entire India is united
+	color = { 255 110 0 }
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+}
+
+k_papal_state = {
+
+	color = { 255 249 198 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	can_use_nomadic_naming = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	de_jure_drift_disabled = yes
+	can_use_nomadic_naming = no
+holding_regnal_male_names = {
+ Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor
+}
+}
+
+k_orthodox = {
+
+	landless = yes
+	definite_form = yes
+	ruler_uses_title_name = no
+	can_use_nomadic_naming = no
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	#color = { 150 90 30 }
+	color = { 183 60 155 }
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+k_fashion = {
+ # Kingdom of Fashion from Establish a New Fashion at Court decision
+	color = { 140 45 165 }
+	landless = yes
+	destroy_on_succession = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+
+	no_automatic_claims = yes
+	de_jure_drift_disabled = yes
+}
+
+d_iconoclast = {
+
+	landless = yes
+	color = { 153 50 125 }
+	definite_form = yes
+	ruler_uses_title_name = no
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_patriarchate_in_the_east = {
+
+	color = { 180 137 97 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_coptic_papacy = {
+
+	color = { 217 155 177 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_apostolic_church = {
+
+	color = { 200 115 167 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_conversos = {
+
+	color = { 0 90 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_manichean = {
+
+	color = { 75 90 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	de_jure_drift_disabled = yes
+	can_use_nomadic_naming = no
+}
+
+k_danelaw = {
+
+	color = { 255 60 15 }
+	de_jure_drift_disabled = yes
+ai_primary_priority = {
+
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_north_germanic }
+			}
+			add = @correct_culture_primary_score
+			add = @better_than_the_alternatives_score
+		}
+}
+}
+
+k_daneland = {
+
+	color = { 200 40 15 }
+ai_primary_priority = {
+
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_north_germanic }
+			}
+			add = @correct_culture_primary_score
+			add = @better_than_the_alternatives_score
+		}
+}
+}
+
+k_mediterranean_sea = {
+ # FP2
+	color = { 180 0 0 }
+}
+
+d_sunni = {
+
+	color = { 40 160 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+can_destroy = {
+custom_tooltip = {
+
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+}
+}
+}
+
+d_shiite = {
+
+	color = { 60 190 60 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_imami = {
+
+	color = { 28 142 62 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_ismaili = {
+
+	color = { 28 142 62 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_nizari = {
+
+	color = { 72 110 72 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+}
+
+d_zayidi = {
+
+	color = { 33 110 33 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_masmudi = {
+
+	color = { 80 160 120 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_muwalladi = {
+
+	color = { 11 113 11 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_ghulat = {
+
+	color = { 48 207 48 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+e_golden_horde = {
+}
+
+e_ilkhanate = {
+}
+
+e_chagatai = {
+}
+
+e_red_horde = {
+}
+
+e_white_horde = {
+}
+
+e_aarlud_khanate = {
+}
+
+e_togskol_khanate = {
+}
+
+e_baruun_khanate = {
+}
+
+e_great_yuan = {
+}
+
+e_blue_horde = {
+}
+
+e_omnod_dalai_khanate = {
+}
+
+e_uyghur_khanate = {
+}
+
+e_kirghiz_khanate = {
+}
+
+e_mongol_empire = {
+}
+
+e_great_liao = {
+}
+
+e_kara_khitai = {
+}
+
+e_jin = {
+}
+
+e_timurids = {
+}
+
+k_bosporan_kingdom = {
+
+	color = { 139 0 0 }
+
+	definite_form = yes
+}
+
+k_naiman = {
+
+	color = { 180 180 180 }
+
+	definite_form = yes
+}
+
+d_karaism = {
+
+	color = { 0 100 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_haymanot = {
+
+	color = { 0 110 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_malabarism = {
+
+	color = { 0 120 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_samaritan = {
+
+	color = { 0 130 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_kabarism = {
+
+	color = { 0 140 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+}
+
+d_mazdayasna = {
+
+	color = { 180 120 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_zurvanism = {
+
+	color = { 180 130 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_gayomarthianism = {
+
+	color = { 190 130 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_khurmazta = {
+
+	color = { 190 140 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_mazdakism = {
+
+	color = { 200 140 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_khurramism = {
+
+	color = { 200 150 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+d_urartuism = {
+
+	color = { 210 150 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+k_sakya_trizin = {
+
+	color = { 52 235 152 }
+	landless = yes
+	definite_form = yes
+	ruler_uses_title_name = no
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
+}
+
+k_guiyi = {
+
+	color = { 181 135 55 }
+}
+
+k_switzerland = {
+
+	color = { 255 80 80 }
+
+	definite_form = yes
+}
+
+k_austria = {
+
+	color = { 240 240 240 }
+
+	#roman = "Noricum"
+}
+
+k_carantania = {
+
+	color = { 90 130 100 }
+}
+
+k_visigoths = {
+
+	color = { 116 135 65 }
+
+	definite_form = yes
+}
+
+e_outremer = {
+}
+
+k_toledo = {
+
+	color = { 99 163 182 }
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+}
+
+d_knights_templar = {
+
+	color = { 230 230 230 }
+}
+
+d_teutonic_order = {
+
+
+	color = { 50 50 50 }
+}
+
+d_knights_hospitaler = {
+
+
+	color = { 180 180 180 }
+}
+
+d_hashshashin = {
+
+
+	color = { 100 100 0 }
+}
+
+d_bektashi = {
+
+
+	color = { 90 150 0 }
+}
+
+d_haruriyyah = {
+
+
+	color = { 150 200 80 }
+}
+
+d_jomsvikings = {
+
+
+	color = { 50 50 50 }
+}
+
+d_immortals = {
+
+
+	color = { 180 205 20 }
+}
+
+d_zealots = {
+
+
+	color = { 20 100 255 }
+}
+
+d_holy_sepulchre = {
+
+
+	color = { 120 0 145 }
+}
+
+d_saint_anthony = {
+
+
+	color = { 180 165 70 }
+}
+
+d_saint_addai = {
+
+
+	color = { 180 80 140 }
+}
+
+d_sky_lords = {
+
+
+	color = { 220 200 140 }
+}
+
+d_spirit_guardians = {
+
+
+	color = { 120 120 55 }
+}
+
+d_warriors_perun = {
+
+
+	color = { 100 140 100 }
+}
+
+d_chosen_perkunas = {
+
+
+	color = { 200 45 45 }
+}
+
+d_sons_kaleva = {
+
+
+	color = { 140 130 105 }
+}
+
+d_huitzilopochtli = {
+
+
+	color = { 255 200 0 }
+}
+
+d_knights_santiago = {
+
+
+	color = { 255 130 0 }
+}
+
+d_knights_calatrava = {
+
+
+	color = { 230 100 0 }
+}
+
+d_followers_arjuna = {
+
+	color = { 255 0 0 }
+}
+
+d_ashokas_chosen = {
+
+	color = { 205 100 0 }
+}
+
+d_bulls_rishabha = {
+
+	color = { 255 100 0 }
+}
+
+d_zun_warriors = {
+
+
+	color = { 230 255 0 }
+}
+
+e_beth_nahrain = {
+}
+
+e_slavia = {
+}
+
+e_armenia = {
+}
+
+e_viet = {
+}
+
+e_majapahit = {
+}
+
+e_ruucuu = {
+}
+
+e_north_sea = {
+}
+
+e_carthage = {
+}
+
+k_pechenegs = {
+
+	color = { 132 108 72}
+}
+
+k_carthage = {
+
+	color = { 0 33 60 }
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+k_tripolitania = {
+
+	color = { 150 20 0 }
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+k_mauretania = {
+
+	color = { 136 14 11 }
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+k_carthago_nova = {
+
+	color = { 116 44 2 }
+can_create = {
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+}
+}
+
+d_zaragoza = {
+
+	color = { 80 220 10 }
+}
+
+d_erzerum = {
+
+	color = { 103 84 255 }
+}
+
+d_amalfi = {
+
+	color = { 140 200 230 }
+}
+
+d_belgrade = {
+
+	color = { 151 125 62 }
+}
+
+d_pronsk = {
+
+	color = { 23 132 81 }
+}
+
+d_sandomiersk = {
+
+	color = { 253 137 137 }
+}
+
+d_swiss = {
+
+	color = { 255 1 1 }
+}
+
+d_yungdrung_bon = {
+
+	color = { 219 102 96 }
+
+	landless = yes
+	definite_form = yes
+	ruler_uses_title_name = no
+ai_primary_priority = {
+
+		add = @always_primary_score
+}
+
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+}
+
+e_hre = {
+}
+
+k_hansa = {
+
+	color = { 142 142 142 }
+}
+
+e_britannia = {
+}
+
+e_illyria = {
+}
+
+e_macedonia = {
+}
+
+e_anatolia = {
+}
+
+e_oriens = {
+}
+
+e_aegyptus = {
+}
+
+e_africa = {
+}
+
+e_scandinavia = {
+}
+
+e_wendish_empire = {
+}
+
+e_west_slavia = {
+}
+
+e_russia = {
+}
+
+e_caspian-pontic_steppe = {
+}
+
+e_volga-ural = {
+}
+
+e_siberia = {
+}
+
+e_mongolia = {
+}
+
+e_tartaria = {
+}
+
+e_turan = {
+}
+
+e_bactria = {
+}
+
+e_abyssinia = {
+}
+
+e_azania = {
+}
+
+e_kanem_bornu = {
+}
+
+e_mali = {
+}
+
+e_guinea = {
+}
+
+e_hindustan = {
+}
+
+e_rajastan = {
+}
+
+e_bengal = {
+}
+
+e_deccan = {
+}
+
+e_tibet = {
+}
+
+e_andong = {
+}
+
+e_amur = {
+}
+
+e_srivijaya = {
+}
+
+d_nf_ampelas = {
+ # Ampelas (Khaldia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_aplakes = {
+ # Aplakes (Thessalonika)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_agelastos = {
+ # Agelastos (Achaia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_doukas = {
+ # Doukas (Paphlagonia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_gerontas = {
+ # Gerontas (Dyrrachion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_hexavoulis = {
+ # Hexavoulis (Epirus)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kardias = {
+ # Kardias (Sebasteia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_katakalitzes = {
+ # Katakalitzes (Boukellarion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kourkouas = {
+ # Kourkouas (Armeniac)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_krateros = {
+ # Krateros (Ephesos)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_lachanodrakon = {
+ # Lachanodrakon (Thrakesion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_makedon = {
+ # Makedon (Kappadokia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_maleios = {
+ # Maleios (Kappadokia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_maleinos = {
+ # Maleinos (Charsianon)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_maurikios = {
+ # Maurikios (Opsikion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_melissenos = {
+ # Melissenos (Anatolikon)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_pastillas = {
+ # Pastillas (Kibyrrhaiotai)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_ooryphas = {
+ # Ooryphas (Aegean)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_sellokalas = {
+ # Sellokalas (Optimatoi)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_skleros = {
+ # Skleros (Athens)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_arcruni = {
+ # Arcruni (Sebasteia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_argyros = {
+ # Argyros (Ephesos)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_basiliakos = {
+ # Basiliakos (Thessalonika)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_botaneiates = {
+ # Botaneiates (Antioch)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_bryennios = {
+ # Bryennios (Kibyrrhaiotai)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_diogenes = {
+ # Diogenes (Anatolikon)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_dragosevic = {
+ # Dragosevic (Rashka)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kamateros = {
+ # Kamateros (Paphlagonia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_karandenos = {
+ # Karandenos (Bulgaria)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kaukadenos = {
+ # Kaukadenos (Opsikion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_komnenos = {
+ # Komnenos (Armeniac)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_makrembolites = {
+ # Makrembolites (Aegean)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_murzuphlos = {
+ # Murzuphlos (Achaia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_ouranos = {
+ # Ouranos (Krete)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_pahlavuni = {
+ # Pahlavuni (Vaspurakan)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_palaiologos = {
+ # Palaiologos (Epirus)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_pegonites = {
+ # Pegonites (Cyprus)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_phokas = {
+ # Phokas (Charsianon)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_pleustes = {
+ # Pleustes (Strymon)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_synadenos = {
+ # Synadenos (Dyrrachion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_tarchaneiotes = {
+ # Tarchaneiotes (Kilikia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_taronites = {
+ # Taronites (Khaldia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_varajnuni = {
+ # Varajnuni (Mesopotamia)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_saronites = {
+ # Saronites (Constantinople)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_garidas = {
+ # Garidas (Constantinople)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_areobindenos = {
+ # Areobindenos (Constantinople)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_alopos = {
+ # Alopos (Constantinople)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_durres = {
+  # Durres (Dyrrachion)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_angelos = {
+ # Angelos
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_batatzes = {
+ # Batatzes
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_branas = {
+ # Branas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_gabras = {
+ # Gabras (Trebizond)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kamytzes = {
+ # Kamytzes
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kantakouzenos = {
+ # Kantakouzenos
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_komnenos_doukas = {
+ # Komnenos Doukas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_kontostephanos = {
+ # Kontostephanos
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_lampardas = {
+ # Lampardas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_macrodoukas = {
+ # Macrodoukas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_petraliphas = {
+ # Petraliphas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_raoul = {
+ # Raoul (Smyrna)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_nf_rogerios = {
+ # Rogerios
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_anangapida = {
+ # Anangapida
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ziyar = {
+ # Ziyar
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ahwazi = {
+ # Husayn
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_guttorm = {
+ # Guttorm
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_hrolfr = {
+ # Hrolfr
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ubbe = {
+ # Ubbe
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_enian = {
+ # Enian Qaghan
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_sevener_caliph = {
+ # Hussayn Fatimid
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_twelver_caliph = {
+ # Ali Fatimid
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_qutid = {
+ # Suleyman ibn Hakam Qutid.
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_sabbah = {
+ # Hassan-i Sabbah
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_wake = {
+ # Hereweard the Wake
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_el_cid = {
+ # El Cid
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_henry_of_skalitz = {
+ # Henry of Skalitz
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+	disable_regnal_numbers = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_crispin = {
+ # Robert Crispin
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_suleyman = {
+ # Suleyman ibn Qutalmish
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_wallada = {
+ # Wallada bint al-Mustakfi
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_danishmend = {
+ # Danishmend Taylu
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_voiteh = {
+ # Georgi Voiteh
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_aelfwine = {
+ # Aelfwine Haroldson
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_karatzas = {
+ # Argyros Karatzas
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_kalbid = {
+ # Muhammad ibn Ibrahim Kalbid.
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_du_leon = {
+ # Ordonu du Leon.
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_kizil_buga = {
+ # Kızıl Buğa Kayı
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ali_ibn_reverter = {
+ # Abu-l-Hasan Ali ibn Reverter
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_andronikos_komnenos = {
+ # Andronikos Komnenos
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_asen = {
+ # Theodor-Peter of Bulgaria
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_mieszko = {
+ # Mieszko the Old
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_raimon_brun = {
+ # Raimon-Brun de Gramont
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_lalibela = {
+ # Lalibela
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_muhammad_bakhtiyar = {
+ # Muhammad Bakhtiyar
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_raoul = {
+ # Roger Raoul
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+k_adiukru = {
+
+	color = { 180 220 189 }
+can_create = {
+ always = no
+}
+}
+
+k_toro = {
+
+	color = { 110 40 57 }
+can_create = {
+ always = no
+}
+}
+
+k_winideheim = {
+
+	color = { 158 102 36 }
+can_create = {
+ always = no
+}
+}
+
+k_cossack = {
+
+	color = { 40 160 40 }
+	
+	definite_form = yes
+can_create = {
+ always = no
+}
+}
+
+e_japan = {
+}
+
+k_chrysanthemum_throne = {
+
+	color = { 96 3 42 }
+	can_be_named_after_dynasty = no
+	landless = yes
+	figurehead = yes
+	allow_domicile = no
+	always_follows_primary_heir = yes
+	definite_form = yes
+can_create = {
+ always = no
+}
+
+ai_primary_priority = {
+
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_japonic }
+			}
+			add = @correct_culture_primary_score
+		}
+}
+
+
+	# Ceremonial Liege/Regent in personal relation summary
+	# (reminder: the ceremonial liege if mechanically a vassal of the ceremonial regent)
+	#
+	# Scopes
+	# ------
+	# root: Inspected character (who holds this title).
+	# target: Character we are evaluating relationships to (usually local player).
+	# title: This title (held by inspected character).
+	# liege: Inspected characters liege.
+	# vassal: Vassal who matches the trigger below, if any.
+	#
+	# Alternate descriptions are provided to trim the extra "Your" before this entry in the summary.
+	#
+personal_relation_entry = {
+first_valid = {
+triggered_desc = {
+
+				trigger = {
+					exists = scope:target
+					scope:liege ?= scope:target
+				}
+				desc = japan_personal_relation_ceremonial_liege_same
+}
+
+triggered_desc = {
+
+				trigger = { exists = scope:liege }
+				desc = japan_personal_relation_ceremonial_liege_other
+}
+}
+}
+
+
+	# Male posthumous Ten'no names
+posthumous_regnal_male_names = {
+
+		Ankan Antoku
+		Daigo
+		En_yU_
+		Heizei
+		Higashiyama
+		Horikawa
+		IchijO_
+		Jun_an Junna Junnin Junchi Junmu
+		Kameyama Kanmu Kashiwabara Kazan
+		Keitai
+		Kinmei
+		KO_bun KO_chi KO_kaku_2 KO_kO_ Komatsu KO_mei KO_mu KO_myO_ KO_nin Konoe Kotoku KO_zei
+		Momozono Monmu Montoku
+		Murakami
+		Nakamikado Nara
+		NijO_ Nin_an Ninchi NinkO_ Ninmu NinmyO_ NinshO_
+		O_gimachi
+		Reichi Reigen Reimei ReishO_ Reizei
+		RokujO_
+		Saga_JP Sakuramachi SanjO_
+		Seiwa Senka
+		ShijO_ Shirakawa
+		ShO_kO_ ShO_mu ShO_toku
+		SukO_ Sushun Sutoku Suzaku
+		Takakura
+		Tenji Tenmu
+		Toba_JP
+		Tsuchimikado
+		Uda_JP
+		YO_mei YO_zei
+		# Unisex
+		AnegakO_ji
+		Atago
+		AyanokO_ji
+		BunchO_ BunryU_ BunshO_
+		BO_jO_
+		Eian
+		Enso
+		Genka
+		GojO_
+		HachijO_
+		Higashiyama
+		Imadegawa
+		Iwakura
+		Junmei Junmei_2
+		Kaen Kan_an Karasuma Kasuga
+		Katoku
+		Keimei KenshO_ Kentoku
+		Kinugasa Kitano Kitashirakawa Kitayama Kiyomizu Kiyotaki
+		Koga
+		KujO_ Kurama
+		KyO_goku
+		KO_bun KO_ka
+		Mantoku Matsunoo
+		Meiho Meitei
+		Mibu
+		Murasakino Muromachi
+		Narutaki
+		Okazaki
+		Omuro
+		OshinokO_ji
+		Reitoku
+		Sakuragi
+		ShichijO_ ShO_ka ShU_bun
+		Taireki TaiO_ Takao Takatsukasa
+		TenkyU_ TenkO_ Tensei
+		TO_in
+		Umezu
+		Yamashina Yase_JP
+		O_hara O_inomikado O_miya
+}
+
+
+	# Female posthumous Ten'no names
+posthumous_regnal_female_names = {
+
+		Gen_an Genchi Genken GenkO_ Genmei Gennei Gennin GenshO_ GentO_ Gentoku Genzei
+		JitO_
+		KO_ken KO_gyoku
+		MeishO_
+		Saimei
+		Suiko
+		# Unisex
+		AnegakO_ji
+		Atago
+		AyanokO_ji
+		BunchO_ BunryU_ BunshO_
+		BO_jO_
+		Eian
+		Enso
+		Genka
+		GojO_
+		HachijO_
+		Imadegawa
+		Iwakura
+		Junmei_2
+		Kaen Kan_an Karasuma Kasuga
+		Katoku
+		Keimei KenshO_ Kentoku
+		Kinugasa Kitano Kitashirakawa Kitayama Kiyomizu Kiyotaki
+		Koga
+		KujO_ Kurama
+		KyO_goku
+		KO_bun KO_ka
+		Mantoku Matsunoo
+		Meiho Meitei
+		Mibu
+		Murasakino Muromachi
+		Narutaki
+		Okazaki
+		Omuro
+		OshinokO_ji
+		Reitoku
+		Sakuragi
+		ShichijO_ ShO_ka ShU_bun
+		Taireki TaiO_ Takao Takatsukasa
+		TenkyU_ TenkO_ Tensei
+		TO_in
+		Umezu
+		Yamashina Yase_JP
+		O_hara O_inomikado O_miya
+}
+}
+
+d_laamp_shunkan = {
+ # Shunkan Minamoto
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_takaoka = {
+ # Prince Takaoka (Shinnyo)
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_yoshitsune = {
+ # Yoshitsune Minamoto
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_miyoshi_kiyotsura = {
+ # Miyoshi Kiyotsura, Kiyotsura's Inspectors
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_hiei_wayfarers = {
+ # Jōjin, Hiei Wayfarers
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_northern_blades = {
+ # Isawa no Saburō, Northern Blades
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_band_of_the_inland_sea = {
+ # Tsukushi no Koretaka, Band of the Inland Sea
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_arrow_cutters = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_hidden_valley_banner = {
+ # Ki Hwon, Hidden Valley Banner
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_way_of_the_mountains = {
+ # Yŏn'gi Tosŏn, Way of the Mountains
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_munheon_disciples = {
+ # Kim Mu-ch’e, Munheon Disciples
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_white_tigers = {
+ # Baek_ho of the White Tigers
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_samadhi_and_prajna_society = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_pongyi_thaing_fellowship = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ravine_lords = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_sirafi_mariners = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_pathwalkers = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_delta_company = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_leaf_hermits = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_lembongs_band = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_stormbringers = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ordinators = {
+
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+h_china = {
+
+	color = { 230 180 10 }
+
+	disable_regnal_numbers = yes
+can_create = {
+custom_tooltip = {
+
+			text = dynastic_cycle.tt.forbid_title_creation
+			NOT = { exists = situation:dynastic_cycle }
+}
+}
+
+can_create_on_partition = {
+custom_tooltip = {
+
+			text = dynastic_cycle.tt.forbid_title_creation
+			NOT = { exists = situation:dynastic_cycle }
+}
+}
+
+can_destroy = {
+custom_tooltip = {
+
+			text = dynastic_cycle.tt.forbid_title_destruction
+			NOT = { exists = situation:dynastic_cycle }
+}
+}
+
+e_zhongyuan = {
+
+		color = { 230 200 10 }
+k_henan = {
+
+			color = { 255 250 5 }
+d_dongji = {
+
+				color = { 215 180 0 }
+}
+
+d_biansong = {
+
+				color = { 255 250 0 }
+}
+
+d_shanguo = {
+
+				color = { 164 109 8 }
+}
+
+d_zhenghua = {
+
+				color = { 212 156 5 }
+}
+
+d_chenxu = {
+
+				color = { 242 190 40 }
+}
+}
+
+k_qingxu = {
+
+			color = { 240 140 0 }
+d_ziqing = {
+
+				color = { 210 110 0 }
+}
+
+d_yanhai = {
+
+				color = { 240 140 30 }
+}
+
+d_xusi = {
+
+				color = { 200 100 10 }
+}
+
+d_yuncao = {
+
+				color = { 240 170 40 }
+}
+}
+
+k_hebei = {
+
+			color = { 210 220 100 }
+d_weibo = {
+
+				color = { 210 220 100 }
+}
+
+d_xingming = {
+
+				color = { 180 240 80 }
+}
+
+d_chengde = {
+
+				color = { 150 160 40 }
+}
+
+d_cangjing = {
+
+				color = { 230 240 130 }
+}
+
+d_heyang = {
+
+				color = { 200 210 60 }
+}
+}
+
+k_hedong = {
+
+			color = { 190 150 70 }
+d_hedong = {
+
+				color = { 190 150 70 }
+}
+
+d_yanmen = {
+
+				color = { 240 180 90 }
+}
+
+d_hezhong = {
+
+				color = { 160 110 50 }
+}
+
+d_zelu = {
+
+				color = { 130 103 40 }
+}
+}
+
+k_youji = {
+
+			color = { 160 80 60 }
+d_youzhou = {
+
+				color = { 120 70 50 }
+}
+
+d_yideng = {
+
+				color = { 190 100 70 }
+}
+
+d_yingmo = {
+
+				color = { 130 60 50 }
+}
+}
+
+k_daibei = {
+
+			color = { 60 35 10 }
+d_yunshuo = {
+
+				color = { 60 35 10 }
+}
+
+d_sanggan = {
+
+				color = { 90 55 20 }
+}
+
+d_xinan = {
+
+				color = { 40 25 10 }
+}
+}
+}
+
+e_yongliang = {
+
+		color = { 180 180 190 }
+k_guannei = {
+
+			color = { 150 150 140 }
+d_yongxing = {
+
+				color = { 240 230 240 }
+}
+
+d_fengxiang = {
+
+				color = { 100 104 100 }
+}
+
+d_jinshang = {
+
+				color = { 120 120 110 }
+}
+
+d_binning = {
+
+				color = { 160 160 190 }
+}
+
+d_fufang = {
+
+				color = { 100 92 110 }
+}
+
+d_jingyuan = {
+
+				color = { 190 190 180 }
+}
+
+d_qincheng = {
+
+
+				color = { 180 184 184 }
+}
+
+d_xingfeng = {
+
+				color = { 110 110 113 }
+}
+}
+
+k_hexi = {
+
+			color = { 150 110 70 }
+d_hexi = {
+
+				color = { 188 143 87 }
+}
+
+d_longyou = {
+
+				color = { 124 120 60 }
+}
+
+d_qilian = {
+
+				color = { 240 125 47 }
+}
+
+d_gansu = {
+
+				color = { 199 72 87 }
+}
+
+d_guasha = {
+
+				color = { 124 146 92 }
+}
+}
+
+k_xia = {
+
+			color = { 55 55 50 }
+d_shuofang = {
+
+				color = { 69 38 35 }
+}
+
+d_xiasui = {
+
+				color = { 47 51 66 }
+}
+
+d_tiande = {
+
+				color = { 70 58 34 }
+}
+
+d_langshan = {
+
+				color = { 58 61 36 }
+}
+
+d_xiutu = {
+
+				color = { 50 48 37 }
+cultural_names = {
+
+					name_list_bodpa = cn_wamo
+}
+}
+
+d_juyan = {
+
+				color = { 66 55 56 }
+}
+}
+}
+
+e_jingyang = {
+
+		color = { 169 40 40 }
+k_jiangdong = {
+
+			color = { 180 70 110 }
+d_jiangdong = {
+
+				color = { 182 70 110  }
+}
+
+d_xuanshe = {
+
+				color = { 80 50 110  }
+}
+}
+
+k_liangzhe = {
+
+			color = { 120 30 120 }
+d_zhexi = {
+
+				color = { 120 30 120 }
+}
+
+d_zhedong = {
+
+				color = { 70 10 60 }
+}
+}
+
+k_fujian = {
+
+			color = { 70 100 240 }
+d_weiwu = {
+
+				color = { 70 100 222 }
+}
+
+d_pinghai = {
+
+				color = { 100 190 255 }
+}
+
+d_jianning = {
+
+				color = { 25 40 100 }
+}
+}
+
+k_huainan = {
+
+			color = { 150 120 190 }
+d_huainan = {
+
+				color = { 150 122 190 }
+}
+
+d_huaixi = {
+
+				color = { 150 62 190 }
+}
+}
+
+k_jiangxi = {
+
+			color = { 200 130 120 }
+d_jiangxi = {
+
+				color = { 220 130 120 }
+}
+
+d_dingjiang = {
+
+				color = { 210 140 170 }
+}
+
+d_zhaoxin = {
+
+				color = { 150 60 50 }
+}
+}
+
+k_shannan = {
+
+			color = { 250 30 30 }
+d_xiangdeng = {
+
+				color = { 250 32 30 }
+}
+
+d_jingnan = {
+
+				color = { 200 20 40 }
+}
+
+d_eyue = {
+
+				color = { 100 10 20  }
+}
+}
+
+k_hunan = {
+
+			color = { 250 100 40 }
+d_hunan = {
+
+				color = { 255 123 50 }
+}
+
+d_lingling = {
+
+				color = { 255 69 37 }
+}
+}
+}
+
+e_liangyi = {
+
+		color = { 60 150 190 }
+k_xichuan = {
+
+			color = { 50 140 180 }
+d_xichuan = {
+
+				color = { 50 140 185 }
+}
+
+d_qiongnan = {
+
+				color = { 80 89 183 }
+}
+}
+
+k_xingyuan = {
+
+			color = { 27 149 167 }
+d_xingyuan = {
+
+				color = { 20 143 189 }
+}
+
+d_lilang = {
+
+				color = { 49 164 179 }
+}
+
+d_baqu = {
+
+				color = { 110 191 220 }
+}
+}
+
+k_dongchuan = {
+
+			color = { 138 204 226 }
+d_dongchuan = {
+
+				color = { 150 208 227 }
+}
+
+d_wuxin = {
+
+				color = { 1 91 91 }
+}
+}
+
+k_kuizhou = {
+
+			color = { 26 73 82 }
+d_kuizhong = {
+
+				color = { 27 73 65 }
+}
+
+d_qianzhong = {
+
+				color = { 28 212 197 }
+}
+
+d_wuxi = {
+
+				color = { 15 92 127 }
+}
+}
+
+k_qianzhong = {
+
+			color = { 22 201 165 }
+d_luodian = {
+
+				color = { 17 209 110 }
+}
+
+d_luoshi = {
+
+				color = { 11 100 178 }
+}
+
+d_shimen = {
+
+				color = { 50 207 176 }
+}
+
+d_zangke = {
+
+				color = { 19 177 145 }
+}
+
+d_xiyuan = {
+
+				color = { 12 201 188 }
+}
+}
+
+k_dali = {
+
+			color = { 240 240 220 }
+d_dali = {
+
+				color = { 161 255 228 }
+}
+
+d_jianchuan = {
+
+				color = { 239 255 168 }
+}
+
+d_huichuan = {
+
+				color = { 208 255 255 }
+}
+
+d_yinsheng = {
+
+				color = { 221 226 197 }
+}
+
+d_tuodong = {
+
+				color = { 255 192 232 }
+}
+
+d_tonghai = {
+
+				color = { 255 214 146 }
+}
+}
+}
+
+e_lingnan = {
+
+		color = { 0 120 31 }
+cultural_names = {
+
+			name_list_vietnamese = cn_nam_viet
+}
+
+k_lingnan = {
+
+			color = { 0 120 21 }
+cultural_names = {
+
+				name_list_vietnamese = cn_linh_nam
+}
+
+d_lingnan = {
+
+				color = { 0 120 42 }
+cultural_names = {
+
+					name_list_vietnamese = cn_linh_nam
+}
+}
+
+d_huixun = {
+
+				color = { 72 91 61 }
+}
+
+d_gaoliang = {
+
+				color = { 81 108 20 }
+}
+
+d_qiongguan = {
+
+				color = { 18 166 42 }
+}
+}
+
+k_lingxi = {
+
+			color = { 81 127 99 }
+d_guiguan = {
+
+				color = { 84 142 115 }
+}
+
+d_jingjiang = {
+
+				color = { 116 214 117 }
+}
+
+d_rongguan = {
+
+				color = { 143 244 158 }
+}
+
+d_yongguan = {
+
+				color = { 81 100 63 }
+}
+}
+
+k_viet = {
+
+			color = { 20 110 140 }
+cultural_names = {
+
+				name_list_han = cn_annan
+}
+
+d_hai_dong = {
+
+				color = { 15 92 127 }
+}
+
+d_nghe_an = {
+
+				color = { 22 126 182 }
+cultural_names = {
+
+					name_list_han = cn_jiuzhen
+}
+}
+
+d_lam_tay = {
+
+				color = { 17 138 119 }
+}
+
+d_thang_long = {
+
+				color = { 13 74 188 }
+cultural_names = {
+
+					name_list_han = cn_jiaozhi
+}
+}
+}
+}
+
+e_minister_chancellor = {
+
+		color = { 228 237 113 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_censor = {
+
+		color = { 185 192 35 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_grand_marshal = {
+
+		color = { 212 150 69 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_personnel = {
+
+		color = { 228 237 59 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_revenue = {
+
+		color = { 206 247 0 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_rites = {
+
+		color = { 248 247 0 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_war = {
+
+		color = { 255 168 10 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_justice = {
+
+		color = { 255 237 13 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+
+e_minister_of_works = {
+
+		color = { 239 255 13 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+}
+}
+
+d_laamp_xuanji = {
+ # Yu Xuanji
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_ding_hui = {
+ # Ding Hui, The Wayward Spears
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_zhu_quanzhong = {
+ # Zhu Quanzhong, Zhu's Iron Host
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_liangshan_band = {
+ # Song Jiang, Liangshan Band
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_frontier_guardians = {
+ # Yang Zongbao, Frontier Guardians
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_companions_of_caodong = {
+ # Furong Daokai, Companions of Caodong
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_disciples_of_chongyang = {
+ # Wang Chuyi, Disciples of Chongyang
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_wandering_lute = {
+ # Jiang Kui, Wandering Lute
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_dawn_company = {
+ # Zhu Zhongba, Dawn Company
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+d_laamp_eastern_sculptors = {
+ # Chen Heqing, Eastern Sculptors
+	color = { 100 100 100 }
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+ai_primary_priority = {
+ add = @never_primary_score
+}
+}
+
+e_suvarnabhumi = {
+}
+
+e_brunei = {
+}
+
+e_kambuja = {
+}
+
+e_goryeo = {
+}
+
+k_yongson_throne = {
+
+	color = { 220 205 250 }
+	can_be_named_after_dynasty = no
+	landless = yes
+	figurehead = yes
+	allow_domicile = no
+	always_follows_primary_heir = yes
+	definite_form = yes
+can_create = {
+ always = no
+}
+
+
+	# Ceremonial Liege/Regent in personal relation summary
+	# (reminder: the ceremonial liege if mechanically a vassal of the ceremonial regent)
+	#
+	# Scopes
+	# ------
+	# root: Inspected character (who holds this title).
+	# target: Character we are evaluating relationships to (usually local player).
+	# title: This title (held by inspected character).
+	# liege: Inspected characters liege.
+	# vassal: Vassal who matches the trigger below, if any.
+	#
+	# Alternate descriptions are provided to trim the extra "Your" before this entry in the summary.
+	#
+personal_relation_entry = {
+first_valid = {
+triggered_desc = {
+
+				trigger = {
+					exists = scope:target
+					scope:liege ?= scope:target
+				}
+				desc = japan_personal_relation_ceremonial_liege_same
+}
+
+triggered_desc = {
+
+				trigger = { exists = scope:liege }
+				desc = japan_personal_relation_ceremonial_liege_other
+}
+}
+}
+
+ai_primary_priority = {
+
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_korean }
+			}
+			add = @correct_culture_primary_score
+		}
+}
+}
+
+e_nusantara = {
+}

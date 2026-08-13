@@ -1,0 +1,16 @@
+﻿### 鍗楄瘡867绮鹃攼鍏电 鎴愭湰鍊?
+luojuzi_recruitment_cost = 101
+luojuzi_low_maint_cost = 0.4
+luojuzi_high_maint_cost = 1.2
+
+mengshe_archers_recruitment_cost = 63
+mengshe_archers_low_maint_cost = 0.23
+mengshe_archers_high_maint_cost = 0.69
+
+baiman_spearmen_recruitment_cost = 90
+baiman_spearmen_low_maint_cost = 0.36
+baiman_spearmen_high_maint_cost = 1.08
+
+cangshan_ambushers_recruitment_cost = 58
+cangshan_ambushers_low_maint_cost = 0.21
+cangshan_ambushers_high_maint_cost = 0.63

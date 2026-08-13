@@ -1,0 +1,231 @@
+﻿# 被征服朝贡者反抗宣战权重(scope = 朝贡者,每年掷一次,0-100 为年度反抗概率)
+# 判定维度:兵力/领地 + 双方恐怖值 + 双方军事才能 + 朝贡者对宗主好感 + 特质 + 忠顺/血亲/宗主战况
+# 校准目标:既不太乖也不太频繁
+#   典型弱旅(兵弱、好感不差、无特质加成):~25%/年,两年反抗期合计约 44%
+#   兵强+仇视+勇武的朝贡者:可逼近上限 90%
+#   忠顺/血亲兄弟几乎不反
+zzz_tribsub_tributary_rebellion_chance_value = {
+	value = 20
+	# ---------- 兵力与国力 ----------
+	if = {
+		limit = {
+			suzerain = { current_military_strength < root.current_military_strength }
+		}
+		add = 20
+	}
+	else_if = {
+		limit = {
+			suzerain = { current_military_strength > root.current_military_strength }
+		}
+		add = -15
+	}
+	if = {
+		limit = {
+			realm_size > suzerain.realm_size
+		}
+		add = 10
+	}
+	# ---------- 恐怖值(双方比较) ----------
+	if = {
+		limit = {
+			dread > suzerain.dread
+		}
+		add = 10
+	}
+	else_if = {
+		limit = {
+			suzerain = { dread > root.dread }
+		}
+		add = -10
+	}
+	if = {
+		limit = {
+			suzerain = { dread >= 80 }
+		}
+		add = -10
+	}
+	# ---------- 军事才能(双方比较) ----------
+	if = {
+		limit = {
+			martial > suzerain.martial
+		}
+		add = 8
+	}
+	else_if = {
+		limit = {
+			martial < suzerain.martial
+		}
+		add = -8
+	}
+	if = {
+		limit = {
+			martial >= 15
+		}
+		add = 5
+	}
+	# ---------- 朝贡者对宗主的好感 ----------
+	if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < -30
+			}
+		}
+		add = 15
+	}
+	else_if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < 0
+			}
+		}
+		add = 8
+	}
+	else_if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value >= 40
+			}
+		}
+		add = -20
+	}
+	# ---------- 特质 ----------
+	if = {
+		limit = { has_trait = brave }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = craven }
+		add = -15
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = vengeful
+				has_trait = wrathful
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = { has_trait = ambitious }
+		add = 8
+	}
+	if = {
+		limit = { has_trait = arrogant }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = greedy }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = content }
+		add = -10
+	}
+	if = {
+		limit = { has_trait = humble }
+		add = -8
+	}
+	if = {
+		limit = { has_trait = patient }
+		add = -8
+	}
+	if = {
+		limit = { has_trait = shy }
+		add = -5
+	}
+	# ---------- 局面与羁绊 ----------
+	# 被宗主强制征召参战:平添怨气,但加成不多
+	if = {
+		limit = {
+			vassal_contract_has_flag = tributary_contract_tributary_forced_war_override
+		}
+		add = 8
+	}
+	if = {
+		limit = {
+			suzerain = { is_at_war = yes }
+		}
+		add = 10
+	}
+	# 前车之鉴:宗主放跑了叛逃者,朝贡者胆子变大
+	if = {
+		limit = {
+			has_variable = tribsub_saw_suzerain_weakness
+		}
+		add = 10
+	}
+	# 敬畏宗主:宗主立威示强,朝贡者不敢造次
+	if = {
+		limit = {
+			has_variable = tribsub_fears_suzerain
+		}
+		add = -10
+	}
+	if = {
+		limit = { is_obedient = yes }
+		add = -50
+	}
+	if = {
+		limit = { has_relation_blood_brother = overlord }
+		add = -60
+	}
+	# ---------- 宗教/文化/权威/赋税 ----------
+	# 异教宗主:宗教压迫感
+	if = {
+		limit = {
+			NOT = { faith = suzerain.faith }
+		}
+		add = 5
+	}
+	# 不同文化宗主:陌生隔阂
+	if = {
+		limit = {
+			NOT = { culture = suzerain.culture }
+		}
+		add = 5
+	}
+	# 宗主合法性:名正言顺难反抗 / 合法性低人人欺(legitimacy_level 0-4)
+	if = {
+		limit = {
+			suzerain = { legitimacy_level >= 3 }
+		}
+		add = -10
+	}
+	else_if = {
+		limit = {
+			suzerain = { legitimacy_level <= 1 }
+		}
+		add = 10
+	}
+	# 高档赋税:盘剥过甚(0=none, 1=low, 2=high)
+	if = {
+		limit = {
+			vassal_contract_obligation_level:default_tributary_taxes >= 2
+		}
+		add = 5
+	}
+	min = 5
+	max = 85
+}
+
+# 安抚反抗期朝贡者的动态价格(scope = 宗主,recipient = 朝贡者)
+# 公式:80 + 朝贡者月收入x25 + 领地数x8,clamp 150~2000
+# 依据:按被安抚对象的实际价值定价——富强者贵,小领主便宜
+#   伯爵(月入~20/8领地):~644 | 公爵(月入~60/15领地):~1700 | 国王+:封顶2000
+zzz_tribsub_soothe_cost_value = {
+	value = 80
+	add = {
+		value = scope:recipient.monthly_character_income
+		multiply = 25
+	}
+	add = {
+		value = scope:recipient.realm_size
+		multiply = 8
+	}
+	min = 150
+	max = 2000
+}

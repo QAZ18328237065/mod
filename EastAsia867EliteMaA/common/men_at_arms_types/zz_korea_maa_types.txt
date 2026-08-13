@@ -1,0 +1,384 @@
+﻿# 朝鲜半岛867精锐兵种 - 韩三文化逐文化绑定 (silla / goryeo / baekje)
+# 特化体系 v5.0: 花郎=剑士斗阵 / 骨品马军=骑射猎杀 / 誓幢=山关枪墙 / 弩幢=破甲弩 / 光军=破散禁军 / 神骑=追亡逐北 / 鹰扬=平原枪阵 / 五方=丘陵方阵 / 百济弩=连弩压制 / 甲骑=具装冲阵
+# 六停军已移除(silla 补轻骑骨品马军)
+# 数值按 project_plan/00_balance_model.md v5.1 验证通过 (日韩权重)
+
+# 宏(文件级作用域)
+@provisions_cost_infantry_expensive = 12
+@provisions_cost_cavalry_moderate = 15
+@cultural_maa_extra_ai_score = 80
+
+# 花郎 - 新罗花郎徒, 剑士斗阵, 专克枪兵, 类型: 重步
+hwarang = {
+	type = heavy_infantry
+
+	damage = 54
+	toughness = 25
+	pursuit = 8
+	screen = 0
+
+	terrain_bonus = {
+		farmlands = { damage = 9 toughness = 5 }
+		plains = { damage = 7 toughness = 5 }
+		hills = { damage = 5 }
+		mountains = { damage = 3 }
+	}
+
+	counters = {
+		pikemen = 2
+		heavy_infantry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:silla }
+	}
+
+	buy_cost = { gold = hwarang_recruitment_cost }
+	low_maintenance_cost = { gold = hwarang_low_maint_cost }
+	high_maintenance_cost = { gold = hwarang_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = samurai
+}
+
+# 骨品马军 - 新罗骨品贵族骑队, 骑射猎杀, 类型: 轻骑
+golpum_cavalry = {
+	type = light_cavalry
+
+	damage = 48
+	toughness = 22
+	pursuit = 42
+	screen = 26
+
+	terrain_bonus = {
+		plains = { damage = 25 }
+		farmlands = { damage = 20 }
+		hills = { damage = -15 }
+		mountains = { damage = -30 }
+	}
+
+	counters = {
+		skirmishers = 2
+		archers = 1.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:silla }
+	}
+
+	buy_cost = { gold = golpum_cavalry_recruitment_cost }
+	low_maintenance_cost = { gold = golpum_cavalry_low_maint_cost }
+	high_maintenance_cost = { gold = golpum_cavalry_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_moderate
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = japanese_horse_archers
+}
+
+# 誓幢军 - 新罗九誓幢驻屯军, 山关枪墙, 类型: 枪兵
+sechang = {
+	type = pikemen
+
+	damage = 40
+	toughness = 31
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		hills = { damage = 40 toughness = 30 }
+		mountains = { damage = 30 toughness = 40 }
+		plains = { damage = 3 }
+	}
+
+	counters = {
+		light_cavalry = 1.5
+		heavy_cavalry = 1.5
+		archer_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:silla }
+	}
+
+	buy_cost = { gold = sechang_recruitment_cost }
+	low_maintenance_cost = { gold = sechang_low_maint_cost }
+	high_maintenance_cost = { gold = sechang_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 弩幢 - 新罗弩兵幢, 破甲弩, 专克重装, 类型: 弓兵
+nudang = {
+	type = archers
+
+	damage = 39
+	toughness = 16
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		mountains = { damage = 30 toughness = 15 }
+		hills = { damage = 30 toughness = 15 }
+		forest = { damage = 10 toughness = 4 }
+		farmlands = { damage = -20 }
+	}
+
+	counters = {
+		heavy_cavalry = 2
+		heavy_infantry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:silla }
+	}
+
+	buy_cost = { gold = nudang_recruitment_cost }
+	low_maintenance_cost = { gold = nudang_low_maint_cost }
+	high_maintenance_cost = { gold = nudang_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = crossbowmen
+}
+
+# 光军 - 高丽精锐禁军, 破散禁军, 类型: 重步
+kwanggun = {
+	type = heavy_infantry
+
+	damage = 53
+	toughness = 23
+	pursuit = 5
+	screen = 0
+
+	terrain_bonus = {
+		farmlands = { damage = 10 toughness = 6 }
+		plains = { damage = 8 toughness = 4 }
+		hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		skirmishers = 2
+		archers = 1.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:goryeo }
+	}
+
+	buy_cost = { gold = kwanggun_recruitment_cost }
+	low_maintenance_cost = { gold = kwanggun_low_maint_cost }
+	high_maintenance_cost = { gold = kwanggun_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = zhanmadao_infantry
+}
+
+# 神骑军 - 高丽精骑, 追亡逐北, 类型: 轻骑
+singi_riders = {
+	type = light_cavalry
+
+	damage = 46
+	toughness = 21
+	pursuit = 55
+	screen = 26
+
+	terrain_bonus = {
+		plains = { damage = 30 }
+		farmlands = { damage = 25 }
+		hills = { damage = -20 }
+		mountains = { damage = -30 }
+	}
+
+	counters = {
+		archers = 1.5
+		light_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:goryeo }
+	}
+
+	buy_cost = { gold = singi_riders_recruitment_cost }
+	low_maintenance_cost = { gold = singi_riders_low_maint_cost }
+	high_maintenance_cost = { gold = singi_riders_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_moderate
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = nomadic_riders
+}
+
+# 鹰扬军 - 高丽二军六卫之首, 平原枪阵, 类型: 枪兵
+eungyang = {
+	type = pikemen
+
+	damage = 37
+	toughness = 30
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		farmlands = { damage = 40 toughness = 20 }
+		plains = { damage = 30 toughness = 15 }
+		hills = { damage = 4 toughness = 2 }
+		mountains = { damage = -30 }
+	}
+
+	counters = {
+		light_cavalry = 1.5
+		heavy_cavalry = 2
+		archer_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:goryeo }
+	}
+
+	buy_cost = { gold = eungyang_recruitment_cost }
+	low_maintenance_cost = { gold = eungyang_low_maint_cost }
+	high_maintenance_cost = { gold = eungyang_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 五方军 - 百济五方军制, 丘陵方阵, 类型: 枪兵
+obang_pikes = {
+	type = pikemen
+
+	damage = 37
+	toughness = 30
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		hills = { damage = 40 toughness = 30 }
+		mountains = { damage = 20 toughness = 40 }
+		plains = { damage = -20 }
+	}
+
+	counters = {
+		light_cavalry = 1
+		heavy_cavalry = 1
+		archer_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:baekje }
+	}
+
+	buy_cost = { gold = obang_pikes_recruitment_cost }
+	low_maintenance_cost = { gold = obang_pikes_low_maint_cost }
+	high_maintenance_cost = { gold = obang_pikes_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 百济弩手 - 百济善弩, 连弩压制, 类型: 弓兵
+baekje_crossbowmen = {
+	type = archers
+
+	damage = 37
+	toughness = 15
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 10 toughness = 4 }
+		mountains = { damage = 8 toughness = 4 }
+		farmlands = { damage = 8 toughness = 2 }
+		forest = { damage = 4 toughness = 2 }
+		plains = { damage = 6 }
+	}
+
+	counters = {
+		skirmishers = 2
+		pikemen = 1.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:baekje }
+	}
+
+	buy_cost = { gold = baekje_crossbowmen_recruitment_cost }
+	low_maintenance_cost = { gold = baekje_crossbowmen_low_maint_cost }
+	high_maintenance_cost = { gold = baekje_crossbowmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = gakgung_archers
+}
+
+# 百济甲骑 - 百济具装骑兵, 具装冲阵, 类型: 轻骑
+baekje_armored_riders = {
+	type = light_cavalry
+
+	damage = 46
+	toughness = 21
+	pursuit = 32
+	screen = 25
+
+	terrain_bonus = {
+		plains = { damage = 25 }
+		farmlands = { damage = 20 }
+		hills = { damage = -10 }
+		mountains = { damage = -30 }
+	}
+
+	counters = {
+		skirmishers = 2
+		archers = 1.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:baekje }
+	}
+
+	buy_cost = { gold = baekje_armored_riders_recruitment_cost }
+	low_maintenance_cost = { gold = baekje_armored_riders_low_maint_cost }
+	high_maintenance_cost = { gold = baekje_armored_riders_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_moderate
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = cataphract_archers
+}

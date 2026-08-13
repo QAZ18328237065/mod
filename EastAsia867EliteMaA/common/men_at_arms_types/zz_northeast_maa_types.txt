@@ -1,0 +1,313 @@
+﻿# 东北867精锐兵种 - balhae / mohe / goguryeo / jurchen 逐文化绑定
+# 特化体系 v5.0: 楛矢=林海箭幕 / 渤海铁骑=林骑突袭 / 五京=京府枪阵 / 靺鞨猎人=雪林伏击 / 靺鞨劲卒=林间悍卒 / 高句丽弓骑=骑射环攻 / 甲士=山城铁卫 / 女真=反射铁阵
+# 数值按 project_plan/00_balance_model.md v5.0 验证通过 (东北权重)
+
+# 宏(文件级作用域)
+@provisions_cost_infantry_moderate = 7
+@provisions_cost_infantry_expensive = 12
+@provisions_cost_cavalry_cheap = 7
+@provisions_cost_cavalry_moderate = 15
+@cultural_maa_extra_ai_score = 80
+
+# 楛矢弓手 - 渤海楛矢弓手, 林海箭幕, 类型: 弓兵
+balhae_kushishi_archers = {
+	type = archers
+
+	damage = 36
+	toughness = 15
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		forest = { damage = 40 toughness = 20 }
+		taiga = { damage = 20 toughness = 10 }
+		hills = { damage = 6 toughness = 2 }
+		plains = { damage = 4 }
+	}
+
+	counters = {
+		skirmishers = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:balhae }
+	}
+
+	buy_cost = { gold = balhae_kushishi_archers_recruitment_cost }
+	low_maintenance_cost = { gold = balhae_kushishi_archers_low_maint_cost }
+	high_maintenance_cost = { gold = balhae_kushishi_archers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 渤海铁骑 - 渤海靺鞨系骑兵, 林骑突袭, 类型: 轻骑
+balhae_riders = {
+	type = light_cavalry
+
+	damage = 45
+	toughness = 20
+	pursuit = 30
+	screen = 24
+
+	terrain_bonus = {
+		plains = { damage = 30 }
+		forest = { damage = 10 }
+		taiga = { damage = -20 }
+		wetlands = { damage = -30 }
+	}
+
+	counters = {
+		archers = 1.5
+		light_cavalry = 1.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:balhae }
+	}
+
+	buy_cost = { gold = balhae_riders_recruitment_cost }
+	low_maintenance_cost = { gold = balhae_riders_low_maint_cost }
+	high_maintenance_cost = { gold = balhae_riders_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_cheap
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = light_cavalry
+}
+
+# 五京军 - 渤海五京十五府驻军, 京府枪阵, 反骑长城, 类型: 枪兵
+balhae_wujing_spearmen = {
+	type = pikemen
+
+	damage = 35
+	toughness = 29
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		forest = { damage = 6 toughness = 8 }
+		taiga = { toughness = 6 }
+		hills = { damage = 6 toughness = 4 }
+		plains = { damage = 6 }
+	}
+
+	counters = {
+		light_cavalry = 2
+		heavy_cavalry = 2
+		archer_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:balhae }
+	}
+
+	buy_cost = { gold = balhae_wujing_spearmen_recruitment_cost }
+	low_maintenance_cost = { gold = balhae_wujing_spearmen_low_maint_cost }
+	high_maintenance_cost = { gold = balhae_wujing_spearmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 靺鞨猎人 - 靺鞨渔猎部族, 雪林伏击, 类型: 散兵
+mohe_hunters = {
+	type = skirmishers
+
+	damage = 30
+	toughness = 19
+	pursuit = 25
+	screen = 20
+
+	terrain_bonus = {
+		taiga = { damage = 50 toughness = 30 }
+		forest = { damage = 30 toughness = 20 }
+		wetlands = { damage = 10 toughness = 4 }
+		hills = { damage = -10 }
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 10 }
+		harsh_winter = { damage = 10 }
+	}
+
+	counters = {
+		heavy_infantry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:mohe }
+	}
+
+	buy_cost = { gold = mohe_hunters_recruitment_cost }
+	low_maintenance_cost = { gold = mohe_hunters_low_maint_cost }
+	high_maintenance_cost = { gold = mohe_hunters_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = skirmishers
+}
+
+# 靺鞨劲卒 - 靺鞨壮士, 林间悍卒, 类型: 重步
+mohe_warriors = {
+	type = heavy_infantry
+
+	damage = 49
+	toughness = 23
+	pursuit = 5
+	screen = 0
+
+	terrain_bonus = {
+		forest = { damage = 50 toughness = 30 }
+		taiga = { toughness = 10 }
+		plains = { damage = 8 toughness = 4 }
+		hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		pikemen = 1.5
+		heavy_cavalry = 0.75
+	}
+
+	can_recruit = {
+		culture = { this = culture:mohe }
+	}
+
+	buy_cost = { gold = mohe_warriors_recruitment_cost }
+	low_maintenance_cost = { gold = mohe_warriors_low_maint_cost }
+	high_maintenance_cost = { gold = mohe_warriors_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = heavy_infantry
+}
+
+# 高句丽弓骑 - 高句丽驰名骑射, 骑射环攻, 类型: 弓骑
+goguryeo_horse_archers = {
+	type = archer_cavalry
+
+	damage = 67
+	toughness = 26
+	pursuit = 34
+	screen = 16
+
+	terrain_bonus = {
+		plains = { damage = 18 }
+		drylands = { damage = 12 }
+		forest = { damage = 6 }
+		mountains = { damage = -20 }
+		wetlands = { damage = -40 }
+	}
+
+	counters = {
+		skirmishers = 2
+		heavy_infantry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:goguryeo }
+	}
+
+	buy_cost = { gold = goguryeo_horse_archers_recruitment_cost }
+	low_maintenance_cost = { gold = goguryeo_horse_archers_low_maint_cost }
+	high_maintenance_cost = { gold = goguryeo_horse_archers_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_moderate
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = 100
+	}
+	icon = emishi_horse_archers
+}
+
+# 高句丽甲士 - 高句丽重甲步卒, 山城铁卫, 类型: 重步
+goguryeo_armored_infantry = {
+	type = heavy_infantry
+
+	damage = 47
+	toughness = 22
+	pursuit = 5
+	screen = 0
+
+	terrain_bonus = {
+		mountains = { damage = 50 toughness = 40 }
+		hills = { damage = 10 toughness = 6 }
+		plains = { damage = 10 toughness = 4 }
+		forest = { damage = -20 }
+	}
+
+	counters = {
+		heavy_cavalry = 2
+	}
+
+	can_recruit = {
+		culture = { this = culture:goguryeo }
+	}
+
+	buy_cost = { gold = goguryeo_armored_infantry_recruitment_cost }
+	low_maintenance_cost = { gold = goguryeo_armored_infantry_low_maint_cost }
+	high_maintenance_cost = { gold = goguryeo_armored_infantry_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = heavy_infantry
+}
+
+# 女真精甲 - 营州女真精甲, 反射铁阵, 类型: 重步
+jurchen_heavy_infantry = {
+	type = heavy_infantry
+
+	damage = 48
+	toughness = 21
+	pursuit = 5
+	screen = 0
+
+	terrain_bonus = {
+		forest = { damage = 30 toughness = 20 }
+		taiga = { toughness = 10 }
+		plains = { damage = 4 }
+		wetlands = { damage = -10 }
+	}
+
+	counters = {
+		archers = 3
+	}
+
+	can_recruit = {
+		culture = { this = culture:jurchen }
+	}
+
+	buy_cost = { gold = jurchen_heavy_infantry_recruitment_cost }
+	low_maintenance_cost = { gold = jurchen_heavy_infantry_low_maint_cost }
+	high_maintenance_cost = { gold = jurchen_heavy_infantry_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = heavy_infantry
+}

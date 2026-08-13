@@ -1,0 +1,44 @@
+﻿# 天下置业——通用投资建城玩法:opinion_modifiers
+# 前缀 universal_investment_(项目名)
+
+# 擅自建城(开工时的好感惩罚)
+universal_investment_unauthorized_construction_opinion = {
+	opinion = -10
+	years = 10
+	decaying = yes
+}
+
+# 敲诈补偿金收买
+universal_investment_pacified_opinion = {
+	opinion = 10
+	years = 5
+	decaying = yes
+}
+
+# 赖账谈判
+universal_investment_negotiated_opinion = {
+	opinion = 15
+	years = 5
+	decaying = yes
+}
+
+# 赖账贿赂
+universal_investment_bribed_opinion = {
+	opinion = 10
+	years = 5
+	decaying = yes
+}
+
+# 强硬拒绝/威胁失败(持有者对玩家)
+universal_investment_defied_opinion = {
+	opinion = -30
+	years = 10
+	decaying = yes
+}
+
+# 放弃投资(玩家对持有者)
+universal_investment_abandoned_opinion = {
+	opinion = -20
+	years = 10
+	decaying = yes
+}

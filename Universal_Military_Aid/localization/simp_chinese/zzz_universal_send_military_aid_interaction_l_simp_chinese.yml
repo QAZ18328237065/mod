@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ universal_send_military_aid_interaction: "命武职官员加入战争"
+ universal_send_military_aid_interaction_desc: "命一位武职[governor|E]加入[recipient.GetShortUINamePossessive]的[wars|E]"
+ recipient_secondary_universal_send_military_aid_interaction: "武职官员"
+ universal_send_military_aid_confirmation: "武职官员加入战争"
+ universal_send_military_aid_effect_desc: "[governor_joining.GetShortUIName|U]加入[governor_at_war.GetShortUINamePossessive]的[wars|E]"
+ universal_request_military_aid_no_military_governors_desc: "该王国没有可命令的武职官员"
+ universal_request_military_aid_no_available_military_governors_desc: "该王国没有可以加入战争的武职官员"

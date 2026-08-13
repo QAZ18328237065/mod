@@ -1,0 +1,61 @@
+﻿# [DEV TIER] 发展度梯度：档位判定与切换
+# 伯爵领 scope。档位边界（三剧本中间值切档）：
+#   T1 0~1 荒野 / T2 2~5 村庄 / T3 6~9 乡 / T4 10~15 镇 / T5 16~24 县 / T6 25~39 郡城 / T7 40+ 京城
+dev_update_tier_effect = {
+	if = {
+		limit = {
+			development_level >= 40
+		}
+		dev_apply_tier_effect = { TIER = 7 }
+	}
+	else_if = {
+		limit = {
+			development_level >= 25
+		}
+		dev_apply_tier_effect = { TIER = 6 }
+	}
+	else_if = {
+		limit = {
+			development_level >= 16
+		}
+		dev_apply_tier_effect = { TIER = 5 }
+	}
+	else_if = {
+		limit = {
+			development_level >= 10
+		}
+		dev_apply_tier_effect = { TIER = 4 }
+	}
+	else_if = {
+		limit = {
+			development_level >= 6
+		}
+		dev_apply_tier_effect = { TIER = 3 }
+	}
+	else_if = {
+		limit = {
+			development_level >= 2
+		}
+		dev_apply_tier_effect = { TIER = 2 }
+	}
+	else = {
+		dev_apply_tier_effect = { TIER = 1 }
+	}
+}
+
+# 切换到目标档位：已挂在同档则不动，否则移除旧档、挂新档
+dev_apply_tier_effect = {
+	if = {
+		limit = {
+			NOT = { has_county_modifier = dev_tier_$TIER$_modifier }
+		}
+		remove_county_modifier = dev_tier_1_modifier
+		remove_county_modifier = dev_tier_2_modifier
+		remove_county_modifier = dev_tier_3_modifier
+		remove_county_modifier = dev_tier_4_modifier
+		remove_county_modifier = dev_tier_5_modifier
+		remove_county_modifier = dev_tier_6_modifier
+		remove_county_modifier = dev_tier_7_modifier
+		add_county_modifier = dev_tier_$TIER$_modifier
+	}
+}

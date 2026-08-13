@@ -1,0 +1,31 @@
+﻿# 被征服朝贡者独立战争失败 -> 宗主镇压惩罚
+# 挂到官方 on_war_won_defender(追加,与原版合并,不覆盖)
+# 场景:朝贡者以 tributary_independence_war 发动独立战争,宗主(defender)获胜
+# 惩罚:反抗期立即结束(认命),契约等级再降,宗主对失败者-30好感(不信任)
+on_war_won_defender = {
+	effect = {
+		if = {
+			limit = {
+				scope:war = { using_cb = tributary_independence_war }
+				scope:attacker = { is_tributary = yes }
+			}
+			scope:attacker = {
+				add_subject_standing = -10
+				remove_variable = tribsub_resisting_new_suzerain
+			}
+			scope:defender = {
+				add_opinion = {
+					modifier = tribsub_untrustworthy_opinion
+					target = scope:attacker
+					opinion = -30
+				}
+				# 镇压成功:叛逃账目一并清除(若在报复列表中)
+				remove_list_variable = {
+					name = tribsub_retaliation_target_list
+					target = scope:attacker
+				}
+				remove_variable = tribsub_wayward_tributary
+			}
+		}
+	}
+}

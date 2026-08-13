@@ -1,0 +1,38 @@
+﻿《日本帝国平定政策放宽》mod 介绍
+========================================
+
+【作用】
+降低日本帝国政策"帝国平定 (Imperial Expansion)"的通过门槛，并增加威望等级要求。
+
+原版（Roads to Power / 日本内容 DLC）中，帝国平定需要官僚制
+提升至 Lv.2 / Lv.3（japanese_bureaucracy_2/3）才能通过；
+本 mod 将其降至只需官僚制 Lv.1（japanese_bureaucracy_1）即可，
+省去漫长官僚改革等待。作为门槛放宽的补偿，同时要求威望等级达到"高"——只有声名远播的君主方能发动帝国平定。
+
+【使用方式】
+游戏内：日本律令制帝国的政策界面 → 帝国政策 → 通过"帝国平定"。
+通过条件：官僚制 Lv.1 以上 + 威望等级 ≥ 高 + 非战争状态 + 政策冷却结束。
+其余帝国政策（征兵动员、缴械、锁国、庄园改革、剿匪）保持原版数值与条件不变。
+
+【实现原理】
+- 覆盖原版同名文件 common/laws/03_imperial_policies.txt（完整法律定义）
+- 仅修改 imperial_expansion_law 的 can_pass 门槛：
+  原版：需通过 japanese_bureaucracy_2 与 japanese_bureaucracy_3
+  本 mod：只需通过 japanese_bureaucracy_1（任意一级官僚制）+ 威望等级 ≥ 高
+- 其余政策、冷却、费用、AI 意愿等均与 1.19 原版一致
+
+【依赖】
+- CK3 1.19.* 原版 + 日本内容 DLC（律令制政体、tgp_imperial_policy_event_effect 等均来自原版）
+- 无 mod 依赖
+
+【兼容性与扩展】
+- 本 mod 仅包含单个覆盖原版同名文件的文本文件，与其他 mod 无文件重叠，可放心混用
+- 注意：本 mod 以同名文件整体覆盖原版帝国政策定义；
+  若与其他修改帝国政策的 mod 混用，加载顺序靠后者生效
+- 卸载时删除 mod 文件夹即可完全移除，不残留任何改动
+- 已通过 ck3-tiger 完整校验（error 0）
+
+【文件清单】
+  Japan_Imperial_Policy_Easy.mod                   启动器注册文件
+  descriptor.mod                                   mod 定义
+  common/laws/03_imperial_policies.txt             帝国政策法律定义（覆盖原版，仅改帝国平定门槛）

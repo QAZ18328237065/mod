@@ -1,0 +1,312 @@
+﻿#max_provinces = 1466
+definitions = "definition.csv"
+provinces = "provinces.png"
+#positions = "positions.txt"
+rivers = "rivers.png"
+#terrain_definition = "terrain.txt"
+topology = "heightmap.heightmap"
+#tree_definition = "trees.bmp"
+continent = "continent.txt"
+adjacencies = "adjacencies.csv"
+#climate = "climate.txt"
+island_region = "island_region.txt"
+seasons = "seasons.txt"
+
+#############
+# SEA ZONES
+#############
+# European Seas
+sea_zones = RANGE { 632 641 }
+sea_zones = RANGE { 643 649 }
+sea_zones = RANGE { 661 667 }
+sea_zones = RANGE { 683 688 }
+sea_zones = RANGE { 690 700 }
+sea_zones = RANGE { 708 715 }
+sea_zones = RANGE { 722 729 }
+sea_zones = RANGE { 936 942 }
+sea_zones = RANGE { 945 954 }
+sea_zones = RANGE { 958 960 }
+sea_zones = RANGE { 964 970 }
+sea_zones = RANGE { 973 975 }
+sea_zones = LIST { 977 }
+sea_zones = RANGE { 980 982 }
+sea_zones = RANGE { 985 997 }
+sea_zones = RANGE { 999 1011 }
+sea_zones = RANGE { 1014 1017 }
+sea_zones = RANGE { 1019 1025 }
+sea_zones = RANGE { 1027 1038 }
+sea_zones = RANGE { 1109 1111 }
+sea_zones = RANGE { 3229 3230 }
+
+#North European Seas
+sea_zones = RANGE { 8613 8617 } #Iceland, Shetlands, Norway
+sea_zones = RANGE { 8618 8622 } #French & Iberian atlantic coasts
+
+#Mediterranean Seas
+sea_zones = RANGE { 8626 8648 }	#Western Mediterranean
+sea_zones = RANGE { 8649 8653 } #Adriatic Mediterranean
+sea_zones = RANGE { 8654 8666 }	#Eastern Mediterranean
+sea_zones = LIST { 8740 }
+
+#Black, Azov, Caspian & Aral Seas
+sea_zones = RANGE { 8667 8672 }
+
+#Middle Eastern Seas
+sea_zones = LIST { 8673 }
+sea_zones = RANGE { 8674 8675 }	#Gulf of Aden
+sea_zones = RANGE { 8676 8677 }	#Somali Sea
+sea_zones = RANGE { 8678 8679 }	#Persian Gulf
+sea_zones = RANGE { 8680 8682 }	#Arabian Sea
+sea_zones = RANGE { 12799 12801 }	#Swahili Coast
+
+#Indian Seas
+sea_zones = RANGE { 1382 1407 }
+sea_zones = RANGE { 1409 1412 }
+sea_zones = RANGE { 8684 8689 }	#Bay of Bengal
+sea_zones = LIST { 8683 }	#Maldives
+
+#African Seas
+sea_zones = RANGE { 8692 8700 } #West Africa & Gulf of Guinea
+
+sea_zones = LIST { 1062 1064 }
+
+#East Asia Seas
+sea_zones = RANGE { 12574 12762 } #East Asia seas
+sea_zones = LIST { 8691 12768 12769 12770 12850 } #Andaman sea extensions
+sea_zones = RANGE { 12821 12822 } # Okhotsk
+sea_zones = RANGE { 12827 12829 }
+sea_zones = RANGE { 12831 12834 }
+
+# Non-accessible sea zones
+sea_zones = LIST { 944 }
+sea_zones = LIST { 8623 8624 8625 }
+
+###############
+# MAJOR RIVERS
+###############
+#European rivers
+river_provinces = RANGE { 628 630 }		#Thames
+river_provinces = RANGE { 456 457 }		#Bengal Delta
+river_provinces = RANGE { 5855 5857 }	#Dvina
+river_provinces = RANGE { 1052 1061 }
+river_provinces = RANGE { 1070 1075 }
+river_provinces = RANGE { 1085 1087 }
+river_provinces = RANGE { 1090 1106 }
+river_provinces = RANGE { 3223 3228 }
+river_provinces = RANGE { 3231 3252 }
+river_provinces = RANGE { 3253 3254 }	#Guadalquivir
+river_provinces = RANGE { 8586 8587 }	#Dvina
+river_provinces = RANGE { 8558 8559 }	#Norway Fjords
+
+#Russian rivers
+river_provinces = RANGE { 8561 8562 }	#Dniestr
+river_provinces = RANGE { 8563 8567 }	#Dniepr
+river_provinces = RANGE { 8569 8570 }	#Volkhov & Lovat
+river_provinces = LIST { 8583 8584 8585 9663 }	#Don
+river_provinces = RANGE { 8578 8582 }	#Volga
+river_provinces = RANGE { 8574 8576 }	#Oka
+
+#Indian rivers
+river_provinces = RANGE { 1307 1309 }	#Indus
+river_provinces = RANGE { 1311 1316 }	#Ganges & Brahmaputra
+river_provinces = RANGE { 8588 8589 }	#Indus
+river_provinces = RANGE { 8590 8592 }	#Chenab
+river_provinces = RANGE { 8593 8594 }	#Tapti
+river_provinces = RANGE { 8595 8596 }	#Kollidam
+river_provinces = RANGE { 8597 8599 }	#Krishna
+river_provinces = RANGE { 8600 8601 }	#Mahanadi
+river_provinces = RANGE { 8603 8605 }	#Brahmaputra
+river_provinces = RANGE { 8606 8611 }	#Irrawaddy
+
+#African rivers
+river_provinces = LIST { 8612 8702 1317 }	#West African rivers
+river_provinces = RANGE { 6026 6029 }	# Nile
+river_provinces = RANGE { 6126 6128 }	# Euphrates
+river_provinces = RANGE { 6791 6796 }	# Niger
+river_provinces = RANGE { 8092 8096 }	# Niger
+
+#Manchurian rivers
+river_provinces = RANGE { 11915 11924 }	#Amur = Heilongjiang
+river_provinces = RANGE { 11925 11928 }	#Songhua
+
+river_provinces = LIST { 626 689 1063 1065 1066 1067 1077 1078 1079 1081 1082 1083 1084 1487 5510 5511 6125 }
+river_provinces = LIST { 8560 8568 8571 8572 8573 8577 8602 }
+
+#Chinese rivers
+river_provinces = RANGE { 11933 11940 }	#Yellow River
+river_provinces = LIST { 10456 10457 10458 10459 10460 10461 10464 }
+
+#Viet rivers
+river_provinces = LIST { 12513 12514 12515 12516 12517 12518 12519 12525 }
+river_provinces = RANGE { 12527 12533 }
+river_provinces = RANGE { 12546 12549 }
+
+########
+# LAKES
+########
+lakes = LIST { 943 955 956 957 961 962 963 979 983 1012 1018 1026 1069 1076 1080 1088 1305 1348 1472 1473 1474 1475 1476 1477 1478 1479 1480 1481 1482 1483 1484 1486 1488 1490 1491 1492 1493 1494 1496 1497 1498 3265 5854 5858 7208 7513 8519 8520 8521 8522 8523 8524 8525 8736 8737 8738 9000 9001 10451 10452 10462 11233 11234 11235 11249 11250 11527 11528 11941 11942 12487 12488 12551 12948 13158 }
+
+#####################
+# IMPASSABLE TERRAIN
+#####################
+# Can be colored by whoever owns the most of the province's neighbours.
+# Blocks unit movement.
+
+#Africa
+
+#Anatolia
+
+#Armenia & Georgia
+
+#Balkans
+
+#Bjarmaland
+
+#Bohemia, France, Germany, Italy
+
+#Burma
+
+#Carpathia
+
+#Caucasus
+
+#Iberia
+
+#Indian ghats
+
+#Kazakh Steppe
+
+#Manchuria & eastern Mongolia
+
+#Mongolia, Tarim & Dzungaria
+
+#Persia
+
+#Russia
+
+#Scandinavia & Finland & Iceland
+
+#Siberia & Tartaria
+
+#Tarim Basin
+
+#Tartaria Mountains
+
+#Turkestan
+
+#Western Europe
+
+#China
+
+#Japan
+
+#Korea
+
+#Southeast Asia
+#Papua
+
+############
+# WASTELAND
+############
+# These are actually supposed to be Wasteland:
+# Cannot be colored. Blocks unit movement, used for things like Sahara desert. 
+
+
+# IMPASSABLE SEA ZONES
+# These sea provinces cannot be crossed/sailed
+impassable_seas = LIST { 660 976 978 984 998 1293 1465 1467 8690 8701 12550 }
+impassable_seas = RANGE { 12763 12767 }	#impassable seas in East Asia
+
+#Northern Indo China
+
+#未恢复地区荒漠（聚焦东亚：区域外陆地全部禁制）
+impassable_mountains = RANGE { 1 457 }
+impassable_mountains = RANGE { 526 532 }
+impassable_mountains = LIST { 534 535 536 542 543 544 }
+impassable_mountains = RANGE { 546 599 }
+impassable_mountains = RANGE { 602 631 }
+impassable_mountains = LIST { 642 }
+impassable_mountains = RANGE { 650 660 }
+impassable_mountains = LIST { 674 675 689 }
+impassable_mountains = RANGE { 716 721 }
+impassable_mountains = RANGE { 730 734 }
+impassable_mountains = RANGE { 763 848 }
+impassable_mountains = RANGE { 850 935 }
+impassable_mountains = LIST { 971 972 976 978 984 998 }
+impassable_mountains = RANGE { 1039 1061 }
+impassable_mountains = LIST { 1063 1065 1066 1067 1068 }
+impassable_mountains = RANGE { 1070 1075 }
+impassable_mountains = LIST { 1077 1078 1079 }
+impassable_mountains = RANGE { 1081 1087 }
+impassable_mountains = RANGE { 1089 1108 }
+impassable_mountains = RANGE { 1112 1304 }
+impassable_mountains = LIST { 1306 1307 1308 1309 }
+impassable_mountains = RANGE { 1311 1347 }
+impassable_mountains = RANGE { 1349 1368 }
+impassable_mountains = RANGE { 1370 1381 }
+impassable_mountains = LIST { 1408 }
+impassable_mountains = RANGE { 1413 1471 }
+impassable_mountains = LIST { 1485 1487 1489 1495 }
+impassable_mountains = RANGE { 1499 1745 }
+impassable_mountains = LIST { 2484 2486 2539 2580 2601 2667 2668 2702 2716 2718 2734 2740 2754 }
+impassable_mountains = RANGE { 2806 2836 }
+impassable_mountains = LIST { 2881 2884 2908 2929 2930 2944 2974 2980 2996 2997 3001 3002 3004 }
+impassable_mountains = RANGE { 3011 3017 }
+impassable_mountains = LIST { 3020 3021 3022 }
+impassable_mountains = RANGE { 3024 3071 }
+impassable_mountains = LIST { 3080 3104 3123 3136 }
+impassable_mountains = RANGE { 3138 3170 }
+impassable_mountains = LIST { 3173 3174 3175 }
+impassable_mountains = RANGE { 3177 3220 }
+impassable_mountains = RANGE { 3222 3228 }
+impassable_mountains = RANGE { 3231 3257 }
+impassable_mountains = RANGE { 3259 3264 }
+impassable_mountains = RANGE { 3266 3499 }
+impassable_mountains = LIST { 3612 }
+impassable_mountains = RANGE { 3949 3972 }
+impassable_mountains = RANGE { 3980 3999 }
+impassable_mountains = LIST { 4059 }
+impassable_mountains = RANGE { 4125 4170 }
+impassable_mountains = LIST { 4181 4182 4183 4184 4242 4243 4244 4248 4255 4281 4282 }
+impassable_mountains = RANGE { 4353 4462 }
+impassable_mountains = LIST { 4497 4510 4511 4512 4513 }
+impassable_mountains = RANGE { 4517 4533 }
+impassable_mountains = LIST { 4612 4760 4761 4898 }
+impassable_mountains = RANGE { 4900 4974 }
+impassable_mountains = RANGE { 5043 5528 }
+impassable_mountains = LIST { 5685 5686 5687 5688 5755 }
+impassable_mountains = RANGE { 5795 5853 }
+impassable_mountains = LIST { 5855 5856 5857 }
+impassable_mountains = RANGE { 5859 5899 }
+impassable_mountains = LIST { 5913 5997 6026 6027 6028 6029 }
+impassable_mountains = RANGE { 6110 6115 }
+impassable_mountains = RANGE { 6123 6128 }
+impassable_mountains = LIST { 6142 6167 6173 6202 6256 6277 6318 6319 6320 }
+impassable_mountains = RANGE { 6323 7207 }
+impassable_mountains = RANGE { 7209 7512 }
+impassable_mountains = RANGE { 7514 8518 }
+impassable_mountains = RANGE { 8526 8612 }
+impassable_mountains = LIST { 8690 }
+impassable_mountains = RANGE { 8701 8712 }
+impassable_mountains = RANGE { 8722 8734 }
+impassable_mountains = LIST { 8739 }
+impassable_mountains = RANGE { 8741 8750 }
+impassable_mountains = RANGE { 8768 8792 }
+impassable_mountains = RANGE { 8802 8999 }
+impassable_mountains = RANGE { 9002 10450 }
+impassable_mountains = RANGE { 10453 10461 }
+impassable_mountains = RANGE { 10463 11232 }
+impassable_mountains = RANGE { 11236 11248 }
+impassable_mountains = RANGE { 11251 11526 }
+impassable_mountains = RANGE { 11529 11940 }
+impassable_mountains = RANGE { 11943 12486 }
+impassable_mountains = RANGE { 12489 12550 }
+impassable_mountains = RANGE { 12552 12573 }
+impassable_mountains = RANGE { 12763 12767 }
+impassable_mountains = RANGE { 12771 12798 }
+impassable_mountains = RANGE { 12802 12820 }
+impassable_mountains = LIST { 12823 12824 12825 12826 12830 }
+impassable_mountains = RANGE { 12835 12849 }
+impassable_mountains = RANGE { 12851 12947 }
+impassable_mountains = RANGE { 12949 13157 }
+impassable_mountains = RANGE { 13159 13269 }

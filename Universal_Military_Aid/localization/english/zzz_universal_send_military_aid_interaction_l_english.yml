@@ -1,0 +1,8 @@
+﻿l_english:
+ universal_send_military_aid_interaction: "Order a Military Governor to Join the War"
+ universal_send_military_aid_interaction_desc: "Order a military [governor|E] to join [recipient.GetShortUINamePossessive] [wars|E]"
+ recipient_secondary_universal_send_military_aid_interaction: "Military Governor"
+ universal_send_military_aid_confirmation: "Military Governor Joined the War"
+ universal_send_military_aid_effect_desc: "[governor_joining.GetShortUIName|U] joined [governor_at_war.GetShortUINamePossessive] [wars|E]"
+ universal_request_military_aid_no_military_governors_desc: "This realm has no military governors to command"
+ universal_request_military_aid_no_available_military_governors_desc: "This realm has no military governors available to join the war"

@@ -1,0 +1,210 @@
+﻿# ============================================================
+# 总领体制 & 总领庄园决议简化 (合并版)
+# 合并自: tgp_simplified_soryo + Japan_Establish_Soryo_Easy
+# 设计原则: 恢复原版全部资格条件, 仅移除:
+#   - 科技前置: 官僚制3级 (has_realm_law = japanese_bureaucracy_3)
+#   - 科技前置: 宅邸主建筑等级 (unlocks_establish_fief_decision)
+#   - 法律条件: 摄关继承法 (japanese_regency_succession_law)
+#   - 联盟凝聚力 (house_confederation cohesion)
+# ============================================================
+
+# ============================================================
+# 决议一: 建立总领庄园 (Abandon the Bureaucracy)
+# 恢复原版条件, 移除: 宅邸主建筑等级前置 + 官僚制3级王权法
+# ============================================================
+tgp_japan_establish_soryo_manor_decision = {
+	decision_group_type = major
+	title = tgp_japan_establish_soryo_manor_decision
+	desc = tgp_japan_establish_soryo_manor_decision_desc
+	selection_tooltip = tgp_japan_establish_house_fief_decision_tooltip
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/tgp_house_fief.dds"
+	}
+	sort_order = 80
+
+	cost = {
+		prestige = {
+			value = 500
+		}
+	}
+
+	is_shown = {
+		has_tgp_dlc_trigger = yes
+		has_government = japan_administrative_government
+		tgp_has_ceremonial_liege_title_trigger = no
+		is_landed = no
+		exists = domicile
+	}
+
+	is_valid = {
+		# Is a Ritsuryo Governor
+		has_government = japan_administrative_government
+		trigger_if = {
+			limit = { is_ai = no } # AI are an exception as they can continue to play despite not being House Heads
+			# Holds Noble Family title
+			custom_tooltip = {
+				text = is_house_head_of_noble_family_tt
+				house.house_head ?= this
+				any_held_title = { is_noble_family_title = yes }
+			}
+			custom_tooltip = {
+				text = tgp_japan_establish_house_fief_capital_domicile_trigger
+				NOT = { domicile.domicile_location.county ?= top_liege.capital_county }
+			}
+		}
+		# No direct descendant is currently Regent or Governor
+		custom_tooltip = {
+			text = tgp_japan_establish_house_fief_direct_descendent_position_trigger
+			any_descendants_are_governors = no
+		}
+		# No direct descendant is liege or above
+		custom_tooltip = {
+			text = create_cadet_branch_decision_liege_is_descendant
+			any_liege_or_above_is_descendant = no
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		# Not Yamato
+		tgp_is_in_ceremonial_house_trigger = no
+		# Must be a Count or Higher
+		highest_held_title_tier >= tier_county
+		# Is not Regent
+		is_independent_ruler = no
+	}
+
+	effect = {
+		add_achievement_global_variable_effect = {
+			VARIABLE = achieved_ep4_18_yes_i_need_my_samurai_achievement
+			VALUE = yes
+		}
+		show_as_tooltip = {
+			change_government = japan_feudal_government
+			# Change Dynasty
+			if = {
+				limit = {
+					NOT = { dynasty.dynast ?= this }
+				}
+				custom_tooltip = tgp_japan_establish_house_fief_found_house_effect
+			}
+		}
+		# Fire relevant event
+		if = {
+			limit = {
+				NOR = {
+					dynasty.dynast ?= this
+					house.house_head ?= this
+				}
+			}
+			add_character_flag = establish_house_fief
+			trigger_event = tgp_japan_decision.9001
+		}
+		else = { trigger_event = tgp_japan_decision.9002 }
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+	ai_potential = {
+		is_landed = yes
+	}
+	ai_will_do = {
+		base = 100
+		ai_value_modifier = {
+			ai_boldness = 0.5
+			ai_honor = -0.5
+		}
+		modifier = {
+			house ?= { has_house_aspiration_parameter = ceremony_cheaper_feasts }
+			add = -50
+		}
+		modifier = {
+			house ?= { has_house_aspiration_parameter = service_house_improved_educator_outcome_chance }
+			add = -100
+		}
+		modifier = {
+			house ?= { has_house_aspiration_parameter = determination_spymaster_task_find_secrets_efficiency }
+			add = 50
+		}
+		modifier = {
+			house ?= { has_house_aspiration_parameter = unlocks_japanese_manor_armory }
+			add = 100
+		}
+	}
+}
+
+# ============================================================
+# 决议二: 建立总领体制 (Become Soryo as independent Ritsuryo)
+# 恢复原版条件, 移除: 摄关继承法 + 官僚制3级 + 联盟凝聚力
+# ============================================================
+tgp_japan_establish_soryo_administration_decision = {
+	decision_group_type = major
+	title = tgp_japan_establish_soryo_administration_decision
+	desc = tgp_japan_establish_soryo_administration_decision_desc
+	selection_tooltip = tgp_japan_establish_soryo_administration_decision_tooltip
+	picture = { reference = "gfx/interface/illustrations/event_story/tgp_japanese_shogunate.dds" }
+	sort_order = 80
+
+	cost = {
+		prestige = {
+			value = massive_prestige_gain
+		}
+		influence = {
+			value = {
+				value = monumental_influence_gain
+				multiply = 2
+			}
+		}
+	}
+
+	is_shown = {
+		has_tgp_dlc_trigger = yes
+		is_independent_ruler = yes
+		government_is_japanese_trigger = yes
+		NOR = {
+			government_has_flag = government_is_japan_feudal
+			has_global_variable = shogunate_established
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		has_government = japan_administrative_government
+		is_at_war = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		add_achievement_global_variable_effect = {
+			VARIABLE = achieved_ep4_18_yes_i_need_my_samurai_achievement
+			VALUE = yes
+		}
+		custom_tooltip = japanese_establish_soryo_administration_war_start_tt
+		custom_description_no_bullet = { text = if_you_win_effect }
+		show_as_tooltip = { japanese_establish_soryo_administration_reward_effect = yes }
+		trigger_event = {
+			id = tgp_japan_decision.9601
+			delayed = yes
+		}
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 36
+		hegemony = 0
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}

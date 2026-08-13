@@ -1,0 +1,28 @@
+﻿### 涓浗鍗楁柟867绮鹃攼鍏电 鎴愭湰鍊?
+viet_crossbowmen_recruitment_cost = 58
+viet_crossbowmen_low_maint_cost = 0.22
+viet_crossbowmen_high_maint_cost = 0.66
+
+viet_spear_pikes_recruitment_cost = 79
+viet_spear_pikes_low_maint_cost = 0.32
+viet_spear_pikes_high_maint_cost = 0.96
+
+hlai_cave_archers_recruitment_cost = 55
+hlai_cave_archers_low_maint_cost = 0.2
+hlai_cave_archers_high_maint_cost = 0.6
+
+tai_rattan_warriors_recruitment_cost = 51
+tai_rattan_warriors_low_maint_cost = 0.18
+tai_rattan_warriors_high_maint_cost = 0.54
+
+bouxcuengh_crossbowmen_recruitment_cost = 55
+bouxcuengh_crossbowmen_low_maint_cost = 0.2
+bouxcuengh_crossbowmen_high_maint_cost = 0.6
+
+hmong_poison_archers_recruitment_cost = 55
+hmong_poison_archers_low_maint_cost = 0.2
+hmong_poison_archers_high_maint_cost = 0.6
+
+yao_mountain_hunters_recruitment_cost = 50
+yao_mountain_hunters_low_maint_cost = 0.18
+yao_mountain_hunters_high_maint_cost = 0.54

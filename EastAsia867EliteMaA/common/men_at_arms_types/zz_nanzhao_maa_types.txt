@@ -1,0 +1,159 @@
+﻿# 南诏867精锐兵种 - yi 彝 / bai 白 分开绑定 (西南区域权重)
+# yi 彝: 罗苴子(重步) + 蒙舍弩手(弓兵)   N 80-82
+# bai 白: 白蛮枪军(枪兵) + 苍山伏兵(散兵)   N 78-80
+# 数值按 project_plan/00_balance_model.md v4.0 验证通过
+
+# 宏(文件级作用域)
+@provisions_cost_infantry_cheap = 3
+@provisions_cost_infantry_moderate = 7
+@provisions_cost_infantry_expensive = 12
+@cultural_maa_extra_ai_score = 80
+
+# 罗苴子 - 南诏国王常备精兵, 择雄勇者充任, 负弓矢短矛, 山地敢战, 类型: 重步
+luojuzi = {
+	type = heavy_infantry
+
+	damage = 43
+	toughness = 23
+	pursuit = 8
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 12 toughness = 6 }
+		mountains = { damage = 10 toughness = 8 }
+		jungle = { damage = 6 toughness = 4 }
+		terraced_hills = { damage = 8 toughness = 4 }
+	}
+
+	counters = {
+		pikemen = 1
+		heavy_cavalry = 0.75
+	}
+
+	can_recruit = {
+		culture = { this = culture:yi }
+	}
+
+	buy_cost = { gold = luojuzi_recruitment_cost }
+	low_maintenance_cost = { gold = luojuzi_low_maint_cost }
+	high_maintenance_cost = { gold = luojuzi_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_heavy_infantry
+	}
+	icon = heavy_infantry
+}
+
+# 蒙舍弩手 - 南诏(蒙舍诏)弩手, 苍山弩阵善射, 类型: 弓兵
+mengshe_archers = {
+	type = archers
+
+	damage = 32
+	toughness = 15
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 14 toughness = 6 }
+		mountains = { damage = 12 toughness = 6 }
+		jungle = { damage = 6 toughness = 4 }
+		terraced_hills = { damage = 10 toughness = 4 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:yi }
+	}
+
+	buy_cost = { gold = mengshe_archers_recruitment_cost }
+	low_maintenance_cost = { gold = mengshe_archers_low_maint_cost }
+	high_maintenance_cost = { gold = mengshe_archers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 白蛮枪军 - 南诏白蛮步军, 务农定居善步战, 长枪结阵, 类型: 枪兵
+baiman_spearmen = {
+	type = pikemen
+
+	damage = 33
+	toughness = 30
+	pursuit = 0
+	screen = 10
+
+	terrain_bonus = {
+		hills = { damage = 8 toughness = 8 }
+		mountains = { damage = 6 toughness = 10 }
+		jungle = { damage = 4 toughness = 6 }
+		terraced_hills = { damage = 6 toughness = 6 }
+	}
+
+	counters = {
+		light_cavalry = 1
+		heavy_cavalry = 1
+		archer_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:bai }
+	}
+
+	buy_cost = { gold = baiman_spearmen_recruitment_cost }
+	low_maintenance_cost = { gold = baiman_spearmen_low_maint_cost }
+	high_maintenance_cost = { gold = baiman_spearmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 苍山伏兵 - 白蛮苍山伏击, 山道袭扰, 类型: 散兵
+cangshan_ambushers = {
+	type = skirmishers
+
+	damage = 29
+	toughness = 18
+	pursuit = 24
+	screen = 18
+
+	terrain_bonus = {
+		hills = { damage = 8 toughness = 6 }
+		mountains = { damage = 6 toughness = 8 }
+		jungle = { damage = 6 toughness = 4 }
+		terraced_hills = { damage = 6 toughness = 4 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:bai }
+	}
+
+	buy_cost = { gold = cangshan_ambushers_recruitment_cost }
+	low_maintenance_cost = { gold = cangshan_ambushers_low_maint_cost }
+	high_maintenance_cost = { gold = cangshan_ambushers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = skirmishers
+}

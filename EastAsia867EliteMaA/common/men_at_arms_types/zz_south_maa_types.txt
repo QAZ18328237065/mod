@@ -1,0 +1,263 @@
+﻿# 中国南方867精锐兵种 - viet 越 / hlai 黎 / tai 傣 / bouxcuengh 布依壮 / hmong 苗 / yao 瑶 逐文化绑定
+# viet: 交趾弩手(弓兵)+步阵枪军(枪兵) (东南亚权重)
+# hlai: 黎峒弓手(弓兵) / tai: 藤甲兵(散兵) / bouxcuengh: 僚人弩手(弓兵) / hmong: 毒弩手(弓兵) / yao: 山猎手(散兵) (西南权重)
+# 数值按 project_plan/00_balance_model.md v5.0 验证通过
+# 原版避让: viet/tai 自带象兵路线, 本线不做象兵
+
+# 宏(文件级作用域)
+@provisions_cost_infantry_cheap = 3
+@provisions_cost_infantry_moderate = 7
+@provisions_cost_infantry_expensive = 12
+@cultural_maa_extra_ai_score = 80
+
+# 交趾弩手 - 安南静海军弩手, 红河平原步战, 类型: 弓兵
+viet_crossbowmen = {
+	type = archers
+
+	damage = 29
+	toughness = 14
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		jungle = { damage = 8 toughness = 4 }
+		hills = { damage = 10 toughness = 4 }
+		mountains = { damage = 6 toughness = 2 }
+		farmlands = { damage = 8 }
+		plains = { damage = 4 }
+		wetlands = { damage = -5 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:viet }
+	}
+
+	buy_cost = { gold = viet_crossbowmen_recruitment_cost }
+	low_maintenance_cost = { gold = viet_crossbowmen_low_maint_cost }
+	high_maintenance_cost = { gold = viet_crossbowmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 步阵枪军 - 安南步军枪阵, 河网平原结阵, 类型: 枪兵
+viet_spear_pikes = {
+	type = pikemen
+
+	damage = 26
+	toughness = 28
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		jungle = { toughness = 6 }
+		hills = { damage = 6 toughness = 6 }
+		mountains = { toughness = 8 }
+		farmlands = { damage = 8 toughness = 4 }
+		plains = { damage = 4 }
+	}
+
+	counters = {
+		light_cavalry = 1
+		heavy_cavalry = 1
+		archer_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:viet }
+	}
+
+	buy_cost = { gold = viet_spear_pikes_recruitment_cost }
+	low_maintenance_cost = { gold = viet_spear_pikes_low_maint_cost }
+	high_maintenance_cost = { gold = viet_spear_pikes_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 黎峒弓手 - 海南黎峒弓手, 山林射猎, 类型: 弓兵
+hlai_cave_archers = {
+	type = archers
+
+	damage = 23
+	toughness = 11
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 10 toughness = 4 }
+		jungle = { damage = 8 toughness = 4 }
+		mountains = { damage = 6 toughness = 2 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:hlai }
+	}
+
+	buy_cost = { gold = hlai_cave_archers_recruitment_cost }
+	low_maintenance_cost = { gold = hlai_cave_archers_low_maint_cost }
+	high_maintenance_cost = { gold = hlai_cave_archers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 藤甲兵 - 傣族藤甲部众, 藤甲轻身, 丛林缠斗, 类型: 散兵
+tai_rattan_warriors = {
+	type = skirmishers
+
+	damage = 20
+	toughness = 14
+	pursuit = 16
+	screen = 16
+
+	terrain_bonus = {
+		jungle = { damage = 8 toughness = 6 }
+		hills = { damage = 6 toughness = 4 }
+		terraced_hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:tai }
+	}
+
+	buy_cost = { gold = tai_rattan_warriors_recruitment_cost }
+	low_maintenance_cost = { gold = tai_rattan_warriors_low_maint_cost }
+	high_maintenance_cost = { gold = tai_rattan_warriors_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = skirmishers
+}
+
+# 僚人弩手 - 桂西俚僚弩手, 山崖设伏, 类型: 弓兵
+bouxcuengh_crossbowmen = {
+	type = archers
+
+	damage = 23
+	toughness = 12
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 10 toughness = 4 }
+		jungle = { damage = 6 toughness = 4 }
+		mountains = { damage = 6 toughness = 2 }
+		terraced_hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:bouxcuengh }
+	}
+
+	buy_cost = { gold = bouxcuengh_crossbowmen_recruitment_cost }
+	low_maintenance_cost = { gold = bouxcuengh_crossbowmen_low_maint_cost }
+	high_maintenance_cost = { gold = bouxcuengh_crossbowmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 毒弩手 - 苗峒毒弩, 草木皆兵, 类型: 弓兵
+hmong_poison_archers = {
+	type = archers
+
+	damage = 23
+	toughness = 12
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		hills = { damage = 10 toughness = 4 }
+		mountains = { damage = 8 toughness = 4 }
+		jungle = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:hmong }
+	}
+
+	buy_cost = { gold = hmong_poison_archers_recruitment_cost }
+	low_maintenance_cost = { gold = hmong_poison_archers_low_maint_cost }
+	high_maintenance_cost = { gold = hmong_poison_archers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+# 山猎手 - 瑶山猎手, 深山袭扰, 类型: 散兵
+yao_mountain_hunters = {
+	type = skirmishers
+
+	damage = 19
+	toughness = 13
+	pursuit = 17
+	screen = 15
+
+	terrain_bonus = {
+		hills = { damage = 6 toughness = 4 }
+		mountains = { damage = 8 toughness = 6 }
+		jungle = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:yao }
+	}
+
+	buy_cost = { gold = yao_mountain_hunters_recruitment_cost }
+	low_maintenance_cost = { gold = yao_mountain_hunters_low_maint_cost }
+	high_maintenance_cost = { gold = yao_mountain_hunters_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = skirmishers
+}

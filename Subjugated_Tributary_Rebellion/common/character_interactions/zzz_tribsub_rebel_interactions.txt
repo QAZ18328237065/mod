@@ -1,0 +1,184 @@
+﻿# 宗主对被征服朝贡者的安抚/威慑交互(反抗期内可用)
+# 安抚:花金币提前平息反抗期,好感回暖,契约等级提升
+# 威慑:不花钱,恐惧压服,反抗期缩短一半,但好感恶化
+# actor = 宗主, recipient = 被征服朝贡者
+
+tribsub_soothe_rebel_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = tribsub_soothe_rebel_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+				has_variable = tribsub_resisting_new_suzerain
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	cost = {
+		gold = {
+			value = zzz_tribsub_soothe_cost_value
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			remove_variable = tribsub_resisting_new_suzerain
+			add_opinion = {
+				modifier = tribsub_plt_suzerain_opinion
+				target = scope:actor
+				opinion = 25
+			}
+			add_subject_standing = 10
+		}
+	}
+
+	is_available = {
+		root = {
+			trigger_if = {
+				limit = { NOT = { exists = var:tribsub_rebellion_roll_cooldown } }
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		base = 30
+		modifier = {
+			add = 20
+			root = {
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+		}
+		modifier = {
+			add = -15
+			root = { has_trait = greedy }
+		}
+		modifier = {
+			add = -20
+			root = { current_military_strength > scope:recipient.current_military_strength }
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+}
+
+tribsub_deter_rebel_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = tribsub_deter_rebel_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+				has_variable = tribsub_resisting_new_suzerain
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			# 反抗期缩短为 1 年(365 天)
+			set_variable = {
+				name = tribsub_resisting_new_suzerain
+				value = yes
+				days = 365
+			}
+			add_opinion = {
+				modifier = tribsub_intimidated_opinion
+				target = scope:actor
+				opinion = -20
+			}
+			add_subject_standing = -5
+		}
+		scope:actor = {
+			add_dread = 10
+		}
+	}
+
+	is_available = {
+		root = {
+			OR = {
+				dread >= 40
+				has_trait = vengeful
+				has_trait = wrathful
+			}
+		}
+	}
+
+	ai_will_do = {
+		base = 20
+		modifier = {
+			add = 25
+			root = {
+				OR = {
+					has_trait = vengeful
+					has_trait = wrathful
+				}
+			}
+		}
+		modifier = {
+			add = 15
+			root = { dread >= 60 }
+		}
+		modifier = {
+			add = -10
+			root = { has_trait = compassionate }
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+}

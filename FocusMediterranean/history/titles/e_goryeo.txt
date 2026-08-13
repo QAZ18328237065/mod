@@ -1,0 +1,110 @@
+﻿e_goryeo = {
+
+	500.1.1 = {
+		government = meritocratic_government
+ 	}
+	
+	918.1.1 = {
+		holder = korean_wang_goryeo_1 
+ 		effect = {
+			if = { 
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_chinese }
+			}
+			set_title_name = "cn_goryeo"
+ 		}
+	}
+	943.7.4 = {
+		holder = korean_wang_goryeo_2 
+	}
+	945.1.1 = {
+		holder = korean_wang_goryeo_3 
+	}
+	949.1.1 = {
+		holder = korean_wang_goryeo_4 
+	}
+	975.1.1 = {
+		holder = korean_wang_goryeo_5 
+	}
+	981.1.1 = {
+		holder = korean_wang_goryeo_7 
+	}
+	997.1.1 = {
+		holder = korean_wang_goryeo_8 
+	}
+	1009.1.1 = {
+		holder = korean_wang_goryeo_10 
+	}
+	1031.1.1 = {
+		holder = korean_wang_goryeo_11 
+	}
+	1034.1.1 = {
+		holder = korean_wang_goryeo_12 
+	}
+	1046.1.1 = {
+		holder = korean_wang_goryeo_13 
+	}
+	1066.1.1 = {
+		effect = {
+			set_variable = {
+				name = administrative_ui_special_title
+				value = title:k_yongson_throne
+			}
+		}
+	}
+	1083.1.1 = {
+		holder = korean_wang_goryeo_14 
+	}
+	1083.6.1 = {
+		holder = korean_wang_goryeo_15 
+	}
+	1094.1.1 = {
+		holder = korean_wang_goryeo_16 
+	}
+	1095.1.1 = {
+		holder = korean_wang_goryeo_17 
+	}
+	1105.1.1 = {
+		holder = korean_wang_goryeo_18 
+	}
+	1122.1.1 = {
+		holder = korean_wang_goryeo_19 
+	}
+	1146.1.1 = {
+		holder = korean_wang_goryeo_20 
+	}
+	
+	1170.9.2 = {
+		holder = korean_i_jeonju_16 
+		government = meritocratic_government
+	}
+	1174.12.1 = {
+		holder = korean_jeong_haeju_1 
+	}
+}
+
+k_yongson_throne = {
+
+	1170.9.2 = {
+		government = meritocratic_government
+		liege = e_goryeo
+		holder = korean_wang_goryeo_21 
+		effect = {
+			add_title_law = single_heir_succession_law 
+			set_variable = {
+				name = ceremonial_title
+				value = title:e_goryeo
+			}
+			if = { 
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_chinese }
+			}
+		}
+	}
+}

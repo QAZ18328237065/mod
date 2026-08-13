@@ -1,0 +1,411 @@
+﻿# 天下置业——通用投资建城玩法:事件
+# 命名空间 universal_investment(项目名)
+namespace = universal_investment
+
+# ============================================================
+# 0001 开工确认(活动到达后由 on_phase_active 触发,root=玩家)
+# ============================================================
+universal_investment.0001 = {
+	type = character_event
+	title = universal_investment.0001.t
+	desc = universal_investment.0001.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = survey
+	}
+
+	option = {
+		# 开工:扣阶梯建造成本,动工
+		name = universal_investment.0001.a
+		trigger = {
+			location = {
+				has_holding = no
+				NOT = {
+					has_ongoing_construction = yes
+				}
+			}
+			gold >= universal_investment_construction_cost_value
+		}
+		custom_tooltip = universal_investment.0001.a.tt
+		universal_investment_start_construction_effect = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		# 反悔:不扣建造成本,仅亏差旅费
+		name = universal_investment.0001.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# ============================================================
+# 0002 领主敲诈(建造期风险,root=玩家,目标=root.var:universal_investment_risk_target)
+# ============================================================
+universal_investment.0002 = {
+	type = character_event
+	title = universal_investment.0002.t
+	desc = universal_investment.0002.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = disapproval
+	}
+
+	option = {
+		# 付补偿金
+		name = universal_investment.0002.a
+		trigger = {
+			gold >= universal_investment_blackmail_cost_value
+		}
+		universal_investment_blackmail_pay_effect = yes
+		ai_chance = {
+			base = 90
+		}
+	}
+
+	option = {
+		# 强硬拒绝
+		name = universal_investment.0002.b
+		universal_investment_blackmail_defy_effect = yes
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	option = {
+		# 接受没收
+		name = universal_investment.0002.c
+		universal_investment_blackmail_accept_effect = yes
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	after = {
+		remove_variable = universal_investment_risk_target
+	}
+}
+
+# ============================================================
+# 0003 工地事故(建造期风险,root=玩家,目标=root.var:universal_investment_risk_target)
+# ============================================================
+universal_investment.0003 = {
+	type = character_event
+	title = universal_investment.0003.t
+	desc = universal_investment.0003.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+
+	option = {
+		# 修复工地
+		name = universal_investment.0003.a
+		trigger = {
+			gold >= universal_investment_accident_cost_value
+		}
+		universal_investment_accident_repair_effect = yes
+		ai_chance = {
+			base = 95
+		}
+	}
+
+	option = {
+		# 放弃工地
+		name = universal_investment.0003.b
+		universal_investment_blackmail_accept_effect = yes
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	after = {
+		remove_variable = universal_investment_risk_target
+	}
+}
+
+# ============================================================
+# 0004 完工通知(仅玩家,由结算 effect 触发)
+# ============================================================
+universal_investment.0004 = {
+	type = character_event
+	title = universal_investment.0004.t
+	desc = universal_investment.0004.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = universal_investment.0004.a
+	}
+
+	after = {
+		remove_variable = universal_investment_notification_target
+	}
+}
+
+# ============================================================
+# 0005 年金年度处理(隐藏,由 yearly_playable_pulse 触发,玩家与 AI 共用)
+# ============================================================
+universal_investment.0005 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_alive = yes
+		is_landed = yes
+		has_variable_list = universal_investment_portfolio
+	}
+
+	immediate = {
+		root = {
+			set_variable = {
+				name = universal_investment_report_gold
+				value = 0
+			}
+			set_variable = {
+				name = universal_investment_report_loss
+				value = 0
+			}
+		}
+		every_in_list = {
+			variable = universal_investment_portfolio
+			universal_investment_process_annuity_effect = yes
+		}
+		if = {
+			limit = {
+				is_ai = no
+				OR = {
+					var:universal_investment_report_gold >= 1
+					var:universal_investment_report_loss >= 1
+				}
+			}
+			trigger_event = {
+				id = universal_investment.0007
+			}
+		}
+	}
+}
+
+# ============================================================
+# 0006 赖账交涉(玩家,由年金处理触发,目标=root.var:universal_investment_dispute_target)
+# ============================================================
+universal_investment.0006 = {
+	type = character_event
+	title = universal_investment.0006.t
+	desc = universal_investment.0006.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = disappointed
+	}
+
+	option = {
+		# 谈判
+		name = universal_investment.0006.a
+		universal_investment_dispute_negotiate_effect = yes
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	option = {
+		# 贿赂
+		name = universal_investment.0006.b
+		trigger = {
+			gold >= 100
+		}
+		universal_investment_dispute_bribe_effect = yes
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	option = {
+		# 威胁
+		name = universal_investment.0006.c
+		universal_investment_dispute_intimidate_effect = yes
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	option = {
+		# 放弃
+		name = universal_investment.0006.d
+		universal_investment_dispute_abandon_effect = yes
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	after = {
+		remove_variable = universal_investment_dispute_target
+	}
+}
+
+# ============================================================
+# 0007 年度投资报告(仅玩家,由年金处理触发)
+# ============================================================
+universal_investment.0007 = {
+	type = character_event
+	title = universal_investment.0007.t
+	desc = universal_investment.0007.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = universal_investment.0007.a
+	}
+}
+
+# ============================================================
+# 0008 里程碑:累计建成 3 座
+# ============================================================
+universal_investment.0008 = {
+	type = character_event
+	title = universal_investment.0008.t
+	desc = universal_investment.0008.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		add_prestige = 500
+	}
+
+	option = {
+		name = universal_investment.0008.a
+	}
+}
+
+# ============================================================
+# 0009 里程碑:累计建成 5 座
+# ============================================================
+universal_investment.0009 = {
+	type = character_event
+	title = universal_investment.0009.t
+	desc = universal_investment.0009.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		add_prestige = 1500
+		give_nickname = nick_the_city_builder
+	}
+
+	option = {
+		name = universal_investment.0009.a
+	}
+}
+
+# ============================================================
+# 0010 里程碑:累计建成 10 座
+# ============================================================
+universal_investment.0010 = {
+	type = character_event
+	title = universal_investment.0010.t
+	desc = universal_investment.0010.desc
+	theme = stewardship
+	override_background = {
+		reference = terrain
+	}
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		add_prestige = 3000
+	}
+
+	option = {
+		name = universal_investment.0010.a
+	}
+}
+
+# ============================================================
+# 0011 建造监控(隐藏,月度自循环,root=玩家)
+# 逐笔检查在建投资:完工结算 / 取消停跟 / 风险判定
+# 无 pending 后链自灭(watcher_active 复位,下次开工重开)
+# ============================================================
+universal_investment.0011 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_alive = yes
+		has_variable_list = universal_investment_pending
+	}
+
+	immediate = {
+		every_in_list = {
+			variable = universal_investment_pending
+			universal_investment_check_pending_effect = yes
+		}
+		if = {
+			limit = {
+				any_in_list = {
+					variable = universal_investment_pending
+					var:universal_investment_pending = yes
+				}
+			}
+			trigger_event = {
+				id = universal_investment.0011
+				months = 1
+			}
+		}
+		else = {
+			remove_variable = universal_investment_watcher_active
+		}
+	}
+}

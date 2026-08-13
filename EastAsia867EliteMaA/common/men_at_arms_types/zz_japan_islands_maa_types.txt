@@ -1,0 +1,78 @@
+﻿# 日本诸岛867精锐兵种 - ainu 阿伊努 / ryukyuan 琉球 逐文化绑定 # ainu: 阿伊努猎手队(散兵) N 60-61 (日韩权重)
+# ryukyuan: 琉球弓手(弓兵) N 60-61
+# emishi 虾夷已有原版虾夷骑手 emishi_horse_archers 覆盖, 本 mod 不重复 # 数值按 project_plan/00_balance_model.md v4.2 验证通过
+
+# (文件级作用域)
+@provisions_cost_infantry_cheap = 3
+@provisions_cost_infantry_moderate = 7
+@cultural_maa_extra_ai_score = 80
+
+# 阿伊努猎手队 - 北海道渔猎部落, 森林山地猎手, 类型: 散兵
+ainu_hunters = {
+	type = skirmishers
+
+	damage = 19
+	toughness = 14
+	pursuit = 16
+	screen = 14
+
+	terrain_bonus = {
+		forest = { damage = 6 toughness = 4 }
+		mountains = { damage = 6 toughness = 4 }
+		hills = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:ainu }
+	}
+
+	buy_cost = { gold = 50 }
+	low_maintenance_cost = { gold = 0.18 }
+	high_maintenance_cost = { gold = 0.54 }
+	provision_cost = @provisions_cost_infantry_cheap
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = skirmishers
+}
+
+# 琉球弓手 - 琉球列岛岛民, 海防弓手, 类型: 弓兵
+ryukyuan_archers = {
+	type = archers
+
+	damage = 24
+	toughness = 11
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		mountains = { damage = 8 toughness = 4 }
+		hills = { damage = 8 toughness = 4 }
+		forest = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:ryukyuan }
+	}
+
+	buy_cost = { gold = 56 }
+	low_maintenance_cost = { gold = 0.2 }
+	high_maintenance_cost = { gold = 0.6 }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}

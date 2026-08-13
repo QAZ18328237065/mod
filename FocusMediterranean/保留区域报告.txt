@@ -1,0 +1,1424 @@
+﻿《聚焦地中海》保留区域报告
+生成时间: 2026-08-12 14:25:25
+
+地块总数: 3337 | 禁制省份: 9394
+顶级霸权/帝国: 10
+
+【简略汇总】（按地块数排序）
+   1. e_byzantium          帝国    708 地块
+        k_saruhan (王国) 0 地块
+        k_trinacria (王国) 0 地块
+        k_tekke (王国) 0 地块
+        k_trebizond (王国) 0 地块
+        k_ottoman (王国) 0 地块
+        k_rum (王国) 0 地块
+        k_mentese (王国) 0 地块
+        k_karaman (王国) 0 地块
+        k_germiyan (王国) 0 地块
+        k_eretnid (王国) 0 地块
+        k_aydin (王国) 0 地块
+        k_candar (王国) 0 地块
+        k_thessalonika (王国) 68 地块
+        k_epirus (王国) 35 地块
+        k_hellas (王国) 24 地块
+        k_krete (王国) 6 地块
+        k_croatia (王国) 85 地块
+        k_serbia (王国) 41 地块
+        k_bosnia (王国) 0 地块
+        k_bulgaria (王国) 95 地块
+        k_cyprus (王国) 6 地块
+        k_nikaea (王国) 66 地块
+        k_anatolia (王国) 81 地块
+        k_pontus (王国) 52 地块
+        k_armenia (王国) 48 地块
+        k_georgia (王国) 44 地块
+        k_sicily (王国) 53 地块
+        k_venice (王国) 4 地块
+        k_armenian_principality (王国) 0 地块
+        k_old_armenia (王国) 0 地块
+   2. e_persia             帝国    539 地块
+        k_persia (王国) 143 地块
+        k_khorasan (王国) 105 地块
+        k_daylam (王国) 69 地块
+        k_makran (王国) 61 地块
+        k_kabulistan (王国) 28 地块
+        k_mesopotamia (王国) 62 地块
+        k_jazira (王国) 71 地块
+   3. e_germany            帝国    479 地块
+        k_saxony (王国) 65 地块
+        k_frisia (王国) 41 地块
+        k_lotharingia (王国) 87 地块
+        k_bavaria (王国) 132 地块
+        k_east_francia (王国) 154 地块
+   4. e_arabia             帝国    368 地块
+        k_israel (王国) 0 地块
+        k_arabia (王国) 144 地块
+        k_yemen (王国) 53 地块
+        k_egypt (王国) 88 地块
+        k_jerusalem (王国) 21 地块
+        k_syria (王国) 62 地块
+   5. e_france             帝国    349 地块
+        k_france (王国) 151 地块
+        k_aquitaine (王国) 116 地块
+        k_brittany (王国) 17 地块
+        k_burgundy (王国) 65 地块
+   6. e_spain              帝国    270 地块
+        k_andalusia (王国) 62 地块
+        k_badajoz (王国) 32 地块
+        k_valencia (王国) 31 地块
+        k_castille (王国) 23 地块
+        k_aragon (王国) 48 地块
+        k_navarra (王国) 12 地块
+        k_asturias (王国) 0 地块
+        k_leon (王国) 25 地块
+        k_spanish_galicia (王国) 18 地块
+        k_portugal (王国) 19 地块
+   7. e_carpathia          帝国    246 地块
+        k_dacia (王国) 39 地块
+        k_moldavia (王国) 37 地块
+        k_hungary (王国) 170 地块
+   8. e_maghreb            帝国    217 地块
+        k_maghreb (王国) 82 地块
+        k_canarias (王国) 0 地块
+        k_tahert (王国) 64 地块
+        k_africa (王国) 71 地块
+   9. e_italy              帝国    161 地块
+        k_genoa (王国) 0 地块
+        k_pisa (王国) 0 地块
+        k_naples (王国) 0 地块
+        k_italy (王国) 94 地块
+        k_sardinia (王国) 19 地块
+        k_romagna (王国) 48 地块
+  10. e_latin_empire       帝国      0 地块
+
+层级统计: 霸权 0 | 帝国 0 | 王国 75 | 公国 250 | 伯爵领 983 | 男爵领 3328
+
+【详细信息】
+
+◆ e_byzantium 【帝国】 (708 地块)
+├─ k_saruhan (王国) (0 地块)
+├─ k_trinacria (王国) (0 地块)
+├─ k_tekke (王国) (0 地块)
+├─ k_trebizond (王国) (0 地块)
+├─ k_ottoman (王国) (0 地块)
+├─ k_rum (王国) (0 地块)
+├─ k_mentese (王国) (0 地块)
+├─ k_karaman (王国) (0 地块)
+├─ k_germiyan (王国) (0 地块)
+├─ k_eretnid (王国) (0 地块)
+├─ k_aydin (王国) (0 地块)
+├─ k_candar (王国) (0 地块)
+├─ k_thessalonika (王国) (68 地块)
+│   ├─ d_thrace (公国) (12 地块)  +3伯爵领/12男爵
+│   │   ├─ c_byzantion (伯爵领) (1 地块)
+│   │   ├─ c_kalliopolis (伯爵领) (5 地块)
+│   │   └─ c_brysis (伯爵领) (6 地块)
+│   ├─ d_strymon (公国) (10 地块)  +2伯爵领/10男爵
+│   │   ├─ c_mosynopolis (伯爵领) (5 地块)
+│   │   └─ c_serres (伯爵领) (5 地块)
+│   ├─ d_aegean_islands (公国) (18 地块)  +5伯爵领/18男爵
+│   │   ├─ c_naxos (伯爵领) (4 地块)
+│   │   ├─ c_abydos (伯爵领) (5 地块)
+│   │   ├─ c_lesbos (伯爵领) (3 地块)
+│   │   ├─ c_chios (伯爵领) (2 地块)
+│   │   └─ c_rhodos (伯爵领) (4 地块)
+│   ├─ d_thessalonika (公国) (13 地块)  +3伯爵领/13男爵
+│   │   ├─ c_thessalonika (伯爵领) (4 地块)
+│   │   ├─ c_chalkidike (伯爵领) (4 地块)
+│   │   └─ c_veria (伯爵领) (5 地块)
+│   └─ d_thessaly (公国) (15 地块)  +4伯爵领/15男爵
+│       ├─ c_thessalia (伯爵领) (4 地块)
+│       ├─ c_demetrias (伯爵领) (3 地块)
+│       ├─ c_neopatras (伯爵领) (4 地块)
+│       └─ c_thessaliotis (伯爵领) (4 地块)
+├─ k_epirus (王国) (35 地块)
+│   ├─ d_epirus (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_nicopolis (伯爵领) (4 地块)
+│   │   ├─ c_epeiros (伯爵领) (4 地块)
+│   │   ├─ c_aetolia (伯爵领) (3 地块)
+│   │   └─ c_metzovo (伯爵领) (4 地块)
+│   ├─ d_dyrrachion (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_dyrrachion (伯爵领) (2 地块)
+│   │   ├─ c_arbanon (伯爵领) (4 地块)
+│   │   ├─ c_debar (伯爵领) (3 地块)
+│   │   ├─ c_antipatreia (伯爵领) (5 地块)
+│   │   └─ c_avlonas (伯爵领) (2 地块)
+│   └─ d_cephalonia (公国) (4 地块)  +2伯爵领/4男爵
+│       ├─ c_cephalonia (伯爵领) (2 地块)
+│       └─ c_buthrotum (伯爵领) (2 地块)
+├─ k_hellas (王国) (24 地块)
+│   ├─ d_athens (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_attica (伯爵领) (3 地块)
+│   │   ├─ c_boeotia (伯爵领) (3 地块)
+│   │   └─ c_euboea (伯爵领) (3 地块)
+│   └─ d_achaia (公国) (15 地块)  +4伯爵领/15男爵
+│       ├─ c_achaia (伯爵领) (4 地块)
+│       ├─ c_korinthos (伯爵领) (4 地块)
+│       ├─ c_messenia (伯爵领) (4 地块)
+│       └─ c_laconia (伯爵领) (3 地块)
+├─ k_krete (王国) (6 地块)
+│   └─ d_krete (公国) (6 地块)  +2伯爵领/6男爵
+│       ├─ c_chandax (伯爵领) (3 地块)
+│       └─ c_chania (伯爵领) (3 地块)
+├─ k_croatia (王国) (85 地块)
+│   ├─ d_dalmatia (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_zadar (伯爵领) (4 地块)
+│   │   ├─ c_knin (伯爵领) (3 地块)
+│   │   └─ c_cetina (伯爵领) (3 地块)
+│   ├─ d_croatia (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_gacka (伯爵领) (3 地块)
+│   │   ├─ c_lika (伯爵领) (4 地块)
+│   │   ├─ c_cherso (伯爵领) (2 地块)
+│   │   └─ c_modrus (伯爵领) (4 地块)
+│   ├─ d_slavonia (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_zagreb (伯爵领) (4 地块)
+│   │   ├─ c_zagorje (伯爵领) (5 地块)
+│   │   ├─ c_pozega (伯爵领) (3 地块)
+│   │   └─ c_vukovar (伯爵领) (3 地块)
+│   ├─ d_bosna (公国) (18 地块)  +4伯爵领/18男爵
+│   │   ├─ c_rama (伯爵领) (5 地块)
+│   │   ├─ c_donjikraji (伯爵领) (5 地块)
+│   │   ├─ c_vhrbosna (伯爵领) (5 地块)
+│   │   └─ c_pset (伯爵领) (3 地块)
+│   ├─ d_lower_bosna (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_soli (伯爵领) (3 地块)
+│   │   ├─ c_usora (伯爵领) (4 地块)
+│   │   ├─ c_vodica (伯爵领) (2 地块)
+│   │   └─ c_vrbas (伯爵领) (3 地块)
+│   ├─ d_usora (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_zachlumia (伯爵领) (5 地块)
+│   │   ├─ c_zelengora (伯爵领) (3 地块)
+│   │   ├─ c_zavrsje (伯爵领) (4 地块)
+│   │   └─ c_pagania (伯爵领) (3 地块)
+│   └─ d_ragusa (公国) (2 地块)  +1伯爵领/2男爵
+│       └─ c_ragusa (伯爵领) (2 地块)
+├─ k_serbia (王国) (41 地块)
+│   ├─ d_rashka (公国) (21 地块)  +5伯爵领/21男爵
+│   │   ├─ c_rashka (伯爵领) (4 地块)
+│   │   ├─ c_zlatibor (伯爵领) (3 地块)
+│   │   ├─ c_sumadija (伯爵领) (3 地块)
+│   │   ├─ c_podrinje (伯爵领) (6 地块)
+│   │   └─ c_hvosno (伯爵领) (5 地块)
+│   ├─ d_macva (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_macva (伯爵领) (4 地块)
+│   │   └─ c_beograd (伯爵领) (4 地块)
+│   └─ d_duklja (公国) (12 地块)  +3伯爵领/12男爵
+│       ├─ c_duklja (伯爵领) (6 地块)
+│       ├─ c_pomorje (伯爵领) (3 地块)
+│       └─ c_travunia (伯爵领) (3 地块)
+├─ k_bosnia (王国) (0 地块)
+├─ k_bulgaria (王国) (95 地块)
+│   ├─ d_vidin (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_vidin (伯爵领) (5 地块)
+│   │   └─ c_branicevo (伯爵领) (3 地块)
+│   ├─ d_turnovo (公国) (26 地块)  +6伯爵领/26男爵
+│   │   ├─ c_turnovo (伯爵领) (4 地块)
+│   │   ├─ c_sredets (伯爵领) (5 地块)
+│   │   ├─ c_nikopolis (伯爵领) (4 地块)
+│   │   ├─ c_dorostorum (伯爵领) (6 地块)
+│   │   ├─ c_vratsa (伯爵领) (4 地块)
+│   │   └─ c_aytos (伯爵领) (3 地块)
+│   ├─ d_dobrudja (公国) (7 地块)  +2伯爵领/7男爵
+│   │   ├─ c_constanta (伯爵领) (4 地块)
+│   │   └─ c_mesembria (伯爵领) (3 地块)
+│   ├─ d_bulgaria (公国) (28 地块)  +7伯爵领/28男爵
+│   │   ├─ c_naissus (伯爵领) (4 地块)
+│   │   ├─ c_pomoravlje (伯爵领) (4 地块)
+│   │   ├─ c_velbazhd (伯爵领) (3 地块)
+│   │   ├─ c_pirin (伯爵领) (2 地块)
+│   │   ├─ c_strumica (伯爵领) (4 地块)
+│   │   ├─ c_skopje (伯爵领) (6 地块)
+│   │   └─ c_ohrid (伯爵领) (5 地块)
+│   └─ d_philippopolis (公国) (26 地块)  +7伯爵领/26男爵
+│       ├─ c_philippopolis (伯爵领) (4 地块)
+│       ├─ c_kran (伯爵领) (4 地块)
+│       ├─ c_beroe (伯爵领) (3 地块)
+│       ├─ c_burgas (伯爵领) (3 地块)
+│       ├─ c_adrianopolis (伯爵领) (3 地块)
+│       ├─ c_zherkovo (伯爵领) (5 地块)
+│       └─ c_rhodopes (伯爵领) (4 地块)
+├─ k_cyprus (王国) (6 地块)
+│   └─ d_cyprus (公国) (6 地块)  +2伯爵领/6男爵
+│       ├─ c_nicosia (伯爵领) (3 地块)
+│       └─ c_famagusta (伯爵领) (3 地块)
+├─ k_nikaea (王国) (66 地块)
+│   ├─ d_opsikion (公国) (19 地块)  +4伯爵领/19男爵
+│   │   ├─ c_nikaea (伯爵领) (4 地块)
+│   │   ├─ c_mysia (伯爵领) (4 地块)
+│   │   ├─ c_prusa (伯爵领) (5 地块)
+│   │   └─ c_phrygia (伯爵领) (6 地块)
+│   ├─ d_ephese (公国) (9 地块)  +2伯爵领/9男爵
+│   │   ├─ c_ionia (伯爵领) (6 地块)
+│   │   └─ c_aeolis (伯爵领) (3 地块)
+│   ├─ d_thracesia (公国) (17 地块)  +4伯爵领/17男爵
+│   │   ├─ c_lydia (伯爵领) (6 地块)
+│   │   ├─ c_thyatira (伯爵领) (4 地块)
+│   │   ├─ c_hadrianeia (伯爵领) (3 地块)
+│   │   └─ c_chonae (伯爵领) (4 地块)
+│   ├─ d_optimatoi (公国) (7 地块)  +2伯爵领/7男爵
+│   │   ├─ c_bithynia (伯爵领) (4 地块)
+│   │   └─ c_tarsos (伯爵领) (3 地块)
+│   └─ d_bucellaria (公国) (14 地块)  +3伯爵领/14男爵
+│       ├─ c_honorias (伯爵领) (4 地块)
+│       ├─ c_galatia (伯爵领) (6 地块)
+│       └─ c_hadrianopolis (伯爵领) (4 地块)
+├─ k_anatolia (王国) (81 地块)
+│   ├─ d_cilicia (公国) (17 地块)  +4伯爵领/17男爵
+│   │   ├─ c_cilicia (伯爵领) (6 地块)
+│   │   ├─ c_seleucia (伯爵领) (4 地块)
+│   │   ├─ c_lycandus (伯爵领) (4 地块)
+│   │   └─ c_tall_hamid (伯爵领) (3 地块)
+│   ├─ d_cibyrrhaeot (公国) (15 地块)  +3伯爵领/15男爵
+│   │   ├─ c_lycia (伯爵领) (6 地块)
+│   │   ├─ c_caria (伯爵领) (4 地块)
+│   │   └─ c_pamphylia (伯爵领) (5 地块)
+│   ├─ d_anatolia (公国) (29 地块)  +7伯爵领/29男爵
+│   │   ├─ c_lycaonia (伯爵领) (4 地块)
+│   │   ├─ c_pacatiana (伯爵领) (5 地块)
+│   │   ├─ c_pisidia (伯爵领) (4 地块)
+│   │   ├─ c_selge (伯爵领) (5 地块)
+│   │   ├─ c_galatia_salutaris (伯爵领) (3 地块)
+│   │   ├─ c_philomelium (伯爵领) (4 地块)
+│   │   └─ c_isauria (伯爵领) (4 地块)
+│   ├─ d_cappadocia (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_cappadocia (伯爵领) (5 地块)
+│   │   └─ c_lower_galatia (伯爵领) (3 地块)
+│   └─ d_charsianon (公国) (12 地块)  +3伯爵领/12男爵
+│       ├─ c_charsianon (伯爵领) (6 地块)
+│       ├─ c_kaisereia (伯爵领) (4 地块)
+│       └─ c_kyzistra (伯爵领) (2 地块)
+├─ k_pontus (王国) (52 地块)
+│   ├─ d_paphlagonia (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_paphlagonia (伯爵领) (4 地块)
+│   │   └─ c_pompeiopolis (伯爵领) (4 地块)
+│   ├─ d_armeniac (公国) (14 地块)  +4伯爵领/14男爵
+│   │   ├─ c_helenopontus (伯爵领) (5 地块)
+│   │   ├─ c_sinope (伯爵领) (3 地块)
+│   │   ├─ c_euchaita (伯爵领) (3 地块)
+│   │   └─ c_zela (伯爵领) (3 地块)
+│   ├─ d_sebasteia (公国) (12 地块)  +3伯爵领/12男爵
+│   │   ├─ c_sebasteia (伯爵领) (4 地块)
+│   │   ├─ c_azysia (伯爵领) (5 地块)
+│   │   └─ c_ablastha (伯爵领) (3 地块)
+│   └─ d_chaldia (公国) (18 地块)  +4伯爵领/18男爵
+│       ├─ c_trebizond (伯爵领) (5 地块)
+│       ├─ c_cerasus (伯爵领) (4 地块)
+│       ├─ c_colonea (伯爵领) (5 地块)
+│       └─ c_satala (伯爵领) (4 地块)
+├─ k_armenia (王国) (48 地块)
+│   ├─ d_mesopotamia (公国) (11 地块)  +3伯爵领/11男爵
+│   │   ├─ c_theodosiopolis (伯爵领) (3 地块)
+│   │   ├─ c_melitene (伯爵领) (4 地块)
+│   │   └─ c_mesopotamia (伯爵领) (4 地块)
+│   ├─ d_vaspurakan (公国) (13 地块)  +3伯爵领/13男爵
+│   │   ├─ c_vaspurakan (伯爵领) (5 地块)
+│   │   ├─ c_turuberan (伯爵领) (3 地块)
+│   │   └─ c_apahunik (伯爵领) (5 地块)
+│   └─ d_greater_armenia (公国) (24 地块)  +6伯爵领/24男爵
+│       ├─ c_hayk (伯爵领) (5 地块)
+│       ├─ c_bagrewand (伯爵领) (4 地块)
+│       ├─ c_vanand (伯爵领) (3 地块)
+│       ├─ c_khachen (伯爵领) (6 地块)
+│       ├─ c_suenik (伯爵领) (3 地块)
+│       └─ c_dvin (伯爵领) (3 地块)
+├─ k_georgia (王国) (44 地块)
+│   ├─ d_tao-klarjeti (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_tao (伯爵领) (3 地块)
+│   │   ├─ c_klarjeti (伯爵领) (4 地块)
+│   │   ├─ c_kartli (伯爵领) (3 地块)
+│   │   └─ c_acampse (伯爵领) (2 地块)
+│   ├─ d_abkhazia (公国) (16 地块)  +4伯爵领/16男爵
+│   │   ├─ c_abkhazia (伯爵领) (4 地块)
+│   │   ├─ c_odishi (伯爵领) (5 地块)
+│   │   ├─ c_svaneti (伯爵领) (3 地块)
+│   │   └─ c_guria (伯爵领) (4 地块)
+│   └─ d_georgia (公国) (16 地块)  +4伯爵领/16男爵
+│       ├─ c_tbilisi (伯爵领) (3 地块)
+│       ├─ c_lori (伯爵领) (3 地块)
+│       ├─ c_kakheti (伯爵领) (6 地块)
+│       └─ c_hereti (伯爵领) (4 地块)
+├─ k_sicily (王国) (53 地块)
+│   ├─ d_sicily (公国) (14 地块)  +5伯爵领/14男爵
+│   │   ├─ c_palermo (伯爵领) (4 地块)
+│   │   ├─ c_messina (伯爵领) (3 地块)
+│   │   ├─ c_siracusa (伯爵领) (3 地块)
+│   │   ├─ c_agrigento (伯爵领) (3 地块)
+│   │   └─ c_malta (伯爵领) (1 地块)
+│   ├─ d_benevento (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_benevento (伯爵领) (5 地块)
+│   │   └─ c_foggia (伯爵领) (3 地块)
+│   ├─ d_capua (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_capua (伯爵领) (3 地块)
+│   │   └─ c_napoli (伯爵领) (3 地块)
+│   ├─ d_apulia (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_apulia (伯爵领) (4 地块)
+│   │   ├─ c_bari (伯爵领) (3 地块)
+│   │   └─ c_lecce (伯爵领) (3 地块)
+│   ├─ d_salerno (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_salerno (伯爵领) (4 地块)
+│   │   └─ c_camarda (伯爵领) (2 地块)
+│   └─ d_calabria (公国) (9 地块)  +3伯爵领/9男爵
+│       ├─ c_reggio_calabria (伯爵领) (3 地块)
+│       ├─ c_cosenza (伯爵领) (3 地块)
+│       └─ c_rossano (伯爵领) (3 地块)
+├─ k_venice (王国) (4 地块)
+│   └─ d_venice (公国) (4 地块)  +2伯爵领/4男爵
+│       ├─ c_venezia (伯爵领) (1 地块)
+│       └─ c_veneto (伯爵领) (3 地块)
+├─ k_armenian_principality (王国) (0 地块)
+└─ k_old_armenia (王国) (0 地块)
+
+◆ e_persia 【帝国】 (539 地块)
+├─ k_persia (王国) (143 地块)
+│   ├─ d_isfahan (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_isfahan (伯爵领) (4 地块)
+│   │   ├─ c_ardestan (伯爵领) (4 地块)
+│   │   ├─ c_qumisha (伯爵领) (5 地块)
+│   │   └─ c_luristan (伯爵领) (2 地块)
+│   ├─ d_kirman (公国) (21 地块)  +5伯爵领/21男爵
+│   │   ├─ c_kirman (伯爵领) (6 地块)
+│   │   ├─ c_behabad (伯爵领) (4 地块)
+│   │   ├─ c_bam (伯爵领) (5 地块)
+│   │   ├─ c_sirjan (伯爵领) (3 地块)
+│   │   └─ c_jiruft (伯爵领) (3 地块)
+│   ├─ d_yazd (公国) (14 地块)  +3伯爵领/14男爵
+│   │   ├─ c_yazd (伯爵领) (6 地块)
+│   │   ├─ c_mafaza (伯爵领) (4 地块)
+│   │   └─ c_shahre-babak (伯爵领) (4 地块)
+│   ├─ d_rayy (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_rayy (伯爵领) (5 地块)
+│   │   ├─ c_khuwar (伯爵领) (2 地块)
+│   │   └─ c_qom (伯爵领) (3 地块)
+│   ├─ d_hamadan (公国) (12 地块)  +3伯爵领/12男爵
+│   │   ├─ c_hamadan (伯爵领) (5 地块)
+│   │   ├─ c_nihawand (伯爵领) (3 地块)
+│   │   └─ c_dinawar (伯爵领) (4 地块)
+│   ├─ d_fars (公国) (31 地块)  +7伯爵领/31男爵
+│   │   ├─ c_shiraz (伯爵领) (5 地块)
+│   │   ├─ c_lar (伯爵领) (3 地块)
+│   │   ├─ c_darabjerd (伯爵领) (5 地块)
+│   │   ├─ c_arrajan (伯爵领) (5 地块)
+│   │   ├─ c_istakhr (伯爵领) (5 地块)
+│   │   ├─ c_mandestan (伯爵领) (5 地块)
+│   │   └─ c_irahistan (伯爵领) (3 地块)
+│   ├─ d_hormuz (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_hormuz (伯爵领) (3 地块)
+│   │   └─ c_sif-i-umara (伯爵领) (5 地块)
+│   ├─ d_khuzestan (公国) (22 地块)  +6伯爵领/22男爵
+│   │   ├─ c_ahvaz (伯爵领) (5 地块)
+│   │   ├─ c_sardan (伯爵领) (3 地块)
+│   │   ├─ c_ramhurmuz (伯爵领) (4 地块)
+│   │   ├─ c_tustar (伯爵领) (5 地块)
+│   │   ├─ c_abbadan (伯爵领) (3 地块)
+│   │   └─ c_dawraq (伯爵领) (2 地块)
+│   └─ d_kermanshah (公国) (10 地块)  +3伯爵领/10男爵
+│       ├─ c_kermanshah (伯爵领) (4 地块)
+│       ├─ c_masabadhan (伯爵领) (3 地块)
+│       └─ c_saimara (伯爵领) (3 地块)
+├─ k_khorasan (王国) (105 地块)
+│   ├─ d_nishapur (公国) (21 地块)  +6伯爵领/21男爵
+│   │   ├─ c_nishapur (伯爵领) (5 地块)
+│   │   ├─ c_tus (伯爵领) (4 地块)
+│   │   ├─ c_samaiqan (伯爵领) (3 地块)
+│   │   ├─ c_juwain (伯爵领) (2 地块)
+│   │   ├─ c_baihaq (伯爵领) (3 地块)
+│   │   └─ c_damghan (伯爵领) (4 地块)
+│   ├─ d_merv (公国) (28 地块)  +7伯爵领/28男爵
+│   │   ├─ c_merv (伯爵领) (6 地块)
+│   │   ├─ c_sarakhs (伯爵领) (3 地块)
+│   │   ├─ c_marvarrud (伯爵领) (5 地块)
+│   │   ├─ c_rivsharan (伯爵领) (3 地块)
+│   │   ├─ c_guzgan (伯爵领) (6 地块)
+│   │   ├─ c_amol (伯爵领) (3 地块)
+│   │   └─ c_zamm (伯爵领) (2 地块)
+│   ├─ d_ghur (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_ghur (伯爵领) (4 地块)
+│   │   ├─ c_darmashan (伯爵领) (3 地块)
+│   │   └─ c_upper_ghur (伯爵领) (3 地块)
+│   ├─ d_herat (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_herat (伯爵领) (3 地块)
+│   │   ├─ c_bakharz (伯爵领) (5 地块)
+│   │   ├─ c_badghis (伯爵领) (3 地块)
+│   │   ├─ c_sabzevar (伯爵领) (3 地块)
+│   │   └─ c_zirkuh (伯爵领) (2 地块)
+│   ├─ d_balkh (公国) (14 地块)  +3伯爵领/14男爵
+│   │   ├─ c_balkh (伯爵领) (5 地块)
+│   │   ├─ c_west-tokharestan (伯爵领) (3 地块)
+│   │   └─ c_east-tokharestan (伯爵领) (6 地块)
+│   ├─ d_nasa (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_abivard (伯爵领) (4 地块)
+│   │   └─ c_farava (伯爵领) (2 地块)
+│   └─ d_kohestan (公国) (10 地块)  +2伯爵领/10男爵
+│       ├─ c_qain (伯爵领) (5 地块)
+│       └─ c_tun (伯爵领) (5 地块)
+├─ k_daylam (王国) (69 地块)
+│   ├─ d_daylam (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_gilan (伯爵领) (3 地块)
+│   │   ├─ c_zanjan (伯爵领) (3 地块)
+│   │   └─ c_qazwin (伯爵领) (3 地块)
+│   ├─ d_tabaristan (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_mazandaran (伯爵领) (3 地块)
+│   │   ├─ c_ruyan (伯爵领) (3 地块)
+│   │   └─ c_baduspan (伯爵领) (3 地块)
+│   ├─ d_gurgan (公国) (8 地块)  +2伯爵领/8男爵
+│   │   ├─ c_gurgan (伯爵领) (4 地块)
+│   │   └─ c_dihistan (伯爵领) (4 地块)
+│   ├─ d_azerbaijan (公国) (26 地块)  +6伯爵领/26男爵
+│   │   ├─ c_tabriz (伯爵领) (6 地块)
+│   │   ├─ c_talish (伯爵领) (2 地块)
+│   │   ├─ c_ardabil (伯爵领) (4 地块)
+│   │   ├─ c_maragha (伯爵领) (6 地块)
+│   │   ├─ c_bailaqan (伯爵领) (4 地块)
+│   │   └─ c_urmiya (伯爵领) (4 地块)
+│   └─ d_shirvan (公国) (17 地块)  +4伯爵领/17男爵
+│       ├─ c_shirvan (伯爵领) (4 地块)
+│       ├─ c_shaki (伯爵领) (4 地块)
+│       ├─ c_aran (伯爵领) (3 地块)
+│       └─ c_mugan (伯爵领) (6 地块)
+├─ k_makran (王国) (61 地块)
+│   ├─ d_makran (公国) (24 地块)  +5伯爵领/24男爵
+│   │   ├─ c_panjgur (伯爵领) (5 地块)
+│   │   ├─ c_kiz (伯爵领) (4 地块)
+│   │   ├─ c_sanij (伯爵领) (4 地块)
+│   │   ├─ c_khawr (伯爵领) (5 地块)
+│   │   └─ c_turan (伯爵领) (6 地块)
+│   ├─ d_jabal_kufs (公国) (14 地块)  +3伯爵领/14男爵
+│   │   ├─ c_bampur (伯爵领) (6 地块)
+│   │   ├─ c_jabal_kufs (伯爵领) (5 地块)
+│   │   └─ c_riqan (伯爵领) (3 地块)
+│   └─ d_sistan (公国) (23 地块)  +5伯爵领/23男爵
+│       ├─ c_zaranj (伯爵领) (5 地块)
+│       ├─ c_nih (伯爵领) (4 地块)
+│       ├─ c_farah (伯爵领) (4 地块)
+│       ├─ c_rudbar (伯爵领) (5 地块)
+│       └─ c_bost (伯爵领) (5 地块)
+├─ k_kabulistan (王国) (28 地块)
+│   ├─ d_kabul (公国) (11 地块)  +3伯爵领/11男爵
+│   │   ├─ c_kabul (伯爵领) (4 地块)
+│   │   ├─ c_bamian (伯爵领) (5 地块)
+│   │   └─ c_chitral (伯爵领) (2 地块)
+│   └─ d_zabulistan (公国) (17 地块)  +4伯爵领/17男爵
+│       ├─ c_ghazna (伯爵领) (5 地块)
+│       ├─ c_zamindawar (伯爵领) (5 地块)
+│       ├─ c_rukhaj (伯爵领) (5 地块)
+│       └─ c_zabulistan (伯爵领) (2 地块)
+├─ k_mesopotamia (王国) (62 地块)
+│   ├─ d_samarra (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_samarra (伯爵领) (4 地块)
+│   │   ├─ c_hulwan (伯爵领) (4 地块)
+│   │   ├─ c_kirkuk (伯爵领) (4 地块)
+│   │   └─ c_takrit (伯爵领) (3 地块)
+│   ├─ d_wasit (公国) (5 地块)  +2伯爵领/5男爵
+│   │   ├─ c_wasit (伯爵领) (3 地块)
+│   │   └─ c_tib (伯爵领) (2 地块)
+│   ├─ d_kufa (公国) (15 地块)  +6伯爵领/15男爵
+│   │   ├─ c_kufa (伯爵领) (3 地块)
+│   │   ├─ c_safata (伯爵领) (3 地块)
+│   │   ├─ c_qadisiya (伯爵领) (3 地块)
+│   │   ├─ c_batiha (伯爵领) (2 地块)
+│   │   ├─ c_akhadid (伯爵领) (2 地块)
+│   │   └─ c_waqisa (伯爵领) (2 地块)
+│   ├─ d_basra (公国) (11 地块)  +3伯爵领/11男爵
+│   │   ├─ c_basra (伯爵领) (4 地块)
+│   │   ├─ c_ubulla (伯爵领) (3 地块)
+│   │   └─ c_rusafa (伯爵领) (4 地块)
+│   └─ d_baghdad (公国) (16 地块)  +5伯爵领/16男爵
+│       ├─ c_baghdad (伯爵领) (6 地块)
+│       ├─ c_iskaf (伯爵领) (3 地块)
+│       ├─ c_anbar (伯爵领) (2 地块)
+│       ├─ c_karbala (伯爵领) (2 地块)
+│       └─ c_badaraya (伯爵领) (3 地块)
+└─ k_jazira (王国) (71 地块)
+    ├─ d_diyarrabia (公国) (27 地块)  +6伯爵领/27男爵
+    │   ├─ c_mosul (伯爵领) (6 地块)
+    │   ├─ c_ninive (伯爵领) (3 地块)
+    │   ├─ c_sinjar (伯爵领) (5 地块)
+    │   ├─ c_nasibin (伯爵领) (4 地块)
+    │   ├─ c_khabur (伯爵领) (6 地块)
+    │   └─ c_upper_khabur (伯爵领) (3 地块)
+    ├─ d_diyarmudar (公国) (8 地块)  +3伯爵领/8男爵
+    │   ├─ c_raqqa (伯爵领) (3 地块)
+    │   ├─ c_harran (伯爵领) (3 地块)
+    │   └─ c_dausar (伯爵领) (2 地块)
+    ├─ d_diyarbakr (公国) (20 地块)  +5伯爵领/20男爵
+    │   ├─ c_amida (伯爵领) (4 地块)
+    │   ├─ c_tall_basma (伯爵领) (2 地块)
+    │   ├─ c_hakkari (伯爵领) (5 地块)
+    │   ├─ c_mayyafariqin (伯爵领) (4 地块)
+    │   └─ c_bakriya (伯爵领) (5 地块)
+    ├─ d_euphrates (公国) (6 地块)  +3伯爵领/6男爵
+    │   ├─ c_rahba (伯爵领) (2 地块)
+    │   ├─ c_hadithat-ana (伯爵领) (2 地块)
+    │   └─ c_al-haditha (伯爵领) (2 地块)
+    └─ d_kurdistan (公国) (10 地块)  +3伯爵领/10男爵
+        ├─ c_irbil (伯爵领) (3 地块)
+        ├─ c_kurdistan (伯爵领) (4 地块)
+        └─ c_shahrazur (伯爵领) (3 地块)
+
+◆ e_germany 【帝国】 (479 地块)
+├─ k_saxony (王国) (65 地块)
+│   ├─ d_angria (公国) (22 地块)  +7伯爵领/22男爵
+│   │   ├─ c_minden (伯爵领) (4 地块)
+│   │   ├─ c_lippe (伯爵领) (3 地块)
+│   │   ├─ c_bremen (伯爵领) (3 地块)
+│   │   ├─ c_wolpe (伯爵领) (3 地块)
+│   │   ├─ c_hannover (伯爵领) (3 地块)
+│   │   ├─ c_hildesheim (伯爵领) (3 地块)
+│   │   └─ c_oldenburg (伯爵领) (3 地块)
+│   ├─ d_westfalen (公国) (19 地块)  +5伯爵领/19男爵
+│   │   ├─ c_osnabruck (伯爵领) (4 地块)
+│   │   ├─ c_tecklenburg (伯爵领) (4 地块)
+│   │   ├─ c_munster (伯爵领) (4 地块)
+│   │   ├─ c_waldeck (伯爵领) (3 地块)
+│   │   └─ c_paderborn (伯爵领) (4 地块)
+│   ├─ d_ostfalen (公国) (15 地块)  +5伯爵领/15男爵
+│   │   ├─ c_luneburg (伯爵领) (4 地块)
+│   │   ├─ c_brunswick (伯爵领) (2 地块)
+│   │   ├─ c_hamburg (伯爵领) (3 地块)
+│   │   ├─ c_dannenberg (伯爵领) (3 地块)
+│   │   └─ c_stendal (伯爵领) (3 地块)
+│   └─ d_holstein (公国) (9 地块)  +3伯爵领/9男爵
+│       ├─ c_lubeck (伯爵领) (3 地块)
+│       ├─ c_stade (伯爵领) (3 地块)
+│       └─ c_ditmarschen (伯爵领) (3 地块)
+├─ k_frisia (王国) (41 地块)
+│   ├─ d_holland (公国) (11 地块)  +3伯爵领/11男爵
+│   │   ├─ c_holland (伯爵领) (4 地块)
+│   │   ├─ c_westfriesland (伯爵领) (4 地块)
+│   │   └─ c_zeeland (伯爵领) (3 地块)
+│   ├─ d_gelre (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_guelders (伯爵领) (3 地块)
+│   │   ├─ c_arnhem (伯爵领) (3 地块)
+│   │   └─ c_zutphen (伯爵领) (3 地块)
+│   ├─ d_utrecht (公国) (11 地块)  +3伯爵领/11男爵
+│   │   ├─ c_nedersticht (伯爵领) (2 地块)
+│   │   ├─ c_oversticht (伯爵领) (5 地块)
+│   │   └─ c_groningen (伯爵领) (4 地块)
+│   └─ d_frisia (公国) (10 地块)  +3伯爵领/10男爵
+│       ├─ c_dokkum (伯爵领) (3 地块)
+│       ├─ c_ostfriesland (伯爵领) (3 地块)
+│       └─ c_frisia (伯爵领) (4 地块)
+├─ k_lotharingia (王国) (87 地块)
+│   ├─ d_luxembourg (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_luxembourg (伯爵领) (5 地块)
+│   │   ├─ c_bouillon (伯爵领) (4 地块)
+│   │   ├─ c_liege (伯爵领) (3 地块)
+│   │   └─ c_namur (伯爵领) (3 地块)
+│   ├─ d_brabant (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_brabant (伯爵领) (3 地块)
+│   │   ├─ c_antwerpen (伯爵领) (3 地块)
+│   │   ├─ c_hainaut (伯爵领) (3 地块)
+│   │   └─ c_cambray (伯爵领) (3 地块)
+│   ├─ d_julich (公国) (12 地块)  +3伯爵领/12男爵
+│   │   ├─ c_aachen (伯爵领) (5 地块)
+│   │   ├─ c_cleves (伯爵领) (4 地块)
+│   │   └─ c_maastricht (伯爵领) (3 地块)
+│   ├─ d_upper_lorraine (公国) (20 地块)  +6伯爵领/20男爵
+│   │   ├─ c_trier (伯爵领) (4 地块)
+│   │   ├─ c_nancy (伯爵领) (4 地块)
+│   │   ├─ c_metz (伯爵领) (4 地块)
+│   │   ├─ c_saarbrucken (伯爵领) (3 地块)
+│   │   ├─ c_puttlingen (伯爵领) (2 地块)
+│   │   └─ c_neufchateau (伯爵领) (3 地块)
+│   ├─ d_lower_lorraine (公国) (21 地块)  +7伯爵领/21男爵
+│   │   ├─ c_cologne (伯爵领) (4 地块)
+│   │   ├─ c_dortmund (伯爵领) (3 地块)
+│   │   ├─ c_arnsberg (伯爵领) (2 地块)
+│   │   ├─ c_mark (伯爵领) (3 地块)
+│   │   ├─ c_koblenz (伯爵领) (4 地块)
+│   │   ├─ c_bergh (伯爵领) (2 地块)
+│   │   └─ c_sayn (伯爵领) (3 地块)
+│   └─ d_bar (公国) (7 地块)  +3伯爵领/7男爵
+│       ├─ c_bar (伯爵领) (3 地块)
+│       ├─ c_briey (伯爵领) (2 地块)
+│       └─ c_vaucouleurs (伯爵领) (2 地块)
+├─ k_bavaria (王国) (132 地块)
+│   ├─ d_bavaria (公国) (27 地块)  +9伯爵领/27男爵
+│   │   ├─ c_regensburg (伯爵领) (4 地块)
+│   │   ├─ c_munchen (伯爵领) (3 地块)
+│   │   ├─ c_eschenlohe (伯爵领) (2 地块)
+│   │   ├─ c_rothenburg (伯爵领) (3 地块)
+│   │   ├─ c_geisenhausen (伯爵领) (2 地块)
+│   │   ├─ c_frontenhausen (伯爵领) (4 地块)
+│   │   ├─ c_falkenstein (伯爵领) (2 地块)
+│   │   ├─ c_ingolstadt (伯爵领) (3 地块)
+│   │   └─ c_passau (伯爵领) (4 地块)
+│   ├─ d_nordgau (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_eichstadt (伯爵领) (3 地块)
+│   │   ├─ c_leuchtenburg (伯爵领) (3 地块)
+│   │   ├─ c_parsberg (伯爵领) (4 地块)
+│   │   └─ c_hohenburg (伯爵领) (3 地块)
+│   ├─ d_salzburg (公国) (17 地块)  +5伯爵领/17男爵
+│   │   ├─ c_salzburg (伯爵领) (5 地块)
+│   │   ├─ c_berchtesgaden (伯爵领) (3 地块)
+│   │   ├─ c_hallstatt (伯爵领) (3 地块)
+│   │   ├─ c_linz (伯爵领) (3 地块)
+│   │   └─ c_schaumberg (伯爵领) (3 地块)
+│   ├─ d_augsburg (公国) (14 地块)  +5伯爵领/14男爵
+│   │   ├─ c_augsburg (伯爵领) (4 地块)
+│   │   ├─ c_alpsee (伯爵领) (3 地块)
+│   │   ├─ c_kempten (伯爵领) (3 地块)
+│   │   ├─ c_ravensburg (伯爵领) (2 地块)
+│   │   └─ c_burgau (伯爵领) (2 地块)
+│   ├─ d_steyermark (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_graz (伯爵领) (5 地块)
+│   │   ├─ c_pitten (伯爵领) (2 地块)
+│   │   ├─ c_liebnitz (伯爵领) (3 地块)
+│   │   └─ c_murzzuschlag (伯爵领) (2 地块)
+│   ├─ d_osterreich (公国) (21 地块)  +6伯爵领/21男爵
+│   │   ├─ c_vienna (伯爵领) (5 地块)
+│   │   ├─ c_hohenau (伯爵领) (3 地块)
+│   │   ├─ c_sankt_polten (伯爵领) (3 地块)
+│   │   ├─ c_freistadt (伯爵领) (4 地块)
+│   │   ├─ c_amstetten (伯爵领) (2 地块)
+│   │   └─ c_krems (伯爵领) (4 地块)
+│   ├─ d_tyrol (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_innsbruck (伯爵领) (3 地块)
+│   │   ├─ c_brixen (伯爵领) (2 地块)
+│   │   └─ c_lienz (伯爵领) (3 地块)
+│   ├─ d_carinthia (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_karnten (伯爵领) (3 地块)
+│   │   ├─ c_kammersberg (伯爵领) (4 地块)
+│   │   ├─ c_knittelfeld (伯爵领) (3 地块)
+│   │   └─ c_villach (伯爵领) (3 地块)
+│   └─ d_krain (公国) (7 地块)  +2伯爵领/7男爵
+│       ├─ c_kranj (伯爵领) (3 地块)
+│       └─ c_ljubljana (伯爵领) (4 地块)
+└─ k_east_francia (王国) (154 地块)
+    ├─ d_west_franconia (公国) (39 地块)  +9伯爵领/33男爵
+    │   ├─ c_frankfurt (伯爵领) (5 地块)
+    │   ├─ c_mainz (伯爵领) (4 地块)
+    │   ├─ c_klingenberg (伯爵领) (3 地块)
+    │   ├─ c_erbach (伯爵领) (4 地块)
+    │   ├─ c_worms (伯爵领) (2 地块)
+    │   ├─ c_speyer (伯爵领) (5 地块)
+    │   ├─ c_vaihingen (伯爵领) (3 地块)
+    │   ├─ c_durne (伯爵领) (3 地块)
+    │   └─ c_kaiserslautern (伯爵领) (5 地块)
+    ├─ d_east_franconia (公国) (25 地块)  +8伯爵领/24男爵
+    │   ├─ c_wurzburg (伯爵领) (3 地块)
+    │   ├─ c_ansbach (伯爵领) (3 地块)
+    │   ├─ c_coburg (伯爵领) (2 地块)
+    │   ├─ c_hohenlohe (伯爵领) (3 地块)
+    │   ├─ c_nurnberg (伯爵领) (3 地块)
+    │   ├─ c_bamberg (伯爵领) (4 地块)
+    │   ├─ c_nordlingen (伯爵领) (3 地块)
+    │   └─ c_wiltberg (伯爵领) (3 地块)
+    ├─ d_hesse (公国) (14 地块)  +4伯爵领/14男爵
+    │   ├─ c_kassel (伯爵领) (4 地块)
+    │   ├─ c_fulda (伯爵领) (3 地块)
+    │   ├─ c_nassau (伯爵领) (3 地块)
+    │   └─ c_marburg (伯爵领) (4 地块)
+    ├─ d_currezia (公国) (10 地块)  +3伯爵领/10男爵
+    │   ├─ c_grisons (伯爵领) (4 地块)
+    │   ├─ c_sankt_gallen (伯爵领) (2 地块)
+    │   └─ c_zurich (伯爵领) (4 地块)
+    ├─ d_alsace (公国) (13 地块)  +4伯爵领/13男爵
+    │   ├─ c_strassburg (伯爵领) (3 地块)
+    │   ├─ c_breisgau (伯爵领) (4 地块)
+    │   ├─ c_colmar (伯爵领) (2 地块)
+    │   └─ c_sundgau (伯爵领) (4 地块)
+    ├─ d_swabia (公国) (24 地块)  +7伯爵领/23男爵
+    │   ├─ c_ulm (伯爵领) (4 地块)
+    │   ├─ c_grunningen (伯爵领) (4 地块)
+    │   ├─ c_wurttemberg (伯爵领) (3 地块)
+    │   ├─ c_baden (伯爵领) (3 地块)
+    │   ├─ c_zollern (伯爵领) (3 地块)
+    │   ├─ c_hohenberg (伯爵领) (3 地块)
+    │   └─ c_furstenberg (伯爵领) (4 地块)
+    ├─ d_anhalt (公国) (15 地块)  +6伯爵领/15男爵
+    │   ├─ c_dessau (伯爵领) (2 地块)
+    │   ├─ c_halberstadt (伯爵领) (3 地块)
+    │   ├─ c_magdeburg (伯爵领) (3 地块)
+    │   ├─ c_blankenburg (伯爵领) (2 地块)
+    │   ├─ c_mansfeld (伯爵领) (2 地块)
+    │   └─ c_mersenburg (伯爵领) (3 地块)
+    └─ d_thuringia (公国) (14 地块)  +5伯爵领/14男爵
+        ├─ c_schmalkalden (伯爵领) (4 地块)
+        ├─ c_gottingen (伯爵领) (2 地块)
+        ├─ c_gleichenstein (伯爵领) (3 地块)
+        ├─ c_orlamunde (伯爵领) (3 地块)
+        └─ c_lobdaburg (伯爵领) (2 地块)
+
+◆ e_arabia 【帝国】 (368 地块)
+├─ k_israel (王国) (0 地块)
+├─ k_arabia (王国) (144 地块)
+│   ├─ d_jawf (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_al_jawf (伯爵领) (3 地块)
+│   │   ├─ c_thalabiya (伯爵领) (4 地块)
+│   │   └─ c_sirhan (伯爵领) (2 地块)
+│   ├─ d_amman (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_balqa (伯爵领) (3 地块)
+│   │   ├─ c_maab (伯爵领) (3 地块)
+│   │   └─ c_jilat (伯爵领) (2 地块)
+│   ├─ d_shammar (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_tabuk (伯爵领) (3 地块)
+│   │   ├─ c_al_aqabah (伯爵领) (6 地块)
+│   │   ├─ c_maan (伯爵领) (3 地块)
+│   │   └─ c_tayma (伯爵领) (3 地块)
+│   ├─ d_medina (公国) (20 地块)  +5伯爵领/20男爵
+│   │   ├─ c_medina (伯爵领) (4 地块)
+│   │   ├─ c_wajh (伯爵领) (4 地块)
+│   │   ├─ c_khaybar (伯爵领) (5 地块)
+│   │   ├─ c_yanbu (伯爵领) (3 地块)
+│   │   └─ c_harrat_rahat (伯爵领) (4 地块)
+│   ├─ d_mecca (公国) (14 地块)  +4伯爵领/14男爵
+│   │   ├─ c_mecca (伯爵领) (5 地块)
+│   │   ├─ c_taif (伯爵领) (3 地块)
+│   │   ├─ c_tihama (伯爵领) (3 地块)
+│   │   └─ c_bisha (伯爵领) (3 地块)
+│   ├─ d_asir (公国) (5 地块)  +2伯爵领/5男爵
+│   │   ├─ c_aqiq (伯爵领) (3 地块)
+│   │   └─ c_asir (伯爵领) (2 地块)
+│   ├─ d_najd (公国) (26 地块)  +6伯爵领/26男爵
+│   │   ├─ c_sharaf (伯爵领) (6 地块)
+│   │   ├─ c_subay (伯爵领) (4 地块)
+│   │   ├─ c_hail (伯爵领) (6 地块)
+│   │   ├─ c_shaqiq (伯爵领) (3 地块)
+│   │   ├─ c_qasim (伯爵领) (4 地块)
+│   │   └─ c_surrah (伯爵领) (3 地块)
+│   ├─ d_yamama (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_yamama (伯爵领) (3 地块)
+│   │   ├─ c_al-arid (伯爵领) (2 地块)
+│   │   └─ c_falaj (伯爵领) (3 地块)
+│   ├─ d_al-hasa (公国) (9 地块)  +4伯爵领/9男爵
+│   │   ├─ c_al-hasa (伯爵领) (3 地块)
+│   │   ├─ c_dhafra (伯爵领) (2 地块)
+│   │   ├─ c_uqayr (伯爵领) (3 地块)
+│   │   └─ c_yabrin (伯爵领) (1 地块)
+│   ├─ d_bahrain (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_qatif (伯爵领) (4 地块)
+│   │   ├─ c_uwal (伯爵领) (1 地块)
+│   │   └─ c_samman (伯爵领) (5 地块)
+│   └─ d_oman (公国) (20 地块)  +6伯爵领/20男爵
+│       ├─ c_nizwa (伯爵领) (3 地块)
+│       ├─ c_julfar (伯爵领) (5 地块)
+│       ├─ c_batina (伯爵领) (3 地块)
+│       ├─ c_az-dhahira (伯爵领) (2 地块)
+│       ├─ c_muscat (伯爵领) (5 地块)
+│       └─ c_duqm (伯爵领) (2 地块)
+├─ k_yemen (王国) (53 地块)
+│   ├─ d_sanaa (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_sanaa (伯爵领) (5 地块)
+│   │   ├─ c_tihamat-al-yamani (伯爵领) (4 地块)
+│   │   ├─ c_najran (伯爵领) (2 地块)
+│   │   └─ c_zabid (伯爵领) (4 地块)
+│   ├─ d_jawf-al-yamani (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_jawf-al-yamani (伯爵领) (4 地块)
+│   │   └─ c_wabar (伯爵领) (2 地块)
+│   ├─ d_taizz (公国) (13 地块)  +3伯爵领/13男爵
+│   │   ├─ c_taizz (伯爵领) (5 地块)
+│   │   ├─ c_mandab (伯爵领) (4 地块)
+│   │   └─ c_dathina (伯爵领) (4 地块)
+│   ├─ d_hadramawt (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_hadramawt (伯爵领) (5 地块)
+│   │   ├─ c_ahqaf (伯爵领) (2 地块)
+│   │   └─ c_kinda_sakun (伯爵领) (2 地块)
+│   ├─ d_mahra (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_mahra (伯爵领) (3 地块)
+│   │   ├─ c_al-asa (伯爵领) (1 地块)
+│   │   └─ c_dhofar (伯爵领) (4 地块)
+│   └─ d_socotra (公国) (2 地块)  +1伯爵领/2男爵
+│       └─ c_socotra (伯爵领) (2 地块)
+├─ k_egypt (王国) (88 地块)
+│   ├─ d_cyrenaica (公国) (11 地块)  +4伯爵领/11男爵
+│   │   ├─ c_barqa (伯爵领) (4 地块)
+│   │   ├─ c_awjila (伯爵领) (3 地块)
+│   │   ├─ c_derna (伯爵领) (3 地块)
+│   │   └─ c_tobruk (伯爵领) (1 地块)
+│   ├─ d_alexandria (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_alexandria (伯爵领) (3 地块)
+│   │   ├─ c_sullum (伯爵领) (3 地块)
+│   │   └─ c_siwa (伯爵领) (3 地块)
+│   ├─ d_delta (公国) (14 地块)  +4伯爵领/14男爵
+│   │   ├─ c_damietta (伯爵领) (3 地块)
+│   │   ├─ c_al-buhaira (伯爵领) (3 地块)
+│   │   ├─ c_al-gharbiya (伯爵领) (5 地块)
+│   │   └─ c_sharkiya (伯爵领) (3 地块)
+│   ├─ d_cairo (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_cairo (伯爵领) (4 地块)
+│   │   ├─ c_giza (伯爵领) (3 地块)
+│   │   └─ c_fayyum (伯爵领) (3 地块)
+│   ├─ d_al-wahat (公国) (9 地块)  +4伯爵领/9男爵
+│   │   ├─ c_bahriya (伯爵领) (3 地块)
+│   │   ├─ c_farafra (伯爵领) (1 地块)
+│   │   ├─ c_dakhla (伯爵领) (3 地块)
+│   │   └─ c_kharga (伯爵领) (2 地块)
+│   ├─ d_al-said (公国) (19 地块)  +5伯爵领/19男爵
+│   │   ├─ c_qus (伯爵领) (5 地块)
+│   │   ├─ c_bahnasa (伯爵领) (3 地块)
+│   │   ├─ c_ushmun (伯爵领) (3 地块)
+│   │   ├─ c_asyut (伯爵领) (4 地块)
+│   │   └─ c_aswan (伯爵领) (4 地块)
+│   ├─ d_eastern_desert (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_qusayr (伯爵领) (2 地块)
+│   │   └─ c_jabal_quzlum (伯爵领) (4 地块)
+│   └─ d_sinai (公国) (10 地块)  +3伯爵领/10男爵
+│       ├─ c_farama (伯爵领) (3 地块)
+│       ├─ c_sinai (伯爵领) (5 地块)
+│       └─ c_firaun (伯爵领) (2 地块)
+├─ k_jerusalem (王国) (21 地块)
+│   ├─ d_oultrejourdain (公国) (7 地块)  +2伯爵领/7男爵
+│   │   ├─ c_kerak (伯爵领) (3 地块)
+│   │   └─ c_negev (伯爵领) (4 地块)
+│   ├─ d_palestine (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_jerusalem (伯爵领) (4 地块)
+│   │   ├─ c_ghazza (伯爵领) (2 地块)
+│   │   └─ c_jaffa (伯爵领) (2 地块)
+│   └─ d_urdunn (公国) (6 地块)  +3伯爵领/6男爵
+│       ├─ c_tiberias (伯爵领) (2 地块)
+│       ├─ c_acre (伯爵领) (2 地块)
+│       └─ c_irbid (伯爵领) (2 地块)
+└─ k_syria (王国) (62 地块)
+    ├─ d_aleppo (公国) (12 地块)  +4伯爵领/12男爵
+    │   ├─ c_aleppo (伯爵领) (5 地块)
+    │   ├─ c_suriya (伯爵领) (2 地块)
+    │   ├─ c_syrrusafa (伯爵领) (2 地块)
+    │   └─ c_qinnasrin (伯爵领) (3 地块)
+    ├─ d_edessa (公国) (11 地块)  +4伯爵领/11男爵
+    │   ├─ c_edessa (伯爵领) (2 地块)
+    │   ├─ c_samosata (伯爵领) (2 地块)
+    │   ├─ c_marash (伯爵领) (3 地块)
+    │   └─ c_aintab (伯爵领) (4 地块)
+    ├─ d_homs (公国) (8 地块)  +3伯爵领/8男爵
+    │   ├─ c_homs (伯爵领) (3 地块)
+    │   ├─ c_shayzar (伯爵领) (2 地块)
+    │   └─ c_hama (伯爵领) (3 地块)
+    ├─ d_antioch (公国) (7 地块)  +2伯爵领/7男爵
+    │   ├─ c_antiocheia (伯爵领) (4 地块)
+    │   └─ c_alexandretta (伯爵领) (3 地块)
+    ├─ d_lebanon (公国) (4 地块)  +2伯爵领/4男爵
+    │   ├─ c_beirut (伯爵领) (2 地块)
+    │   └─ c_tripoli (伯爵领) (2 地块)
+    ├─ d_damascus (公国) (13 地块)  +4伯爵领/13男爵
+    │   ├─ c_damascus (伯爵领) (4 地块)
+    │   ├─ c_juwair (伯爵领) (3 地块)
+    │   ├─ c_baalbek (伯爵领) (3 地块)
+    │   └─ c_hauran (伯爵领) (3 地块)
+    └─ d_palmyra (公国) (7 地块)  +3伯爵领/7男爵
+        ├─ c_palmyra (伯爵领) (2 地块)
+        ├─ c_sukhna (伯爵领) (3 地块)
+        └─ c_qaryatan (伯爵领) (2 地块)
+
+◆ e_france 【帝国】 (349 地块)
+├─ k_france (王国) (151 地块)
+│   ├─ d_valois (公国) (26 地块)  +7伯爵领/26男爵
+│   │   ├─ c_ile_de_france (伯爵领) (6 地块)
+│   │   ├─ c_brie_francaise (伯爵领) (4 地块)
+│   │   ├─ c_vermandois (伯爵领) (3 地块)
+│   │   ├─ c_valois (伯爵领) (3 地块)
+│   │   ├─ c_amiens (伯爵领) (3 地块)
+│   │   ├─ c_beaumont (伯爵领) (4 地块)
+│   │   └─ c_clermont (伯爵领) (3 地块)
+│   ├─ d_berry (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_berry (伯爵领) (3 地块)
+│   │   ├─ c_tourraine (伯爵领) (3 地块)
+│   │   ├─ c_blois (伯爵领) (3 地块)
+│   │   └─ c_issoudun (伯爵领) (3 地块)
+│   ├─ d_anjou (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_anjou (伯爵领) (5 地块)
+│   │   ├─ c_saumur (伯爵领) (2 地块)
+│   │   ├─ c_maine (伯爵领) (3 地块)
+│   │   └─ c_sable (伯爵领) (3 地块)
+│   ├─ d_normandy (公国) (21 地块)  +7伯爵领/21男爵
+│   │   ├─ c_rouen (伯爵领) (3 地块)
+│   │   ├─ c_evreux (伯爵领) (3 地块)
+│   │   ├─ c_bayeux (伯爵领) (3 地块)
+│   │   ├─ c_avranches (伯爵领) (3 地块)
+│   │   ├─ c_alencon (伯爵领) (3 地块)
+│   │   ├─ c_lisieux (伯爵领) (2 地块)
+│   │   └─ c_eu (伯爵领) (4 地块)
+│   ├─ d_orleans (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_orleans (伯爵领) (4 地块)
+│   │   ├─ c_montargis (伯爵领) (3 地块)
+│   │   ├─ c_vendome (伯爵领) (2 地块)
+│   │   ├─ c_chartres (伯爵领) (4 地块)
+│   │   └─ c_sancerre (伯爵领) (3 地块)
+│   ├─ d_champagne (公国) (24 地块)  +7伯爵领/24男爵
+│   │   ├─ c_reims (伯爵领) (4 地块)
+│   │   ├─ c_troyes (伯爵领) (4 地块)
+│   │   ├─ c_coulommiers (伯爵领) (3 地块)
+│   │   ├─ c_meaux (伯爵领) (2 地块)
+│   │   ├─ c_chalons (伯爵领) (3 地块)
+│   │   ├─ c_rethel (伯爵领) (4 地块)
+│   │   └─ c_sens (伯爵领) (4 地块)
+│   ├─ d_burgundy (公国) (23 地块)  +8伯爵领/23男爵
+│   │   ├─ c_dijon (伯爵领) (3 地块)
+│   │   ├─ c_chalon (伯爵领) (4 地块)
+│   │   ├─ c_auxerre (伯爵领) (3 地块)
+│   │   ├─ c_tonnerrois (伯爵领) (2 地块)
+│   │   ├─ c_avalois (伯爵领) (2 地块)
+│   │   ├─ c_macon (伯爵领) (3 地块)
+│   │   ├─ c_nevers (伯爵领) (3 地块)
+│   │   └─ c_langres (伯爵领) (3 地块)
+│   └─ d_flanders (公国) (16 地块)  +5伯爵领/16男爵
+│       ├─ c_brugge (伯爵领) (3 地块)
+│       ├─ c_yperen (伯爵领) (3 地块)
+│       ├─ c_guines (伯爵领) (3 地块)
+│       ├─ c_lille (伯爵领) (3 地块)
+│       └─ c_boulogne (伯爵领) (4 地块)
+├─ k_aquitaine (王国) (116 地块)
+│   ├─ d_gascogne (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_bordeaux (伯爵领) (4 地块)
+│   │   ├─ c_labourd (伯爵领) (3 地块)
+│   │   ├─ c_albret (伯爵领) (4 地块)
+│   │   ├─ c_marsan (伯爵领) (3 地块)
+│   │   └─ c_agenais (伯爵领) (2 地块)
+│   ├─ d_aquitaine (公国) (17 地块)  +5伯爵领/17男爵
+│   │   ├─ c_angouleme (伯爵领) (3 地块)
+│   │   ├─ c_perigord (伯爵领) (4 地块)
+│   │   ├─ c_limousin (伯爵领) (4 地块)
+│   │   ├─ c_saintonge (伯爵领) (4 地块)
+│   │   └─ c_aunis (伯爵领) (2 地块)
+│   ├─ d_toulouse (公国) (18 地块)  +5伯爵领/18男爵
+│   │   ├─ c_toulouse (伯爵领) (4 地块)
+│   │   ├─ c_quercy (伯爵领) (4 地块)
+│   │   ├─ c_gevaudan (伯爵领) (4 地块)
+│   │   ├─ c_rouergue (伯爵领) (4 地块)
+│   │   └─ c_millau (伯爵领) (2 地块)
+│   ├─ d_languedoc (公国) (16 地块)  +6伯爵领/16男爵
+│   │   ├─ c_albi (伯爵领) (2 地块)
+│   │   ├─ c_uses (伯爵领) (2 地块)
+│   │   ├─ c_montpellier (伯爵领) (3 地块)
+│   │   ├─ c_carcassonne (伯爵领) (3 地块)
+│   │   ├─ c_beziers (伯爵领) (3 地块)
+│   │   └─ c_foix (伯爵领) (3 地块)
+│   ├─ d_armagnac (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_armagnac (伯爵领) (4 地块)
+│   │   ├─ c_bigorre (伯爵领) (2 地块)
+│   │   ├─ c_bearn (伯爵领) (3 地块)
+│   │   └─ c_comminges (伯爵领) (4 地块)
+│   ├─ d_poitou (公国) (14 地块)  +4伯爵领/14男爵
+│   │   ├─ c_poitiers (伯爵领) (4 地块)
+│   │   ├─ c_lusignan (伯爵领) (3 地块)
+│   │   ├─ c_montaigu (伯爵领) (3 地块)
+│   │   └─ c_thouars (伯爵领) (4 地块)
+│   ├─ d_auvergne (公国) (11 地块)  +4伯爵领/11男爵
+│   │   ├─ c_auvergne (伯爵领) (3 地块)
+│   │   ├─ c_clermont_sur_allier (伯爵领) (4 地块)
+│   │   ├─ c_thiers (伯爵领) (2 地块)
+│   │   └─ c_velay (伯爵领) (2 地块)
+│   └─ d_bourbon (公国) (11 地块)  +4伯爵领/11男爵
+│       ├─ c_bourbon (伯爵领) (4 地块)
+│       ├─ c_bellac (伯爵领) (2 地块)
+│       ├─ c_jaligny (伯爵领) (2 地块)
+│       └─ c_la_marche (伯爵领) (3 地块)
+├─ k_brittany (王国) (17 地块)
+│   └─ d_brittany (公国) (17 地块)  +6伯爵领/17男爵
+│       ├─ c_vannes (伯爵领) (3 地块)
+│       ├─ c_nantes (伯爵领) (4 地块)
+│       ├─ c_cornouaille (伯爵领) (3 地块)
+│       ├─ c_french_leon (伯爵领) (2 地块)
+│       ├─ c_penthievre (伯爵领) (3 地块)
+│       └─ c_rennes (伯爵领) (2 地块)
+└─ k_burgundy (王国) (65 地块)
+    ├─ d_provence (公国) (19 地块)  +4伯爵领/19男爵
+    │   ├─ c_venaissin (伯爵领) (4 地块)
+    │   ├─ c_provence (伯爵领) (5 地块)
+    │   ├─ c_nice (伯爵领) (5 地块)
+    │   └─ c_forcalquier (伯爵领) (5 地块)
+    ├─ d_savoie (公国) (13 地块)  +4伯爵领/13男爵
+    │   ├─ c_savoie (伯爵领) (4 地块)
+    │   ├─ c_aosta (伯爵领) (2 地块)
+    │   ├─ c_geneva (伯爵领) (4 地块)
+    │   └─ c_canavese (伯爵领) (3 地块)
+    ├─ d_dauphine (公国) (15 地块)  +5伯爵领/15男爵
+    │   ├─ c_lyon (伯爵领) (3 地块)
+    │   ├─ c_forez (伯爵领) (3 地块)
+    │   ├─ c_viviers (伯爵领) (2 地块)
+    │   ├─ c_viennois (伯爵领) (4 地块)
+    │   └─ c_valentinois (伯爵领) (3 地块)
+    ├─ d_upper_burgundy (公国) (11 地块)  +3伯爵领/11男爵
+    │   ├─ c_besancon (伯爵领) (5 地块)
+    │   ├─ c_bresse (伯爵领) (2 地块)
+    │   └─ c_dole (伯爵领) (4 地块)
+    └─ d_transjurania (公国) (7 地块)  +3伯爵领/7男爵
+        ├─ c_bern (伯爵领) (3 地块)
+        ├─ c_aargau (伯爵领) (2 地块)
+        └─ c_neuchatel (伯爵领) (2 地块)
+
+◆ e_spain 【帝国】 (270 地块)
+├─ k_andalusia (王国) (62 地块)
+│   ├─ d_cordoba (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_cordoba (伯爵领) (4 地块)
+│   │   ├─ c_calatrava (伯爵领) (3 地块)
+│   │   ├─ c_almader (伯爵领) (2 地块)
+│   │   └─ c_andujar (伯爵领) (3 地块)
+│   ├─ d_granada (公国) (11 地块)  +4伯爵领/11男爵
+│   │   ├─ c_granada (伯爵领) (3 地块)
+│   │   ├─ c_almeria (伯爵领) (3 地块)
+│   │   ├─ c_cabra (伯爵领) (2 地块)
+│   │   └─ c_malaga (伯爵领) (3 地块)
+│   ├─ d_sevilla (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_sevilla (伯爵领) (4 地块)
+│   │   ├─ c_cadiz (伯爵领) (3 地块)
+│   │   ├─ c_algeciras (伯爵领) (3 地块)
+│   │   ├─ c_niebla (伯爵领) (4 地块)
+│   │   └─ c_moura (伯爵领) (2 地块)
+│   └─ d_toledo (公国) (23 地块)  +6伯爵领/23男爵
+│       ├─ c_toledo (伯爵领) (3 地块)
+│       ├─ c_madrid (伯爵领) (4 地块)
+│       ├─ c_molina (伯爵领) (4 地块)
+│       ├─ c_cuenca (伯爵领) (4 地块)
+│       ├─ c_malagon (伯爵领) (4 地块)
+│       └─ c_mora (伯爵领) (4 地块)
+├─ k_badajoz (王国) (32 地块)
+│   ├─ d_beja (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_lisboa (伯爵领) (3 地块)
+│   │   ├─ c_beja (伯爵领) (2 地块)
+│   │   ├─ c_alcacer_do_sal (伯爵领) (4 地块)
+│   │   └─ c_elvas (伯爵领) (3 地块)
+│   ├─ d_badajoz (公国) (15 地块)  +5伯爵领/15男爵
+│   │   ├─ c_badajoz (伯爵领) (3 地块)
+│   │   ├─ c_plasencia (伯爵领) (3 地块)
+│   │   ├─ c_caceres (伯爵领) (3 地块)
+│   │   ├─ c_merida (伯爵领) (3 地块)
+│   │   └─ c_medellin (伯爵领) (3 地块)
+│   └─ d_algarve (公国) (5 地块)  +2伯爵领/5男爵
+│       ├─ c_faro (伯爵领) (2 地块)
+│       └─ c_silves (伯爵领) (3 地块)
+├─ k_valencia (王国) (31 地块)
+│   ├─ d_valencia (公国) (14 地块)  +5伯爵领/14男爵
+│   │   ├─ c_valencia (伯爵领) (4 地块)
+│   │   ├─ c_castellon (伯爵领) (3 地块)
+│   │   ├─ c_teruel (伯爵领) (3 地块)
+│   │   ├─ c_denia (伯爵领) (2 地块)
+│   │   └─ c_alicante (伯爵领) (2 地块)
+│   ├─ d_mallorca (公国) (4 地块)  +3伯爵领/4男爵
+│   │   ├─ c_mallorca (伯爵领) (2 地块)
+│   │   ├─ c_menorca (伯爵领) (1 地块)
+│   │   └─ c_iviza (伯爵领) (1 地块)
+│   └─ d_murcia (公国) (13 地块)  +3伯爵领/13男爵
+│       ├─ c_murcia (伯爵领) (5 地块)
+│       ├─ c_alcaraz (伯爵领) (4 地块)
+│       └─ c_alarcon (伯爵领) (4 地块)
+├─ k_castille (王国) (23 地块)
+│   ├─ d_castilla (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_burgos (伯爵领) (4 地块)
+│   │   ├─ c_valladolid (伯爵领) (3 地块)
+│   │   ├─ c_soria (伯爵领) (4 地块)
+│   │   ├─ c_cuellar (伯爵领) (3 地块)
+│   │   └─ c_olmedo (伯爵领) (2 地块)
+│   └─ d_cantabria (公国) (7 地块)  +2伯爵领/7男爵
+│       ├─ c_asturias_de_santillana (伯爵领) (4 地块)
+│       └─ c_amaya (伯爵领) (3 地块)
+├─ k_aragon (王国) (48 地块)
+│   ├─ d_aragon (公国) (22 地块)  +8伯爵领/22男爵
+│   │   ├─ c_zaragoza (伯爵领) (4 地块)
+│   │   ├─ c_albarracin (伯爵领) (3 地块)
+│   │   ├─ c_alto_aragon (伯爵领) (3 地块)
+│   │   ├─ c_sobrarbe (伯爵领) (3 地块)
+│   │   ├─ c_huesca (伯爵领) (2 地块)
+│   │   ├─ c_calatayud (伯爵领) (2 地块)
+│   │   ├─ c_fraga (伯爵领) (2 地块)
+│   │   └─ c_alcaniz (伯爵领) (3 地块)
+│   └─ d_barcelona (公国) (26 地块)  +8伯爵领/26男爵
+│       ├─ c_barcelona (伯爵领) (5 地块)
+│       ├─ c_urgell (伯爵领) (4 地块)
+│       ├─ c_pallas (伯爵领) (3 地块)
+│       ├─ c_puigcerda (伯爵领) (2 地块)
+│       ├─ c_girona (伯爵领) (3 地块)
+│       ├─ c_rossello (伯爵领) (3 地块)
+│       ├─ c_lleida (伯爵领) (3 地块)
+│       └─ c_tarragona (伯爵领) (3 地块)
+├─ k_navarra (王国) (12 地块)
+│   ├─ d_navarra (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_navarra (伯爵领) (3 地块)
+│   │   ├─ c_najera (伯爵领) (3 地块)
+│   │   └─ c_tudela (伯爵领) (2 地块)
+│   └─ d_viscaya (公国) (4 地块)  +2伯爵领/4男爵
+│       ├─ c_viscaya (伯爵领) (2 地块)
+│       └─ c_ipuskoa (伯爵领) (2 地块)
+├─ k_asturias (王国) (0 地块)
+├─ k_leon (王国) (25 地块)
+│   ├─ d_leon (公国) (17 地块)  +5伯爵领/17男爵
+│   │   ├─ c_leon (伯爵领) (5 地块)
+│   │   ├─ c_benavente (伯爵领) (2 地块)
+│   │   ├─ c_zamora (伯爵领) (3 地块)
+│   │   ├─ c_salamanca (伯爵领) (3 地块)
+│   │   └─ c_avila (伯爵领) (4 地块)
+│   └─ d_asturias (公国) (8 地块)  +2伯爵领/8男爵
+│       ├─ c_asturias_de_oviedo (伯爵领) (4 地块)
+│       └─ c_pravia (伯爵领) (4 地块)
+├─ k_spanish_galicia (王国) (18 地块)
+│   └─ d_galicia (公国) (18 地块)  +5伯爵领/18男爵
+│       ├─ c_coruna (伯爵领) (4 地块)
+│       ├─ c_santiago (伯爵领) (4 地块)
+│       ├─ c_tui (伯爵领) (3 地块)
+│       ├─ c_astorga (伯爵领) (5 地块)
+│       └─ c_monterrei (伯爵领) (2 地块)
+└─ k_portugal (王国) (19 地块)
+    ├─ d_porto (公国) (8 地块)  +2伯爵领/8男爵
+    │   ├─ c_porto (伯爵领) (4 地块)
+    │   └─ c_braganza (伯爵领) (4 地块)
+    └─ d_coimbra (公国) (11 地块)  +4伯爵领/11男爵
+        ├─ c_coimbra (伯爵领) (3 地块)
+        ├─ c_viseu (伯爵领) (2 地块)
+        ├─ c_aveiro (伯爵领) (3 地块)
+        └─ c_castelo_branco (伯爵领) (3 地块)
+
+◆ e_carpathia 【帝国】 (246 地块)
+├─ k_dacia (王国) (39 地块)
+│   ├─ d_transylvanian_alps (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_campulung (伯爵领) (4 地块)
+│   │   ├─ c_polovragi (伯爵领) (3 地块)
+│   │   └─ c_tabla_butii (伯爵领) (3 地块)
+│   ├─ d_muntenia (公国) (16 地块)  +5伯爵领/16男爵
+│   │   ├─ c_giurgiu (伯爵领) (6 地块)
+│   │   ├─ c_bucuresti (伯爵领) (2 地块)
+│   │   ├─ c_calarasi (伯爵领) (3 地块)
+│   │   ├─ c_buzau (伯爵领) (3 地块)
+│   │   └─ c_braila (伯爵领) (2 地块)
+│   └─ d_oltenia (公国) (13 地块)  +4伯爵领/13男爵
+│       ├─ c_targu_jiu (伯爵领) (2 地块)
+│       ├─ c_severin (伯爵领) (4 地块)
+│       ├─ c_calafat (伯爵领) (4 地块)
+│       └─ c_craiova (伯爵领) (3 地块)
+├─ k_moldavia (王国) (37 地块)
+│   ├─ d_bukovina (公国) (13 地块)  +4伯爵领/13男爵
+│   │   ├─ c_suceava (伯爵领) (5 地块)
+│   │   ├─ c_neamnt (伯爵领) (3 地块)
+│   │   ├─ c_dorohoi (伯爵领) (2 地块)
+│   │   └─ c_hotin (伯爵领) (3 地块)
+│   ├─ d_moldova (公国) (15 地块)  +6伯爵领/15男爵
+│   │   ├─ c_iasi (伯爵领) (3 地块)
+│   │   ├─ c_orhei (伯爵领) (2 地块)
+│   │   ├─ c_soroca (伯爵领) (2 地块)
+│   │   ├─ c_barlad (伯爵领) (3 地块)
+│   │   ├─ c_galati (伯爵领) (3 地块)
+│   │   └─ c_stoenesti (伯爵领) (2 地块)
+│   └─ d_bugeac (公国) (9 地块)  +4伯爵领/9男爵
+│       ├─ c_tigheci (伯爵领) (2 地块)
+│       ├─ c_cetatea_alba (伯爵领) (2 地块)
+│       ├─ c_chilia (伯爵领) (3 地块)
+│       └─ c_lapusna (伯爵领) (2 地块)
+└─ k_hungary (王国) (170 地块)
+    ├─ d_visegrad (公国) (16 地块)  +5伯爵领/16男爵
+    │   ├─ c_visegrad (伯爵领) (4 地块)
+    │   ├─ c_komarom (伯爵领) (2 地块)
+    │   ├─ c_esztergom (伯爵领) (2 地块)
+    │   ├─ c_szekesfehervar (伯爵领) (3 地块)
+    │   └─ c_hewes (伯爵领) (5 地块)
+    ├─ d_somogy (公国) (14 地块)  +4伯爵领/14男爵
+    │   ├─ c_somogy (伯爵领) (4 地块)
+    │   ├─ c_kolon (伯爵领) (3 地块)
+    │   ├─ c_tolna (伯爵领) (3 地块)
+    │   └─ c_baranya (伯爵领) (4 地块)
+    ├─ d_nyitra (公国) (28 地块)  +9伯爵领/28男爵
+    │   ├─ c_nyitra (伯爵领) (4 地块)
+    │   ├─ c_gemer (伯爵领) (3 地块)
+    │   ├─ c_orava (伯爵领) (2 地块)
+    │   ├─ c_trenscen (伯爵领) (4 地块)
+    │   ├─ c_lipto (伯爵领) (2 地块)
+    │   ├─ c_zolyom (伯爵领) (2 地块)
+    │   ├─ c_bars (伯爵领) (2 地块)
+    │   ├─ c_hont (伯爵领) (6 地块)
+    │   └─ c_poszony (伯爵领) (3 地块)
+    ├─ d_ungvar (公国) (17 地块)  +6伯爵领/17男爵
+    │   ├─ c_ungvar (伯爵领) (2 地块)
+    │   ├─ c_zemplen (伯爵领) (5 地块)
+    │   ├─ c_borsod (伯爵领) (3 地块)
+    │   ├─ c_saris (伯爵领) (2 地块)
+    │   ├─ c_spis (伯爵领) (2 地块)
+    │   └─ c_abauj (伯爵领) (3 地块)
+    ├─ d_transcarpathia (公国) (10 地块)  +2伯爵领/10男爵
+    │   ├─ c_marmaros (伯爵领) (5 地块)
+    │   └─ c_bereg (伯爵领) (5 地块)
+    ├─ d_transylvania (公国) (29 地块)  +7伯爵领/29男爵
+    │   ├─ c_feher (伯爵领) (6 地块)
+    │   ├─ c_szekelyfold (伯爵领) (4 地块)
+    │   ├─ c_barcasag (伯爵领) (4 地块)
+    │   ├─ c_fogaras (伯爵领) (2 地块)
+    │   ├─ c_torda (伯爵领) (5 地块)
+    │   ├─ c_beszterce (伯爵领) (5 地块)
+    │   └─ c_hunyad (伯爵领) (3 地块)
+    ├─ d_bihar (公国) (22 地块)  +5伯爵领/22男爵
+    │   ├─ c_bihar (伯爵领) (6 地块)
+    │   ├─ c_zarand (伯爵领) (3 地块)
+    │   ├─ c_bekes (伯爵领) (3 地块)
+    │   ├─ c_szabolcs (伯爵领) (4 地块)
+    │   └─ c_szatmar (伯爵领) (6 地块)
+    ├─ d_temes (公国) (14 地块)  +5伯爵领/14男爵
+    │   ├─ c_temes (伯爵领) (3 地块)
+    │   ├─ c_arad (伯爵领) (2 地块)
+    │   ├─ c_krasso (伯爵领) (3 地块)
+    │   ├─ c_keve (伯爵领) (3 地块)
+    │   └─ c_csanad (伯爵领) (3 地块)
+    ├─ d_bacs (公国) (6 地块)  +3伯爵领/6男爵
+    │   ├─ c_bacs (伯爵领) (2 地块)
+    │   ├─ c_bodrog (伯爵领) (2 地块)
+    │   └─ c_csongrad (伯爵领) (2 地块)
+    ├─ d_gyor (公国) (11 地块)  +4伯爵领/11男爵
+    │   ├─ c_gyor (伯爵领) (2 地块)
+    │   ├─ c_sopron (伯爵领) (3 地块)
+    │   ├─ c_vas (伯爵领) (3 地块)
+    │   └─ c_veszprem (伯爵领) (3 地块)
+    └─ d_syrmia (公国) (3 地块)  +1伯爵领/3男爵
+        └─ c_szerem (伯爵领) (3 地块)
+
+◆ e_maghreb 【帝国】 (217 地块)
+├─ k_maghreb (王国) (82 地块)
+│   ├─ d_marrakesh (公国) (24 地块)  +6伯爵领/24男爵
+│   │   ├─ c_marrakesh (伯爵领) (5 地块)
+│   │   ├─ c_tadla (伯爵领) (6 地块)
+│   │   ├─ c_fazaz (伯爵领) (3 地块)
+│   │   ├─ c_tamasna (伯爵领) (4 地块)
+│   │   ├─ c_asfi (伯爵领) (3 地块)
+│   │   └─ c_tinmallal (伯爵领) (3 地块)
+│   ├─ d_sous (公国) (16 地块)  +4伯爵领/16男爵
+│   │   ├─ c_sous (伯爵领) (3 地块)
+│   │   ├─ c_agadir (伯爵领) (2 地块)
+│   │   ├─ c_ifni (伯爵领) (6 地块)
+│   │   └─ c_draa (伯爵领) (5 地块)
+│   ├─ d_tafilalt (公国) (8 地块)  +3伯爵领/8男爵
+│   │   ├─ c_sijilmasa (伯爵领) (3 地块)
+│   │   ├─ c_tudgha (伯爵领) (3 地块)
+│   │   └─ c_ziz (伯爵领) (2 地块)
+│   ├─ d_fes (公国) (20 地块)  +5伯爵领/20男爵
+│   │   ├─ c_fes (伯爵领) (5 地块)
+│   │   ├─ c_muluya (伯爵领) (3 地块)
+│   │   ├─ c_taza (伯爵领) (2 地块)
+│   │   ├─ c_meknes (伯爵领) (4 地块)
+│   │   └─ c_gharb (伯爵领) (6 地块)
+│   ├─ d_rif (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_tangiers (伯爵领) (4 地块)
+│   │   ├─ c_ceuta (伯爵领) (3 地块)
+│   │   └─ c_melilla (伯爵领) (2 地块)
+│   └─ d_canarias (公国) (5 地块)  +3伯爵领/5男爵
+│       ├─ c_canarias (伯爵领) (2 地块)
+│       ├─ c_fuerteventura (伯爵领) (2 地块)
+│       └─ c_madeira (伯爵领) (1 地块)
+├─ k_canarias (王国) (0 地块)
+├─ k_tahert (王国) (64 地块)
+│   ├─ d_tlemcen (公国) (14 地块)  +4伯爵领/14男爵
+│   │   ├─ c_tlemcen (伯爵领) (5 地块)
+│   │   ├─ c_wajda (伯爵领) (3 地块)
+│   │   ├─ c_orania (伯爵领) (3 地块)
+│   │   └─ c_hunyan (伯爵领) (3 地块)
+│   ├─ d_tahert (公国) (15 地块)  +4伯爵领/15男爵
+│   │   ├─ c_tahert (伯爵领) (5 地块)
+│   │   ├─ c_yalala (伯爵领) (3 地块)
+│   │   ├─ c_ashir (伯爵领) (4 地块)
+│   │   └─ c_figuig (伯爵领) (3 地块)
+│   ├─ d_alger (公国) (7 地块)  +2伯爵领/7男爵
+│   │   ├─ c_algier (伯爵领) (4 地块)
+│   │   └─ c_tanas (伯爵领) (3 地块)
+│   ├─ d_bejaia (公国) (6 地块)  +2伯爵领/6男爵
+│   │   ├─ c_bejaia (伯爵领) (2 地块)
+│   │   └─ c_satif (伯爵领) (4 地块)
+│   ├─ d_zab (公国) (10 地块)  +3伯爵领/10男爵
+│   │   ├─ c_hodna (伯爵领) (4 地块)
+│   │   ├─ c_biskra (伯爵领) (4 地块)
+│   │   └─ c_bilizma (伯爵领) (2 地块)
+│   └─ d_mzab (公国) (12 地块)  +4伯爵领/12男爵
+│       ├─ c_wargla (伯爵领) (4 地块)
+│       ├─ c_laghwat (伯爵领) (2 地块)
+│       ├─ c_ghardaia (伯爵领) (3 地块)
+│       └─ c_arigh (伯爵领) (3 地块)
+└─ k_africa (王国) (71 地块)
+    ├─ d_kairouan (公国) (13 地块)  +3伯爵领/13男爵
+    │   ├─ c_kairwan (伯爵领) (6 地块)
+    │   ├─ c_west_qamuda (伯爵领) (3 地块)
+    │   └─ c_tabassa (伯爵领) (4 地块)
+    ├─ d_tunis (公国) (14 地块)  +4伯爵领/14男爵
+    │   ├─ c_tunis (伯爵领) (5 地块)
+    │   ├─ c_satfura (伯爵领) (3 地块)
+    │   ├─ c_medjerda (伯爵领) (3 地块)
+    │   └─ c_mahdiya (伯爵领) (3 地块)
+    ├─ d_kroumerie (公国) (8 地块)  +2伯爵领/8男爵
+    │   ├─ c_constantine (伯爵领) (5 地块)
+    │   └─ c_annaba (伯爵领) (3 地块)
+    ├─ d_gabes (公国) (5 地块)  +2伯爵领/5男爵
+    │   ├─ c_gabes (伯爵领) (2 地块)
+    │   └─ c_sfax (伯爵领) (3 地块)
+    ├─ d_jerid (公国) (11 地块)  +4伯爵领/11男爵
+    │   ├─ c_qashtiliya (伯爵领) (5 地块)
+    │   ├─ c_souf (伯爵领) (2 地块)
+    │   ├─ c_bir_amir (伯爵领) (2 地块)
+    │   └─ c_ghadames (伯爵领) (2 地块)
+    ├─ d_tripolitania (公国) (11 地块)  +3伯爵领/11男爵
+    │   ├─ c_tripolitana (伯爵领) (3 地块)
+    │   ├─ c_djerba (伯爵领) (3 地块)
+    │   └─ c_jafara (伯爵领) (5 地块)
+    └─ d_syrte (公国) (9 地块)  +3伯爵领/9男爵
+        ├─ c_syrte (伯爵领) (3 地块)
+        ├─ c_labda (伯爵领) (3 地块)
+        └─ c_waddan (伯爵领) (3 地块)
+
+◆ e_italy 【帝国】 (161 地块)
+├─ k_genoa (王国) (0 地块)
+├─ k_pisa (王国) (0 地块)
+├─ k_naples (王国) (0 地块)
+├─ k_italy (王国) (94 地块)
+│   ├─ d_friuli (公国) (9 地块)  +3伯爵领/9男爵
+│   │   ├─ c_aquileia (伯爵领) (4 地块)
+│   │   ├─ c_friuli (伯爵领) (3 地块)
+│   │   └─ c_gorz (伯爵领) (2 地块)
+│   ├─ d_verona (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_verona (伯爵领) (3 地块)
+│   │   ├─ c_treviso (伯爵领) (3 地块)
+│   │   ├─ c_padua (伯爵领) (4 地块)
+│   │   └─ c_polesine (伯爵领) (2 地块)
+│   ├─ d_piedmonte (公国) (12 地块)  +4伯爵领/12男爵
+│   │   ├─ c_monferrato (伯爵领) (3 地块)
+│   │   ├─ c_turin (伯爵领) (3 地块)
+│   │   ├─ c_novara (伯爵领) (3 地块)
+│   │   └─ c_cuneo (伯爵领) (3 地块)
+│   ├─ d_lombardia (公国) (25 地块)  +8伯爵领/25男爵
+│   │   ├─ c_lombardia (伯爵领) (4 地块)
+│   │   ├─ c_brescia (伯爵领) (3 地块)
+│   │   ├─ c_como (伯爵领) (3 地块)
+│   │   ├─ c_trent (伯爵领) (4 地块)
+│   │   ├─ c_pavia (伯爵领) (3 地块)
+│   │   ├─ c_cremona (伯爵领) (3 地块)
+│   │   ├─ c_parma (伯爵领) (3 地块)
+│   │   └─ c_tortona (伯爵领) (2 地块)
+│   ├─ d_genoa (公国) (5 地块)  +2伯爵领/5男爵
+│   │   ├─ c_genoa (伯爵领) (3 地块)
+│   │   └─ c_luni (伯爵领) (2 地块)
+│   ├─ d_emilia (公国) (7 地块)  +2伯爵领/7男爵
+│   │   ├─ c_modena (伯爵领) (4 地块)
+│   │   └─ c_mantua (伯爵领) (3 地块)
+│   ├─ d_pisa (公国) (3 地块)  +1伯爵领/3男爵
+│   │   └─ c_pisa (伯爵领) (3 地块)
+│   ├─ d_toscana (公国) (17 地块)  +5伯爵领/17男爵
+│   │   ├─ c_firenze (伯爵领) (4 地块)
+│   │   ├─ c_lucca (伯爵领) (3 地块)
+│   │   ├─ c_arezzo (伯爵领) (3 地块)
+│   │   ├─ c_siena (伯爵领) (4 地块)
+│   │   └─ c_orbetello (伯爵领) (3 地块)
+│   └─ d_istria (公国) (4 地块)  +1伯爵领/4男爵
+│       └─ c_pula (伯爵领) (4 地块)
+├─ k_sardinia (王国) (19 地块)
+│   ├─ d_corsica (公国) (6 地块)  +3伯爵领/6男爵
+│   │   ├─ c_ajaccio (伯爵领) (2 地块)
+│   │   ├─ c_bastia (伯爵领) (2 地块)
+│   │   └─ c_vecchio (伯爵领) (2 地块)
+│   └─ d_sardinia (公国) (13 地块)  +5伯爵领/13男爵
+│       ├─ c_cagliari (伯爵领) (3 地块)
+│       ├─ c_arborea (伯爵领) (2 地块)
+│       ├─ c_gallura (伯爵领) (2 地块)
+│       ├─ c_logudoro (伯爵领) (4 地块)
+│       └─ c_tortoli (伯爵领) (2 地块)
+└─ k_romagna (王国) (48 地块)
+    ├─ d_romagna (公国) (13 地块)  +4伯爵领/13男爵
+    │   ├─ c_ravenna (伯爵领) (4 地块)
+    │   ├─ c_bologna (伯爵领) (3 地块)
+    │   ├─ c_ferrara (伯爵领) (3 地块)
+    │   └─ c_casentino (伯爵领) (3 地块)
+    ├─ d_ancona (公国) (10 地块)  +3伯爵领/10男爵
+    │   ├─ c_ancona (伯爵领) (4 地块)
+    │   ├─ c_urbino (伯爵领) (3 地块)
+    │   └─ c_fermo (伯爵领) (3 地块)
+    ├─ d_spoleto (公国) (12 地块)  +5伯爵领/12男爵
+    │   ├─ c_spoleto (伯爵领) (3 地块)
+    │   ├─ c_orvieto (伯爵领) (2 地块)
+    │   ├─ c_teramo (伯爵领) (2 地块)
+    │   ├─ c_lanciano (伯爵领) (3 地块)
+    │   └─ c_abruzzi (伯爵领) (2 地块)
+    └─ d_latium (公国) (13 地块)  +3伯爵领/13男爵
+        ├─ c_roma (伯爵领) (6 地块)
+        ├─ c_viterbo (伯爵领) (3 地块)
+        └─ c_tivoli (伯爵领) (4 地块)
+
+◆ e_latin_empire 【帝国】 (0 地块)

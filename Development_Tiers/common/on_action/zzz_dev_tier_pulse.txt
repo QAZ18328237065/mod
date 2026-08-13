@@ -1,0 +1,10 @@
+﻿# [DEV TIER] 发展度梯度档位脉冲：每年对全图所有伯爵领检查一次档位
+# 挂在 random_yearly_everyone_pulse（yearly_on_actions.txt）的 on_actions 列表
+dev_tier_check_pulse = {
+	effect = {
+		every_held_title = {
+			title_tier = tier_county
+			dev_update_tier_effect = yes
+		}
+	}
+}

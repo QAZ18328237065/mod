@@ -1,0 +1,2171 @@
+﻿k_aragon = {
+
+	867.1.1 = { change_development_level = 8 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 24 }
+ 
+	1035.10.18 = {
+		holder = 110510 
+ 
+		
+		effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:flag_formed_kingdom_of_aragon
+			}
+		}
+	}
+	1063.5.8 = {
+		holder = 110500 
+	}
+	1094.6.4 = {
+		holder = 70231 
+	}
+	1104.9.27 = {
+		holder = 70232 
+	}
+	1134.9.7 = {
+		holder = 70233 
+	}
+	1157.8.16 = {
+		holder = 210507 
+	}
+	1164.1.1 = {
+		holder = 210500 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+d_barcelona = {
+
+	711.1.1 = {
+		de_jure_liege = k_andalusia
+	}
+	769.1.1 = {
+		holder = 200049 
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = 70140 
+		liege = k_aquitaine
+		de_jure_liege = k_aquitaine
+	}
+	820.2.1 = {
+		holder = 200141 
+	}
+	825.1.1 = {
+		holder = 163063 
+	}
+	832.3.1 = {
+		holder = 167791 
+	}
+	835.6.1 = {
+		holder = 163063 
+	}
+	844.5.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = 73784 
+	}
+	850.1.1 = {
+		holder = 200142 
+	}
+	851.1.1 = {
+		holder = 200144 
+	}
+	852.1.1 = {
+		holder = 200145 
+	}
+	858.1.1 = {
+		holder = 200148 
+	}
+	865.1.1 = {
+		holder = 168137 
+	}
+	878.9.11 = {
+		holder = 70150 
+	}
+	884.12.12 = {
+		liege = k_france
+	}
+	888.1.13 = {
+		liege = 0
+	}
+	897.8.11 = {
+		holder = 70152 
+	}
+	911.1.1 = {
+		holder = 110536 
+	}
+	947.1.1 = {
+		holder = occitan0113 
+	}
+	966.10.31 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110540 
+	}
+	1017.9.8 = {
+		holder = 110530 
+	}
+	1035.5.26 = {
+		holder = 110520 
+	}
+	1035.10.18 = {
+		de_jure_liege = k_aragon
+	}
+	1076.5.26 = {
+		holder = 110522 
+	}
+	1082.12.5 = {
+		holder = 110525 
+	}
+	1097.1.1 = {
+		holder = 210508 
+	}
+	1131.7.19 = {
+		holder = 210506 
+	}
+	1137.8.11 = {
+		liege = k_aragon
+	}
+	1162.8.6 = {
+		holder = 210500 
+	}
+}
+
+c_barcelona = {
+
+	1178.1.1 = { change_development_level = 24 }
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = 70140 
+	}
+	820.2.1 = {
+		holder = 200141 
+	}
+	825.1.1 = {
+		holder = 163063 
+	}
+	832.3.1 = {
+		holder = 167791 
+	}
+	835.6.1 = {
+		holder = 163063 
+	}
+	844.5.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = 73784 
+	}
+	850.1.1 = {
+		holder = 200142 
+	}
+	851.1.1 = {
+		holder = 200144 
+	}
+	852.1.1 = {
+		holder = 200145 
+	}
+	858.1.1 = {
+		holder = 200148 
+	}
+	865.1.1 = {
+		holder = 168137 
+	}
+	878.9.11 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 70152 
+	}
+	911.1.1 = {
+		holder = 110536 
+	}
+	947.1.1 = {
+		holder = occitan0113 
+	}
+	966.10.31 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110540 
+	}
+	1017.9.8 = {
+		holder = 110530 
+	}
+	1035.5.26 = {
+		holder = 110520 
+	}
+	1076.5.26 = {
+		holder = 110525 
+	}
+	1097.1.1 = {
+		holder = 210508 
+	}
+	1126.1.1 = {
+		holder = guardia_1 
+		liege = k_aragon
+	}
+	1142.1.1 = {
+		holder = guardia_2 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+b_manresa = {
+
+	1040.1.1 = {
+		holder = 72300 
+	}
+	1131.7.19 = {
+		holder = 210506 
+	}
+	1162.8.6 = {
+		holder = 210500 
+	}
+	1176.1.1 = {
+		holder = 71604 
+	}
+}
+
+c_urgell = {
+
+	798.1.1 = {
+		holder = visigothic0006 
+		liege = k_aquitaine
+	}
+	800.1.1 = {
+		liege = d_barcelona
+	}
+	820.1.1 = {
+		holder = 70300 
+	}
+	832.1.1 = {
+		holder = 70277 
+	}
+	838.1.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = 73786 
+	}
+	867.1.1 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 200155 
+	}
+	948.1.1 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110571 
+	}
+	1010.9.1 = {
+		holder = 110570 
+	}
+	1038.1.1 = {
+		holder = 110560 
+	}
+	1066.4.1 = {
+		holder = 110550 
+	}
+	1092.3.28 = {
+		holder = 210576 
+	}
+	1102.9.14 = {
+		holder = 210572 
+	}
+	1154.6.28 = {
+		holder = 210571 
+	}
+	1164.1.1 = {
+		liege = k_aragon
+	}
+	1184.8.11 = {
+		holder = 210570 
+	}
+	1209.10.16 = {
+		holder = 72139 
+	}
+	1213.1.1 = {
+		holder = 72186 
+	}
+	1228.1.1 = {
+		holder = 72139 
+	}
+	1229.7.15 = {
+		holder = 209508 
+	}
+	1231.8.1 = {
+		holder = 72218 
+	}
+	1243.1.1 = {
+		holder = 72220 
+	}
+	1243.7.1 = {
+		holder = 72223 
+	}
+	1267.3.1 = {
+		holder = 72232 
+	}
+	1314.7.1 = {
+		holder = 460511 
+	}
+	1327.10.20 = {
+		holder = 460520 
+	}
+}
+
+c_pallas = {
+
+	798.1.1 = {
+		holder = visigothic0006 
+		liege = k_aquitaine
+	}
+	800.1.1 = {
+		liege = d_barcelona
+	}
+	820.1.1 = {
+		holder = 70300 
+	}
+	832.1.1 = {
+		holder = 70277 
+	}
+	838.1.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = 73786 
+	}
+	867.1.1 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 200155 
+	}
+	948.1.1 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110571 
+	}
+	1010.9.1 = {
+		holder = 110570 
+	}
+	1038.1.1 = {
+		holder = 110560 
+	}
+	1066.4.1 = {
+		holder = 110550 
+	}
+	1092.3.28 = {
+		holder = 210576 
+	}
+	1098.1.1 = {
+		holder = 72061 
+		liege = k_aragon
+	}
+	1111.1.1 = {
+		holder = 72064 
+	}
+	1160.1.1 = {
+		holder = 72065 
+	}
+	1184.8.11 = {
+		holder = 210570 
+	}
+	1209.10.16 = {
+		holder = 72139 
+	}
+	1213.1.1 = {
+		holder = 72186 
+	}
+	1228.1.1 = {
+		holder = 72139 
+	}
+	1229.7.15 = {
+		holder = 209508 
+	}
+	1231.8.1 = {
+		holder = 72218 
+	}
+	1243.1.1 = {
+		holder = 72220 
+	}
+	1243.7.1 = {
+		holder = 72223 
+	}
+	1267.3.1 = {
+		holder = 72232 
+	}
+	1314.7.1 = {
+		holder = 460511 
+	}
+	1327.10.20 = {
+		holder = 460520 
+	}
+}
+
+b_vielha = {
+
+	872.1.1 = {
+		holder = 70272 
+	}
+	920.1.1 = {
+		holder = 70278 
+	}
+	947.1.1 = {
+		holder = occitan0062 
+	}
+	948.1.1 = {
+		holder = catalan0113 
+	}
+	995.1.1 = {
+		holder = catalan0114 
+	}
+	996.1.1 = {
+		holder = 70280 
+	}
+	1010.1.1 = {
+		holder = catalan0115 
+	}
+	1011.1.1 = {
+		holder = 70281 
+	}
+	1047.1.1 = {
+		holder = 70283 
+	}
+	1098.1.1 = {
+		holder = 70261 
+	}
+	1111.1.1 = {
+		holder = 72057 
+	}
+	1113.1.1 = {
+		holder = 72058 
+	}
+	1102.9.14 = {
+		holder = 210572 
+	}
+	1154.6.28 = {
+		holder = 210571 
+	}
+	1174.1.1 = {
+		holder = 72065 
+	}
+	1182.1.1 = {
+		holder = 72060 
+	}
+}
+
+c_puigcerda = {
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	798.1.1 = {
+		holder = visigothic0006 
+		liege = k_aquitaine
+	}
+	800.1.1 = {
+		liege = d_barcelona
+	}
+	820.1.1 = {
+		holder = 70300 
+	}
+	832.1.1 = {
+		holder = 70277 
+	}
+	834.1.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = 73786 
+	}
+	867.1.1 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 70154 
+	}
+	927.1.1 = {
+		holder = occitan0118 
+	}
+	968.1.1 = {
+		holder = occitan0120 
+	}
+	984.1.22 = {
+		holder = 70156 
+	}
+	988.1.1 = {
+		holder = 70160 
+	}
+	1035.1.1 = {
+		holder = 70163 
+	}
+	1068.1.1 = {
+		holder = 70165 
+	}
+	1164.1.1 = {
+		liege = k_aragon
+	}
+	1168.1.1 = {
+		holder = 210514 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_girona = {
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = 70140 
+	}
+	820.2.1 = {
+		holder = 200141 
+	}
+	825.1.1 = {
+		holder = 163063 
+	}
+	832.3.1 = {
+		holder = 167791 
+	}
+	835.6.1 = {
+		holder = 163063 
+	}
+	844.5.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = occitan0140 
+	}
+	852.1.1 = {
+		holder = 200145 
+	}
+	858.1.1 = {
+		holder = 200148 
+	}
+	865.1.1 = {
+		holder = barcelona_00003
+		
+		
+	}
+	870.1.1 = {
+		holder = 168137 
+	}
+	878.9.11 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 70152 
+	}
+	911.1.1 = {
+		holder = 110536 
+	}
+	947.1.1 = {
+		holder = occitan0113 
+	}
+	966.10.31 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110540 
+	}
+	1017.9.8 = {
+		holder = 110530 
+	}
+	1035.5.26 = {
+		holder = 110520 
+	}
+	1076.5.26 = {
+		holder = 110525 
+	}
+	1097.1.1 = {
+		holder = 210508 
+	}
+	1105.1.1 = {
+		holder = 72156
+		liege = k_aragon
+	}
+	1132.1.1 = {
+		holder = 72161
+	}
+	1165.1.1 = {
+		holder = 72185 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_rossello = {
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = 70140 
+	}
+	820.2.1 = {
+		holder = 200141 
+	}
+	825.1.1 = {
+		holder = 163063 
+	}
+	832.3.1 = {
+		holder = 167791 
+	}
+	835.6.1 = {
+		holder = 163063 
+	}
+	844.5.1 = {
+		holder = 73785 
+	}
+	848.1.1 = {
+		holder = occitan0140 
+	}
+	852.1.1 = {
+		holder = 200145 
+	}
+	858.1.1 = {
+		holder = 200148 
+	}
+	865.1.1 = {
+		holder = barcelona_00003
+		
+		
+	}
+	870.1.1 = {
+		holder = 168137 
+	}
+	878.9.11 = {
+		holder = 70150 
+	}
+	897.8.11 = {
+		holder = 70152 
+	}
+	911.1.1 = {
+		holder = 110536 
+	}
+	947.1.1 = {
+		holder = occitan0113 
+	}
+	966.10.31 = {
+		holder = 110538 
+	}
+	992.9.30 = {
+		holder = 110540 
+	}
+	1017.9.8 = {
+		holder = 110530 
+	}
+	1035.5.26 = {
+		holder = 110520 
+	}
+	1076.5.26 = {
+		holder = 110525 
+	}
+	1078.1.1 = {
+		holder = 110582
+	}
+	1098.1.1 = {
+		holder = 110585
+	}
+	1137.1.1 = {
+		holder = 72238
+	}
+	1166.1.1 = {
+		holder = 72245 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_lleida = {
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = basque0127 
+		liege = d_aragon
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = levantine0008 
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	
+	889.10.10 = {
+		holder = 73815 
+	}
+	898.10.8 = {
+		holder = 200026 
+		liege = d_toledo
+	}
+	907.9.30 = {
+		holder = andalusian0082 
+		liege = 0
+	}
+	913.10.23 = {
+		holder = andalusian0006 
+	}
+	918.12.25 = {
+		holder = andalusian0013 
+	}
+	922.5.25 = {
+		holder = 200030 
+	}
+	927.1.1 = {
+		holder = yemeni0032 
+		liege = d_aragon
+	}
+	976.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1031.1.1 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 3938 
+		liege = 0
+	}
+	1079.1.1 = {
+		holder = 3934 
+		liege = d_aragon
+	}
+	1081.1.1 = {
+		holder = 73190 
+		liege = 0
+	}
+	1090.1.1 = {
+		holder = 73191 
+	}
+	1102.1.1 = {
+		holder = 73180 
+	}
+	1110.5.31 = {
+		holder = 73182 
+	}
+	1115.1.1 = {
+		holder = 73183 
+	}
+	1118.12.18 = {
+		holder = 70232 
+		liege = k_aragon
+	}
+	1178.1.1 = {
+		holder = 72316 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_tarragona = {
+
+	769.1.1 = {
+		holder = 200049 
+		liege = d_barcelona
+	}
+	780.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = 200052 
+	}
+	800.1.1 = {
+		holder = 200053 
+	}
+	801.4.3 = {
+		holder = basque0127 
+		liege = d_aragon
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = 73851 
+	}
+	892.1.1 = {
+		holder = 73852 
+	}
+	898.1.1 = {
+		holder = 73853 
+	}
+	930.1.1 = {
+		holder = levantine0127 
+	}
+	950.1.1 = {
+		holder = 200041 
+	}
+	978.1.1 = {
+		holder = 73846 
+		liege = d_aragon
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1009.3.3 = {
+		holder = andalusian0101 
+		liege = 0
+	}
+	1009.7.1 = {
+		holder = 73184 
+		liege = d_aragon
+	}
+	1010.1.1 = {
+		holder = andalusian0101 
+		liege = 0
+	}
+	1016.1.1 = {
+		liege = d_valencia
+	}
+	1038.1.1 = {
+		holder = andalusian0102 
+	}
+	1053.1.1 = {
+		holder = andalusian0103 
+	}
+	1057.1.1 = {
+		holder = andalusian0104 
+	}
+	1060.1.1 = {
+		holder = 3938 
+		liege = 0
+	}
+	1079.1.1 = {
+		holder = 3934 
+		liege = d_aragon
+	}
+	1081.1.1 = {
+		holder = 73191 
+		liege = 0
+	}
+	1090.1.1 = {
+		holder = 73191 
+	}
+	1102.1.1 = {
+		holder = 73180 
+		liege = d_aragon
+	}
+	1110.5.31 = {
+		holder = 73182 
+	}
+	1115.1.1 = {
+		holder = 73183 
+	}
+	1118.12.18 = {
+		liege = k_aragon
+	}
+	1135.1.1 = {
+		liege = d_navarra 
+	}
+	1136.1.1 = {
+		liege = k_aragon
+	}
+	1174.3.21 = {
+		holder = 210550 
+		government = theocracy_government
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+d_aragon = {
+
+	711.1.1 = {
+		de_jure_liege = k_valencia
+		effect = { set_title_name = d_zaragoza }
+	}
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+		
+	
+	771.1.1 = {
+		holder = 200046 
+		liege = k_andalusia
+	}
+	788.6.10 = {
+		holder = 73810 
+	}
+	789.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = levantine0005 
+	}
+	798.1.1 = {
+		holder = basque0127 
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	814.1.1 = {
+		holder = 0
+	}
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+		liege = k_valencia
+	}
+	860.1.1 = {
+		holder = levantine0008 
+		liege = k_andalusia
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	882.12.1 = {
+		holder = 73815 
+	}
+	884.1.1 = {
+		holder = 0
+	}
+	890.1.1 = {
+		holder = 73841 
+	}
+	925.1.1 = {
+		holder = 73842 
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73845 
+	}
+	975.1.1 = {
+		holder = 73847 
+	}
+	975.7.1 = {
+		holder = 73845 
+	}
+	976.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+		liege = 0
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1035.10.18 = {
+		de_jure_liege = k_aragon
+		effect = { reset_title_name = yes }
+	}
+	1036.1.1 = {
+		holder = 73186 
+	}
+	1038.8.23 = {
+		holder = 73187 
+	}
+	1038.9.20 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 3934 
+	}
+	1082.1.1 = {
+		holder = 3935 
+	}
+	1085.1.1 = {
+		holder = 45005 
+	}
+	1110.1.24 = {
+		holder = 73180 
+	}
+	1110.5.31 = {
+		holder = 73182 
+		liege = k_maghreb
+	}
+	1115.1.1 = {
+		holder = 73183 
+	}
+	1134.9.7 = {
+		holder = 70233 
+	}
+	1157.8.16 = {
+		holder = 210507 
+	}
+	1164.1.1 = {
+		holder = 210500 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_zaragoza = {
+
+	867.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 27 }
+ 
+	7671.1.1 = {
+		holder = 200046 
+		liege = d_aragon
+		government = clan_government
+	}
+	788.6.10 = {
+		holder = 73810 
+	}
+	789.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = levantine0005 
+	}
+	798.1.1 = {
+		holder = basque0127 
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = levantine0008 
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	882.12.1 = {
+		holder = 73815 
+	}
+	
+	890.1.1 = {
+		holder = 73841 
+	}
+	925.1.1 = {
+		holder = 73842 
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73845 
+	}
+	975.1.1 = {
+		holder = 73847 
+	}
+	975.7.1 = {
+		holder = 73845 
+	}
+	976.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1036.1.1 = {
+		holder = 73186 
+	}
+	1038.8.23 = {
+		holder = 73187 
+	}
+	1038.9.20 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 3934 
+	}
+	1082.1.1 = {
+		holder = 3935 
+	}
+	1085.1.1 = {
+		holder = 45005 
+	}
+	1110.1.24 = {
+		holder = 73180 
+	}
+	1110.5.31 = {
+		holder = 73182 
+	}
+	1115.1.1 = {
+		holder = 73183 
+	}
+	1118.12.18 = {
+		holder = 70232 
+	}
+	1134.9.7 = {
+		holder = 70233 
+	}
+	1157.8.16 = {
+		holder = 210507 
+	}
+	1164.1.1 = {
+		holder = 210500 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_albarracin = {
+
+	7671.1.1 = {
+		holder = 200046 
+		liege = d_aragon
+		government = clan_government
+	}
+	788.6.10 = {
+		holder = 73810 
+	}
+	789.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = levantine0005 
+	}
+	798.1.1 = {
+		holder = basque0127 
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = levantine0008 
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	882.12.1 = {
+		holder = 73815 
+	}
+	
+	890.1.1 = {
+		holder = 73841 
+	}
+	925.1.1 = {
+		holder = 73842 
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73845 
+	}
+	968.1.1 = {
+		holder = baranis0079 
+	}
+	1000.1.1 = {
+		holder = baranis0080 
+	}
+	1012.1.1 = {
+		holder = baranis0081 
+		liege = 0
+	}
+	1045.1.1 = {
+		holder = 20883 
+	}
+	1103.5.18 = {
+		holder = 20884 
+	}
+	1104.4.6 = {
+		holder = 73182 
+	}
+	1115.1.1 = {
+		holder = 73183 
+		liege = d_aragon
+	}
+	1118.12.18 = {
+		holder = 73246 
+	}
+	1143.1.1 = {
+		holder = 224014 
+	}
+	1170.1.1 = {
+		liege = k_navarra
+		holder = 72048 
+	}
+	1177.3.16 = {
+		liege = 0
+	}
+	1198.1.1 = {
+		holder = 72044 
+	}
+	1200.1.1 = {
+		holder = 72039 
+	}
+	1241.4.4 = {
+		holder = 71573 
+	}
+	1276.1.1 = {
+		holder = 71574 
+	}
+	1284.1.1 = {
+		holder = 71744 
+		liege = k_aragon
+	}
+	1327.1.1 = {
+		holder = 71698 
+	}
+}
+
+c_alto_aragon = {
+
+	867.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 24 }
+ 
+	799.1.1 = {
+		holder = frankish0005 
+		liege = k_navarra
+	}
+	806.1.1 = {
+		holder = 70300 
+	}
+	820.1.1 = {
+		holder = 70302 
+	}
+	833.1.1 = {
+		holder = 70303 
+	}
+	844.1.1 = {
+		holder = 70277 
+	}
+	867.1.1 = {
+		holder = 70276 
+	}
+	893.1.1 = {
+		holder = 70274 
+	}
+	922.1.1 = {
+		holder = 70275 
+	}
+	943.1.1 = {
+		holder = 70124 
+	}
+	994.12.1 = {
+		holder = 106040 
+	}
+	999.12.8 = {
+		holder = 106030 
+	}
+	1035.10.18 = {
+		holder = 110510 
+		liege = k_aragon
+	}
+	1063.5.8 = {
+		holder = 110500 
+	}
+	1094.6.4 = {
+		holder = 70231 
+	}
+	1104.9.27 = {
+		holder = 70232 
+	}
+	1134.9.27 = {
+		holder = 70233 
+	}
+	1157.8.16 = {
+		holder = 210507 
+	}
+	1174.10.16 = {
+		holder = 210500 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460580 
+	}
+}
+
+c_sobrarbe = {
+
+	867.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 24 }
+ 
+	799.1.1 = {
+		holder = frankish0005 
+		liege = k_navarra
+	}
+	806.1.1 = {
+		holder = 70300 
+	}
+	820.1.1 = {
+		holder = 70302 
+	}
+	833.1.1 = {
+		holder = 70303 
+	}
+	844.1.1 = {
+		holder = 70277 
+	}
+	867.1.1 = {
+		holder = 70276 
+	}
+	893.1.1 = {
+		holder = 70274 
+	}
+	922.1.1 = {
+		holder = 70275 
+	}
+	943.1.1 = {
+		holder = 70124 
+	}
+	994.12.1 = {
+		holder = 106040 
+	}
+	999.12.8 = {
+		holder = 106030 
+	}
+	1035.10.18 = {
+		holder = 110510 
+		liege = k_aragon
+	}
+	1063.5.8 = {
+		holder = 110500 
+	}
+	1178.1.1 = {
+		holder = erill_1 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460580 
+	}
+}
+
+c_huesca = {
+
+	867.1.1 = { change_development_level = 6 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 24 }
+ 
+	799.1.1 = {
+		holder = frankish0005 
+		liege = k_navarra
+	}
+	806.1.1 = {
+		holder = 70300 
+	}
+	820.1.1 = {
+		holder = 70302 
+	}
+	833.1.1 = {
+		holder = 70303 
+	}
+	844.1.1 = {
+		holder = 70277 
+	}
+	867.1.1 = {
+		holder = 70276 
+	}
+	893.1.1 = {
+		holder = 70274 
+	}
+	922.1.1 = {
+		holder = 70275 
+	}
+	943.1.1 = {
+		holder = 70124 
+	}
+	994.12.1 = {
+		holder = 106040 
+	}
+	999.12.8 = {
+		holder = 106030 
+	}
+	1035.10.18 = {
+		holder = 110510 
+		liege = k_aragon
+	}
+	1063.5.8 = {
+		holder = 110500 
+	}
+	1178.1.1 = {
+		holder = cornel_1 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460580 
+	}
+}
+
+c_calatayud = {
+
+	7671.1.1 = {
+		holder = 200046 
+		liege = d_aragon
+		government = clan_government
+	}
+	788.6.10 = {
+		holder = 73810 
+	}
+	789.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = levantine0005 
+	}
+	798.1.1 = {
+		holder = basque0127 
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = yemeni0030 
+		liege = k_andalusia
+	}
+	871.1.1 = {
+		holder = 73839 
+	}
+	890.1.1 = {
+		liege = d_aragon
+	}
+	890.7.1 = {
+		holder = 73841 
+	}
+	925.1.1 = {
+		holder = 73842 
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73845 
+	}
+	975.1.1 = {
+		holder = 73847 
+	}
+	975.7.1 = {
+		holder = 73845 
+	}
+	976.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1036.1.1 = {
+		holder = 73186 
+	}
+	1038.8.23 = {
+		holder = 73187 
+	}
+	1038.9.20 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 73192 
+		liege = 0
+	}
+	1055.1.1 = {
+		holder = 3934 
+		liege = d_aragon
+	}
+	1082.1.1 = {
+		holder = 3935 
+	}
+	1085.1.1 = {
+		holder = 45005 
+	}
+	1110.1.24 = {
+		holder = 73180 
+	}
+	1110.1.1 = {
+		holder = 73180 
+	}
+	1115.1.1 = {
+		liege = k_maghreb
+	}
+	1130.1.1 = {
+		holder = 73181 
+	}
+	1164.1.1 = {
+		holder = 210500 
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 71651 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1284.1.1 = {
+		holder = 71744 
+	}
+	1327.1.1 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_fraga = {
+
+	7671.1.1 = {
+		holder = 200046 
+		liege = d_aragon
+		government = clan_government
+	}
+	788.6.10 = {
+		holder = 73810 
+	}
+	789.1.1 = {
+		holder = 200051 
+	}
+	792.1.1 = {
+		holder = levantine0005 
+	}
+	798.1.1 = {
+		holder = basque0127 
+	}
+	802.12.1 = {
+		holder = 73799 
+	}
+	
+	848.1.1 = {
+		holder = 73683 
+	}
+	852.10.14 = {
+		holder = 73812 
+	}
+	860.1.1 = {
+		holder = levantine0008 
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	882.12.1 = {
+		holder = 73815 
+	}
+	896.1.1 = {
+		holder = 200026 
+		liege = d_toledo
+	}
+	907.9.30 = {
+		holder = andalusian0082 
+		liege = 0
+	}
+	913.10.23 = {
+		holder = andalusian0006 
+	}
+	914.4.23 = {
+		holder = andalusian0007 
+	}
+	915.1.1 = {
+		holder = basque0138 
+	}
+	926.1.1 = {
+		holder = 73842 
+		liege = d_aragon
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1036.1.1 = {
+		holder = 73186 
+	}
+	1038.8.23 = {
+		holder = 73187 
+	}
+	1038.9.20 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 3934 
+	}
+	1082.1.1 = {
+		holder = 3935 
+	}
+	1085.1.1 = {
+		holder = 45005 
+	}
+	1110.1.1 = {
+		holder = 73180 
+	}
+	1110.5.31 = {
+		holder = 73182 
+	}
+	1115.1.1 = {
+		holder = 73183 
+		liege = k_maghreb
+	}
+	1118.12.18 = {
+		liege = k_aragon
+	}
+	1135.1.1 = {
+		liege = d_navarra 
+	}
+	1136.1.1 = {
+		liege = k_aragon
+	}
+	1174.3.21 = {
+		holder = 210550 
+		government = theocracy_government
+	}
+	1195.4.25 = {
+		holder = 210501 
+	}
+	1213.9.14 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460590 
+	}
+	1285.11.11 = {
+		holder = 71739 
+	}
+	1291.6.18 = {
+		holder = 460560 
+	}
+	1327.11.5 = {
+		holder = 460510 
+	}
+	1336.1.24 = {
+		holder = 460500 
+	}
+}
+
+c_alcaniz = {
+
+	852.10.14 = {
+		holder = 73812 
+		liege = d_aragon
+	}
+	860.1.1 = {
+		holder = levantine0008 
+	}
+	872.1.22 = {
+		holder = 73818 
+	}
+	882.12.1 = {
+		holder = 73815 
+	}
+	
+	890.1.1 = {
+		holder = 73841 
+	}
+	925.1.1 = {
+		holder = 73842 
+	}
+	930.1.1 = {
+		holder = 73843 
+	}
+	939.1.1 = {
+		holder = 73845 
+	}
+	975.1.1 = {
+		holder = 73847 
+	}
+	975.7.1 = {
+		holder = 73845 
+	}
+	976.1.1 = {
+		holder = 73846 
+	}
+	989.1.1 = {
+		holder = 73847 
+	}
+	1013.1.1 = {
+		holder = 73184 
+	}
+	1022.1.1 = {
+		holder = 73185 
+	}
+	1036.1.1 = {
+		holder = 73186 
+	}
+	1038.8.23 = {
+		holder = 73187 
+	}
+	1038.9.20 = {
+		holder = 3933 
+	}
+	1047.1.1 = {
+		holder = 3934 
+	}
+	1065.1.1 = { 
+		holder = andalusian0059 
+		liege = d_toledo 
+	}
+	1082.1.1 = {
+		holder = 3935 
+	}
+	1085.1.1 = {
+		holder = 45005 
+	}
+	1110.1.24 = {
+		holder = 73180 
+	}
+	1110.5.31 = {
+		holder = 224007 
+	}
+	1130.1.1 = {
+		holder = 224013 
+	}
+	1135.1.1 = {
+		holder = 32973 
+	}
+	1145.1.1 = {
+		holder = 73210 
+		liege = d_valencia
+	}
+	1145.7.1 = {
+		holder = 73201 
+	}
+	1146.1.1 = {
+		holder = 73181 
+	}
+	1146.7.1 = {
+		holder = 73201 
+	}
+	1147.1.1 = {
+		holder = 73243 
+		liege = d_murcia
+	}
+	1169.1.1 = {
+		holder = 210500 
+	}
+	1172.1.1 = {
+		liege = k_maghreb
+	}
+	1186.1.1 = {
+		holder = 224002 
+	}
+	1212.1.1 = {
+		holder = 73619 
+	}
+	1214.1.1 = {
+		holder = 73620 
+	}
+	1224.1.1 = {
+		holder = 73622 
+	}
+	1228.1.1 = {
+		liege = d_murcia
+	}
+	1234.1.1 = {
+		holder = 210516 
+		liege = k_aragon
+	}
+	1242.1.1 = {
+		holder = 209508 
+	}
+	1258.6.2 = {
+		holder = 460600 
+	}
+	1276.7.27 = {
+		holder = 460010 
+	}
+	1285.1.1 = {
+		holder = 70234 
+	}
+	1321.1.1 = {
+		holder = 461512 
+	}
+	1335.4.28 = {
+		holder = 460011 
+	}
+}
+
+b_caspe = {
+
+	1297.1.1 = {
+		holder = 71730
+	}
+	1323.1.1 = {
+		holder = 71731
+	}
+	1329.1.1 = {
+		holder = 71733
+	}
+}

@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ universal_convert_to_meritocratic_decision: "采用贤能制政体（通用）"
+ universal_convert_to_meritocratic_desc: "是时候按照贤能、官僚体系与商业，而非血脉与习俗，来重组我们的国度了。真正的统治者依仗有才之士，而非裙带之亲。"
+ universal_convert_to_meritocratic_tooltip: "改变[government|E]，成为[meritocratic|E]"
+ universal_meritocratic_confirm: "我们的道路将由有才之士指引，而非裙带之亲。"
+ universal_meritocratic_liege_requirement: "你的[liege|E]必须已经采用[meritocratic|E][government|E]"
+ universal_meritocratic_vassals_will_convert: "你[realm|E]内所有世俗[vassal|E]及其下属封臣将采用[meritocratic|E][government|E]。[theocratic|E]、[republican|E]与[holy_order|E]统治者将保留原有[government|E]"

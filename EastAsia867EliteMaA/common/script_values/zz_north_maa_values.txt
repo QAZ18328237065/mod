@@ -1,0 +1,20 @@
+﻿### 涓浗鍖楁柟867绮鹃攼鍏电 鎴愭湰鍊?
+tangut_fanluo_riders_recruitment_cost = 82
+tangut_fanluo_riders_low_maint_cost = 0.35
+tangut_fanluo_riders_high_maint_cost = 1.05
+
+tangut_dingnan_spearmen_recruitment_cost = 83
+tangut_dingnan_spearmen_low_maint_cost = 0.32
+tangut_dingnan_spearmen_high_maint_cost = 0.96
+
+shatuo_yajun_riders_recruitment_cost = 83
+shatuo_yajun_riders_low_maint_cost = 0.35
+shatuo_yajun_riders_high_maint_cost = 1.05
+
+qiang_crossbows_recruitment_cost = 56
+qiang_crossbows_low_maint_cost = 0.2
+qiang_crossbows_high_maint_cost = 0.6
+
+qiang_mountain_ambushers_recruitment_cost = 53
+qiang_mountain_ambushers_low_maint_cost = 0.19
+qiang_mountain_ambushers_high_maint_cost = 0.57

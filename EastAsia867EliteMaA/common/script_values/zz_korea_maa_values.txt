@@ -1,0 +1,41 @@
+﻿### 鏈濋矞鍗婂矝867绮鹃攼鍏电 鎴愭湰鍊?(v5.1: 鍏仠鍐涒啋楠ㄥ搧椹啗)
+
+hwarang_recruitment_cost = 118
+hwarang_low_maint_cost = 0.48
+hwarang_high_maint_cost = 1.44
+
+golpum_cavalry_recruitment_cost = 100
+golpum_cavalry_low_maint_cost = 0.41
+golpum_cavalry_high_maint_cost = 1.23
+
+sechang_recruitment_cost = 106
+sechang_low_maint_cost = 0.42
+sechang_high_maint_cost = 1.26
+
+nudang_recruitment_cost = 84
+nudang_low_maint_cost = 0.32
+nudang_high_maint_cost = 0.96
+
+kwanggun_recruitment_cost = 111
+kwanggun_low_maint_cost = 0.45
+kwanggun_high_maint_cost = 1.35
+
+singi_riders_recruitment_cost = 97
+singi_riders_low_maint_cost = 0.41
+singi_riders_high_maint_cost = 1.23
+
+eungyang_recruitment_cost = 93
+eungyang_low_maint_cost = 0.38
+eungyang_high_maint_cost = 1.14
+
+obang_pikes_recruitment_cost = 99
+obang_pikes_low_maint_cost = 0.4
+obang_pikes_high_maint_cost = 1.2
+
+baekje_crossbowmen_recruitment_cost = 70
+baekje_crossbowmen_low_maint_cost = 0.26
+baekje_crossbowmen_high_maint_cost = 0.78
+
+baekje_armored_riders_recruitment_cost = 97
+baekje_armored_riders_low_maint_cost = 0.4
+baekje_armored_riders_high_maint_cost = 1.2

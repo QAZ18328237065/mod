@@ -1,0 +1,59 @@
+﻿e_srivijaya = {
+
+	
+	
+	
+	671.1.1 = {
+		holder = malay_oldsrivijaya_01	
+		government = mandala_government
+	}
+	702.1.1 = {
+		holder = malay_oldsrivijaya_02	
+	}
+	728.1.1 = {
+		holder = malay_oldsrivijaya_03	
+	}
+	
+	
+	
+	775.1.1 = {
+		holder = javanese_sailendra_05	
+	}
+	782.1.1 = {
+		holder = javanese_sailendra_06	
+	}
+	
+	840.1.1 = {
+		holder = javanese_sanjaya_06	
+	}
+	842.1.1 = {
+		holder = malay_soma_02	
+	}
+	856.1.1 = {
+		holder = javanese_sailendra_07	
+	}
+	
+	
+	
+	960.1.1 = {
+		holder = javanese_sailendra_20	
+	}
+	980.1.1 = {
+		holder = javanese_sailendra_21	
+	}
+	988.1.1 = {
+		holder = javanese_sailendra_22	
+	}
+	1008.1.1 = {
+		holder = javanese_sailendra_23	
+	}
+	1017.1.1 = {
+		holder = javanese_sailendra_24	
+	}
+	1025.1.1 = {
+		holder = javanese_sailendra_25	
+	}
+	1025.6.6 = {	
+		holder = 0
+	}
+}

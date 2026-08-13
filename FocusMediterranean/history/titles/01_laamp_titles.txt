@@ -1,0 +1,1267 @@
+﻿d_laamp_xuanji = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = han_3828 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_guttorm = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 168650 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ahwazi = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = al_ahwazi_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ziyar = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 166987 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_anangapida = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 188394 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_hrolfr = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 242
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ubbe = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 163119
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_enian = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = yaglakar_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_sevener_caliph = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 33920 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_twelver_caliph = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 163025 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_qutid = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = 73984 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_takaoka = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = japanese_yamato_181 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ding_hui = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = ding_hui_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_zhu_quanzhong = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = zhu_quanzhong_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_miyoshi_kiyotsura = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = japanese_miyoshi_4 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_hidden_valley_banner = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = ki_hwon_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_way_of_the_mountains = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = toson_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_pongyi_thaing_fellowship = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = upali_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ravine_lords = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = ly_do_doc_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_sirafi_mariners = {
+ 
+	867.1.1 = {
+		liege = 0
+		holder = sulayman_al_tajir_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_sabbah = {
+ 
+	1066.6.1 = {
+		liege = 0
+		holder = 41702 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1124.6.12 = {
+		holder = 0
+	}
+}
+
+d_laamp_wake = {
+ 
+	1066.6.1 = {
+		liege = 0
+		holder = 90028 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1072.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_el_cid = {
+ 
+	1065.12.27 = {
+		liege = 0
+		holder = 107590 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1099.7.10 = {
+		holder = 0
+	}
+}
+
+d_laamp_crispin = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = norman_crispin_06 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1072.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_suleyman = {
+ 
+	1063.1.1 = {
+		liege = 0
+		holder = 3046 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_wallada = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = andalusian_0003 
+		government = landless_adventurer_government
+		succession_laws = {
+			landless_adventurer_succession_law
+			equal_law
+		}
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			
+			set_variable = { name = can_keep_realm_law value = flag:equal_law }
+		}
+	}
+	1066.09.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1091.3.26 = {
+		holder = 0
+	}
+}
+
+d_laamp_danishmend = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = danishmendid_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1071.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_raoul = {
+ 
+	1066.6.1 = {
+		liege = 0
+		holder = 232504 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1080.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_karatzas = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = karatzas_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_aelfwine = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = 161260 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_voiteh = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = 34463 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1072.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_kalbid = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = 73309 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1066.9.15 = {
+		holder = 0
+	}
+}
+
+d_laamp_du_leon = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = 106060 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1066.9.15 = {
+		holder = 0
+	}
+}
+
+d_laamp_liangshan_band = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = song_jiang_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_frontier_guardians = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = yang_zongbao_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_companions_of_caodong = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = furong_daokai_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_hiei_wayfarers = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = jojin_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_northern_blades = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = isawa_no_saburo_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_band_of_the_inland_sea = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = tsukushi_no_koretaka_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_munheon_disciples = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = kim_mu_che_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_white_tigers = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = baekho_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_pathwalkers = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = khong_lo_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_delta_company = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = nga_yamankan_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_leaf_hermits = {
+ 
+	1066.1.1 = {
+		liege = 0
+		holder = mpu_bharada_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1077.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_kizil_buga = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = kayi_3 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1200.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ali_ibn_reverter = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = guardia_3 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1187.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_andronikos_komnenos = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = 215529 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1183.9.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_asen = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = 217501 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1185.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_mieszko = {
+ 
+	1177.4.21 = {
+		liege = 0
+		holder = 221560 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1185.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_raimon_brun = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = 93810 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1183.8.10 = {
+		holder = 0
+	}
+}
+
+d_laamp_lalibela = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = 32233 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1181.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_muhammad_bakhtiyar = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = 170252 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_shunkan = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = japanese_minamoto_murakami_99 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+}
+
+d_laamp_yoshitsune = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = japanese_minamoto_seiwa_139 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+}
+
+d_laamp_disciples_of_chongyang = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = wang_chuyi_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_wandering_lute = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = jiang_kui_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_lembongs_band = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = lembong_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_dawn_company = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = zhu_zhongba_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_eastern_sculptors = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = chen_heqing_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_stormbringers = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = quach_boc_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_samadhi_and_prajna_society = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = il_eom_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_arrow_cutters = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = gochi_in_no_tajima_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_ordinators = {
+ 
+	1178.1.1 = {
+		liege = 0
+		holder = shin_capata_1 
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.1.1 }
+		}
+	}
+	1203.1.1 = {
+		holder = 0
+	}
+}
+
+d_laamp_henry_of_skalitz = {
+ 
+	866.1.1 = {
+		liege = 0
+		holder = easteregg_henry_of_skalitz
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	866.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 866.1.1 }
+		}
+	}
+	868.1.2 = {
+		holder = 0
+	}
+	1065.12.27 = {
+		liege = 0
+		holder = easteregg_henry_kobyla
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1065.12.27 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1065.12.27 }
+		}
+	}
+	1067.12.28 = {
+		holder = 0
+	}
+	
+	1177.10.1 = {
+		liege = 0
+		holder = easteregg_henry_kobyla_late
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	1177.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1177.10.1 }
+		}
+	}
+	1179.10.2 = {
+		holder = 0
+	}
+}

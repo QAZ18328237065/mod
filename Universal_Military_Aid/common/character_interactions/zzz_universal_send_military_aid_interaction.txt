@@ -1,0 +1,372 @@
+﻿# 通用"命武职官员加入战争"交互
+# 原版 celestial_send_military_aid_interaction 只对 天朝/贤能/宫帐（有 merit）开放
+# 本交互服务其余行政制政体：拜占庭行政制(administrative_government)、原版律令制(japan_administrative_government)
+# 发送端排除有 merit 的政体，因此与原版交互互补、不会出现双入口
+# 依赖：EP3 Roads to Power（拜占庭）、TGP All Under Heaven（律令制，事件 tgp_interaction_event.0015/0016）
+universal_send_military_aid_interaction = {
+	icon = icon_soldier_survivor
+	interface_priority = 70
+	category = interaction_category_vassal
+	common_interaction = no
+	desc = universal_send_military_aid_interaction_desc
+	
+	filter_tags = { admin_governor }
+
+	popup_on_receive = yes
+	pause_on_receive = yes
+
+	pre_answer_yes_key = ACCEPT
+	pre_answer_no_key = DECLINE
+	
+	shows_military_strength = yes
+
+	cost = {
+		influence = {
+			value = {
+				add = medium_influence_value
+				desc = BASE
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = {
+			# 独立行政制统治者且无 merit（有 merit 的走原版交互）
+			top_liege = this
+			government_allows = administrative
+			NOT = { government_allows = merit }
+		}
+		scope:recipient = {
+			top_liege = scope:actor.top_liege
+			OR = {
+				is_landed = yes
+				has_title = title:e_minister_grand_marshal
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		custom_tooltip = {
+			text = universal_request_military_aid_no_military_governors_desc
+			scope:recipient.top_liege = {
+				any_vassal_or_below = {
+					OR = {
+						vassal_contract_has_flag = celestial_military_appointment
+						vassal_contract_has_flag = meritocratic_military_appointment
+						vassal_contract_has_flag = admin_theme_military
+						vassal_contract_has_flag = japan_administrative_military_appointment
+					}
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = universal_request_military_aid_no_available_military_governors_desc
+			scope:recipient.top_liege = {
+				any_vassal_or_below = {
+					save_temporary_scope_as = joining_governor
+					OR = {
+						vassal_contract_has_flag = celestial_military_appointment
+						vassal_contract_has_flag = meritocratic_military_appointment
+						vassal_contract_has_flag = admin_theme_military
+						vassal_contract_has_flag = japan_administrative_military_appointment
+						has_title = title:e_minister_grand_marshal
+					}
+					NOR = {
+						scope:joining_governor = scope:recipient
+						scope:joining_governor = scope:actor
+						any_war_ally = { this = scope:recipient }
+						is_at_war_with = scope:recipient
+						is_at_war_with = scope:actor
+						scope:recipient = {
+							any_war_enemy = {
+								OR = {
+									is_vassal_of = scope:joining_governor
+									is_liege_or_above_of = scope:joining_governor
+									is_allied_to = scope:joining_governor
+									is_tributary_of = scope:joining_governor
+									is_at_war_with = scope:joining_governor
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		scope:recipient = {
+			is_at_war = yes # Has to be at war
+			is_at_war_with_liege = no # But not with liege
+			NOT = { is_at_war_with = scope:actor }
+			# Has to be a war leader
+			trigger_if = {
+				limit = { is_at_war = yes }
+				custom_description = {
+					text = target_is_not_war_leader
+					object = scope:recipient
+					any_character_war = {
+						scope:recipient = { is_leader_in_war = prev }
+					}
+				}
+			}
+		}
+	}
+
+	populate_recipient_list = {
+		scope:actor.top_liege = {
+			every_vassal_or_below = {
+				limit = {
+					save_temporary_scope_as = joining_governor
+					OR = {
+						vassal_contract_has_flag = celestial_military_appointment
+						vassal_contract_has_flag = meritocratic_military_appointment
+						vassal_contract_has_flag = admin_theme_military
+						vassal_contract_has_flag = japan_administrative_military_appointment
+						has_title = title:e_minister_grand_marshal
+					}
+					NOR = {
+						scope:joining_governor = scope:recipient
+						scope:joining_governor = scope:actor
+						any_war_ally = { this = scope:recipient }
+						is_at_war_with = scope:recipient
+						is_at_war_with = scope:actor
+						scope:recipient = {
+							any_war_enemy = {
+								OR = {
+									is_vassal_of = scope:joining_governor
+									is_liege_or_above_of = scope:joining_governor
+									is_allied_to = scope:joining_governor
+									is_tributary_of = scope:joining_governor
+									is_at_war_with = scope:joining_governor
+								}
+							}
+						}
+					}
+				}
+				add_to_list = characters
+			}
+		}
+	}
+
+	can_send = {
+	}
+
+	on_send = {
+	}
+	
+	is_highlighted = {
+		scope:recipient = {
+			is_at_war = yes
+		}
+	}
+
+	auto_accept = yes
+
+	on_accept = {
+		scope:recipient = {
+			# Save scopes for events
+			save_scope_as = governor_at_war
+			scope:secondary_recipient = { save_scope_as = governor_joining }
+
+			# Have secondary_recipient join recipient's wars
+			every_character_war = {
+				limit = {
+					scope:recipient = { is_leader_in_war = prev }
+					is_attacker = scope:recipient
+				}
+				add_attacker = scope:secondary_recipient
+			}
+			every_character_war = {
+				limit = {
+					scope:recipient = { is_leader_in_war = prev }
+					is_defender = scope:recipient
+				}
+				add_defender = scope:secondary_recipient
+			}
+
+			# If recipient is AI, add some opinion
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_opinion = {
+					target = scope:actor
+					modifier = grateful_opinion
+					opinion = 10
+				}
+			}
+
+			# Send recipient a letter event and let them know of your action
+			if = {
+				limit = {
+					scope:actor != scope:recipient
+				}
+				trigger_event = {
+					id = tgp_interaction_event.0015
+				}
+			}
+		}
+
+		scope:secondary_recipient = {
+			# Send recipient a letter event and let them know of your action
+			trigger_event = {
+				id = tgp_interaction_event.0016
+			}
+		}
+	}
+
+	on_decline = {
+		# Interaction is auto accepted and cannot be declined
+	}
+
+	ai_targets = {
+		ai_recipients = peer_vassals
+		max = 30
+	}
+	ai_targets = {
+		ai_recipients = vassals
+		max = 30
+	}
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 8
+		empire = 4
+		hegemony = 3
+	}
+
+	ai_potential = {
+		top_liege = this
+		government_allows = administrative
+		NOT = { government_allows = merit }
+	}
+
+	ai_will_do = {
+		base = 0
+
+		# Make sure to send aid if there is no one helping
+		modifier = {
+			add = 100
+			scope:recipient = {
+				vassal_contract_has_flag = celestial_civil_appointment
+				any_war_ally = {
+					count < 1
+					this != scope:actor
+				}
+			}
+		}
+		
+		# We'll make sure to send a bit more help to the top liege
+		modifier = {
+			add = 100
+			scope:recipient = {
+				top_liege = this
+				any_war_ally = {
+					count < 3
+				}
+			}
+		}
+		
+		# We always want to send the grand marshal to the top liege
+		modifier = {
+			add = 100
+			scope:recipient = {
+				top_liege = this
+			}
+			scope:secondary_recipient = {
+				has_title = title:e_minister_grand_marshal
+			}
+		}
+
+		# Send more aid if recipient is weaker than the enemy side - But do so less frequently
+		modifier = {
+			add = 40
+			scope:recipient = {
+				any_character_war = {
+					# Set up scope values so that we can compare strength
+					save_temporary_scope_value_as = {
+						name = ai_will_do_defender_strength
+						value = 0
+					}
+					save_temporary_scope_value_as = {
+						name = ai_will_do_attacker_strength
+						value = 0
+					}
+					any_war_defender = {
+						count = all
+						save_temporary_scope_value_as = {
+							name = ai_will_do_defender_strength
+							value = {
+								value = scope:ai_will_do_defender_strength
+								add = current_military_strength
+							}
+						}
+					}
+					any_war_attacker = {
+						count = all
+						save_temporary_scope_value_as = {
+							name = ai_will_do_attacker_strength
+							value = {
+								value = scope:ai_will_do_attacker_strength
+								add = current_military_strength
+							}
+						}
+					}
+					# Check if actor's side is weaker than the opponent
+					OR = {
+						AND = {
+							is_defender = scope:actor
+							scope:ai_will_do_defender_strength < scope:ai_will_do_attacker_strength
+						}
+						AND = {
+							is_attacker = scope:actor
+							scope:ai_will_do_attacker_strength < scope:ai_will_do_defender_strength
+						}
+					}
+				}
+			}
+		}
+		
+		# We always want to send the grand marshal to the top liege
+		modifier = {
+			factor = {
+				value = 1
+				if = {
+					limit = {
+						scope:secondary_recipient = { highest_held_title_tier >= tier_empire }
+					}
+					add = 3
+				}
+				else_if = {
+					limit = {
+						scope:secondary_recipient = { highest_held_title_tier >= tier_kingdom }
+					}
+					add = 2
+				}
+				else_if = {
+					limit = {
+						scope:secondary_recipient = { highest_held_title_tier >= tier_duchy }
+					}
+					add = 1.5
+				}
+			}
+			scope:secondary_recipient = {
+				is_at_war = no
+			}
+		}
+		
+		# Players get a bit of extra score if not already busy
+		modifier = {
+			factor = 2
+			scope:secondary_recipient = {
+				is_ai = no
+				is_at_war = no
+			}
+		}
+	}
+
+	ai_accept = {
+		base = 100 # Auto accepted/no reason to refuse
+	}
+}

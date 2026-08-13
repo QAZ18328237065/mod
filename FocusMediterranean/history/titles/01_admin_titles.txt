@@ -1,0 +1,1307 @@
+﻿d_nf_ampelas = {
+ 
+	844.1.1 = {
+		liege = e_byzantium
+		holder = 145123 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_aplakes = {
+ 
+	855.1.1 = {
+		liege = e_byzantium
+		holder = 145185 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_agelastos = {
+ 
+	865.1.1 = {
+		liege = e_byzantium
+		holder = 145182 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_doukas = {
+ 
+	835.1.1 = {
+		liege = e_byzantium
+		holder = 145164 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	870.1.1 = {
+		holder = 1768 
+	}
+	908.1.1 = {
+		holder = 1774 
+	}
+	913.6.9 = {
+		holder = 145167 
+	}
+	950.1.1 = {
+		holder = 145168 
+	}
+	980.1.1 = {
+		holder = 145169 
+	}
+	1005.1.1 = {
+		holder = 1744 
+	}
+	1050.1.1 = {
+		holder = 1732 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.5.22 = {
+		holder = 1736 
+	}
+	1078.3.1 = {
+		holder = 125700 
+	}
+	1095.1.1 = {
+		holder = 1782 
+	}
+	1118.1.9 = {
+		holder = 125751 
+	}
+	1140.1.1 = {
+		holder = doukas_1 
+	}
+	1163.4.8 = {
+		holder = doukas_2 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_gerontas = {
+ 
+	865.1.1 = {
+		liege = e_byzantium
+		holder = 145124 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_hexavoulis = {
+ 
+	865.1.1 = {
+		liege = e_byzantium
+		holder = 145180 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_kardias = {
+ 
+	830.5.10 = {
+		liege = e_byzantium
+		holder = 302353 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	861.6.16 = {
+		holder = 302355 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_katakalitzes = {
+ 
+	855.1.1 = {
+		liege = e_byzantium
+		holder = 145115 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_kourkouas = {
+ 
+	860.1.1 = {
+		liege = e_byzantium
+		holder = 145171 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	1066.1.1 = { holder = 20552 } 
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1178.1.1 = { holder = 0 }
+}
+
+d_nf_krateros = {
+ 
+	750.1.1 = {
+		liege = e_byzantium
+		holder = 145830 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	793.1.1 = {
+		holder = 145831 
+	}
+	847.1.1 = {
+		holder = 145194 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_lachanodrakon = {
+ 
+	755.1.1 = {
+		liege = e_byzantium
+		holder = 145841 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	792.7.20 = {
+		holder = 145842 
+	}
+	847.1.1 = {
+		holder = 145116 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_makedon = {
+ 
+	866.9.24 = {
+		liege = e_byzantium
+		holder = 1700 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_maleios = {
+ 
+	823.1.2 = {
+		liege = e_byzantium
+		holder = 302341 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	859.7.16 = {
+		holder = 302342 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	893.9.11 = {
+		holder = 302344 
+	}
+	912.12.16 = {
+		holder = 0
+	}
+	1065.12.9 = {
+		holder = 302350 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_maleinos = {
+ 
+	845.1.1 = {
+		liege = e_byzantium
+		holder = 145144 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_maurikios = {
+ 
+	855.1.1 = {
+		liege = e_byzantium
+		holder = 145111 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_melissenos = {
+ 
+	750.1.1 = {
+		liege = e_byzantium
+		holder = 145134 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	790.1.1 = {
+		holder = 145135 
+	}
+	840.1.1 = {
+		holder = 145136 
+	}
+	860.1.1 = {
+		holder = 145137 
+	}
+	867.1.1 = {
+		holder = 145137 
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	900.1.1 = {
+		holder = 145138 
+	}
+	930.1.1 = {
+		holder = 145139 
+	}
+	960.1.1 = {
+		holder = 145140 
+	}
+	980.1.1 = {
+		holder = 145141 
+	}
+	990.1.1 = {
+		holder = 145142 
+	}
+	1030.1.1 = {
+		holder = 145143 
+	}
+	1060.1.1 = {
+		holder = 41303 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_pastillas = {
+ 
+	860.1.1 = {
+		liege = e_byzantium
+		holder = 145196 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_ooryphas = {
+ 
+	762.1.1 = {
+		liege = e_byzantium
+		holder = 145931 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	801.1.1 = {
+		holder = 145930 
+	}
+	842.1.1 = {
+		holder = 145931 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_sellokalas = {
+ 
+	855.1.1 = {
+		liege = e_byzantium
+		holder = 145191 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_skleros = {
+ 
+	812.1.1 = {
+		liege = e_byzantium
+		holder = 145148 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	820.1.1 = {
+		holder = 145149 
+	}
+	845.1.1 = {
+		holder = 145150 
+	}
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	870.1.1 = {
+		holder = 145151 
+	}
+	895.1.1 = {
+		holder = 145152 
+	}
+	920.1.1 = {
+		holder = 145154 
+	}
+	945.1.1 = {
+		holder = 1792 
+	}
+	991.1.1 = {
+		holder = 1778 
+	}
+	993.1.1 = {
+		holder = 41314 
+	}
+	1028.1.1 = {
+		holder = 41315 
+	}
+	1057.1.1 = {
+		holder = 20526 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_arcruni = {
+ 
+	1022.1.1 = {
+		liege = e_byzantium
+		holder = 41576 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1026.1.1 = {
+		holder = 41578 
+	}
+	1050.1.2 = {
+		holder = 41579 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_argyros = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 42003 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_basiliakos = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 41308 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_batatzes = {
+
+	1047.1.1 = {
+		liege = e_byzantium
+		holder = 70427 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1100.1.1 = {
+		holder = 125752
+	}
+	1130.1.1 = {
+		holder = 125753 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_botaneiates = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = 1740 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_bryennios = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 20502 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+	1094.1.1 = {
+		holder = 232531
+	}
+	1136.1.1 = {
+		holder = 34382
+	}
+	1156.3.31 = {
+		holder = 34387 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_diogenes = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 1734 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_kamateros = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 20537 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+	1178.1.1 = {
+		holder = 232551 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_karandenos = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 34464 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_kaukadenos = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 20527 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_komnenos = {
+ 
+	1059.12.25 = {
+		liege = e_byzantium
+		holder = 1752 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.7.12 = {
+		holder = 1756 
+	}
+	1071.4.17 = {
+		holder = 1742 
+	}
+	1118.8.15 = {
+		holder = 223023 
+	}
+	1143.4.8 = {
+		holder = 215530 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_makrembolites = {
+ 
+	1025.1.1 = {
+		liege = e_byzantium
+		holder = 20528 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1040.9.15 = {
+		holder = 20514 
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+	1178.1.1 = {
+		holder = makrembolites_3 
+	}
+}
+
+d_nf_murzuphlos = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 1766 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_ouranos = {
+ 
+	1057.1.1 = {
+		liege = e_byzantium
+		holder = 20516 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_pahlavuni = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 41585 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_palaiologos = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 1764 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1081.10.18 = {
+		holder = 42014 
+	}
+	1108.1.1 = {
+		holder = 34439 
+	}
+	1132.1.1 = {
+		holder = 34445 
+	}
+	1156.1.1 = {
+		holder = 34281 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_pegonites = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 20563 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_phokas = {
+ 
+	945.1.1 = {
+		liege = e_byzantium
+		holder = 1712 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	969.12.10 = {
+		holder = 41318 
+	}
+	972.1.1 = {
+		holder = 41319 
+	}
+	989.4.13 = {
+		holder = 41320 
+	}
+	1022.1.1 = {
+		holder = 20534 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_pleustes = {
+ 
+	1066.1.1 = {
+		liege = e_byzantium
+		holder = 20512 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_synadenos = {
+ 
+	1050.1.1 = {
+		liege = e_byzantium
+		holder = 20487 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1060.1.1 = {
+		holder = 20488 
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1070.1.1  = {
+		holder = 90035
+	}
+	1081.10.18 = {
+		holder = 20481
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1120.1.1 = {
+		holder = 34275 
+	}
+}
+
+d_nf_tarchaneiotes = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 20559 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1074.1.1 = {
+		holder = 90040
+	}
+	1112.1.1 = {
+		holder = tarchaneiotes_1
+	}
+	1113.1.1 = {
+		holder = tarchaneiotes_2
+	}
+	1131.1.1 = {
+		holder = tarchaneiotes_3
+	}
+	1167.1.1 = {
+		holder = tarchaneiotes_4
+	}
+	1177.1.1 = {
+		holder = 215027 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_taronites = {
+ 
+	1060.1.1 = {
+		liege = e_byzantium
+		holder = 41537 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1094.3.12 = {
+		holder = 34466
+	}
+	1107.1.1 = {
+		holder = 34467
+	}
+	1140.1.1 = {
+		holder = 34470
+	}
+	1147.1.1 = {
+		holder = taronites_1 
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_varajnuni = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = 85001 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_saronites = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = saronites_1 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_garidas = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = garidas_1 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_areobindenos = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = areobindenos_1 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_alopos = {
+ 
+	1066.9.15 = {
+		liege = e_byzantium
+		holder = alopos_1 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1067.1.1 = {
+		holder = 0
+	}
+}
+
+d_nf_angelos = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 215504 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_branas = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 215060 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_gabras = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 232544 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_kamytzes = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 34589 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_kantakouzenos = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 34412 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_komnenos_doukas = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 215508 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_kontostephanos = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 232515 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_lampardas = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = lampardas_1 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_macrodoukas = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 180997 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_petraliphas = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 232530 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_raoul = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 34609 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_nf_rogerios = {
+
+	1178.1.1 = {
+		liege = e_byzantium
+		holder = 215010 
+		government = administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+e_andong = {
+
+	867.1.1 = { change_development_level = 0 }
+	1066.1.1 = { change_development_level = 0 }
+	1178.1.1 = { change_development_level = 0 }
+}

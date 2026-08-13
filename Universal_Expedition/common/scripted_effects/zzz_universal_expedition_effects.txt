@@ -1,0 +1,268 @@
+﻿# 天下大征伐——按原版大圣战机制发动（自动选目标、原版准备期、贡献度受益人）
+# 独立运行关键：启动时自行打上原版"大圣战时代"解锁标记（variable_ghw_unlocked），
+# 不依赖 Crusades_From_867 或任何其他 mod（原版引擎效果本身无教义/时代检查，
+# 时代检查只存在于原版事件的 trigger 中，本决议绕开事件、直接调用引擎）
+
+# ============ 主效果：解锁 + 选目标 + 防御检查 ============
+# 若目标在显示后消失（极端竞态），不进入启动流程、不打一生一次 flag，
+# 玩家仅损失本次 cost，可待新目标出现后再次发动。
+universal_expedition_launch_ghw_effect = {
+	# 自解锁：本宗教族进入大圣战时代（与原版 1178 解锁等效，宗教族全信仰生效）
+	faith.religion = {
+		set_variable = {
+			name = variable_ghw_unlocked
+			value = yes
+		}
+	}
+
+	# 保存作用域
+	faith = { save_scope_as = the_faith }
+	root = { save_scope_as = ghw_sponsor }
+
+	# 原版自动目标选择（按 great_holy_war_target_kingdom_weight 权重挑王国）
+	determine_ghw_target_effect = { FAITH = scope:the_faith }
+
+	# 防御检查：目标必须成功选定（is_valid 已先行检查，此处兜底竞态）
+	if = {
+		limit = {
+			exists = scope:target_kingdom
+			exists = scope:target_character
+		}
+		universal_expedition_start_ghw_effect = yes
+	}
+}
+
+# ============ 启动流程：flag + 完整原版准备阶段 ============
+universal_expedition_start_ghw_effect = {
+	# 一生一次：实际启动成功才打上 flag
+	root = { add_character_flag = universal_expedition_used }
+
+	# 原版准备期时长（约 1-1.5 年）
+	faith = {
+		start_great_holy_war = {
+			target_character = scope:target_character
+			target_title = scope:target_kingdom
+			delay = { 365 545 }
+		}
+	}
+	scope:target_character.faith = { save_scope_as = target_faith }
+
+	# 主帅（发动者）+ 原版受益人指派（法理持有者/宣称者，胜后按贡献分封）
+	faith.great_holy_war = {
+		set_war_declarer = scope:ghw_sponsor
+		if = {
+			limit = { is_directed_ghw = no }
+			undirected_ghw_recipient_selection_effect = yes
+		}
+		pledge_attacker = scope:ghw_sponsor
+		set_variable = {
+			name = redirect_cost
+			value = 500
+		}
+	}
+
+	# 出资 1000 金注入战争金库（胜利后按贡献度分配）
+	if = {
+		limit = {
+			scope:ghw_sponsor.gold >= 1000
+		}
+		faith.great_holy_war = {
+			change_war_chest_gold = {
+				value = 1000
+				max = 10000
+			}
+		}
+		scope:ghw_sponsor = {
+			remove_short_term_gold = {
+				value = 1000
+				max = 10000
+			}
+		}
+	}
+
+	# 无候选受益人时生成后备受益人（保证宣战界面完整，原版逻辑）
+	if = {
+		limit = {
+			NOT = { exists = scope:the_faith.great_holy_war.ghw_title_recipient }
+			exists = scope:ghw_sponsor
+			exists = scope:the_faith.great_holy_war
+			scope:ghw_sponsor = {
+				any_courtier = {
+					is_adult = yes
+					is_ai = yes
+					NOR = {
+						has_trait = excommunicated
+						has_trait = incapable
+						has_trait = devoted
+					}
+					faith = scope:the_faith
+				}
+			}
+		}
+		scope:ghw_sponsor = {
+			random_courtier = {
+				alternative_limit = {
+					scope:the_faith = { has_doctrine = doctrine_gender_male_dominated }
+					is_male = yes
+					is_adult = yes
+					is_ai = yes
+					NOR = {
+						has_trait = excommunicated
+						has_trait = incapable
+						has_trait = devoted
+					}
+					faith = scope:the_faith
+				}
+				alternative_limit = {
+					scope:the_faith = { has_doctrine = doctrine_gender_female_dominated }
+					is_female = yes
+					is_adult = yes
+					is_ai = yes
+					NOR = {
+						has_trait = excommunicated
+						has_trait = incapable
+						has_trait = devoted
+					}
+					faith = scope:the_faith
+				}
+				limit = {
+					is_adult = yes
+					is_ai = yes
+					NOR = {
+						has_trait = excommunicated
+						has_trait = incapable
+						has_trait = devoted
+					}
+					faith = scope:the_faith
+				}
+				save_scope_as = fallback_recipient
+				add_character_flag = flag_is_ghw_fallback_recipient
+			}
+		}
+	}
+	else_if = { # 无合适朝臣则生成一个
+		limit = {
+			NOT = { exists = scope:the_faith.great_holy_war.ghw_title_recipient }
+		}
+		create_character = {
+			location = scope:ghw_sponsor.capital_province
+			template = new_commander_character
+			faith = scope:the_faith
+			culture = scope:ghw_sponsor.culture
+			save_scope_as = fallback_recipient
+			gender_female_chance = {
+				if = {
+					limit = {
+						scope:the_faith = { has_doctrine = doctrine_gender_male_dominated }
+					}
+					add = 0
+				}
+				else_if = {
+					limit = {
+						scope:the_faith = { has_doctrine = doctrine_gender_female_dominated }
+					}
+					add = 100
+				}
+				else = {
+					add = 50
+				}
+			}
+		}
+		scope:fallback_recipient = { add_character_flag = flag_is_ghw_fallback_recipient }
+	}
+	faith.great_holy_war = {
+		set_variable = {
+			name = var_fallback_recipient
+			value = scope:fallback_recipient
+		}
+	}
+
+	# 通知进攻方玩家准备开始（原版事件，含宣誓金额变量）
+	every_player = {
+		limit = {
+			faith = scope:the_faith
+			highest_held_title_tier >= tier_county
+			this != scope:ghw_sponsor
+		}
+		trigger_event = great_holy_war.0003
+	}
+	# 发动者本人专属反馈（原版 0003 排除了 sponsor 自己；仅玩家弹出，AI 静默跳过）
+	if = {
+		limit = {
+			any_player = { this = root }
+		}
+		trigger_event = universal_expedition.0001
+	}
+	# 通知防守方玩家
+	every_player = {
+		limit = {
+			OR = {
+				faith = scope:target_faith # 目标王国信仰所属
+				any_liege_or_above = {
+					scope:the_faith.great_holy_war = { has_pledged_defender = prev }
+				}
+				AND = {
+					faith != scope:the_faith
+					scope:the_faith.great_holy_war = { has_pledged_defender = prev }
+				}
+			}
+		}
+		trigger_event = great_holy_war.0050
+	}
+
+	# 攻击方 AI 宣誓（原版时间）
+	faith = {
+		every_faith_ruler = {
+			limit = {
+				is_ai = yes
+				is_landed = yes
+				highest_held_title_tier >= tier_county
+				NOR = {
+					this = scope:ghw_sponsor
+					root.faith.great_holy_war = { has_pledged_attacker = prev }
+					target_is_liege_or_above = scope:target_character
+				}
+			}
+			trigger_event = {
+				id = great_holy_war.0020
+				days = { 50 450 }
+			}
+		}
+		every_faith_holy_order = {
+			trigger_event = {
+				id = great_holy_war.0090
+				days = { 30 60 }
+			}
+		}
+	}
+
+	# 防守方 AI 宣誓（原版时间）
+	scope:target_character = {
+		religion = {
+			every_faith = {
+				every_faith_ruler = {
+					limit = {
+						is_ai = yes
+						is_landed = yes
+						highest_held_title_tier >= tier_county
+						NOT = {
+							root.faith.great_holy_war = { has_pledged_defender = prev }
+						}
+					}
+					trigger_event = {
+						id = great_holy_war.0021
+						days = { 25 150 }
+					}
+				}
+			}
+		}
+		faith = {
+			every_faith_holy_order = {
+				trigger_event = {
+					id = great_holy_war.0091
+					days = { 30 60 }
+				}
+			}
+		}
+	}
+}

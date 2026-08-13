@@ -1,0 +1,17 @@
+﻿### 涓浗867绮鹃攼鍏电 鎴愭湰鍊?(v5.0 鐗瑰寲)
+
+tiaodang_recruitment_cost = 55
+tiaodang_low_maint_cost = 0.18
+tiaodang_high_maint_cost = 0.54
+
+changqiangdu_recruitment_cost = 88
+changqiangdu_low_maint_cost = 0.33
+changqiangdu_high_maint_cost = 0.99
+
+shence_youqi_recruitment_cost = 99
+shence_youqi_low_maint_cost = 0.35
+shence_youqi_high_maint_cost = 1.05
+
+sheshengjun_recruitment_cost = 148
+sheshengjun_low_maint_cost = 0.49
+sheshengjun_high_maint_cost = 1.47

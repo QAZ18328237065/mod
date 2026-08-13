@@ -1,0 +1,81 @@
+﻿《发展度梯度》mod 介绍
+========================================
+
+【作用】
+给伯爵领发展度设置 7 档梯度，每档挂对应的 buff/负面修正，
+并让战争真正摧毁繁华：围城期间每月损耗发展度成长值，
+破城（伯爵领被完全攻占）时直接掉级。
+
+原版中发展度只提供征兆兵、赋税、补给三项线性加成（引擎硬编码，
+无法直接加"每发展度+钱/威望"），本 mod 用"档位 modifier + 事件驱动"
+模拟出梯度化收益，并补上原版缺失的"普通封建战争围城不掉发展度"。
+
+【使用方式】
+纯自动机制，无需任何操作：
+  - 每年自动为全图所有伯爵领检查档位（含 AI 与封臣领地）
+  - 围城：攻方军队围攻敌县期间，被围县每月 -10 发展度成长值
+    （只推迟升级，不掉级；100 成长值 = 升 1 级）
+  - 破城：伯爵领被完全攻占瞬间，按发展度直接掉级
+    （京城档 40+ 掉一半，其余档掉三分之一），并给守方弹
+    "城陷落"通知 toast
+  - 破城后 10 年内该县挂"破城"冷却（发展度成长减速、民心受损），
+    期间再被攻占不再重复掉级（防拉锯刷级）
+
+【档位速查】（边界取 867/1066/1178 三剧本发展度分布中间值）
+
+  档位    范围    命名   增益                         负面
+  T1     0~1    荒野   无                           -
+  T2     2~5    村庄   +2% 税                       -
+  T3     6~9    乡     +4% 税 +3% 兵                -
+  T4    10~15   镇     +6% 税 +6% 兵 +5% 补给        -
+  T5    16~24   县     +9% 税 +9% 兵 +10% 补给      控制度月 -0.2
+                       +0.1 成长 +10 民心
+  T6    25~39   郡城   +13% 税 +13% 兵 +15% 补给    控制度月 -0.3
+                       +0.2 成长 +15 民心            建造成本 +25%
+  T7    40+     京城   +18% 税 +18% 兵 +25% 补给    控制度月 -0.4
+                       +0.35 成长 +30 民心           建造成本 +40%
+                                                       成长速率 -15%
+
+设计逻辑：高档增益种类递增，同时引入治理压力（大城难治、
+地价昂贵、成熟饱和），玩家需在"高收益"与"维持控制度"间权衡。
+
+【实现原理】
+- 档位检查：random_yearly_everyone_pulse（引擎每年对全角色触发）
+  → dev_tier_check_pulse → every_held_title 遍历每个角色持有的伯爵领
+  （一领一主，全图无重复覆盖）→ 7 级 if/else 按发展度切换互斥 modifier
+- 围城损耗：on_army_monthly（每 30 天对每支军队）→ 军队位于
+  未占领（is_occupied = no）敌国男爵领 = 正在围攻 → 被围县 -10 成长值
+- 破城重创：on_county_occupied（伯爵领完全被占，不因守方夺回触发）
+  → 按发展度 change_development_level 扣级（T7 减半 / 其余减三分之一）
+  → 挂 10 年 dev_siege_razed_modifier 冷却 → 即时重算档位换 buff
+  → 守方 toast 通知
+- 疫病负面不做：引擎自带（繁华地区疫病传播更强，感染掉发展度）
+
+【兼容性与扩展】
+- 覆盖文件（同路径同名整体替换原版）：
+    common/on_action/army_on_actions.txt
+    common/on_action/yearly_on_actions.txt
+  均为"整体复制原版再追加改动"，其余原版 on_action 不受影响；
+  游戏更新这两个文件时需同步复制新版本
+- 调档位边界：编辑
+  common/scripted_effects/zzz_dev_tier_effects.txt 中的
+  development_level 阈值与 TIER 参数
+- 调 buff 数值：编辑
+  common/modifiers/zzz_dev_tier_modifiers.txt
+- 调围城/破城力度：编辑
+  common/on_action/army_on_actions.txt 中 [DEV TIER] 标记的代码块
+  （change_development_progress 数值、40 档特判、10 年冷却）
+- 无 DLC 依赖，纯脚本
+- 已通过 ck3-tiger 完整校验（error 0 / warning 0）
+
+【文件清单】
+  Development_Tiers.mod                             启动器注册文件
+  descriptor.mod                                    mod 定义
+  ck3-tiger.conf                                    Tiger 误报过滤配置
+  common/on_action/army_on_actions.txt              复制原版，围城损耗 + 破城重创
+  common/on_action/yearly_on_actions.txt            复制原版，挂档位脉冲
+  common/on_action/zzz_dev_tier_pulse.txt           档位检查脉冲
+  common/scripted_effects/zzz_dev_tier_effects.txt  档位判定与切换
+  common/modifiers/zzz_dev_tier_modifiers.txt       T1~T7 档位 buff + 破城冷却
+  localization/english/zzz_dev_tier_l_english.yml   英文本地化
+  localization/simp_chinese/zzz_dev_tier_l_simp_chinese.yml  简体中文本地化

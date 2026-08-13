@@ -1,0 +1,16 @@
+﻿namespace = universal_expedition
+
+# 发动者个人反馈：大圣战已启动（原版 0003 排除了 sponsor 本人，这里补上专属确认）
+# 作用域链中的 scope:target_kingdom / scope:target_character / scope:the_faith 由
+# universal_expedition_start_ghw_effect 内的 save_scope_as 保存，跨 trigger_event 传递
+universal_expedition.0001 = {
+	title = universal_expedition_launched_title
+	desc = universal_expedition_launched_desc
+	theme = faith
+	left_portrait = root
+	right_portrait = scope:target_character
+
+	option = {
+		name = universal_expedition_launched_ok
+	}
+}

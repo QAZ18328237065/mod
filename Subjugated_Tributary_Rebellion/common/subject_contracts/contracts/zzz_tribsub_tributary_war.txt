@@ -1,0 +1,50 @@
+﻿# 被征服朝贡者专属"强制参战义务"契约(覆盖原版 none 默认层)
+# flag tributary_contract_tributary_forced_war_override 被游戏代码引用,勿改名
+# 与原版 tributary_war_participation_obligation 的差异:
+#  1) 默认层级为 forced(而不是 none):新建立的被征服朝贡关系默认强制参战
+#  2) is_valid 放宽:被征服者无条件可强制(原版要求朝贡者忠顺或宗主承诺保护)
+zzz_tribsub_tributary_war_participation_obligation = {
+	display_mode = checkbox
+	obligation_levels = {
+		zzz_tribsub_tributary_war_participation_obligation_none = {
+			default = yes
+			position = { 0 0 }
+
+			ai_liege_desire = 0
+			ai_subject_desire = 1
+			score = 1
+		}
+		zzz_tribsub_tributary_war_participation_obligation_forced = {
+			parent = zzz_tribsub_tributary_war_participation_obligation_none
+			position = { 1 0 }
+
+			is_valid = {
+				trigger_if = {
+					limit = { scope:subject = { has_government = herder_government } }
+					custom_tooltip = {
+						text = herder_cannot_war_tt
+						always = no
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						scope:subject.suzerain ?= { government_has_flag = government_is_steppe_admin }
+					}
+					always = yes
+				}
+				trigger_else = {
+					always = yes
+				}
+			}
+
+			subject_opinion = -25
+
+			# flag referenced in code, do not change without approval
+			flag = tributary_contract_tributary_forced_war_override
+
+			ai_liege_desire = 1
+			ai_subject_desire = 0
+			score = -3
+		}
+	}
+}

@@ -1,0 +1,16 @@
+﻿# 被征服朝贡者对新宗主的好感痕迹与宗主对反抗者的态度
+tribsub_resent_new_suzerain_opinion = {
+	opinion = -30
+}
+tribsub_plt_suzerain_opinion = {
+	opinion = 25
+}
+tribsub_suzerain_aggression_opinion = {
+	opinion = -5
+}
+tribsub_intimidated_opinion = {
+	opinion = -10
+}
+tribsub_untrustworthy_opinion = {
+	opinion = -30
+}

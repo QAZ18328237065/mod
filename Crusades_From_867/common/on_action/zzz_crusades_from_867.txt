@@ -1,0 +1,42 @@
+﻿# 867-1178.10.1 开局解锁全部宗教族的大圣战(十字军/吉哈德/净化战争/大圣战)
+# 原版逻辑:1178.10.1 后开局由 on_game_start 直接解锁(game_start.txt:837),仅基督教/伊斯兰;
+# 更早的书签只能等 great_holy_war.0010 事件(耶路撒冷陷落且≥1095,或≥1100 无条件)。
+# 本文件按官方 on_action 追加规范(on_actions = {...} 合并,不覆盖原版文件):
+#   - 全部宗教族开局即打解锁标记(任意信仰满足信条/领袖/狂热条件即可开大圣战)
+#   - 世俗领袖信仰(如哈里发)额外获得完整版不定向大圣战入口(见 zzz_crusades_ghw.0001)
+on_game_start = {
+	on_actions = { zzz_crusades_from_867_unlock }
+}
+
+on_faith_monthly = {
+	on_actions = { zzz_crusades_temporal_ghw_monthly }
+}
+
+zzz_crusades_from_867_unlock = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 867.1.1
+				NOT = { game_start_date >= 1178.10.1 }
+			}
+			every_religion_global = {
+				set_variable = {
+					name = variable_ghw_unlocked
+					value = yes
+				}
+				# 与原版 great_holy_war.0010 一致:解锁后 AI 等待约 4 个月再发动第一次大圣战,
+				# 避免开局多宗教同时刷屏(0001 与原版事件都检查此变量)
+				set_variable = {
+					name = variable_first_ghw_cooldown
+					value = yes
+					days = 120
+				}
+			}
+		}
+	}
+}
+
+# 每月对每个信仰触发世俗领袖版大圣战发动检查(与原版 great_holy_war.0001 同机制,互斥)
+zzz_crusades_temporal_ghw_monthly = {
+	events = { zzz_crusades_ghw.0001 }
+}

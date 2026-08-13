@@ -1,0 +1,9 @@
+﻿version="1.19.*"
+tags={
+	"Map"
+}
+name="聚焦地中海"
+supported_version="1.19.*"
+replace_path="common/landed_titles"
+replace_path="history/titles"
+replace_path="common/bookmarks"

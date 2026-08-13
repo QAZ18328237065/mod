@@ -1,0 +1,8 @@
+﻿# 天下置业——通用投资建城玩法:on_action
+# 前缀 universal_investment_(项目名)
+# 追加到原版 yearly_playable_pulse(原版同键名定义多次,引擎自动合并)
+yearly_playable_pulse = {
+	events = {
+		universal_investment.0005
+	}
+}

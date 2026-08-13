@@ -1,0 +1,176 @@
+﻿e_japan = {
+ 
+	500.1.1 = {
+		government = japan_administrative_government
+	}
+	593.1.1 = { holder = japanese_yamato_200 } 
+	622.1.1 = { holder = 0 }
+	655.1.1 = { holder = japanese_yamato_8 } 
+	661.1.1 = { holder = 0 }
+	681.1.1 = { holder = japanese_yamato_16 } 
+	686.1.1 = { holder = 0 }
+	858.1.1 = { holder = japanese_fujiwara_530 } 
+	867.1.1 = {
+		effect = {
+			if = { 
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_chinese }
+			}
+			if = {
+				limit = {
+					has_tgp_dlc_trigger = yes
+				}
+				set_variable = {
+					name = administrative_ui_special_title
+					value = title:k_chrysanthemum_throne
+				}
+			}
+		}
+	}
+	872.10.7 = { holder = japanese_fujiwara_17 } 
+	890.1.1 = { holder = 0 }
+	901.1.1 = { holder = japanese_fujiwara_65 } 
+	909.4.26 = { holder = 0 }
+	930.1.1 = { holder = japanese_fujiwara_16 } 
+	949.9.9 = { holder = japanese_fujiwara_80 } 
+	970.6.24 = { holder = japanese_fujiwara_36 } 
+	972.12.9 = { holder = japanese_fujiwara_37 } 
+	977.12.20 = { holder = japanese_fujiwara_84 } 
+	986.1.1 = { holder = japanese_fujiwara_14 } 
+	990.7.26 = { holder = japanese_fujiwara_112 }
+	995.5.12 = { holder = japanese_fujiwara_1 } 
+	1017.1.1 = { holder = japanese_fujiwara_9 } 
+	1066.1.1 = {
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_japonic }
+			}
+		}
+	}
+	1068.1.1 = { holder = japanese_fujiwara_11 } 
+	1075.1.1 = { holder = japanese_fujiwara_132 } 
+	1094.1.1 = { holder = japanese_fujiwara_134 } 
+	1099.7.18 = { holder = japanese_fujiwara_459 } 
+	1121.1.1 = { holder = japanese_fujiwara_460 } 
+	1158.1.1 = { holder = japanese_fujiwara_461 } 
+	1166.8.23 = { holder = japanese_fujiwara_511 } 
+	1167.1.1 = {
+		holder = japanese_taira_kanmu_34 
+		government = japan_feudal_government 
+	}
+}
+
+k_chrysanthemum_throne = {
+ 
+	500.1.1 = {
+		liege = e_japan
+		government = japan_administrative_government
+		effect = {
+			set_variable = {
+				name = ceremonial_title
+				value = title:e_japan
+			}
+		}
+	}
+	503.3.3 = {
+		holder = japanese_yamato_192 
+		effect = {
+			if = { 
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_chinese }
+			}
+		}
+	}
+	531.3.10 = { holder = japanese_yamato_193 } 
+	536.1.25 = { holder = japanese_yamato_194 } 
+	539.12.30 = { holder = japanese_yamato_1 } 
+	572.4.30 = { holder = japanese_yamato_3 } 
+	585.10.3 = { holder = japanese_yamato_4 } 
+	587.9.9 = { holder = japanese_yamato_2 } 
+	593.1.15 = { holder = japanese_yamato_5 } 
+	629.2.2 = { holder = japanese_yamato_7 } 
+	642.2.9 = { holder = japanese_yamato_11 } 
+	645.7.12 = { holder = japanese_yamato_12 } 
+	655.2.14 = { holder = japanese_yamato_11 } 
+	661.1.3 = { holder = japanese_yamato_8 } 
+	672.1.9 = { holder = japanese_yamato_14 } 
+	673.3.20 = { holder = japanese_yamato_9 } 
+	690.2.14 = { holder = japanese_yamato_15 } 
+	697.8.22 = { holder = japanese_yamato_17 } 
+	707.8.18 = { holder = japanese_yamato_18 } 
+	715.10.3 = { holder = japanese_yamato_19 } 
+	724.3.3 = { holder = japanese_yamato_20 } 
+	749.8.19 = { holder = japanese_yamato_21 } 
+	758.9.7 = { holder = japanese_yamato_180 } 
+	764.11.6 = { holder = japanese_yamato_21 } 
+	770.10.23 = { holder = japanese_yamato_23 } 
+	781.4.3 = { holder = japanese_yamato_24 } 
+	806.4.9 = { holder = japanese_yamato_25 } 
+	809.5.18 = { holder = japanese_yamato_26 } 
+	829.5.29 = { holder = japanese_yamato_27 } 
+	833.3.22 = { holder = japanese_yamato_28 } 
+	850.5.4 = { holder = japanese_yamato_29 } 
+	858.10.7 = { holder = japanese_yamato_30 } 
+	867.1.1 = {
+		effect = {
+			add_title_law = single_heir_succession_law 
+			destroy_landless_title_no_tgp_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+	876.12.18 = { holder = japanese_yamato_31 } 
+	884.3.5 = { holder = japanese_yamato_32 } 
+	887.9.17 = { holder = japanese_yamato_33 } 
+	897.8.4 = { holder = japanese_yamato_34 } 
+	930.10.16 = { holder = japanese_yamato_35 } 
+	946.5.23 = { holder = japanese_yamato_36 } 
+	967.7.5 = { holder = japanese_yamato_37 } 
+	969.9.27 = { holder = japanese_yamato_38 } 
+	984.9.24 = { holder = japanese_yamato_39 } 
+	986.7.31 = { holder = japanese_yamato_40 } 
+	1011.7.16 = { holder = japanese_yamato_41 } 
+	1016.3.10 = { holder = japanese_yamato_42 } 
+	1036.5.15 = { holder = japanese_yamato_43 } 
+	1045.2.5 = {
+		holder = japanese_yamato_44 
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_japonic }
+			}
+		}
+	}
+	1066.9.15 = {
+		effect = {
+			destroy_landless_title_no_tgp_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+	1068.5.22 = { holder = japanese_yamato_45 } 
+	1073.1.18 = { holder = japanese_yamato_46 } 
+	1087.1.3 = { holder = japanese_yamato_47 } 
+	1107.8.9 = { holder = japanese_yamato_48 } 
+	1123.2.25 = { holder = japanese_yamato_49 } 
+	1142.1.5 = { holder = japanese_yamato_50 } 
+	1155.8.23 = { holder = japanese_yamato_51 } 
+	1158.9.5 = { holder = japanese_yamato_52 } 
+	1165.8.3 = { holder = japanese_yamato_53 } 
+	1168.3.30 = { holder = japanese_yamato_54 } 
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_tgp_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+	1180.3.18 = { holder = japanese_yamato_56 }
+}

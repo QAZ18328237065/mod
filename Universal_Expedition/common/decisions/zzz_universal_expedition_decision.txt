@@ -1,0 +1,58 @@
+﻿# 天下大征伐——通用大圣战决议（独立 mod，不依赖任何其他 mod）
+# 国王及以上方可发动（伯爵/公爵见得到但不可用），门槛适中、AI 亦有机会使用：
+#   门槛：国王级 + 声望 ≥ 2000 / 金币 ≥ 2000 / 虔诚 ≥ 1000 / 军力 ≥ 50 / 一生一次
+#   代价：声望 2000 + 金币 1000 + 虔诚 1000（另捐 1000 金入战争金库）
+# 机制：完全采用原版大圣战引擎（自动选目标 / 原版 365-545 天准备期 / 原版贡献度受益人）
+universal_expedition_decision = {
+	decision_group_type = major
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_siege_warfare.dds" }
+
+	is_shown = {
+		is_landed = yes
+		universal_expedition_any_target_exists_trigger = yes
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+		# —— 门槛 ——
+		highest_held_title_tier >= tier_kingdom
+		prestige >= 2000
+		gold >= 2000
+		piety >= 1000
+		current_military_strength >= 50
+		# 一生一次
+		NOT = { has_character_flag = universal_expedition_used }
+		# 信仰当前无进行中的大圣战（引擎信仰槽限制）
+		faith = {
+			NOT = { exists = great_holy_war }
+		}
+		# 发动瞬间重新确认存在合法目标（防显示后目标消失的竞态；AI 评估也依赖此检查）
+		universal_expedition_any_target_exists_trigger = yes
+	}
+
+	# —— 代价 ——
+	cost = {
+		prestige = 2000
+		gold = 1000
+		piety = 1000
+	}
+
+	effect = {
+		universal_expedition_launch_ghw_effect = yes
+	}
+
+	ai_check_interval = 36
+	ai_potential = { always = yes }
+	ai_will_do = {
+		base = 25
+		modifier = { add = 25 prestige >= 5000 }
+		modifier = { add = 20 gold >= 5000 }
+		modifier = { add = 15 piety >= 3000 }
+		modifier = { add = 15 current_military_strength >= 150 }
+		modifier = { add = 15 OR = { has_trait = ambitious has_trait = brave } }
+		# 破产保护：金币刚过门槛的 AI 更谨慎（发动后 cost+捐金共耗 2000）
+		modifier = { add = -15 gold < 3000 }
+	}
+}

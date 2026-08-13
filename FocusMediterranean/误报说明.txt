@@ -1,0 +1,89 @@
+《聚焦东地中海》mod 校验误报说明
+========================================
+
+【mod 简介】
+将 CK3 世界地图缩减为中东区域（阿拉伯/波斯/拜占庭/意大利/马格里布(仅伊弗里基亚)/
+喀尔巴阡/里海-黑海草原）的删图 mod。
+不替换任何地图美术文件，复用原版（含 TGP/Steppe 等 DLC）的省份与海洋，
+通过 map_data/default.map 把区域外约 10290 个陆地省份标记为 impassable_mountains
+（"未恢复地区荒漠"），使其不可进入、不可殖民，玩法上等于删除。
+
+【保留区域】
+  e_arabia                  k_arabia k_egypt k_syria k_jerusalem k_israel
+                            （已删除 k_yemen 也门王国；k_arabia 内删除 d_oman 阿曼公国）
+  e_persia                  k_persia k_khorasan k_daylam k_mesopotamia k_jazira k_kabulistan k_makran
+  e_byzantium               小亚细亚+希腊+巴尔干+高加索+安纳托利亚贝伊国等 28 王国
+                            （k_sicily 西西里与 k_venice 威尼斯的法理已转给 e_italy）
+  e_italy                   k_italy k_genoa k_pisa k_naples k_sardinia k_romagna
+                            + k_sicily（恢复，法理转入）+ k_venice（法理转入），共 8 王国
+  e_maghreb                 仅恢复 k_africa（伊弗里基亚），其余 5 王国
+                            （k_maghreb k_canarias k_tahert k_anbiya k_sahara）不恢复
+  e_carpathia               k_dacia k_moldavia k_hungary
+  e_caspian-pontic_steppe   k_pontic_steppe k_caucasus k_caspian_steppe k_magyar
+  （e_turan 图兰帝国已整体删除：k_khotan/k_oghuz_il/k_syr_darya/k_transoxiana 全部移除）
+保留省份 2189 个；区域外全部陆地（含原版禁制废土）共 10287 个 → impassable。
+
+【被删区域的头衔处理（防止幽灵头衔/角色）】
+  10_world_framework.txt 只保留被删帝国的"帝国级纯空壳"（e_xxx = { }，无王国/公国/伯爵领），
+  供原版 casus belli/事件/区域等脚本引用解析；王国级以下头衔全部不定义，
+  history/titles 中对应历史块整体剔除 → 游戏内不再存在被删区域的幽灵头衔与持有者角色
+  （如 d_rutog 及其历史持有者 GekhO ???）。宗教/制度头衔（h_*、k_papal_state、
+  d_*_papacy 等）保留壳（原版宗教机制引用）。
+
+【书签】
+  bm_867_persia              原版 867 波斯剧本（已删除图兰角色伊司马仪·萨曼尼，因其领地为 c_bukhara）
+  bm_1178_call_of_the_empire 原版 1178 帝国的召唤（塔玛尔/基利杰·阿尔斯兰/安杰洛斯等）
+  bm_1178_swords_of_faith    原版 1178 信仰之剑（萨拉丁/西比拉/莱翁/古克博里/雷蒙）
+  1178 两剧本角色全部位于保留区，肖像/UI 均走原版素材。
+  书签组仅保留 bm_group_867 / bm_group_1178（1066 组已删）。
+  挑战角色（common/bookmarks/challenge_characters）以同名空文件覆盖移除。
+
+【Tiger 校验状态】
+工具：ck3-tiger v1.19.0（--game 指向游戏根目录，校验 FocusEasternMediterranean.mod）
+结果：fatal 0 / error 469 / warning 372 / untidy 0
+结论：error 去重后共 164 种消息，逐条比对纯原版报告（空 mod + --show-vanilla，
+      原版 error 2944：history 1117 / missing-item 363 / strict-scopes 646 等）——
+      164 种 100% 原版同源，mod 自身引入的 error 为 0。
+
+【error 误报清单（469 条 = 164 种）】
+一、error(history) 约 420 条 —— 原版历史怪癖
+  形式：XXX has no holder at Y / holder of XXX is not alive at Y
+  来源：history/titles 为原版文件裁剪复制（仅剥离被删区域的 c_/b_ 历史块与
+        指向已删头衔的引用行），原版自身的头衔历史缺陷（如 k_mesopotamia 638 无主、
+        e_arabia 646 无主、h_china 历任君主未按期存活等）原样带入。
+  证明：纯原版 Tiger 报告含同类 error 1117 条，本 mod 的错误全部在其中。
+  影响：无。游戏对"头衔无主/历史缺空窗"完全容忍（原版即如此运行）。
+
+二、error(missing-item) 约 50 条 —— 原版悬空引用
+  1) character X not defined：k_dacia 等保留区历史文件里的 holder = 3020102 /
+     karluk0033 等，原版 characters 目录中本就不存在该角色 ID（原版悬空引用）。
+  2) k_eretnid / k_saruhan / k_ottoman 等 has no title history：
+     原版这些头衔本就没有历史块（原版同类 118 条，FocusEastAsia 文档同款）。
+  证明：上述消息逐条在纯原版报告中存在同文记录。
+
+【warning 误报清单（372 条）】
+一、warning(brace-placement) 315 条 —— 原版文件排版风格
+  来源：原版历史/头衔文件的缩进风格（如 `definite_form = yes` 顶格），
+        本 mod 整包复制原版内容带入，原版 Tiger 报告同类 6000+ 条。
+二、warning(history) 42 条 —— 原版角色时序（角色 X 在 Y 日配偶/存活冲突）
+  来源：原版历史文件复制带入，纯原版报告同类 160+ 种。
+三、其余（duplicate-field 6 / bookmarks 5 / missing-item 4 等）—— 原版同源，均可在
+   纯原版报告中找到同文记录（本地化类警告因 Tiger 不加载原版 1173 个 yml 文件而不再出现，
+   框架瘦身后保留头衔的键均已在原版本地化中验证存在）。
+
+【本 mod 的自定义内容（区别于原版）】
+1. map_data/default.map：区域外陆地全部禁制（脚本按保留帝国法理省份反向生成，
+   已闭环校验：保留 2189 + 禁制 10287 + 海/湖/河 786 = 全图省份，无漏网）
+2. common/landed_titles：00_middle_east.txt（7 帝国+拉丁帝国完整 c/b 定义，原版裁剪；
+   其中 k_sicily/k_venice 法理由 e_byzantium 转入 e_italy；e_turan 整体删除）
+   + 10_world_framework.txt（被删帝国仅帝国级空壳 + 宗教/制度头衔壳，供脚本引用解析）
+3. history/titles：原版 183 文件裁剪（按"已定义头衔集合"过滤：被删区域历史块整体剔除，
+   保留区 c_/b_ 历史完整保留，悬空引用行剥离）
+4. 书签：867 波斯 + 1178 帝国的召唤 + 1178 信仰之剑（均为原版块）
+
+【自查方法】
+1. 重新校验：ck3-tiger.exe --no-color --game "游戏根目录" "mod目录/FocusEasternMediterranean.mod"
+2. 判定误报：error 消息逐条在"空 mod + --show-vanilla"报告中搜索，存在即原版同源。
+3. 进游戏建议：新开 867 波斯 / 1178 帝国的召唤 / 1178 信仰之剑剧本，
+   确认区域外为荒漠不可进入、也门/阿曼/和田已消失、意大利与威尼斯可玩、
+   被删区域无幽灵头衔/角色（如 d_rutog 持有者不再出现）。

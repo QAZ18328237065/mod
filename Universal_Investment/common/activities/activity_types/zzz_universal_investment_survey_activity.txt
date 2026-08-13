@@ -1,0 +1,185 @@
+﻿# 天下置业——通用投资建城玩法:活动定义
+# 前缀 universal_investment_(项目名)
+# 模板:monument_expedition(province_filter=all 全图选点)+ activity_survey(is_location_valid 筛选)
+universal_investment_survey_activity = {
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		is_landed = yes
+		NOT = { has_trait = incapable }
+	}
+
+	can_start_showing_failures_only = {
+		is_available = yes
+		is_landed = yes
+		age >= 16
+	}
+
+	is_valid = {
+		scope:host = {
+			is_alive = yes
+			is_imprisoned = no
+			is_incapable = no
+		}
+	}
+
+	# 地图筛选核心:root=省(男爵领),无门槛
+	is_location_valid = {
+		has_holding = no
+		NOT = { has_ongoing_construction = yes }
+		exists = county.holder
+	}
+
+	province_filter = all
+	ai_province_filter = top_realm
+
+	# 地图悬浮提示(风险标注)
+	province_description = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = county.holder
+					county.holder = {
+						opinion = {
+							target = scope:host
+							value < 0
+						}
+					}
+				}
+				desc = universal_investment_survey_activity_province_desc_risky
+			}
+			desc = universal_investment_survey_activity_province_desc
+		}
+	}
+
+	# 地图排序/AI 参考
+	province_score = {
+		add = 10
+		if = {
+			limit = {
+				county.holder = scope:host
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				exists = county.holder
+				county.holder = {
+					opinion = {
+						target = scope:host
+						value >= 40
+					}
+				}
+			}
+			add = 10
+		}
+	}
+
+	max_province_icons = 5
+
+	# 活动差旅费(建造成本在开工事件里扣,反悔只亏差旅费)
+	cost = {
+		gold = {
+			value = universal_investment_travel_fee_value
+		}
+	}
+
+	ui_predicted_cost = {
+		gold = {
+			value = universal_investment_travel_fee_value
+		}
+	}
+
+	on_start = {
+	}
+
+	on_invalidated = {
+		invalidation_imprisoned_effect = yes
+		invalidation_incapable_effect = yes
+		invalidation_unlanded_effect = yes
+	}
+
+	on_complete = {
+	}
+
+	on_host_death = {
+		invalidation_host_death_effect = yes
+	}
+
+	# 单阶段:到达 → 开工事件;1 个月后自动结束回家(玩家一个月内做出选择)
+	phases = {
+		phase_univ_invest_survey = {
+			is_predefined = yes
+			location_source = pickable
+
+			on_phase_active = {
+				trigger_event = {
+					id = universal_investment.0001
+				}
+				scope:activity = {
+					progress_activity_phase_after = {
+						months = 1
+					}
+				}
+			}
+		}
+	}
+
+	# 意图:复用原版 survey intent(无活动特定触发,auto_complete=yes)
+	host_intents = {
+		default = survey_overseer_intent
+		intents = {
+			survey_overseer_intent
+		}
+	}
+
+	guest_intents = {
+		intents = {
+			survey_learning_intent_guest
+		}
+		default = survey_learning_intent_guest
+	}
+
+	can_be_activity_guest = {
+		always = no
+	}
+
+	# 独行考察,不邀客
+	allow_zero_guest_invites = yes
+	open_invite = no
+
+	# AI
+	ai_will_do = {
+		value = 25
+		if = {
+			limit = {
+				NOT = {
+					can_make_expensive_purchase_trigger = {
+						PRICE = universal_investment_travel_fee_value
+					}
+				}
+			}
+			add = -75
+		}
+		if = {
+			limit = { gold >= 2000 }
+			add = 15
+		}
+		if = {
+			limit = { stewardship >= 12 }
+			add = 10
+		}
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 6
+		kingdom = 3
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_select_province = {
+		value = 10
+	}
+}

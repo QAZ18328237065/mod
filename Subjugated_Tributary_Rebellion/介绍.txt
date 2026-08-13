@@ -1,0 +1,103 @@
+《被征服朝贡者反抗机制》mod 介绍
+========================================
+
+【作用】
+让"被征服的朝贡者"(tributary_subjugated) 真正像一个被武力压服的附属国：
+宗主去世换主、继承人接管朝贡关系时，朝贡者会怀恨在心、蠢蠢欲动；
+强者会择机宣战独立，弱者会悄悄断绝朝贡。
+同时为被征服朝贡契约增加"强制参战义务"选项，宗主可征召他们上战场。
+
+【使用方式】
+纯自动机制 + 少量交互，无需操作：
+  - 宗主去世 → 继承人接管朝贡关系（原版是直接断约），每个被征服朝贡者
+    被打上 2 年"反抗期"标记：契约等级 -10、对新宗主永久 -30 好感
+  - 被征服朝贡者死亡 → 继承人继承朝贡关系，弹"被继承的枷锁"事件
+    （玩家可选隐忍或立即断绝朝贡）
+  - 反抗期内（730 天）：AI 每年掷一次反抗骰（概率 clamp 5~85），
+    掷中先尝试宣"朝贡独立战争"，宣不成（休战期等）则直接断绝朝贡
+  - 宗主可在反抗期内手动使用两个新交互：
+      安抚（花钱）：反抗期立即结束，好感 +25，契约等级 +10
+      威慑（免费）：反抗期缩短为 1 年，宗主 +10 恐惧，对方好感 -20、
+                    契约等级 -5
+  - 朝贡者无论以何种方式断贡，宗主都会弹"挣脱枷锁"三选一事件：
+      a. 立即出兵讨伐（威望 -50，其余朝贡者 -5 好感）
+      b. 认了（威望 -50，其余朝贡者"前车之鉴"730 天：反抗权重 +10）
+      c. 杀鸡儆猴（恐惧 +15，其余朝贡者"敬畏宗主"730 天：反抗权重 -10，
+                  其余朝贡者 -10 好感，叛逃者成永久仇敌，威望 -10）
+  - 契约界面可勾选"强制参战义务"（默认关闭）：朝贡者必须加入宗主战争，
+    代价：对宗主 -25 好感 + 反抗掷骰权重 +8
+
+【反抗概率构成】（每年一次，clamp 5~85）
+  基础 20
+  + 兵力强于宗主 20  |  - 兵力弱于宗主 15
+  + 领地大于宗主 10
+  + 恐怖值高于宗主 10 |  - 低于宗主 10 |  - 宗主恐怖值 ≥80 再 -10
+  + 军事高于宗主 8  |  - 低于宗主 8  |  - 自身 martial ≥15 再 +5
+  + 对宗主好感 <-30: 15 |  <0: 8 |  ≥40: -20
+  特质：brave+10 / craven-15 / vengeful·wrathful+10 / ambitious+8 /
+        arrogant+5 / greedy+5 / content-10 / humble-8 / patient-8 / shy-5
+  + 宗主正在打仗 10 |  + 被强制参战 8
+  忠顺朝贡者 -50 |  宗主血亲兄弟 -60
+  异教宗主 +5 | 不同文化宗主 +5
+  宗主合法性 ≥3 级 -10 |  ≤1 级 +10
+  高档赋税 +5 | 前车之鉴 +10 | 敬畏宗主 -10
+  参考：两年反抗期至少反抗一次——弱旅约 10%，普通约 45%，
+       有勇武之气者 60-75%，兵强刺头 85%+
+
+【宗主收复宣战理由】（tribsub_retaliation_cb）
+  - 目标必须在宗主报复账目（叛逃者列表）中，仅限独立领主
+  - 打赢：叛逃者**重新成为被征服朝贡者**（非普通朝贡），带上 -30 怨恨
+    与 2 年反抗期标记；威望按目标领地规模计价
+  - 打输/白和：叛逃者保持独立，账目暂不清（AI 季检每年再评估是否重打）
+  - 独立战争失败者：反抗期立即结束 + 契约等级再降 -10 + 宗主对失败者
+    -30 好感"叛乱败者"（不再信任）
+
+【设计规则】
+- 平时朝贡者永不能挣脱（tributary_can_break_free=no）；只有反抗期
+  （换主后 730 天）内可挣脱，窗口过后恢复不能挣脱
+- 断贡账目三选一事件若宗主正忙于战争会自动延后；账目在解决前一直保留，
+  玩家宗主随时可用宣战理由手动讨伐
+- 叛逃者重新被收服/已臣服时自动清账，不弹无效事件
+- 每季度自动清理过期账目（3 年账目标记），无泄漏
+
+【实现原理】
+- 契约组覆写：tributary_subjugated 组设置 suzerain_heir_succession=yes
+  + 反抗期窗口期可挣脱（同路径同名整体替换原版契约组文件）
+- 季度脉冲：追加到官方 quarterly_playable_pulse（on_actions 合并，
+  不覆盖原版），trigger 守卫 number_of_tributaries > 0，全图绝大多数
+  角色一次标量检查即跳过
+- 反抗判定：script_value 权重（zzz_tribsub_tributary_rebellion_chance_value）
+  每年掷一次，365 天冷却变量兜底；掷中后 ai_start_best_war 宣战，
+  宣不成才 end_tributary 断贡（避免战争瞬间失去目标失效）
+- 记账体系：wayward 单槽变量 + 报复列表（支持多叛逃者并存），
+  季检 L1 扫描自动补记正在打独立战争的叛逃者
+- 复仇评估：仅 AI、有账目才跑、365 天冷却，无弹窗
+
+【兼容性与扩展】
+- 不修改原版文件：除契约组为同名覆写（与原版 tributary_subjugated
+  组同键，需与其它改该组的 mod 协调加载顺序）外，其余全部为追加
+- 无 DLC 依赖，纯脚本
+- 调反抗概率：编辑
+  common/script_values/zzz_tribsub_tributary_values.txt
+- 调安抚价格：同上文件 zzz_tribsub_soothe_cost_value
+  （80 + 对方月收入×25 + 领地数×8，clamp 150~2000）
+- 调三选一事件/账目/冷却：编辑
+  common/scripted_effects/zzz_tribsub_tributary_effects.txt 与
+  events/zzz_tribsub_subjugation_events.txt
+- 存档兼容：强制参战义务只影响新建朝贡关系；旧关系需在"修改契约"
+  界面手动勾选
+
+【文件清单】
+  descriptor.mod                                    mod 定义
+  README.txt                                        设计文档
+  common/on_action/zzz_tribsub_tributary_pulse.txt  季度脉冲（追加，含复仇评估）
+  common/on_action/zzz_tribsub_war_on_actions.txt   独立战争失败惩罚（追加）
+  common/scripted_effects/zzz_tribsub_tributary_effects.txt  季度检查/三选一效果
+  common/script_values/zzz_tribsub_tributary_values.txt  反抗概率/安抚价格
+  common/opinion_modifiers/zzz_tribsub_opinion_modifiers.txt  好感修正
+  common/subject_contracts/groups/zzz_tribsub_tributary_subjugated.txt  契约组覆写
+  common/subject_contracts/contracts/zzz_tribsub_tributary_war.txt  强制参战义务
+  common/casus_belli_types/zzz_tribsub_retaliation_cb.txt  收复朝贡者宣战理由
+  common/character_interactions/zzz_tribsub_rebel_interactions.txt  安抚/威慑交互
+  events/zzz_tribsub_subjugation_events.txt        断贡三选一/换主通知事件
+  localization/english|simp_chinese/zzz_tribsub_tributary_l_*.yml  本地化

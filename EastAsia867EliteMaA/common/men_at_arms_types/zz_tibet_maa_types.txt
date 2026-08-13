@@ -1,0 +1,309 @@
+﻿# 西藏867精锐兵种 - 吐蕃系6文化逐文化绑定 (西藏权重: mountains 0.45/desert_mountains 0.25/drylands 0.10/steppe 0.10/desert 0.10)
+# bodpa 吐蕃: 雪域弓手(弓兵)+深山伏戎(散兵)+高原马军(轻骑) N 74-77
+# zhangzhung 象雄: 象雄穹骑(轻骑) N 67-69
+# sumpa 苏毗: 苏毗女军(散兵) N 66-68
+# tsangpa 藏巴: 后藏枪军(枪兵) N 65-67
+# kirati 基拉蒂: 基拉蒂猎手(散兵) N 60-61
+# lhomon 珞门: 珞门弓手(弓兵) N 60-61
+# 数值按 project_plan/00_balance_model.md v4.3 验证通过
+# 成本/供给/ai权重用数字字面量
+
+# 雪域弓手 - 吐蕃柳叶弓射手, 高寒精射, 类型: 弓兵 (bodpa 专属)
+snowfield_archers = {
+	type = archers
+
+	damage = 30
+	toughness = 14
+	pursuit = 0
+	screen = 8
+
+	terrain_bonus = {
+		mountains = { damage = 12 toughness = 8 }
+		desert_mountains = { damage = 12 toughness = 8 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_infantry = 0.75
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 5 }
+		harsh_winter = { damage = 5 }
+	}
+
+	can_recruit = {
+		culture = { this = culture:bodpa }
+	}
+
+	buy_cost = { gold = 63 }
+	low_maintenance_cost = { gold = 0.23 }
+	high_maintenance_cost = { gold = 0.69 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = { value = 100 }
+	icon = maturkan_warriors
+}
+
+# 深山伏戎 - 高原游击伏击, 山地袭扰, 类型: 散兵 (bodpa 专属)
+highland_ambushers = {
+	type = skirmishers
+
+	damage = 25
+	toughness = 12
+	pursuit = 26
+	screen = 16
+
+	terrain_bonus = {
+		mountains = { damage = 10 toughness = 6 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 5 }
+		harsh_winter = { damage = 5 }
+	}
+
+	can_recruit = {
+		culture = { this = culture:bodpa }
+	}
+
+	buy_cost = { gold = 50 }
+	low_maintenance_cost = { gold = 0.18 }
+	high_maintenance_cost = { gold = 0.54 }
+	provision_cost = 3
+
+	stack = 100
+	ai_quality = { value = 100 }
+	icon = ayrudzi
+}
+
+# 高原马军 - 吐蕃五茹马军, 高原驰突, 类型: 轻骑 (bodpa 专属)
+plateau_horsemen = {
+	type = light_cavalry
+
+	damage = 40
+	toughness = 19
+	pursuit = 28
+	screen = 22
+
+	terrain_bonus = {
+		steppe = { damage = 15 }
+		drylands = { damage = 12 }
+		desert = { damage = 8 }
+		mountains = { damage = -15 }
+		desert_mountains = { damage = -20 }
+	}
+
+	counters = {
+		archers = 1
+		light_cavalry = 1
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 5 }
+		harsh_winter = { damage = 5 }
+	}
+
+	can_recruit = {
+		culture = { this = culture:bodpa }
+	}
+
+	buy_cost = { gold = 86 }
+	low_maintenance_cost = { gold = 0.36 }
+	high_maintenance_cost = { gold = 1.08 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = light_cavalry
+}
+
+# 象雄穹骑 - 阿里象雄游骑, 高原牧场劲骑, 类型: 轻骑
+zhangzhung_riders = {
+	type = light_cavalry
+
+	damage = 36
+	toughness = 17
+	pursuit = 26
+	screen = 20
+
+	terrain_bonus = {
+		steppe = { damage = 15 }
+		drylands = { damage = 12 }
+		desert = { damage = 8 }
+		mountains = { damage = -15 }
+		desert_mountains = { damage = -20 }
+	}
+
+	counters = {
+		archers = 1
+		light_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:zhangzhung }
+	}
+
+	buy_cost = { gold = 84 }
+	low_maintenance_cost = { gold = 0.35 }
+	high_maintenance_cost = { gold = 1.05 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_light_cavalry
+	}
+	icon = light_cavalry
+}
+
+# 苏毗女军 - 苏毗女国遗风, 骁勇部曲, 类型: 散兵
+sumpa_women_warriors = {
+	type = skirmishers
+
+	damage = 23
+	toughness = 15
+	pursuit = 18
+	screen = 16
+
+	terrain_bonus = {
+		mountains = { damage = 8 toughness = 4 }
+		desert_mountains = { damage = 6 toughness = 4 }
+		steppe = { damage = 4 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:sumpa }
+	}
+
+	buy_cost = { gold = 53 }
+	low_maintenance_cost = { gold = 0.19 }
+	high_maintenance_cost = { gold = 0.57 }
+	provision_cost = 3
+
+	stack = 100
+	ai_quality = {
+		value = 100
+	}
+	icon = skirmishers
+}
+
+# 后藏枪军 - 后藏庄园枪阵, 部曲结阵, 类型: 枪兵
+tsangpa_spearmen = {
+	type = pikemen
+
+	damage = 26
+	toughness = 24
+	pursuit = 0
+	screen = 6
+
+	terrain_bonus = {
+		mountains = { damage = 4 toughness = 10 }
+		desert_mountains = { toughness = 8 }
+		drylands = { damage = 6 }
+	}
+
+	counters = {
+		light_cavalry = 1
+		heavy_cavalry = 1
+		archer_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:tsangpa }
+	}
+
+	buy_cost = { gold = 80 }
+	low_maintenance_cost = { gold = 0.32 }
+	high_maintenance_cost = { gold = 0.96 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = {
+		value = 100
+		add = counter_synergy_ai_weight_pikemen
+	}
+	icon = pikemen
+}
+
+# 基拉蒂猎手 - 藏南喜马拉雅山民猎手, 险峰设伏, 类型: 散兵
+kirati_hunters = {
+	type = skirmishers
+
+	damage = 20
+	toughness = 13
+	pursuit = 15
+	screen = 14
+
+	terrain_bonus = {
+		mountains = { damage = 6 toughness = 4 }
+		desert_mountains = { damage = 4 toughness = 2 }
+	}
+
+	counters = {
+		heavy_infantry = 0.75
+		skirmishers = 0.5
+	}
+
+	can_recruit = {
+		culture = { this = culture:kirati }
+	}
+
+	buy_cost = { gold = 49 }
+	low_maintenance_cost = { gold = 0.18 }
+	high_maintenance_cost = { gold = 0.54 }
+	provision_cost = 3
+
+	stack = 100
+	ai_quality = {
+		value = 100
+	}
+	icon = skirmishers
+}
+
+# 珞门弓手 - 珞瑜门隅山地弓手, 隘口守御, 类型: 弓兵
+lhomon_archers = {
+	type = archers
+
+	damage = 23
+	toughness = 11
+	pursuit = 0
+	screen = 0
+
+	terrain_bonus = {
+		mountains = { damage = 10 toughness = 4 }
+		desert_mountains = { damage = 8 toughness = 4 }
+	}
+
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 1
+	}
+
+	can_recruit = {
+		culture = { this = culture:lhomon }
+	}
+
+	buy_cost = { gold = 54 }
+	low_maintenance_cost = { gold = 0.2 }
+	high_maintenance_cost = { gold = 0.6 }
+	provision_cost = 7
+
+	stack = 100
+	ai_quality = { value = 100 }
+	icon = bowmen
+}

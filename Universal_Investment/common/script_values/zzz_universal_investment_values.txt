@@ -1,0 +1,157 @@
+﻿# 天下置业——通用投资建城玩法:script_values
+# 前缀 universal_investment_(项目名),全部数值在此集中
+
+# 阶梯建造成本:400 × 2^(开工次数-1),封顶 12800
+universal_investment_construction_cost_value = {
+	value = 400
+	if = {
+		limit = { root.var:universal_investment_start_count >= 2 }
+		multiply = 2
+	}
+	if = {
+		limit = { root.var:universal_investment_start_count >= 3 }
+		multiply = 2
+	}
+	if = {
+		limit = { root.var:universal_investment_start_count >= 4 }
+		multiply = 2
+	}
+	if = {
+		limit = { root.var:universal_investment_start_count >= 5 }
+		multiply = 2
+	}
+	if = {
+		limit = { root.var:universal_investment_start_count >= 6 }
+		multiply = 2
+	}
+	max = 12800
+}
+
+universal_investment_construction_cost_negative_value = {
+	value = universal_investment_construction_cost_value
+	multiply = -1
+}
+
+# 活动差旅费
+universal_investment_travel_fee_value = {
+	value = 50
+}
+
+# 领主敲诈概率:基础 35%,持有者好感<0 翻倍,已结怨 +50%,建筑师/管理 18 减半
+# 评估作用域:barony(当前在建投资)
+universal_investment_blackmail_chance_value = {
+	value = 35
+	if = {
+		limit = {
+			county.holder = {
+				opinion = { target = root value < 0 }
+			}
+		}
+		multiply = 2
+	}
+	if = {
+		limit = { has_variable = universal_investment_dispute }
+		multiply = 1.5
+	}
+	if = {
+		limit = {
+			root = {
+				OR = {
+					has_trait = architect
+					stewardship >= 18
+				}
+			}
+		}
+		multiply = 0.5
+	}
+}
+
+# 工地事故概率:基础 15%,建筑师/管理 18 减半
+universal_investment_accident_chance_value = {
+	value = 15
+	if = {
+		limit = {
+			root = {
+				OR = {
+					has_trait = architect
+					stewardship >= 18
+				}
+			}
+		}
+		multiply = 0.5
+	}
+}
+
+# 敲诈补偿金 = 该笔建造成本 × 50%
+universal_investment_blackmail_cost_value = {
+	value = root.var:universal_investment_risk_target.var:universal_investment_annuity
+	divide = 2
+}
+
+universal_investment_blackmail_cost_negative_value = {
+	value = universal_investment_blackmail_cost_value
+	multiply = -1
+}
+
+# 事故修复费 = 该笔建造成本 × 25%
+universal_investment_accident_cost_value = {
+	value = root.var:universal_investment_risk_target.var:universal_investment_annuity
+	divide = 4
+}
+
+universal_investment_accident_cost_negative_value = {
+	value = universal_investment_accident_cost_value
+	multiply = -1
+}
+
+# 易主认账判定:基础 50%,持有者好感修正,已结怨 -30
+# 评估作用域:barony(年金名单条目)
+universal_investment_recognition_chance_value = {
+	value = 50
+	if = {
+		limit = {
+			county.holder = {
+				opinion = { target = root value >= 50 }
+			}
+		}
+		add = 15
+	}
+	if = {
+		limit = {
+			county.holder = {
+				opinion = { target = root value >= 20 }
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			county.holder = {
+				opinion = { target = root value < 20 }
+			}
+		}
+		add = -10
+	}
+	if = {
+		limit = { has_variable = universal_investment_dispute }
+		add = -30
+	}
+}
+
+# 赖账威胁成功率:基础 40%,恐吓加成
+universal_investment_intimidate_chance_value = {
+	value = 40
+	if = {
+		limit = { dread >= 50 }
+		add = 20
+	}
+	if = {
+		limit = { dread >= 90 }
+		add = 20
+	}
+}
+
+# 赖账贿赂金 100(负值用于 add_gold 扣款)
+universal_investment_bribe_cost_negative_value = {
+	value = -100
+}

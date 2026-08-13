@@ -1,0 +1,324 @@
+﻿k_dali = {
+
+	867.1.1 = { change_development_level = 5 }
+	1066.1.1 = { change_development_level = 9 }
+	1178.1.1 = { change_development_level = 10 }
+
+	649.1.1 = {
+		holder = nanzhao_meng_10 
+		government = meritocratic_government
+	}
+	674.1.1 = {
+		holder = nanzhao_meng_11 
+	}
+	712.1.1 = {
+		holder = nanzhao_meng_12 
+	}
+	728.1.1 = {
+		holder = nanzhao_meng_13 
+		name = NAME_NANZHAO
+	}
+	748.1.1 = {
+		holder = nanzhao_meng_14 
+	}
+	779.1.1 = {
+		holder = nanzhao_meng_16 
+	}
+	808.1.1 = {
+		holder = nanzhao_meng_3 
+	}
+	809.1.1 = {
+		holder = nanzhao_meng_5 
+	}
+	816.1.1 = {
+		holder = nanzhao_meng_6 
+	}
+	823.1.1 = {
+		holder = nanzhao_meng_2 
+	}
+	859.1.1 = {
+		holder = nanzhao_meng_1 
+	}
+	877.1.1 = {
+		holder = nanzhao_meng_4 
+	}
+	897.1.1 = {
+		holder = nanzhao_meng_7 
+	}
+	902.1.1 = {
+		holder = bai_zheng_2 
+	}
+	909.1.1 = {
+		holder = bai_zheng_3 
+	}
+	926.1.1 = {
+		holder = bai_zheng_4 
+	}
+	928.1.1 = {
+		holder = bai_zhao_1 
+	}
+	929.1.1 = {
+		holder = nanzhao_meng_8 
+	}
+	930.1.1 = {
+		holder = nanzhao_meng_9 
+	}
+	937.1.1 = {
+		holder = dali_duan_13 
+		reset_name = yes
+	}
+	944.1.1 = {
+		holder = dali_duan_14 
+	}
+	945.1.1 = {
+		holder = dali_duan_15 
+	}
+	952.1.1 = {
+		holder = dali_duan_11 
+	}
+	968.1.1 = {
+		holder = dali_duan_18 
+	}
+	985.1.1 = {
+		holder = dali_duan_20 
+	}
+	1009.1.1 = {
+		holder = dali_duan_16 
+	}
+	1022.1.1 = {
+		holder = dali_duan_17 
+	}
+	1026.1.1 = {
+		holder = dali_duan_21 
+	}
+	1041.1.1 = {
+		holder = dali_duan_19 
+	}
+	1044.1.1 = {
+		holder = dali_duan_12 
+	}
+	1075.1.1 = {
+		holder = dali_duan_3 
+	}
+	1080.1.1 = {
+		holder = bai_yang_2 
+	}
+	1080.6.1 = {
+		holder = dali_duan_10 
+	}
+	1081.1.1 = {
+		holder = dali_duan_24 
+	}
+	1094.1.1 = {
+		holder = dali_gao_18 
+	}
+	1096.1.1 = {
+		holder = dali_duan_23 
+	}
+	1108.1.1 = {
+		holder = dali_duan_2 
+	}
+	1147.1.1 = {
+		holder = dali_duan_25 
+	}
+	1171.1.1 = {
+		holder = dali_duan_29 
+	}
+}
+
+d_nghe_an = {
+
+	1066.1.1 = {
+		holder = viet_ngo_4 
+		liege = k_viet
+		government = meritocratic_government
+	}
+	1178.1.1 = {
+		holder = viet_tran_2
+	}
+}
+
+d_hai_dong = {
+
+	1066.1.1 = {
+		holder = viet_than_1 
+		liege = k_viet
+		government = meritocratic_government
+	}
+	1178.1.1 = {
+		holder = viet_to_1
+	}
+}
+
+d_lam_tay = {
+
+	1066.1.1 = {
+		holder = viet_ha_thuongoai_1 
+		liege = k_viet
+		government = meritocratic_government
+	}
+	1178.1.1 = {
+		holder = viet_dam_1
+	}
+}
+
+d_tuodong = {
+
+	867.1.1 = {
+		holder = bai_yang_3_1
+		liege = k_dali
+		government = meritocratic_government
+	}
+	1066.1.1 = {
+		holder = dali_gao_34 
+	}
+	1178.1.1 = {
+		holder = dali_gao_7
+	}
+}
+
+d_jianchuan = {
+
+	867.1.1 = {
+		holder = bai_du_1
+		liege = k_dali
+		government = meritocratic_government
+	}
+	1066.1.1 = {
+		holder = dali_duan_9
+	}
+	1178.1.1 = {
+		holder = dali_gao_6
+	}
+}
+
+d_huichuan = {
+
+	867.1.1 = {
+		holder = dali_duan_0
+		liege = k_dali
+		government = meritocratic_government
+	}
+	1066.1.1 = {
+		holder = bai_dong_11
+	}
+	1178.1.1 = {
+		holder = dali_gao_2
+	}
+}
+
+d_tonghai = {
+
+	867.1.1 = {
+		holder = dali_gao_36
+		liege = k_dali
+		government = meritocratic_government
+	}
+	1066.1.1 = {
+		holder = dali_gao_18
+	}
+	1178.1.1 = {
+		holder = dali_gao_57
+	}
+}
+
+k_viet = {
+
+	866.1.1 = {
+		government = celestial_government
+		holder = han_3310 
+		liege = h_china
+		effect = {
+			if = { 
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = { set_court_language = language_chinese }
+			}
+ 		}
+	}
+	905.1.1 = {
+		holder = viet_khuc_1 
+	}
+	907.7.23 = {
+		holder = viet_khuc_2 
+	}
+	917.1.1 = {
+		holder = viet_khuc_3 
+	}
+	930.1.1 = {
+		holder = viet_duong_2 
+	}
+	938.1.1 = {
+		holder = viet_ngo_3
+		government = meritocratic_government
+		liege = 0
+	}
+	944.2.14 = {
+		holder = viet_duong_1
+	}
+	950.1.1 = {
+		holder = viet_ngo_1 
+	}
+	951.1.1 = {
+		holder = viet_ngo_6
+	}
+	954.1.1 = {
+		holder = viet_ngo_1 
+	}
+	965.1.1 = {
+		holder = viet_ngo_2 
+	}
+	968.1.1 = {
+		holder = viet_dinh_1 
+	}
+	979.12.1 = {
+		holder = viet_dinh_4 
+	}
+	980.1.1 = {
+		holder = viet_le_1 
+	}
+	1005.1.1 = {
+		holder = viet_le_5 
+	}
+	1005.1.4 = {
+		holder = viet_le_6 
+	}
+	1009.11.19 = {
+		holder = viet_ly_1 
+	}
+	1028.4.1 = {
+		holder = viet_ly_2 
+	}
+	1054.11.3 = {
+		holder = viet_ly_10 
+	}
+	1072.2.3 = {
+		holder = viet_ly_15 
+	}
+	1128.1.15 = {
+		holder = viet_ly_20 
+	}
+	1138.1.1 = {
+		holder = viet_ly_22 
+	}
+	1175.8.14 = {
+		holder = viet_ly_25 
+	}
+}
+
+d_yinsheng = {
+
+	867.1.1 = {
+		holder = bai_dong_4
+		liege = k_dali
+		government = meritocratic_government
+	}
+	1066.1.1 = {
+		holder = bai_yang_2
+	}
+	1178.1.1 = {
+		holder = dali_gao_29
+	}
+}

@@ -1,0 +1,45 @@
+《通用军令支援》mod 介绍
+========================================
+
+【作用】
+让"命武职官员加入战争"交互对所有行政制政体可用。
+
+原版（All Under Heaven DLC）中该交互仅限天朝制、贤能制、宫帐制
+（有 merit 货币的政体），本 mod 将其扩展至：
+  - 拜占庭行政制（administrative_government，Roads to Power DLC）
+  - 原版律令制（japan_administrative_government，All Under Heaven DLC）
+两个政体的军事总督（拜占庭军事管理区、律令制军事管理）现在也能被皇帝下令加入战争。
+
+【使用方式】
+游戏内：对"武职官员"总督右键 → 选择"命武职官员加入战争"。
+被命令的总督会加入其所有战争的战斗（作为攻击方/防御方）。
+AI 皇帝也会自动使用本交互支援战局。
+
+【实现原理】
+- 新增交互 universal_send_military_aid_interaction（全新名字，零覆盖原版文件）
+- 发送端条件：独立统治者 + 行政制 + 无 merit
+  → 自动排除天朝/贤能/宫帐（它们继续使用原版交互，不会出现双入口）
+- 接收端白名单（vassal_contract_has_flag）：
+    celestial_military_appointment        （天朝军事总督）
+    meritocratic_military_appointment     （贤能/宫帐军事总督）
+    admin_theme_military                  （拜占庭军事管理区）
+    japan_administrative_military_appointment （律令制军事管理）
+
+【依赖】
+- All Under Heaven (TGP)：律令制政体、结果通知事件 tgp_interaction_event.0015/0016
+- Roads to Power (EP3)：拜占庭行政制
+缺少对应 DLC 时该政体不存在，交互自然不显示，无副作用。
+
+【兼容性与扩展】
+- 全部为新增文件，不修改/覆盖任何原版文件，卸载即完全移除
+- 想让其他政体/契约组也可用：编辑
+  common/character_interactions/zzz_universal_send_military_aid_interaction.txt，
+  在 populate_recipient_list 与 is_valid 的 OR 列表中添加对应 flag 即可
+- 已通过 ck3-tiger 完整校验（error 0）
+
+【文件清单】
+  Universal_Military_Aid.mod                              启动器注册文件
+  descriptor.mod                                          mod 定义
+  common/character_interactions/zzz_universal_send_military_aid_interaction.txt   交互本体
+  localization/english/zzz_universal_send_military_aid_interaction_l_english.yml  英文本地化
+  localization/simp_chinese/zzz_universal_send_military_aid_interaction_l_simp_chinese.yml  简体中文本地化

@@ -1,0 +1,33 @@
+﻿### 涓滃寳867绮鹃攼鍏电 鎴愭湰鍊?(v5.0 鐗瑰寲)
+
+balhae_kushishi_archers_recruitment_cost = 62
+balhae_kushishi_archers_low_maint_cost = 0.23
+balhae_kushishi_archers_high_maint_cost = 0.69
+
+balhae_riders_recruitment_cost = 90
+balhae_riders_low_maint_cost = 0.37
+balhae_riders_high_maint_cost = 1.11
+
+balhae_wujing_spearmen_recruitment_cost = 84
+balhae_wujing_spearmen_low_maint_cost = 0.34
+balhae_wujing_spearmen_high_maint_cost = 1.02
+
+mohe_hunters_recruitment_cost = 59
+mohe_hunters_low_maint_cost = 0.21
+mohe_hunters_high_maint_cost = 0.63
+
+mohe_warriors_recruitment_cost = 99
+mohe_warriors_low_maint_cost = 0.41
+mohe_warriors_high_maint_cost = 1.23
+
+goguryeo_horse_archers_recruitment_cost = 148
+goguryeo_horse_archers_low_maint_cost = 0.49
+goguryeo_horse_archers_high_maint_cost = 1.47
+
+goguryeo_armored_infantry_recruitment_cost = 98
+goguryeo_armored_infantry_low_maint_cost = 0.39
+goguryeo_armored_infantry_high_maint_cost = 1.17
+
+jurchen_heavy_infantry_recruitment_cost = 98
+jurchen_heavy_infantry_low_maint_cost = 0.39
+jurchen_heavy_infantry_high_maint_cost = 1.17

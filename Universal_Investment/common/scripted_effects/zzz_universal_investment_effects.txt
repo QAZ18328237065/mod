@@ -1,0 +1,591 @@
+﻿# 天下置业——通用投资建城玩法:scripted_effects
+# 前缀 universal_investment_(项目名)
+# 说明:完工检测/年金处理全部走"建造监控链"(事件 0011 月度自循环),不依赖角色位置
+
+# ============================================================
+# 开工(在开工事件 0001 选项 A 中调用,root=玩家,location=目标男爵领)
+# ============================================================
+universal_investment_start_construction_effect = {
+	add_gold = universal_investment_construction_cost_negative_value
+	change_variable = {
+		name = universal_investment_start_count
+		add = 1
+	}
+	location = {
+		set_variable = {
+			name = universal_investment_pending
+			value = yes
+		}
+		set_variable = {
+			name = universal_investment_owner
+			value = root
+		}
+		set_variable = {
+			name = universal_investment_holder
+			value = county.holder
+		}
+		set_variable = {
+			name = universal_investment_annuity
+			value = universal_investment_construction_cost_value
+		}
+		begin_create_holding = {
+			type = castle_holding
+		}
+	}
+	add_to_variable_list = {
+		name = universal_investment_pending
+		target = location
+	}
+	if = {
+		limit = {
+			location = {
+				county.holder != root
+			}
+		}
+		location = {
+			county.holder = {
+				add_opinion = {
+					target = root
+					modifier = universal_investment_unauthorized_construction_opinion
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = universal_investment_watcher_active }
+		}
+		set_variable = {
+			name = universal_investment_watcher_active
+			value = yes
+		}
+		trigger_event = {
+			id = universal_investment.0011
+			months = 1
+		}
+	}
+}
+
+# ============================================================
+# 建造监控:逐笔检查在建投资(在监控事件 0011 的 every_in_list 中调用,作用域=barony)
+# ============================================================
+universal_investment_check_pending_effect = {
+	if = {
+		limit = {
+			var:universal_investment_pending = yes
+		}
+		if = {
+			limit = {
+				has_holding_type = castle_holding
+			}
+			universal_investment_settlement_effect = yes
+		}
+		else_if = {
+			limit = {
+				has_variable = universal_investment_cancelled
+			}
+			set_variable = {
+				name = universal_investment_pending
+				value = no
+			}
+		}
+		else = {
+			change_variable = {
+				name = universal_investment_pending_months
+				add = 1
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = universal_investment_risk_rolled }
+					var:universal_investment_pending_months >= 3
+				}
+				universal_investment_roll_risk_effect = yes
+			}
+		}
+	}
+}
+
+# ============================================================
+# 建造期风险判定(作用域=barony;玩家弹事件,AI 自动付账)
+# ============================================================
+universal_investment_roll_risk_effect = {
+	save_scope_as = risk_barony
+	if = {
+		limit = {
+			NOT = { county.holder = root }
+		}
+		random = {
+			chance = universal_investment_blackmail_chance_value
+			if = {
+				limit = {
+					root = {
+						is_ai = no
+						NOT = { has_variable = universal_investment_risk_target }
+					}
+				}
+				root = {
+					set_variable = {
+						name = universal_investment_risk_target
+						value = scope:risk_barony
+					}
+					trigger_event = {
+						id = universal_investment.0002
+					}
+				}
+			}
+			else = {
+				# AI 或已有待处理事件:自动付补偿金(按当前男爵领 annuity 计算,勿依赖 root 变量)
+				root = {
+					add_gold = {
+						value = scope:risk_barony.var:universal_investment_annuity
+						divide = -2
+					}
+				}
+				county.holder = {
+					add_opinion = {
+						target = root
+						modifier = universal_investment_pacified_opinion
+					}
+				}
+			}
+		}
+		else = {
+			random = {
+				chance = universal_investment_accident_chance_value
+				if = {
+					limit = {
+						root = {
+							is_ai = no
+							NOT = { has_variable = universal_investment_risk_target }
+						}
+					}
+					root = {
+						set_variable = {
+							name = universal_investment_risk_target
+							value = scope:risk_barony
+						}
+						trigger_event = {
+							id = universal_investment.0003
+						}
+					}
+				}
+				else = {
+					root = {
+						add_gold = {
+							value = scope:risk_barony.var:universal_investment_annuity
+							divide = -4
+						}
+					}
+				}
+			}
+		}
+	}
+	set_variable = {
+		name = universal_investment_risk_rolled
+		value = yes
+	}
+}
+
+# ============================================================
+# 完工结算(作用域=barony;唯一结算链路:直接归自己 或 入年金名单)
+# 附加建筑直接用 add_building(原版 laamp_city_builder_construction_effect 依赖
+# 角色作用域 + laamp_city_builder_* 系列 flag + scope:city_location,本 mod 均不具备)
+# ============================================================
+universal_investment_settlement_effect = {
+	save_scope_as = settled_barony
+	add_building = watermills_02
+	add_building = castle_02
+	add_building = farm_estates_02
+	add_building = workshops_02
+	add_building = monastic_schools_02
+	set_variable = {
+		name = universal_investment_pending
+		value = no
+	}
+	set_variable = {
+		name = universal_investment_active
+		value = yes
+	}
+	root = {
+		add_to_variable_list = {
+			name = universal_investment_portfolio
+			target = scope:settled_barony
+		}
+		change_variable = {
+			name = universal_investment_built_count
+			add = 1
+		}
+		add_prestige = 100
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_variable = universal_investment_notification_target }
+			}
+			set_variable = {
+				name = universal_investment_notification_target
+				value = scope:settled_barony
+			}
+			trigger_event = {
+				id = universal_investment.0004
+			}
+		}
+		if = {
+			limit = {
+				var:universal_investment_built_count >= 3
+				NOT = { has_variable = universal_investment_milestone_3 }
+			}
+			set_variable = {
+				name = universal_investment_milestone_3
+				value = yes
+			}
+			trigger_event = {
+				id = universal_investment.0008
+			}
+		}
+		if = {
+			limit = {
+				var:universal_investment_built_count >= 5
+				NOT = { has_variable = universal_investment_milestone_5 }
+			}
+			set_variable = {
+				name = universal_investment_milestone_5
+				value = yes
+			}
+			trigger_event = {
+				id = universal_investment.0009
+			}
+		}
+		if = {
+			limit = {
+				var:universal_investment_built_count >= 10
+				NOT = { has_variable = universal_investment_milestone_10 }
+			}
+			set_variable = {
+				name = universal_investment_milestone_10
+				value = yes
+			}
+			trigger_event = {
+				id = universal_investment.0010
+			}
+		}
+	}
+}
+
+# ============================================================
+# 年金年度处理:逐笔判定(在年度事件 0005 的 every_in_list 中调用,作用域=barony)
+# ============================================================
+universal_investment_process_annuity_effect = {
+	if = {
+		limit = {
+			var:universal_investment_active = yes
+		}
+		if = {
+			limit = {
+				NOT = { has_holding = yes }
+			}
+			# 建筑被毁:投资作废
+			set_variable = {
+				name = universal_investment_active
+				value = no
+			}
+			root = {
+				change_variable = {
+					name = universal_investment_report_loss
+					add = 1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { exists = var:universal_investment_holder }
+			}
+			# 数据缺失:作废
+			set_variable = {
+				name = universal_investment_active
+				value = no
+			}
+			root = {
+				change_variable = {
+					name = universal_investment_report_loss
+					add = 1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = county.holder
+				county.holder = root
+			}
+			# 投资地并入自己领地:免税,保留名单(日后封出自动转年金,D7)
+		}
+		else_if = {
+			limit = {
+				exists = county.holder
+				exists = var:universal_investment_holder
+				county.holder != var:universal_investment_holder
+			}
+			# 持有者易主:认账判定
+			random = {
+				chance = universal_investment_recognition_chance_value
+				set_variable = {
+					name = universal_investment_holder
+					value = county.holder
+				}
+				universal_investment_pay_annuity_effect = yes
+			}
+			else = {
+				if = {
+					limit = {
+						root = {
+							is_ai = no
+							NOT = { has_variable = universal_investment_dispute_target }
+						}
+					}
+					save_scope_as = dispute_barony
+					root = {
+						set_variable = {
+							name = universal_investment_dispute_target
+							value = scope:dispute_barony
+						}
+						trigger_event = {
+							id = universal_investment.0006
+						}
+					}
+				}
+				else = {
+					# AI 或已有待处理纠纷:自动谈判续约
+					set_variable = {
+						name = universal_investment_holder
+						value = county.holder
+					}
+					universal_investment_pay_annuity_effect = yes
+				}
+			}
+		}
+		else = {
+			universal_investment_pay_annuity_effect = yes
+		}
+	}
+}
+
+# ============================================================
+# 年金发放(作用域=barony;pay_short_term_gold 从持有者金库扣钱,不足自动分月补扣)
+# ============================================================
+universal_investment_pay_annuity_effect = {
+	save_scope_as = annuity_barony
+	if = {
+		limit = {
+			exists = county.holder
+		}
+		county.holder = {
+			pay_short_term_gold = {
+				target = root
+				gold = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 10
+					min = 10
+				}
+			}
+		}
+		root = {
+			change_variable = {
+				name = universal_investment_report_gold
+				add = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 10
+					min = 10
+				}
+			}
+		}
+	}
+}
+
+# ============================================================
+# 赖账交涉四选项(root=玩家,目标=root.var:universal_investment_dispute_target)
+# ============================================================
+universal_investment_dispute_negotiate_effect = {
+	# 谈判:持有者好感+15,当年租金减半,续约
+	root.var:universal_investment_dispute_target = {
+		set_variable = {
+			name = universal_investment_holder
+			value = county.holder
+		}
+		remove_variable = universal_investment_dispute
+		save_scope_as = annuity_barony
+		county.holder = {
+			add_opinion = {
+				target = root
+				modifier = universal_investment_negotiated_opinion
+			}
+			pay_short_term_gold = {
+				target = root
+				gold = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 20
+					min = 5
+				}
+			}
+		}
+		root = {
+			change_variable = {
+				name = universal_investment_report_gold
+				add = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 20
+					min = 5
+				}
+			}
+		}
+	}
+}
+
+universal_investment_dispute_bribe_effect = {
+	# 贿赂:100 金,当年租金全收,持有者好感+10
+	add_gold = universal_investment_bribe_cost_negative_value
+	root.var:universal_investment_dispute_target = {
+		set_variable = {
+			name = universal_investment_holder
+			value = county.holder
+		}
+		remove_variable = universal_investment_dispute
+		save_scope_as = annuity_barony
+		county.holder = {
+			add_opinion = {
+				target = root
+				modifier = universal_investment_bribed_opinion
+			}
+			pay_short_term_gold = {
+				target = root
+				gold = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 10
+					min = 10
+				}
+			}
+		}
+		root = {
+			change_variable = {
+				name = universal_investment_report_gold
+				add = {
+					value = scope:annuity_barony.var:universal_investment_annuity
+					divide = 10
+					min = 10
+				}
+			}
+		}
+	}
+}
+
+universal_investment_dispute_intimidate_effect = {
+	# 威胁:恐吓判定,成功全收续约,失败投资作废+好感-30
+	random = {
+		chance = universal_investment_intimidate_chance_value
+		root.var:universal_investment_dispute_target = {
+			set_variable = {
+				name = universal_investment_holder
+				value = county.holder
+			}
+			remove_variable = universal_investment_dispute
+			save_scope_as = annuity_barony
+			county.holder = {
+				pay_short_term_gold = {
+					target = root
+					gold = {
+						value = scope:annuity_barony.var:universal_investment_annuity
+						divide = 10
+						min = 10
+					}
+				}
+			}
+			root = {
+				change_variable = {
+					name = universal_investment_report_gold
+					add = {
+						value = scope:annuity_barony.var:universal_investment_annuity
+						divide = 10
+						min = 10
+					}
+				}
+			}
+		}
+	}
+	else = {
+		root.var:universal_investment_dispute_target = {
+			county.holder = {
+				add_opinion = {
+					target = root
+					modifier = universal_investment_defied_opinion
+				}
+			}
+		}
+		universal_investment_dispute_abandon_effect = yes
+	}
+}
+
+universal_investment_dispute_abandon_effect = {
+	# 放弃:投资作废,玩家对持有者好感-20
+	root.var:universal_investment_dispute_target = {
+		set_variable = {
+			name = universal_investment_active
+			value = no
+		}
+		remove_variable = universal_investment_dispute
+		county.holder = {
+			reverse_add_opinion = {
+				target = root
+				modifier = universal_investment_abandoned_opinion
+			}
+		}
+	}
+}
+
+# ============================================================
+# 敲诈三选项(root=玩家,目标=root.var:universal_investment_risk_target)
+# ============================================================
+universal_investment_blackmail_pay_effect = {
+	# 付补偿金:扣 50% 成本,持有者好感+10,前嫌尽释
+	add_gold = universal_investment_blackmail_cost_negative_value
+	root.var:universal_investment_risk_target = {
+		remove_variable = universal_investment_dispute
+		county.holder = {
+			add_opinion = {
+				target = root
+				modifier = universal_investment_pacified_opinion
+			}
+		}
+	}
+}
+
+universal_investment_blackmail_defy_effect = {
+	# 强硬拒绝:持有者好感-30,该笔年金拒付概率大增
+	root.var:universal_investment_risk_target = {
+		set_variable = {
+			name = universal_investment_dispute
+			value = yes
+		}
+		county.holder = {
+			add_opinion = {
+				target = root
+				modifier = universal_investment_defied_opinion
+			}
+		}
+	}
+}
+
+universal_investment_blackmail_accept_effect = {
+	# 接受没收:投资作废,城堡继续建完归当地
+	root.var:universal_investment_risk_target = {
+		set_variable = {
+			name = universal_investment_cancelled
+			value = yes
+		}
+	}
+}
+
+# ============================================================
+# 事故两选项(root=玩家,目标=root.var:universal_investment_risk_target)
+# ============================================================
+universal_investment_accident_repair_effect = {
+	# 修复工地:扣 25% 成本
+	add_gold = universal_investment_accident_cost_negative_value
+}

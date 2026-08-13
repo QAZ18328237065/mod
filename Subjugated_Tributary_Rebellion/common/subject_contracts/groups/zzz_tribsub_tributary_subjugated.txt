@@ -1,0 +1,24 @@
+﻿# 被征服的朝贡者契约组覆写(原版 subject_contract_groups.txt:100)
+# 改动点:
+#  1) suzerain_heir_succession = no -> yes:宗主去世后由继承人接管朝贡关系,不再断约
+#  2) tributary_can_break_free = always no -> 反抗窗口期允许挣脱:
+#     新宗主即位时由脉冲打上 tribsub_resisting_new_suzerain 变量(2年反抗期),
+#     期间朝贡者可尝试独立(强者宣战,弱者直接断贡),窗口过后恢复"永不能挣脱"
+tributary_subjugated = {
+	is_tributary = yes
+	tributary_can_break_free = {
+		has_variable = tribsub_resisting_new_suzerain
+	}
+	suzerain_heir_succession = yes
+	suzerain_line_type = line_suzerain
+	tributary_line_type = line_tributary
+	should_show_as_suzerain_realm_name = no
+	should_show_as_suzerain_realm_color = yes
+
+	contracts = {
+		default_tributary_taxes
+		default_tributary_prestige
+		suzerain_war_participation_guarantee
+		zzz_tribsub_tributary_war_participation_obligation
+	}
+}
