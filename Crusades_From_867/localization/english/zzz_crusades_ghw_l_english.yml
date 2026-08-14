@@ -1,0 +1,5 @@
+l_english:
+ zzz_crusades_ghw.0002.t:0 "The Flames of Holy War Spread"
+ zzz_crusades_ghw.0002.desc_ready:0 "As the age turns, the flames of holy war burn in the hearts of [faith.GetName|U]'s followers. Your faith holds lawful doctrine, high fervor, and a substantial following — the path of the Great Holy War lies open before you.\n\nWhenever a worthy target presents itself, you may call for a great holy war of your own."
+ zzz_crusades_ghw.0002.desc_general:0 "The age of Great Holy Wars has begun. Whatever your religion — as long as its doctrine is lawful, it has a religious head, fervor runs high, and its following is substantial — it may wage crusades, jihads, and great purifications.\n\nIf your faith does not yet qualify, reform it or create a new faith to meet the doctrinal requirements."
+ zzz_crusades_ghw.0002.a:0 "Very well"

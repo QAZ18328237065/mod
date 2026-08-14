@@ -1,8 +1,0 @@
-﻿l_simp_chinese:
- universal_expedition_decision: "天下大征伐"
- universal_expedition_decision_desc: "以倾国之力发动一场不受教义与时代束缚的大圣战——目标王国由军略机宜选定，兵锋所指即为征伐之的。\n\n大军集结，同信仰的诸侯宣誓随征，四方捐输金帛以充军资。准备既定，倒计时尽则宣战。\n\n胜则论功行赏——王国及以下土地、军资财帛皆按贡献度分封。\n\n发动需：国王或以上 + 声望两千、金币两千、虔诚一千、军力五十。代价：声望两千、金币一千、虔诚一千，另捐一千金入战争金库。一生仅可发动一次。"
- universal_expedition_decision_tooltip: "以一定代价发动一场通用大圣战（自动选定目标王国），准备期约一年后宣战，胜利后按贡献度论功行赏。发动后你的宗教族永久解锁大圣战时代——此后同族信仰的宗教领袖亦可按原版机制发动大圣战。"
- universal_expedition_decision_confirm: "发动大圣战"
- universal_expedition_launched_title: "征伐启程"
- universal_expedition_launched_desc: "征伐之的已定：[target_kingdom.GetBaseNameNoTier]。[target_character.GetTitledFirstName]的国土，将在约一年的准备期后迎来大圣战。\n\n同信仰诸侯将陆续宣誓随征，四方金帛将注入战争金库。准备既定，倒计时尽则自动宣战，胜利后按贡献度论功行赏。\n\n你的宗教族已永久进入大圣战时代——此后只要条件成熟，同族信仰的宗教领袖亦可发动大圣战。此决议一生仅可发动一次。"
- universal_expedition_launched_ok: "静候佳音"

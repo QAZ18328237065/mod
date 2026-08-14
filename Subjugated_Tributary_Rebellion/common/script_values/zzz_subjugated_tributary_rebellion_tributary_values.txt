@@ -1,0 +1,416 @@
+﻿# 被征服朝贡者反抗宣战权重(scope = 朝贡者,每年掷一次,0-100 为年度反抗概率)
+# 判定维度:兵力/领地 + 双方恐怖值 + 双方军事才能 + 朝贡者对宗主好感 + 特质 + 忠顺/血亲/宗主战况
+# 校准目标(2026-08 平衡模型):base 12,clamp 5~85
+#   普通弱旅(兵弱、好感不差、无特质加成):~5%/年,两年反抗期合计约 10%
+#   普通相当兵力(好感中上、宗主和平):~7-15%/年,两年约 13-28% —— 多数年份安静
+#   受压朝贡者(不满+被征召+宗主陷战):~40%/年,两年约 65% —— 明显张力
+#   兵强+仇视+勇武的朝贡者:可逼近上限 85%,两年约 98% —— 必反
+#   忠顺/血亲兄弟:被 clamp 5 兜底压到近乎不反
+zzz_subjugated_tributary_rebellion_tributary_rebellion_chance_value = {
+	value = 12
+	# ---------- 兵力与国力 ----------
+	# 兵力比较用 ±15% 容差:我比宗主强 15% 以上才算强;宗主比我强 15% 以上才算弱;
+	# 其余(含势均力敌)归为"相当"档——修正前整数相等几乎不可能触发该档,形同虚设
+	if = {
+		limit = {
+			current_military_strength > {
+				value = suzerain.current_military_strength
+				multiply = 1.15
+			}
+		}
+		add = 20
+	}
+	else_if = {
+		limit = {
+			suzerain = {
+				current_military_strength > {
+					value = root.current_military_strength
+					multiply = 1.15
+				}
+			}
+		}
+		add = -15
+	}
+	else = {
+		# 兵力相当(±15% 内):势均力敌最敢赌,微弱加成
+		add = 3
+	}
+	if = {
+		limit = {
+			realm_size > suzerain.realm_size
+		}
+		add = 10
+	}
+	# ---------- 恐怖值(双方比较) ----------
+	if = {
+		limit = {
+			dread > suzerain.dread
+		}
+		add = 10
+	}
+	else_if = {
+		limit = {
+			suzerain = { dread > root.dread }
+		}
+		add = -10
+	}
+	if = {
+		limit = {
+			suzerain = { dread >= 80 }
+		}
+		add = -10
+	}
+	# ---------- 军事才能(双方比较) ----------
+	if = {
+		limit = {
+			martial > suzerain.martial
+		}
+		add = 8
+	}
+	else_if = {
+		limit = {
+			martial < suzerain.martial
+		}
+		add = -8
+	}
+	if = {
+		limit = {
+			martial >= 15
+		}
+		add = 5
+	}
+	# ---------- 朝贡者对宗主的好感 ----------
+	if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < -30
+			}
+		}
+		add = 15
+	}
+	else_if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < 0
+			}
+		}
+		add = 8
+	}
+	else_if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < 20
+			}
+		}
+		add = 3
+	}
+	else_if = {
+		limit = {
+			opinion = {
+				target = suzerain
+				value < 40
+			}
+		}
+		add = -5
+	}
+	else = {
+		add = -20
+	}
+	# ---------- 牵制维度 ----------
+	# 宗主对朝贡者持钩:把柄在手,不敢造次(-10);强钩再压(-10,共 -20)
+	if = {
+		limit = {
+			suzerain = { has_hook = root }
+		}
+		add = -10
+	}
+	if = {
+		limit = {
+			suzerain = {
+				OR = {
+					has_hook_of_type = { target = root type = strong_blackmail_hook }
+					has_hook_of_type = { target = root type = strong_favor_hook }
+					has_hook_of_type = { target = root type = strong_obligation_hook }
+					has_hook_of_type = { target = root type = strong_indebted_hook }
+					has_hook_of_type = { target = root type = life_threat_hook }
+					has_hook_of_type = { target = root type = major_threat_hook }
+					has_hook_of_type = { target = root type = strong_influence_hook }
+					has_hook_of_type = { target = root type = strong_test_hook }
+				}
+			}
+		}
+		add = -10
+	}
+	# 朝贡者对宗主持钩:护身符,有恃无恐(+10);强钩再加(+10,共 +20)
+	if = {
+		limit = {
+			has_hook = suzerain
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			OR = {
+				has_hook_of_type = { target = suzerain type = strong_blackmail_hook }
+				has_hook_of_type = { target = suzerain type = strong_favor_hook }
+				has_hook_of_type = { target = suzerain type = strong_obligation_hook }
+				has_hook_of_type = { target = suzerain type = strong_indebted_hook }
+				has_hook_of_type = { target = suzerain type = life_threat_hook }
+				has_hook_of_type = { target = suzerain type = major_threat_hook }
+				has_hook_of_type = { target = suzerain type = strong_influence_hook }
+				has_hook_of_type = { target = suzerain type = strong_test_hook }
+			}
+		}
+		add = 10
+	}
+	# ---------- 特质 ----------
+	if = {
+		limit = { has_trait = brave }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = craven }
+		add = -15
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = vengeful
+				has_trait = wrathful
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = { has_trait = ambitious }
+		add = 8
+	}
+	if = {
+		limit = { has_trait = arrogant }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = greedy }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = content }
+		add = -10
+	}
+	if = {
+		limit = { has_trait = humble }
+		add = -8
+	}
+	if = {
+		limit = { has_trait = patient }
+		add = -8
+	}
+	if = {
+		limit = { has_trait = shy }
+		add = -5
+	}
+	# ---------- 局面与羁绊 ----------
+	# 被宗主强制征召参战:平添怨气,但加成不多
+	if = {
+		limit = {
+			vassal_contract_has_flag = tributary_contract_tributary_forced_war_override
+		}
+		add = 8
+	}
+	# 被宗主禁内斗:和平红利与怨气并存(维度:性格/军力/好感/宗主状态)
+	# 弱藩+安分+敬重宗主者:禁令实为保护,权重净减(被 min=5 兜底压制到近乎不反)
+	# 强藩+好战+低好感:禁令束缚感强,权重显著抬升
+	if = {
+		limit = {
+			vassal_contract_has_flag = zzz_subjugated_tributary_rebellion_peace_among_subjugated_forbidden
+		}
+		# 基础:禁令束缚感的怨气(原固定 +10,现拆分为多维)
+		add = 5
+		# 好战性格:怨气更大
+		if = {
+			limit = {
+				OR = {
+					has_trait = brave
+					has_trait = ambitious
+					has_trait = vengeful
+					has_trait = wrathful
+				}
+			}
+			add = 8
+		}
+		# 安分性格:认同禁令的保护,怨气抵消
+		if = {
+			limit = {
+				OR = {
+					has_trait = content
+					has_trait = humble
+					has_trait = patient
+					has_trait = craven
+				}
+			}
+			add = -8
+		}
+		# 军力维度:强藩觉得束缚,弱藩觉得保护
+		if = {
+			limit = {
+				current_military_strength > suzerain.current_military_strength
+			}
+			add = 6
+		}
+		else_if = {
+			limit = {
+				suzerain = { current_military_strength > root.current_military_strength }
+			}
+			add = -6
+		}
+		# 好感维度:敬重宗主者接受禁令
+		if = {
+			limit = {
+				opinion = {
+					target = suzerain
+					value >= 40
+				}
+			}
+			add = -8
+		}
+		# 宗主陷于战事:保护承诺空洞,禁令失去价值
+		if = {
+			limit = {
+				suzerain = { is_at_war = yes }
+			}
+			add = 4
+		}
+	}
+	if = {
+		limit = {
+			suzerain = { is_at_war = yes }
+		}
+		add = 6
+	}
+	# 前车之鉴:宗主放跑了叛逃者,朝贡者胆子变大
+	if = {
+		limit = {
+			has_variable = subjugated_tributary_rebellion_saw_suzerain_weakness
+		}
+		add = 10
+	}
+	# 敬畏宗主:宗主立威示强,朝贡者不敢造次
+	if = {
+		limit = {
+			has_variable = subjugated_tributary_rebellion_fears_suzerain
+		}
+		add = -10
+	}
+	if = {
+		limit = { is_obedient = yes }
+		add = -50
+	}
+	if = {
+		limit = { has_relation_blood_brother = overlord }
+		add = -60
+	}
+	# ---------- 宗教/文化/权威/赋税 ----------
+	# 异教宗主:宗教压迫感
+	if = {
+		limit = {
+			NOT = { faith = suzerain.faith }
+		}
+		add = 5
+	}
+	# 不同文化宗主:陌生隔阂
+	if = {
+		limit = {
+			NOT = { culture = suzerain.culture }
+		}
+		add = 5
+	}
+	# 宗主合法性:名正言顺难反抗 / 合法性低人人欺(legitimacy_level 0-4)
+	if = {
+		limit = {
+			suzerain = { legitimacy_level >= 3 }
+		}
+		add = -10
+	}
+	else_if = {
+		limit = {
+			suzerain = { legitimacy_level <= 1 }
+		}
+		add = 10
+	}
+	# 高档赋税:盘剥过甚(0=none, 1=low, 2=high)
+	if = {
+		limit = {
+			vassal_contract_obligation_level:default_tributary_taxes >= 2
+		}
+		add = 5
+	}
+	min = 5
+	max = 85
+}
+
+# 安抚反抗期朝贡者的动态价格(scope = 宗主,recipient = 朝贡者)
+# 公式:80 + 朝贡者月收入x25 + 领地数x8,clamp 150~2000
+# 依据:按被安抚对象的实际价值定价——富强者贵,小领主便宜
+#   伯爵(月入~20/8领地):~644 | 公爵(月入~60/15领地):~1700 | 国王+:封顶2000
+# 牵制折扣:宗主对朝贡者持钩(有把柄),安抚成本减半;强钩再减半(共 -75%)
+# min 随折扣同步缩放,否则低价对象折扣被 150 兜底抵消(修正前低价对象吃不到折扣)
+zzz_subjugated_tributary_rebellion_soothe_cost_value = {
+	value = 80
+	add = {
+		value = scope:recipient.monthly_character_income
+		multiply = 25
+	}
+	add = {
+		value = scope:recipient.realm_size
+		multiply = 8
+	}
+	if = {
+		limit = {
+			has_hook = scope:recipient
+		}
+		multiply = 0.5
+	}
+	if = {
+		limit = {
+			OR = {
+				has_hook_of_type = { target = scope:recipient type = strong_blackmail_hook }
+				has_hook_of_type = { target = scope:recipient type = strong_favor_hook }
+				has_hook_of_type = { target = scope:recipient type = strong_obligation_hook }
+				has_hook_of_type = { target = scope:recipient type = strong_indebted_hook }
+				has_hook_of_type = { target = scope:recipient type = life_threat_hook }
+				has_hook_of_type = { target = scope:recipient type = major_threat_hook }
+				has_hook_of_type = { target = scope:recipient type = strong_influence_hook }
+				has_hook_of_type = { target = scope:recipient type = strong_test_hook }
+			}
+		}
+		multiply = 0.5
+	}
+	min = {
+		value = 150
+		if = {
+			limit = {
+				has_hook = scope:recipient
+			}
+			multiply = 0.5
+		}
+		if = {
+			limit = {
+				OR = {
+					has_hook_of_type = { target = scope:recipient type = strong_blackmail_hook }
+					has_hook_of_type = { target = scope:recipient type = strong_favor_hook }
+					has_hook_of_type = { target = scope:recipient type = strong_obligation_hook }
+					has_hook_of_type = { target = scope:recipient type = strong_indebted_hook }
+					has_hook_of_type = { target = scope:recipient type = life_threat_hook }
+					has_hook_of_type = { target = scope:recipient type = major_threat_hook }
+					has_hook_of_type = { target = scope:recipient type = strong_influence_hook }
+					has_hook_of_type = { target = scope:recipient type = strong_test_hook }
+				}
+			}
+			multiply = 0.5
+		}
+	}
+	max = 2000
+}

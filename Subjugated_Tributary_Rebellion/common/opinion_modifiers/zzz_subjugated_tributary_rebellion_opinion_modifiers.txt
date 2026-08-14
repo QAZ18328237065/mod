@@ -1,0 +1,16 @@
+﻿# 被征服朝贡者对新宗主的好感痕迹与宗主对反抗者的态度
+subjugated_tributary_rebellion_resent_new_suzerain_opinion = {
+	opinion = -30
+}
+subjugated_tributary_rebellion_plt_suzerain_opinion = {
+	opinion = 25
+}
+subjugated_tributary_rebellion_suzerain_aggression_opinion = {
+	opinion = -5
+}
+subjugated_tributary_rebellion_intimidated_opinion = {
+	opinion = -10
+}
+subjugated_tributary_rebellion_untrustworthy_opinion = {
+	opinion = -30
+}

@@ -1,0 +1,18 @@
+﻿# 禁内斗契约宣战约束(scope = 攻击者/CB 使用者,scope:defender = 目标持有者)
+# 由 casus_belli_groups 覆写文件在各组 allowed_for_character 中调用
+# 逻辑:攻击者契约处于 forbidden(禁内斗)时,不得对同宗主的被征服朝贡者宣战
+zzz_subjugated_tributary_rebellion_peace_among_subjugated_constraint = {
+	OR = {
+		# 攻击者未被禁内斗(契约默认 allowed 或无此契约) → 放行
+		NOT = { subject_contract_has_flag = zzz_subjugated_tributary_rebellion_peace_among_subjugated_forbidden }
+		# 防守者不是朝贡者 → 放行
+		NOT = { scope:defender = { is_tributary = yes } }
+		# 防守者不是被征服朝贡者,或宗主不同 → 放行
+		scope:defender = {
+			OR = {
+				NOT = { has_subject_contract_group = tributary_subjugated }
+				NOT = { suzerain ?= prev.suzerain }
+			}
+		}
+	}
+}

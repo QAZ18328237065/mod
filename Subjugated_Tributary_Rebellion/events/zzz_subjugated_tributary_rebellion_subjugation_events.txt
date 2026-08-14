@@ -1,0 +1,195 @@
+﻿# 被征服朝贡者反抗机制事件
+# 0001:宗主视角:朝贡者断贡叛逃 -> 三选一应对
+# 0002:玩家是被征服朝贡者时,宗主死亡更替通知
+# 0003:被征服朝贡者死亡后,继承人继承被征服朝贡关系时通知
+namespace = zzz_subjugated_tributary_rebellion_subjugation
+
+zzz_subjugated_tributary_rebellion_subjugation.0001 = {
+	title = zzz_subjugated_tributary_rebellion_subjugation.0001.t
+	desc = zzz_subjugated_tributary_rebellion_subjugation.0001.desc
+	theme = war
+
+	immediate = {
+		var:subjugated_tributary_rebellion_wayward_tributary = {
+			save_scope_as = wayward
+		}
+		# 立即清账:防止玩家挂机期间新断贡者覆盖本事件对象
+		remove_variable = subjugated_tributary_rebellion_wayward_tributary
+		# 防御:叛逃者已死或已臣服他人(触发前检查漏网)——
+		# 打标记使所有选项只清理、不生效
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = scope:wayward }
+					scope:wayward = { is_independent_ruler = no }
+				}
+			}
+			set_variable = {
+				name = subjugated_tributary_rebellion_wayward_invalid
+				value = yes
+			}
+		}
+	}
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0001.a
+		zzz_subjugated_tributary_rebellion_revenge_choice_a_effect = yes
+		ai_chance = {
+			base = 45
+			modifier = {
+				add = 10
+				has_trait = brave
+			}
+			modifier = {
+				add = 10
+				OR = {
+					has_trait = vengeful
+					has_trait = wrathful
+				}
+			}
+			modifier = {
+				add = -25
+				has_trait = craven
+			}
+			modifier = {
+				add = 20
+				current_military_strength > scope:wayward.current_military_strength
+			}
+			# 叛逃者对宗主持钩:投鼠忌器,讨伐意愿下降
+			modifier = {
+				add = -15
+				scope:wayward = { has_hook = root }
+			}
+			modifier = {
+				add = -15
+				scope:wayward = {
+					OR = {
+						has_hook_of_type = { target = root type = strong_blackmail_hook }
+						has_hook_of_type = { target = root type = strong_favor_hook }
+						has_hook_of_type = { target = root type = strong_obligation_hook }
+						has_hook_of_type = { target = root type = strong_indebted_hook }
+						has_hook_of_type = { target = root type = life_threat_hook }
+						has_hook_of_type = { target = root type = major_threat_hook }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0001.b
+		zzz_subjugated_tributary_rebellion_revenge_choice_b_effect = yes
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 15
+				has_trait = craven
+			}
+			modifier = {
+				add = 10
+				OR = {
+					has_trait = generous
+					has_trait = forgiving
+				}
+			}
+			modifier = {
+				add = -10
+				has_trait = brave
+			}
+			# 叛逃者把柄在手:息事宁人,认了
+			modifier = {
+				add = 10
+				scope:wayward = { has_hook = root }
+			}
+			modifier = {
+				add = 15
+				scope:wayward = {
+					OR = {
+						has_hook_of_type = { target = root type = strong_blackmail_hook }
+						has_hook_of_type = { target = root type = strong_favor_hook }
+						has_hook_of_type = { target = root type = strong_obligation_hook }
+						has_hook_of_type = { target = root type = strong_indebted_hook }
+						has_hook_of_type = { target = root type = life_threat_hook }
+						has_hook_of_type = { target = root type = major_threat_hook }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0001.c
+		zzz_subjugated_tributary_rebellion_revenge_choice_c_effect = yes
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 10
+				dread >= 50
+			}
+			modifier = {
+				add = -10
+				has_trait = craven
+			}
+			modifier = {
+				add = -5
+				has_trait = brave
+			}
+		}
+	}
+}
+
+zzz_subjugated_tributary_rebellion_subjugation.0002 = {
+	title = zzz_subjugated_tributary_rebellion_subjugation.0002.t
+	desc = zzz_subjugated_tributary_rebellion_subjugation.0002.desc
+	theme = tributary
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0002.a
+	}
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0002.b
+		remove_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+		# 宗主记账:叛逃者入"待弹窗"列表(脉冲串行弹 0001;触发前防御:叛逃者仍独立才入列)
+		suzerain = {
+			if = {
+				limit = {
+					prev = { is_independent_ruler = yes }
+				}
+				add_to_variable_list = {
+					name = subjugated_tributary_rebellion_wayward_list
+					target = prev
+				}
+			}
+		}
+		end_tributary = yes
+	}
+}
+
+zzz_subjugated_tributary_rebellion_subjugation.0003 = {
+	title = zzz_subjugated_tributary_rebellion_subjugation.0003.t
+	desc = zzz_subjugated_tributary_rebellion_subjugation.0003.desc
+	theme = tributary
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0003.a
+	}
+
+	option = {
+		name = zzz_subjugated_tributary_rebellion_subjugation.0003.b
+		remove_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+		# 宗主记账:叛逃者入"待弹窗"列表(脉冲串行弹 0001;触发前防御:叛逃者仍独立才入列)
+		suzerain = {
+			if = {
+				limit = {
+					prev = { is_independent_ruler = yes }
+				}
+				add_to_variable_list = {
+					name = subjugated_tributary_rebellion_wayward_list
+					target = prev
+				}
+			}
+		}
+		end_tributary = yes
+	}
+}

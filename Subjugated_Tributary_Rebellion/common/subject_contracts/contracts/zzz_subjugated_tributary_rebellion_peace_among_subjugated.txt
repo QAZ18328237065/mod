@@ -1,0 +1,30 @@
+﻿# 被征服朝贡者"禁内斗"契约(checkbox)
+# 默认允许内斗(allowed);宗主可改为禁止(forbidden,切换入口见 subjugated_tributary_rebellion_enforce_peace_interaction)
+# forbidden 生效时:
+#  1) CB 层禁止该朝贡者对同宗主的被征服朝贡者宣战(见 casus_belli_groups 覆写 + zzz_subjugated_tributary_rebellion_peace_among_subjugated_constraint)
+#  2) 朝贡者怨气积累:叛乱权重 +10(见 zzz_subjugated_tributary_rebellion_tributary_rebellion_chance_value)
+zzz_subjugated_tributary_rebellion_peace_among_subjugated = {
+	display_mode = checkbox
+	obligation_levels = {
+		zzz_subjugated_tributary_rebellion_peace_among_subjugated_allowed = {
+			default = yes
+			position = { 0 0 }
+
+			ai_liege_desire = 0
+			ai_subject_desire = 1
+			score = 1
+		}
+		zzz_subjugated_tributary_rebellion_peace_among_subjugated_forbidden = {
+			parent = zzz_subjugated_tributary_rebellion_peace_among_subjugated_allowed
+			position = { 1 0 }
+
+			flag = zzz_subjugated_tributary_rebellion_peace_among_subjugated_forbidden
+
+			subject_opinion = -15
+
+			ai_liege_desire = 1
+			ai_subject_desire = 0
+			score = -2
+		}
+	}
+}

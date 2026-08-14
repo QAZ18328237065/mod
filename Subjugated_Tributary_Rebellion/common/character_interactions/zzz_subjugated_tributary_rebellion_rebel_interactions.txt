@@ -1,0 +1,487 @@
+﻿# 宗主对被征服朝贡者的安抚/威慑交互(反抗期内可用)
+# 安抚:花金币提前平息反抗期,好感回暖,契约等级提升
+# 威慑:不花钱,恐惧压服,反抗期缩短一半,但好感恶化
+# actor = 宗主, recipient = 被征服朝贡者
+
+subjugated_tributary_rebellion_soothe_rebel_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_soothe_rebel_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	cost = {
+		gold = {
+			value = zzz_subjugated_tributary_rebellion_soothe_cost_value
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			remove_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			add_opinion = {
+				modifier = subjugated_tributary_rebellion_plt_suzerain_opinion
+				target = scope:actor
+				opinion = 25
+			}
+			add_subject_standing = 10
+		}
+	}
+
+	is_available = {
+		root = {
+			trigger_if = {
+				limit = { NOT = { exists = var:subjugated_tributary_rebellion_rebellion_roll_cooldown } }
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		base = 30
+		modifier = {
+			add = 20
+			root = {
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+		}
+		modifier = {
+			add = -15
+			root = { has_trait = greedy }
+		}
+		modifier = {
+			add = -20
+			root = { current_military_strength > scope:recipient.current_military_strength }
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+}
+
+# 宗主对被征服朝贡者颁布"禁内斗敕令"(契约切换为 forbidden)
+# actor = 宗主, recipient = 被征服朝贡者
+# 效果:recipient 不得对同宗主的被征服朝贡者宣战(CB 层拦截),但怨气使其叛乱权重 +10
+subjugated_tributary_rebellion_enforce_peace_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_enforce_peace_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+			}
+		}
+		scope:recipient = {
+			vassal_contract_obligation_level:zzz_subjugated_tributary_rebellion_peace_among_subjugated < 1
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			tributary_contract_set_obligation_level = {
+				type = zzz_subjugated_tributary_rebellion_peace_among_subjugated
+				level = 1
+			}
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 5
+		# 强藩易生内斗:兵力强于宗主或领地大的朝贡者,优先禁内斗
+		modifier = {
+			add = 25
+			scope:recipient = {
+				OR = {
+					current_military_strength > scope:actor.current_military_strength
+					realm_size > scope:actor.realm_size
+				}
+			}
+		}
+		modifier = {
+			add = 15
+			scope:recipient = {
+				is_at_war = yes
+			}
+		}
+		modifier = {
+			add = -20
+			scope:recipient = {
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+	}
+}
+
+# 宗主解除被征服朝贡者的"禁内斗敕令"(契约切回 allowed)
+subjugated_tributary_rebellion_relax_peace_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_relax_peace_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+			}
+		}
+		scope:recipient = {
+			vassal_contract_obligation_level:zzz_subjugated_tributary_rebellion_peace_among_subjugated >= 1
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			tributary_contract_set_obligation_level = {
+				type = zzz_subjugated_tributary_rebellion_peace_among_subjugated
+				level = 0
+			}
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 2
+		# 反抗中的朝贡者不宜再压:解除禁令安抚
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+		# 温和宗主更愿放行
+		modifier = {
+			add = 10
+			OR = {
+				has_trait = compassionate
+				has_trait = generous
+			}
+		}
+		modifier = {
+			add = -15
+			scope:recipient = {
+				current_military_strength > scope:actor.current_military_strength
+			}
+		}
+	}
+}
+
+# 宗主对被征服朝贡者强制参战(契约切为 forced)
+# actor = 宗主, recipient = 被征服朝贡者
+# 原版修改契约 UI 排除 tributary,故提供此交互入口
+subjugated_tributary_rebellion_enforce_war_obligation_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_enforce_war_obligation_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+			}
+		}
+		scope:recipient = {
+			vassal_contract_obligation_level:zzz_subjugated_tributary_rebellion_tributary_war_participation_obligation < 1
+			# 与契约 forced 层 is_valid 一致:牧畜政体不可强制
+			NOT = { has_government = herder_government }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			tributary_contract_set_obligation_level = {
+				type = zzz_subjugated_tributary_rebellion_tributary_war_participation_obligation
+				level = 1
+			}
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 5
+		# 宗主陷于战事:需要炮灰
+		modifier = {
+			add = 20
+			is_at_war = yes
+		}
+		# 宗主兵力吃亏:更需要人
+		modifier = {
+			add = 15
+			any_character_war = {
+				any_war_enemy = {
+					current_military_strength > scope:actor.current_military_strength
+				}
+			}
+		}
+		modifier = {
+			add = -15
+			scope:recipient = {
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+	}
+}
+
+# 宗主解除被征服朝贡者的强制参战(契约切回 none)
+subjugated_tributary_rebellion_relax_war_obligation_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_relax_war_obligation_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+			}
+		}
+		scope:recipient = {
+			vassal_contract_obligation_level:zzz_subjugated_tributary_rebellion_tributary_war_participation_obligation >= 1
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			tributary_contract_set_obligation_level = {
+				type = zzz_subjugated_tributary_rebellion_tributary_war_participation_obligation
+				level = 0
+			}
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 2
+		# 反抗中的朝贡者不宜再压:解除征召安抚
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+		modifier = {
+			add = 10
+			OR = {
+				has_trait = compassionate
+				has_trait = generous
+			}
+		}
+	}
+}
+
+subjugated_tributary_rebellion_deter_rebel_interaction = {
+	category = interaction_category_vassal
+	common_interaction = no
+	icon = become_tributary_interaction
+	desc = subjugated_tributary_rebellion_deter_rebel_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			this != scope:recipient
+			any_tributary = {
+				this = scope:recipient
+				has_subject_contract_group = tributary_subjugated
+				has_variable = subjugated_tributary_rebellion_resisting_new_suzerain
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_physically_able = yes
+			is_travelling = no
+			NOT = { exists = involved_activity }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			# 反抗期缩短为 1 年(365 天)
+			set_variable = {
+				name = subjugated_tributary_rebellion_resisting_new_suzerain
+				value = yes
+				days = 365
+			}
+			add_opinion = {
+				modifier = subjugated_tributary_rebellion_intimidated_opinion
+				target = scope:actor
+				opinion = -20
+			}
+			add_subject_standing = -5
+		}
+		scope:actor = {
+			add_dread = 10
+		}
+	}
+
+	is_available = {
+		root = {
+			OR = {
+				dread >= 40
+				has_trait = vengeful
+				has_trait = wrathful
+			}
+		}
+	}
+
+	ai_will_do = {
+		base = 20
+		modifier = {
+			add = 25
+			root = {
+				OR = {
+					has_trait = vengeful
+					has_trait = wrathful
+				}
+			}
+		}
+		modifier = {
+			add = 15
+			root = { dread >= 60 }
+		}
+		modifier = {
+			add = -10
+			root = { has_trait = compassionate }
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = tributaries
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+}

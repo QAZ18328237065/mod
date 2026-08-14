@@ -32,6 +32,13 @@ zzz_crusades_from_867_unlock = {
 					days = 120
 				}
 			}
+			# 开局通知弹窗(延迟 5 天等 UI 就绪;仅 mod 生效的开局弹出)
+			every_player = {
+				trigger_event = {
+					id = zzz_crusades_ghw.0002
+					days = 5
+				}
+			}
 		}
 	}
 }

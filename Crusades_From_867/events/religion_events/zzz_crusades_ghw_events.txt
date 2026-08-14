@@ -19,6 +19,9 @@ zzz_crusades_ghw.0001 = {
 			religion = { exists = var:variable_first_ghw_cooldown } # 解锁后等待约 4 个月再发动
 		}
 		religious_head = { is_imprisoned = no }
+		num_county_followers >= 15 # 信徒规模门槛:对齐原版 0010 的合法性门槛(35)但放宽——
+		# 本 mod 目标"所有宗教都能用",35 会挡掉新创建/小型信仰;15 保留最低规模代表性,
+		# 只挡信徒寥寥的微型教派(纯脚本教义达标但全图不足 15 个伯爵领者)
 		religion = { exists = var:variable_ghw_unlocked } # 本 mod 开局为全部宗教族解锁
 		zzz_suitable_faith_for_undirected_ghw_any_head_trigger = yes # 信条/狂热/有效目标
 	}
@@ -247,5 +250,31 @@ zzz_crusades_ghw.0001 = {
 				}
 			}
 		}
+	}
+}
+
+# 开局通知:大圣战时代已开启(玩家信仰达标则提示"可发动",否则泛化提示)
+# 由 on_game_start 解锁 effect 延迟 5 天触发,仅在 mod 生效的开局(867~1178)弹出
+zzz_crusades_ghw.0002 = {
+	title = zzz_crusades_ghw.0002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					faith = { zzz_crusades_ghw_basic_eligibility_trigger = yes }
+				}
+				desc = zzz_crusades_ghw.0002.desc_ready
+			}
+			desc = zzz_crusades_ghw.0002.desc_general
+		}
+	}
+	theme = war
+
+	immediate = {
+		set_global_variable = { name = zzz_crusades_ghw_intro_shown value = yes }
+	}
+
+	option = {
+		name = zzz_crusades_ghw.0002.a
 	}
 }

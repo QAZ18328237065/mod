@@ -166,22 +166,36 @@ universal_send_military_aid_interaction = {
 		scope:recipient = {
 			# Save scopes for events
 			save_scope_as = governor_at_war
-			scope:secondary_recipient = { save_scope_as = governor_joining }
 
-			# Have secondary_recipient join recipient's wars
-			every_character_war = {
+			# The joining governor may have died/been imprisoned between send and accept
+			if = {
 				limit = {
-					scope:recipient = { is_leader_in_war = prev }
-					is_attacker = scope:recipient
+					exists = scope:secondary_recipient
 				}
-				add_attacker = scope:secondary_recipient
-			}
-			every_character_war = {
-				limit = {
-					scope:recipient = { is_leader_in_war = prev }
-					is_defender = scope:recipient
+				scope:secondary_recipient = { save_scope_as = governor_joining }
+
+				# Have secondary_recipient join recipient's wars
+				every_character_war = {
+					limit = {
+						scope:recipient = { is_leader_in_war = prev }
+						is_attacker = scope:recipient
+					}
+					add_attacker = scope:secondary_recipient
 				}
-				add_defender = scope:secondary_recipient
+				every_character_war = {
+					limit = {
+						scope:recipient = { is_leader_in_war = prev }
+						is_defender = scope:recipient
+					}
+					add_defender = scope:secondary_recipient
+				}
+
+				# Send joining governor a letter event and let them know of your action
+				scope:secondary_recipient = {
+					trigger_event = {
+						id = tgp_interaction_event.0016
+					}
+				}
 			}
 
 			# If recipient is AI, add some opinion
@@ -206,13 +220,6 @@ universal_send_military_aid_interaction = {
 				}
 			}
 		}
-
-		scope:secondary_recipient = {
-			# Send recipient a letter event and let them know of your action
-			trigger_event = {
-				id = tgp_interaction_event.0016
-			}
-		}
 	}
 
 	on_decline = {
@@ -227,6 +234,10 @@ universal_send_military_aid_interaction = {
 		ai_recipients = vassals
 		max = 30
 	}
+	ai_targets = { # Match populate_recipient_list (every_vassal_or_below), so deep vassals are reachable by AI
+		ai_recipients = realm_characters
+		max = 30
+	}
 	ai_frequency_by_tier = {
 		barony = 0
 		county = 0
@@ -235,6 +246,8 @@ universal_send_military_aid_interaction = {
 		empire = 4
 		hegemony = 3
 	}
+
+	cooldown_against_recipient = { months = 6 }
 
 	ai_potential = {
 		top_liege = this
@@ -245,11 +258,17 @@ universal_send_military_aid_interaction = {
 	ai_will_do = {
 		base = 0
 
-		# Make sure to send aid if there is no one helping
+		# Make sure to send aid if there is no one helping a non-military governor
 		modifier = {
 			add = 100
 			scope:recipient = {
-				vassal_contract_has_flag = celestial_civil_appointment
+				OR = {
+					vassal_contract_has_flag = celestial_civil_appointment
+					vassal_contract_has_flag = admin_theme_civilian
+					vassal_contract_has_flag = admin_theme_balanced
+					vassal_contract_has_flag = japan_administrative_province_standard
+					vassal_contract_has_flag = japan_administrative_province_trade
+				}
 				any_war_ally = {
 					count < 1
 					this != scope:actor
@@ -257,33 +276,36 @@ universal_send_military_aid_interaction = {
 			}
 		}
 		
-		# We'll make sure to send a bit more help to the top liege
+		# We'll make sure to send a bit more help to the liege's own vassals if they are short on allies
 		modifier = {
 			add = 100
 			scope:recipient = {
-				top_liege = this
+				top_liege = scope:actor
 				any_war_ally = {
 					count < 3
 				}
 			}
 		}
 		
-		# We always want to send the grand marshal to the top liege
+		# We always want to send the grand marshal to the liege's vassals
 		modifier = {
 			add = 100
 			scope:recipient = {
-				top_liege = this
+				top_liege = scope:actor
 			}
 			scope:secondary_recipient = {
 				has_title = title:e_minister_grand_marshal
 			}
 		}
 
-		# Send more aid if recipient is weaker than the enemy side - But do so less frequently
+		# Send more aid if the recipient's side is weaker than the enemy side - But do so less frequently
 		modifier = {
 			add = 40
 			scope:recipient = {
 				any_character_war = {
+					limit = {
+						scope:recipient = { is_leader_in_war = prev }
+					}
 					# Set up scope values so that we can compare strength
 					save_temporary_scope_value_as = {
 						name = ai_will_do_defender_strength
@@ -313,14 +335,14 @@ universal_send_military_aid_interaction = {
 							}
 						}
 					}
-					# Check if actor's side is weaker than the opponent
+					# Check if the recipient's side is weaker than the opponent
 					OR = {
 						AND = {
-							is_defender = scope:actor
+							is_defender = scope:recipient
 							scope:ai_will_do_defender_strength < scope:ai_will_do_attacker_strength
 						}
 						AND = {
-							is_attacker = scope:actor
+							is_attacker = scope:recipient
 							scope:ai_will_do_attacker_strength < scope:ai_will_do_defender_strength
 						}
 					}
@@ -328,7 +350,7 @@ universal_send_military_aid_interaction = {
 			}
 		}
 		
-		# We always want to send the grand marshal to the top liege
+		# Prefer sending governors of higher rank when they are not busy
 		modifier = {
 			factor = {
 				value = 1

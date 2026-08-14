@@ -1,7 +1,0 @@
-﻿l_english:
- universal_convert_to_meritocratic_decision: "Adopt Meritocratic Government"
- universal_convert_to_meritocratic_desc: "The time has come to restructure our realm around merit, bureaucracy, and commerce rather than birthright and custom. A true ruler is served by the capable, not the connected."
- universal_convert_to_meritocratic_tooltip: "Change [government|E] type by becoming [meritocratic|E]"
- universal_meritocratic_confirm: "Our path shall be guided by the capable, not the connected."
- universal_meritocratic_liege_requirement: "Your [liege|E] must already have the [meritocratic|E] [government|E]"
- universal_meritocratic_vassals_will_convert: "All secular [vassal|E]s in your [realm|E] will adopt the [meritocratic|E] [government|E], along with their own vassals. [theocratic|E], [republican|E] and [holy_order|E] rulers will keep their current [government|E]"

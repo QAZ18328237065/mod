@@ -1,0 +1,7 @@
+# 禁内斗契约的"和平红利":被宗主禁止内斗的被征服朝贡者
+# 获得微弱正面修正——不打仗的和平环境,军队休整、经济安定
+# 数值刻意微小,不影响平衡,仅作为禁令的补偿性安抚
+subjugated_tributary_rebellion_peace_dividend = {
+	levy_reinforcement_rate = 0.1
+	monthly_income_mult = 0.05
+}
